@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7639c05bb1b3847889731fed564d43, type: 3}
+  m_Name: GunMenu
+  m_EditorClassIdentifier: 
+  Gunlist:
+  - GunName: ScarLight
+    gunType: 1
+    baseModel: {fileID: 160804294792524997, guid: 5e5a6a3656aaf6b4c9b98cf3084c979e, type: 3}
+    Ready: {fileID: 7400000, guid: 7a65b6f64802655479d572f266ba910a, type: 2}
+    Fire: {fileID: 7400000, guid: 93b46bf796580174693f6a1a808be6be, type: 2}
+    Reload: {fileID: 7400000, guid: b4fc8206526512b41a1473d5fb71a581, type: 2}
+    Hide: {fileID: 7400000, guid: 05998ac09ae8a6945b2511703b0e929e, type: 2}
+    ShootingSound: {fileID: 8300000, guid: ef3d14035605cf64ba1faaed18eaaedc, type: 3}
+    ReloadSound: {fileID: 8300000, guid: 01d2cf091a927064396359d48c1344de, type: 3}
+    ammoCapacity: 30
+    fireRate: 600
+    reloadTime: 2

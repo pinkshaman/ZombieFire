@@ -6,7 +6,7 @@ LightProbes:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: (Clone)
+  m_Name: LightProbes_1
   m_Data:
     m_Tetrahedralization:
       m_Tetrahedra:
@@ -20,12 +20,12 @@ LightProbes:
         neighbors[3]: 114
         matrix:
           e00: 0.09765625
-          e01: 2.117394E-08
-          e02: 4.7662043E-09
+          e01: 0.00000002117394
+          e02: 0.0000000047662043
           e03: 0
           e10: -0.09765625
           e11: 0.3134796
-          e12: 5.820766E-09
+          e12: 0.000000005820766
           e13: 0
           e20: -0
           e21: -0.31347963
@@ -86,7 +86,7 @@ LightProbes:
         neighbors[3]: 134
         matrix:
           e00: -0.09398497
-          e01: 2.2407763E-08
+          e01: 0.000000022407763
           e02: -0.09174313
           e03: 0
           e10: 0
@@ -155,7 +155,7 @@ LightProbes:
           e01: 0
           e02: 0.09174312
           e03: 0
-          e10: -1.0059856E-08
+          e10: -0.000000010059856
           e11: 0.31347963
           e12: -0.09174312
           e13: 0
@@ -201,7 +201,7 @@ LightProbes:
           e03: 0
           e10: -0
           e11: 0.31347963
-          e12: 1.058697E-08
+          e12: 0.00000001058697
           e13: 0
           e20: -0
           e21: -0.31347963
@@ -287,7 +287,7 @@ LightProbes:
           e01: 0
           e02: 0.104931794
           e03: 0
-          e10: -1.0059856E-08
+          e10: -0.000000010059856
           e11: 0.37453184
           e12: 0.1049318
           e13: 0
@@ -305,7 +305,7 @@ LightProbes:
         neighbors[2]: 5
         neighbors[3]: 85
         matrix:
-          e00: -1.0059856E-08
+          e00: -0.000000010059856
           e01: -0.37453184
           e02: 0.09174312
           e03: 0
@@ -357,7 +357,7 @@ LightProbes:
           e11: 0
           e12: 0.104931794
           e13: 0
-          e20: -1.11619185E-08
+          e20: -0.0000000111619185
           e21: -0.37453184
           e22: -0.1049318
           e23: 0
@@ -571,7 +571,7 @@ LightProbes:
         matrix:
           e00: 0.09398497
           e01: 0.31347963
-          e02: 1.058697E-08
+          e02: 0.00000001058697
           e03: 0
           e10: -0.09398497
           e11: -0
@@ -659,7 +659,7 @@ LightProbes:
         matrix:
           e00: -0
           e01: 0.31347963
-          e02: -1.0059856E-08
+          e02: -0.000000010059856
           e03: 0
           e10: -0
           e11: -0.31347963
@@ -703,7 +703,7 @@ LightProbes:
         matrix:
           e00: -0.09398497
           e01: -0.31347963
-          e02: -5.6019407E-09
+          e02: -0.0000000056019407
           e03: 0
           e10: -0
           e11: -0
@@ -817,7 +817,7 @@ LightProbes:
           e03: 0
           e10: 0
           e11: -0.37453184
-          e12: -1.058697E-08
+          e12: -0.00000001058697
           e13: 0
           e20: 0
           e21: 0.37453184
@@ -883,7 +883,7 @@ LightProbes:
           e03: 0
           e10: 0.09765625
           e11: -0.31347963
-          e12: 7.0376056E-09
+          e12: 0.0000000070376056
           e13: 0
           e20: 0
           e21: 0
@@ -1011,7 +1011,7 @@ LightProbes:
         matrix:
           e00: 0.09765625
           e01: -0.37453184
-          e02: -1.11619185E-08
+          e02: -0.0000000111619185
           e03: 0
           e10: -0.09765625
           e11: -0
@@ -1195,7 +1195,7 @@ LightProbes:
           e13: 0
           e20: -0.09765626
           e21: 0.37453187
-          e22: -8.408226E-09
+          e22: -0.000000008408226
           e23: 0
         isValid: 0
       - indices[0]: 15
@@ -1231,7 +1231,7 @@ LightProbes:
         matrix:
           e00: 0.09765624
           e01: -0.3134796
-          e02: 5.6124905E-09
+          e02: 0.0000000056124905
           e03: 0
           e10: -0.09765625
           e11: -0
@@ -1305,7 +1305,7 @@ LightProbes:
           e13: 0
           e20: -0.09765625
           e21: 0.37453184
-          e22: -5.5809593E-09
+          e22: -0.0000000055809593
           e23: 0
         isValid: 0
       - indices[0]: 1
@@ -1385,7 +1385,7 @@ LightProbes:
         matrix:
           e00: 0.09398496
           e01: 0.37453184
-          e02: -5.468316E-09
+          e02: -0.000000005468316
           e03: 0
           e10: -0.09398497
           e11: -0
@@ -1427,7 +1427,7 @@ LightProbes:
         neighbors[2]: 33
         neighbors[3]: 13
         matrix:
-          e00: -1.0059856E-08
+          e00: -0.000000010059856
           e01: -0
           e02: 0.09174312
           e03: 0
@@ -1517,7 +1517,7 @@ LightProbes:
         matrix:
           e00: -0.09398496
           e01: -0.3134796
-          e02: 5.468316E-09
+          e02: 0.000000005468316
           e03: 0
           e10: 0
           e11: 0.31347963
@@ -1585,9 +1585,9 @@ LightProbes:
           e01: 0
           e02: 0
           e03: 0
-          e10: 5.293485E-09
+          e10: 0.000000005293485
           e11: -0.31347963
-          e12: -1.058697E-08
+          e12: -0.00000001058697
           e13: 0
           e20: -0.0843882
           e21: 0.31347963
@@ -1609,7 +1609,7 @@ LightProbes:
           e03: 0
           e10: -0.09765626
           e11: 0.37453187
-          e12: 9.369922E-09
+          e12: 0.000000009369922
           e13: 0
           e20: 0
           e21: 0
@@ -1647,7 +1647,7 @@ LightProbes:
         neighbors[2]: 69
         neighbors[3]: 34
         matrix:
-          e00: -1.0059856E-08
+          e00: -0.000000010059856
           e01: 0.31347963
           e02: 0.08880995
           e03: 0
@@ -1692,12 +1692,12 @@ LightProbes:
         neighbors[3]: 126
         matrix:
           e00: -0.09765625
-          e01: -2.3283064E-08
+          e01: -0.000000023283064
           e02: 0.094161965
           e03: 0
           e10: -0
           e11: -0.3745318
-          e12: -5.6124905E-09
+          e12: -0.0000000056124905
           e13: 0
           e20: 0
           e21: 0.37453184
@@ -1717,7 +1717,7 @@ LightProbes:
           e01: -0.37453184
           e02: 0.094161965
           e03: 0
-          e10: 5.5809593E-09
+          e10: 0.0000000055809593
           e11: 0.37453184
           e12: -0.094161965
           e13: 0
@@ -1761,7 +1761,7 @@ LightProbes:
           e01: -0
           e02: -0
           e03: 0
-          e10: 9.342421E-09
+          e10: 0.000000009342421
           e11: 0.31347963
           e12: -0.09416197
           e13: 0
@@ -1779,8 +1779,8 @@ LightProbes:
         neighbors[2]: 81
         neighbors[3]: 190
         matrix:
-          e00: -5.6019407E-09
-          e01: -2.2407763E-08
+          e00: -0.0000000056019407
+          e01: -0.000000022407763
           e02: 0.09416198
           e03: 0
           e10: -0.09398496
@@ -1801,11 +1801,11 @@ LightProbes:
         neighbors[2]: 82
         neighbors[3]: 191
         matrix:
-          e00: 3.7404804E-09
+          e00: 0.0000000037404804
           e01: 0.31347963
-          e02: -1.1203881E-08
+          e02: -0.000000011203881
           e03: 0
-          e10: -9.342421E-09
+          e10: -0.000000009342421
           e11: -0.31347963
           e12: 0.09416197
           e13: 0
@@ -2097,7 +2097,7 @@ LightProbes:
           e13: 0
           e20: 0.09765625
           e21: -0.31347963
-          e22: -6.6375994E-09
+          e22: -0.0000000066375994
           e23: 0
         isValid: 0
       - indices[0]: 47
@@ -2313,7 +2313,7 @@ LightProbes:
           e03: 0
           e10: -0.09765625
           e11: 0.31347963
-          e12: 6.6375994E-09
+          e12: 0.0000000066375994
           e13: 0
           e20: -0
           e21: -0
@@ -2330,7 +2330,7 @@ LightProbes:
         neighbors[3]: 29
         matrix:
           e00: 0.09765625
-          e01: -2.3283064E-08
+          e01: -0.000000023283064
           e02: -0.094161965
           e03: 0
           e10: 0
@@ -2493,7 +2493,7 @@ LightProbes:
           e13: 0
           e20: -0.097656265
           e21: 0.31347963
-          e22: -7.842536E-09
+          e22: -0.000000007842536
           e23: 0
         isValid: 0
       - indices[0]: 7
@@ -2511,7 +2511,7 @@ LightProbes:
           e03: 0
           e10: 0.09765625
           e11: -0.31347963
-          e12: 6.2544223E-09
+          e12: 0.0000000062544223
           e13: 0
           e20: 0
           e21: 0.31347963
@@ -2551,7 +2551,7 @@ LightProbes:
         matrix:
           e00: 0.09765625
           e01: 0
-          e02: 5.468316E-09
+          e02: 0.000000005468316
           e03: 0
           e10: -0.09765625
           e11: -0
@@ -2573,7 +2573,7 @@ LightProbes:
         matrix:
           e00: -0.09765625
           e01: 0.31347963
-          e02: -9.342421E-09
+          e02: -0.000000009342421
           e03: 0
           e10: 0.09765625
           e11: 0
@@ -2599,7 +2599,7 @@ LightProbes:
           e03: 0
           e10: 0.09765625
           e11: -0.31347963
-          e12: 6.8568227E-09
+          e12: 0.0000000068568227
           e13: 0
           e20: 0
           e21: 0
@@ -2616,7 +2616,7 @@ LightProbes:
         neighbors[3]: 93
         matrix:
           e00: -0.09765625
-          e01: 2.1873264E-08
+          e01: 0.000000021873264
           e02: 0.09174312
           e03: 0
           e10: 0
@@ -2661,7 +2661,7 @@ LightProbes:
         matrix:
           e00: -0
           e01: 0.37453184
-          e02: 1.058697E-08
+          e02: 0.00000001058697
           e03: 0
           e10: -0
           e11: -0.37453184
@@ -2683,7 +2683,7 @@ LightProbes:
         matrix:
           e00: -0
           e01: 0.37453184
-          e02: 5.293485E-09
+          e02: 0.000000005293485
           e03: 0
           e10: -0.09765625
           e11: -0
@@ -2691,7 +2691,7 @@ LightProbes:
           e13: 0
           e20: 0.09765625
           e21: -0.37453184
-          e22: -5.5809593E-09
+          e22: -0.0000000055809593
           e23: 0
         isValid: 0
       - indices[0]: 42
@@ -2727,11 +2727,11 @@ LightProbes:
         matrix:
           e00: 0.09765625
           e01: -0
-          e02: 4.7662043E-09
+          e02: 0.0000000047662043
           e03: 0
           e10: -0.09765625
           e11: 0.3745318
-          e12: 5.820766E-09
+          e12: 0.000000005820766
           e13: 0
           e20: -0
           e21: -0.37453184
@@ -2751,7 +2751,7 @@ LightProbes:
           e01: 0.37453184
           e02: 0
           e03: 0
-          e10: -5.6019407E-09
+          e10: -0.0000000056019407
           e11: -0
           e12: 0.094161965
           e13: 0
@@ -2815,7 +2815,7 @@ LightProbes:
         matrix:
           e00: 0.09398496
           e01: 0.3745318
-          e02: 5.6124905E-09
+          e02: 0.0000000056124905
           e03: 0
           e10: -0
           e11: -0.37453184
@@ -2836,12 +2836,12 @@ LightProbes:
         neighbors[3]: 221
         matrix:
           e00: -0.09398497
-          e01: 2.2407763E-08
+          e01: 0.000000022407763
           e02: -0.09416198
           e03: 0
           e10: 0
           e11: 0.3745318
-          e12: 5.6124905E-09
+          e12: 0.0000000056124905
           e13: 0
           e20: -0
           e21: -0.37453184
@@ -2969,11 +2969,11 @@ LightProbes:
         matrix:
           e00: 0
           e01: -0
-          e02: 4.2146848E-08
+          e02: 0.000000042146848
           e03: 7.707463
           e10: 7.7074637
           e11: 3.192536
-          e12: 1.9013882E-07
+          e12: 0.00000019013882
           e13: 117.76002
           e20: 34.771
           e21: -0
@@ -2991,7 +2991,7 @@ LightProbes:
         matrix:
           e00: 0
           e01: 0
-          e02: 1.7457797E-08
+          e02: 0.000000017457797
           e03: 7.7074633
           e10: 3.192536
           e11: 7.707463
@@ -3057,11 +3057,11 @@ LightProbes:
         matrix:
           e00: 0
           e01: 0
-          e02: 5.9604645E-08
+          e02: 0.000000059604645
           e03: 7.7074633
           e10: 7.7074637
           e11: -3.192536
-          e12: 1.1920929E-07
+          e12: 0.00000011920929
           e13: 131.24724
           e20: 29.103
           e21: 0
@@ -3299,11 +3299,11 @@ LightProbes:
         matrix:
           e00: -0
           e01: 0
-          e02: -5.9604645E-08
+          e02: -0.000000059604645
           e03: 7.9620237
           e10: 7.9620223
           e11: -3.297978
-          e12: -1.591444E-07
+          e12: -0.0000001591444
           e13: 135.58202
           e20: 30.064201
           e21: 0
@@ -3519,11 +3519,11 @@ LightProbes:
         matrix:
           e00: 0
           e01: 0
-          e02: -4.2146848E-08
+          e02: -0.000000042146848
           e03: 7.962023
           e10: 7.9620223
           e11: 3.2979777
-          e12: -1.9013882E-07
+          e12: -0.00000019013882
           e13: 121.64935
           e20: 35.919403
           e21: 0
@@ -3541,7 +3541,7 @@ LightProbes:
         matrix:
           e00: 0
           e01: 0
-          e02: -1.7457797E-08
+          e02: -0.000000017457797
           e03: 7.962022
           e10: 3.297978
           e11: 7.962022
@@ -3607,11 +3607,11 @@ LightProbes:
         matrix:
           e00: 0
           e01: 0
-          e02: -5.9604645E-08
+          e02: -0.000000059604645
           e03: 7.962024
           e10: 3.297978
           e11: -7.9620223
-          e12: -7.1525574E-07
+          e12: -0.00000071525574
           e13: 169.46931
           e20: -0
           e21: -119.8064
@@ -3959,11 +3959,11 @@ LightProbes:
         matrix:
           e00: 0
           e01: -0
-          e02: 5.9604645E-08
+          e02: 0.000000059604645
           e03: 7.7074633
           e10: 3.192536
           e11: -7.7074637
-          e12: 6.341934E-07
+          e12: 0.0000006341934
           e13: 164.05109
           e20: 0
           e21: -115.97599
@@ -5054,7 +5054,7 @@ LightProbes:
     - {x: -1.37, y: 5.67, z: 10.389999}
     - {x: -1.37, y: 3, z: 10.389999}
     - {x: -1.37, y: -0.19, z: 10.389999}
-    m_NonTetrahedralizedProbeSetIndexMap: {}
+    m_NonTetrahedralizedProbeSetIndexMap: []
   m_BakedCoefficients:
   - sh[ 0]: 0.8174157
     sh[ 1]: 0.77238107
@@ -5161,7 +5161,7 @@ LightProbes:
     sh[21]: -0.2089083
     sh[22]: -0.100300945
     sh[23]: -0.0031271442
-    sh[24]: 1.6249367E-05
+    sh[24]: 0.000016249367
     sh[25]: 0.0037335474
     sh[26]: -0.039217833
   - sh[ 0]: 1.1703552
@@ -5593,7 +5593,7 @@ LightProbes:
     sh[21]: 0.10861442
     sh[22]: 0.09173702
     sh[23]: 0.08355568
-    sh[24]: 4.1023595E-05
+    sh[24]: 0.000041023595
     sh[25]: 0.048224926
     sh[26]: 0.011405343
   - sh[ 0]: 0.7448895
@@ -6515,813 +6515,381 @@ LightProbes:
     sh[25]: 0.09404711
     sh[26]: 0.04662707
   m_BakedLightOcclusion:
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
-  - m_ProbeOcclusionLightIndex:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff
+  - m_ProbeOcclusionLightIndex: ffffffffffffffffffffffffffffffff
     m_Occlusion:
     - 1
     - 1
     - 1
     - 1
-    m_OcclusionMaskChannel:
-    - -1
-    - -1
-    - -1
-    - -1
+    m_OcclusionMaskChannel: ffffffff

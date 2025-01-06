@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!43 &4300000
 Mesh:
-  serializedVersion: 11
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Combined Mesh (root: scene)'
+  m_Name: Combined Mesh (root_ scene)_1
+  serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -147,7 +147,7 @@ Mesh:
     firstVertex: 2256
     vertexCount: 4
     localAABB:
-      m_Center: {x: -7.4599953, y: -5E-05, z: 30.98}
+      m_Center: {x: -7.4599953, y: -0.00005, z: 30.98}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 8004
@@ -167,7 +167,7 @@ Mesh:
     firstVertex: 2432
     vertexCount: 4
     localAABB:
-      m_Center: {x: -17.459995, y: -5E-05, z: 10.98}
+      m_Center: {x: -17.459995, y: -0.00005, z: 10.98}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 8568
@@ -187,7 +187,7 @@ Mesh:
     firstVertex: 2508
     vertexCount: 4
     localAABB:
-      m_Center: {x: 2.5400047, y: -5E-05, z: 0.97999954}
+      m_Center: {x: 2.5400047, y: -0.00005, z: 0.97999954}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 8796
@@ -197,7 +197,7 @@ Mesh:
     firstVertex: 2512
     vertexCount: 4
     localAABB:
-      m_Center: {x: -7.4599953, y: -5E-05, z: 10.98}
+      m_Center: {x: -7.4599953, y: -0.00005, z: 10.98}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 8808
@@ -247,7 +247,7 @@ Mesh:
     firstVertex: 3052
     vertexCount: 4
     localAABB:
-      m_Center: {x: 2.5400047, y: -5E-05, z: -9.02}
+      m_Center: {x: 2.5400047, y: -0.00005, z: -9.02}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 10836
@@ -307,7 +307,7 @@ Mesh:
     firstVertex: 3944
     vertexCount: 4
     localAABB:
-      m_Center: {x: 12.540005, y: -5E-05, z: -9.02}
+      m_Center: {x: 12.540005, y: -0.00005, z: -9.02}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 13848
@@ -327,7 +327,7 @@ Mesh:
     firstVertex: 3988
     vertexCount: 4
     localAABB:
-      m_Center: {x: -7.4599953, y: -5E-05, z: -9.02}
+      m_Center: {x: -7.4599953, y: -0.00005, z: -9.02}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 13980
@@ -347,7 +347,7 @@ Mesh:
     firstVertex: 4192
     vertexCount: 4
     localAABB:
-      m_Center: {x: -7.4599953, y: -5E-05, z: 20.98}
+      m_Center: {x: -7.4599953, y: -0.00005, z: 20.98}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 14784
@@ -387,7 +387,7 @@ Mesh:
     firstVertex: 4410
     vertexCount: 4
     localAABB:
-      m_Center: {x: -7.4599953, y: -5E-05, z: 0.97999954}
+      m_Center: {x: -7.4599953, y: -0.00005, z: 0.97999954}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 15468
@@ -397,7 +397,7 @@ Mesh:
     firstVertex: 4414
     vertexCount: 4
     localAABB:
-      m_Center: {x: 12.540005, y: -5E-05, z: 0.97999954}
+      m_Center: {x: 12.540005, y: -0.00005, z: 0.97999954}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 15480
@@ -407,7 +407,7 @@ Mesh:
     firstVertex: 4418
     vertexCount: 4
     localAABB:
-      m_Center: {x: -7.4599953, y: -5E-05, z: 40.98}
+      m_Center: {x: -7.4599953, y: -0.00005, z: 40.98}
       m_Extent: {x: 5, y: 0, z: 5}
   - serializedVersion: 2
     firstByte: 15492
@@ -458,7 +458,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 7.540001, y: 0, z: 35.98}
-      m_Extent: {x: 10.000004, y: 1.9520521E-06, z: 10}
+      m_Extent: {x: 10.000004, y: 0.0000019520521, z: 10}
   - serializedVersion: 2
     firstByte: 18000
     indexCount: 108
@@ -598,7 +598,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 7.540001, y: 0, z: 15.98}
-      m_Extent: {x: 10.000004, y: 1.9520521E-06, z: 10}
+      m_Extent: {x: 10.000004, y: 0.0000019520521, z: 10}
   - serializedVersion: 2
     firstByte: 25428
     indexCount: 396
@@ -645,11 +645,11 @@ Mesh:
     channels: []
     fullWeights: []
   m_BindPose: []
-  m_BoneNameHashes: []
+  m_BoneNameHashes: 
   m_RootBoneNameHash: 0
   m_BonesAABB: []
   m_VariableBoneCountWeights:
-    m_Data: []
+    m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 0
   m_KeepVertices: 1
@@ -723,51 +723,51 @@ Mesh:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UV:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Normals:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Tangents:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Weights:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_NormalSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_TangentSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_FloatColors:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_BoneIndices:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Triangles:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
@@ -775,8 +775,8 @@ Mesh:
     m_Extent: {x: 44.11889, y: 4.927469, z: 33.391068}
   m_MeshUsageFlags: 0
   m_CookingOptions: 30
-  m_BakedConvexCollisionMesh:
-  m_BakedTriangleCollisionMesh:
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
   m_MeshMetrics[0]: 1049.532
   m_MeshMetrics[1]: 406.27536
   m_MeshOptimizationFlags: -1
@@ -784,4 +784,4 @@ Mesh:
     serializedVersion: 2
     offset: 0
     size: 0
-    path:
+    path: 
