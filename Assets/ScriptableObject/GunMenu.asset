@@ -12,16 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7639c05bb1b3847889731fed564d43, type: 3}
   m_Name: GunMenu
   m_EditorClassIdentifier: 
-  Gunlist:
-  - GunName: ScarLight
-    gunType: 1
-    baseModel: {fileID: 160804294792524997, guid: 5e5a6a3656aaf6b4c9b98cf3084c979e, type: 3}
+  baseGunList:
+  - GunName: Scarlight
+    BaseModel: {fileID: 160804294792524997, guid: 5e5a6a3656aaf6b4c9b98cf3084c979e, type: 3}
+    GunType: 1
+    AmmoCapacity: 30
+    FireRate: 600
+    ReloadTime: 2
+    Damage: 1
     Ready: {fileID: 7400000, guid: 7a65b6f64802655479d572f266ba910a, type: 2}
     Fire: {fileID: 7400000, guid: 93b46bf796580174693f6a1a808be6be, type: 2}
     Reload: {fileID: 7400000, guid: b4fc8206526512b41a1473d5fb71a581, type: 2}
     Hide: {fileID: 7400000, guid: 05998ac09ae8a6945b2511703b0e929e, type: 2}
-    ShootingSound: {fileID: 8300000, guid: ef3d14035605cf64ba1faaed18eaaedc, type: 3}
-    ReloadSound: {fileID: 8300000, guid: 01d2cf091a927064396359d48c1344de, type: 3}
-    ammoCapacity: 30
-    fireRate: 600
-    reloadTime: 2
+    ShootingSound: {fileID: 8300000, guid: 78ab0dc3c4344484a8ecf3913c072d7a, type: 3}
+    ReloadSound: {fileID: 8300000, guid: 27f104286a77aa148bb88b9c88d696e1, type: 3}
+    ReadySound: {fileID: 8300000, guid: 075a008346da5ea4181232e68b72c515, type: 3}
+    OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}
+  - GunName: RPG
+    BaseModel: {fileID: 744766231063157218, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
+    GunType: 5
+    AmmoCapacity: 5
+    FireRate: 20
+    ReloadTime: 3
+    Damage: 10
+    Ready: {fileID: 7400000, guid: 5ad52ef2a4c1219498e721595f599284, type: 2}
+    Fire: {fileID: 7400000, guid: 11a30ec1399b9eb4d848e561a9661150, type: 2}
+    Reload: {fileID: 7400000, guid: 19e96e21f5fd45142a620b1a26db678b, type: 2}
+    Hide: {fileID: 7400000, guid: 0ecb24ffb8e36ee4f8e1fd3ce04d6e91, type: 2}
+    ShootingSound: {fileID: 8300000, guid: c127ede83e4901542b0757dd2f2c1cf6, type: 3}
+    ReloadSound: {fileID: 8300000, guid: f18647206976fe54ea89c09ec50a36c2, type: 3}
+    ReadySound: {fileID: 8300000, guid: dded5450beac1c24cb9e3abaf70198fe, type: 3}
+    OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}

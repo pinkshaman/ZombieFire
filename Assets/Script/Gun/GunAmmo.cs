@@ -1,26 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GunAmmo : MonoBehaviour
-{
-    private int magSize;
-    public Gun gun;
-    public Text ShowUIMag;
+{   
+    public Gun gun;  
     private int _loadedAmmo;
     public AudioSource reloadSound;
-    public bool isReloadComplete;
+    public UnityEvent loadedAmmoChanged;
     public int LoadedAmmo
     {
         get => _loadedAmmo;
         set
         {
             _loadedAmmo = value;
+            loadedAmmoChanged.Invoke();
             if (_loadedAmmo <= 0)
             {
                 LockShooting();
-                StartCoroutine(Reload());
             }
             else
             {
@@ -29,45 +28,38 @@ public class GunAmmo : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        magSize = gun.gunData.AmmoCapacity;
-        ReFillAmmo();
-        ShowUi();
+    public void Start()
+    {      
+        ReFillAmmo();     
     }
     public void SingleFireAmmoCounter()
     {
-        LoadedAmmo--;
-        ShowUi();
+        LoadedAmmo--;      
     }
-    private void LockShooting()
+    public void LockShooting()
     {
         gun.enabled = false;
     }
-    private void UnlockShooting()
+    public void UnlockShooting()
     {
         gun.enabled = true;
     }
-    private void ReFillAmmo()
+    public void ReFillAmmo()
     {
-        LoadedAmmo = magSize;
-        ShowUi();
+        LoadedAmmo = gun.gunData.AmmoCapacity;       
     }
-    public void ShowUi()
-    {
-        ShowUIMag.text = $"{LoadedAmmo}/{magSize}";
-    }
+  
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (LoadedAmmo == magSize)
+            if (LoadedAmmo == gun.gunData.AmmoCapacity)
             {
                 return;
             }
             else
             {
-                StartCoroutine(Reload());
+                StartCoroutine(Reload());              
             }
         }
     }
@@ -76,28 +68,16 @@ public class GunAmmo : MonoBehaviour
 
         gun.ReloadState();
         LockShooting();
-        if (Input.anyKeyDown)
-        {
-            OnCancelReload();
-        }
-        yield return new WaitUntil(() => isReloadComplete);
+        
+        yield return new WaitForSeconds(gun.gunData.ReloadTime);
         AddAmmo();
-        isReloadComplete = false;
+        
     }
     public void AddAmmo()
     {
         ReFillAmmo();
     }
-    public void OnCancelReload()
-    {
-        gun.ReadyState();
-        isReloadComplete = false;
-    }
-    public void OnReloadComplete()
-    {
-        Debug.Log("Reload Complete");
-        isReloadComplete = true;
-    }
+ 
     public void OnSelectedGun()
     {
         UpdateShootLocking();
@@ -105,6 +85,6 @@ public class GunAmmo : MonoBehaviour
     public void UpdateShootLocking()
     {
         gun.enabled = _loadedAmmo > 0;
-        ShowUi();
+        
     }
 }

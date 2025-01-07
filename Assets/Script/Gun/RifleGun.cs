@@ -11,9 +11,7 @@ public class RifleGun : Gun
     public GunRayCaster gunRayCaster;
     private float lastShoot;
     private float interval;
-
-    public UnityEvent onShoot;
-   
+     
     public override void Start()
     {     
         base.Start();
@@ -29,7 +27,7 @@ public class RifleGun : Gun
     }
     private void UpdateFiring()
     {
-        interval = 60 / gunData.FireRate;
+        
         if (Time.time - lastShoot >= interval)
         {
             Shoot();
@@ -39,6 +37,7 @@ public class RifleGun : Gun
     public void Shoot()
     {
         ShootState();
+        gunAmmo.SingleFireAmmoCounter();
         gunRayCaster.PerformRayCasting();
         onShoot.Invoke();
     }

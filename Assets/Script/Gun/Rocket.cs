@@ -8,27 +8,25 @@ public class Rocket : MonoBehaviour
     public GameObject explosinPrefabs;
     public float exposionRadius;
     public float exposionForce;
-    public AudioClip exlosionSound;
     public int damage;
     public GameObject fireTail;
 
     public void Start()
+    {
+        
+    }
+    public void ActiveFireTail()
     {
         fireTail.SetActive(true);
     }
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"{collision.collider.gameObject.tag}");
-        Instantiate(explosinPrefabs, transform.position, transform.rotation);
-        PlaySound();
-        Destroy(gameObject);
+        Instantiate(explosinPrefabs, transform.position, transform.rotation);        
         BlowObject();
+        Destroy(gameObject);
     }
-    public void PlaySound()
-    {
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
-        audioManager.PlaySound(exlosionSound);
-    }
+  
     private void BlowObject()
     {
         Collider[] effectedObject = Physics.OverlapSphere(transform.position, exposionRadius);

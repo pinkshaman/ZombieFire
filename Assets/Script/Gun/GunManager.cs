@@ -22,7 +22,7 @@ public class BaseGun
     public int AmmoCapacity;
     public float FireRate;
     public float ReloadTime;
-
+    public int Damage;
     [Header("Animations")]
     public AnimationClip Ready;
     public AnimationClip Fire;
@@ -33,7 +33,26 @@ public class BaseGun
     public AudioClip ShootingSound;
     public AudioClip ReloadSound;
     public AudioClip ReadySound;
+    public AudioClip OutofAmmoSound;
 
+    public void InitWeapon(string gunName, GameObject baseModel, Guntype gunType, int ammoCapacity, float fireRate, float reloadTime, int damage, AnimationClip ready, AnimationClip fire, AnimationClip reload, AnimationClip hide, AudioClip shootingSound, AudioClip reloadSound, AudioClip readySound, AudioClip outofAmmoSound)
+    {
+        GunName = gunName;
+        BaseModel = baseModel;
+        GunType = gunType;
+        AmmoCapacity = ammoCapacity;
+        FireRate = fireRate;
+        ReloadTime = reloadTime;
+        Damage = damage;
+        Ready = ready;
+        Fire = fire;
+        Reload = reload;
+        Hide = hide;
+        ShootingSound = shootingSound;
+        ReloadSound = reloadSound;
+        ReadySound = readySound;
+        OutofAmmoSound = outofAmmoSound;
+    }
 }
 
 public class GunManager : MonoBehaviour

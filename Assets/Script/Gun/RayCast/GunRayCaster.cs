@@ -7,7 +7,7 @@ public class GunRayCaster : MonoBehaviour
     public Camera aimingCamera;
     public LayerMask layerMask;
     public HitEffectManager hitEffectManager;
-    public int damage;
+    public Gun gun;
 
     public void PerformRayCasting()
     {
@@ -35,7 +35,7 @@ public class GunRayCaster : MonoBehaviour
         Health health = hitInfo.collider.GetComponentInParent<Health>();
         if (health != null)
         {
-            health.TakeDamage(damage);
+            health.TakeDamage(gun.gunData.Damage);
         }
     }
 }

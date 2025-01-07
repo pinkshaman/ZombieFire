@@ -41,11 +41,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 924312915486943501}
-  - component: {fileID: 6111864376032785159}
   - component: {fileID: 720707762515744872}
-  - component: {fileID: 8935904126154040954}
+  - component: {fileID: 6111864376032785159}
   - component: {fileID: 960142015957222111}
   - component: {fileID: 8813092395251611091}
+  - component: {fileID: 8935904126154040954}
   m_Layer: 8
   m_Name: Scalight
   m_TagString: Untagged
@@ -72,8 +72,28 @@ Transform:
   - {fileID: 6832912837865189717}
   - {fileID: 70260377076874232}
   - {fileID: 9176400285551448395}
+  - {fileID: 1884867112748455846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!111 &720707762515744872
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160804294792524997}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7a65b6f64802655479d572f266ba910a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 93b46bf796580174693f6a1a808be6be, type: 2}
+  - {fileID: 7400000, guid: 05998ac09ae8a6945b2511703b0e929e, type: 2}
+  - {fileID: 7400000, guid: 7a65b6f64802655479d572f266ba910a, type: 2}
+  - {fileID: 7400000, guid: b4fc8206526512b41a1473d5fb71a581, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!82 &6111864376032785159
 AudioSource:
   m_ObjectHideFlags: 0
@@ -170,25 +190,77 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!111 &720707762515744872
-Animation:
+--- !u!114 &960142015957222111
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160804294792524997}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 7a65b6f64802655479d572f266ba910a, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 93b46bf796580174693f6a1a808be6be, type: 2}
-  - {fileID: 7400000, guid: 05998ac09ae8a6945b2511703b0e929e, type: 2}
-  - {fileID: 7400000, guid: 7a65b6f64802655479d572f266ba910a, type: 2}
-  - {fileID: 7400000, guid: b4fc8206526512b41a1473d5fb71a581, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37671275a75062e4799567c721433887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 8813092395251611091}
+  reloadSound: {fileID: 6111864376032785159}
+  loadedAmmoChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8813092395251611091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160804294792524997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c62fce885a83348b86eb2db8aa35b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Scarlight
+  gunData:
+    GunName: 
+    BaseModel: {fileID: 0}
+    GunType: 0
+    AmmoCapacity: 0
+    FireRate: 0
+    ReloadTime: 0
+    Damage: 0
+    Ready: {fileID: 0}
+    Fire: {fileID: 0}
+    Reload: {fileID: 0}
+    Hide: {fileID: 0}
+    ShootingSound: {fileID: 0}
+    ReloadSound: {fileID: 0}
+    ReadySound: {fileID: 0}
+    OutofAmmoSound: {fileID: 0}
+  audioSource: {fileID: 6111864376032785159}
+  gunAmmo: {fileID: 960142015957222111}
+  aimingPos: {fileID: 1884867112748455846}
+  onShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8935904126154040954}
+        m_TargetAssemblyTypeName: GunRayCaster, Assembly-CSharp
+        m_MethodName: PerformRayCasting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onAiming:
+    m_PersistentCalls:
+      m_Calls: []
+  onReLoad:
+    m_PersistentCalls:
+      m_Calls: []
+  gunRayCaster: {fileID: 8935904126154040954}
 --- !u!114 &8935904126154040954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,67 +278,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   hitEffectManager: {fileID: 0}
-  damage: 1
---- !u!114 &960142015957222111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160804294792524997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37671275a75062e4799567c721433887, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   gun: {fileID: 8813092395251611091}
-  ShowUIMag: {fileID: 0}
-  reloadSound: {fileID: 6111864376032785159}
-  isReloadComplete: 0
---- !u!114 &8813092395251611091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160804294792524997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56c62fce885a83348b86eb2db8aa35b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunName: ScarLight
-  gunData:
-    GunName: 
-    BaseModel: {fileID: 0}
-    GunType: 0
-    AmmoCapacity: 0
-    FireRate: 0
-    ReloadTime: 0
-    Ready: {fileID: 0}
-    Fire: {fileID: 0}
-    Reload: {fileID: 0}
-    Hide: {fileID: 0}
-    ShootingSound: {fileID: 0}
-    ReloadSound: {fileID: 0}
-    ReadySound: {fileID: 0}
-  audioSource: {fileID: 6111864376032785159}
-  gunRayCaster: {fileID: 8935904126154040954}
-  onShoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8935904126154040954}
-        m_TargetAssemblyTypeName: GunRayCaster, Assembly-CSharp
-        m_MethodName: PerformRayCasting
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &464231399604719986
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +341,7 @@ Transform:
   m_Children:
   - {fileID: 3491594901732088938}
   m_Father: {fileID: 6832912837865189717}
-  m_LocalEulerAnglesHint: {x: -47.67817, y: -157.62329, z: -111.77966}
+  m_LocalEulerAnglesHint: {x: -34.32756, y: -154.71288, z: 177.50226}
 --- !u!1 &914521265980906303
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +436,7 @@ Transform:
   m_Children:
   - {fileID: 5580468199187647123}
   m_Father: {fileID: 6367315060155163032}
-  m_LocalEulerAnglesHint: {x: -12.117153, y: 0.6179083, z: 0.0000000068220993}
+  m_LocalEulerAnglesHint: {x: -12.117153, y: 0.6179083, z: 0.000000006822152}
 --- !u!1 &1198997719633971849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,6 +2796,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &1667999514807938669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1884867112748455846}
+  m_Layer: 8
+  m_Name: AimingPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1884867112748455846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667999514807938669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.222, z: -0.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 924312915486943501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1689491500990471236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,7 +3081,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 70260377076874232}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: 0}
 --- !u!33 &7055235080388739727
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3343,7 +3386,7 @@ Transform:
   m_Children:
   - {fileID: 892478154163240646}
   m_Father: {fileID: 6832912837865189717}
-  m_LocalEulerAnglesHint: {x: -38.10103, y: -178.4484, z: -78.40705}
+  m_LocalEulerAnglesHint: {x: -65.6553, y: -52.7773, z: 89.543465}
 --- !u!1 &3817354209059300594
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,7 +5966,7 @@ Transform:
   m_Children:
   - {fileID: 4845201115976757194}
   m_Father: {fileID: 3357349581418056272}
-  m_LocalEulerAnglesHint: {x: -80.41121, y: -0.66249704, z: 0.00000032033947}
+  m_LocalEulerAnglesHint: {x: -80.41121, y: -0.66249704, z: 0.00000032034188}
 --- !u!1 &4473108278542581059
 GameObject:
   m_ObjectHideFlags: 0
@@ -6050,7 +6093,7 @@ Transform:
   m_Children:
   - {fileID: 8672201210278893769}
   m_Father: {fileID: 6991168205369277164}
-  m_LocalEulerAnglesHint: {x: 2.6204317, y: -62.033604, z: 3.0001287}
+  m_LocalEulerAnglesHint: {x: -3.0322459, y: 62.022816, z: -6.398916}
 --- !u!1 &5110478532746515994
 GameObject:
   m_ObjectHideFlags: 0
@@ -6324,7 +6367,7 @@ Transform:
   m_Children:
   - {fileID: 4267463917804447554}
   m_Father: {fileID: 70260377076874232}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: 0}
 --- !u!33 &5470149016438384454
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6438,7 +6481,7 @@ Transform:
   m_Children:
   - {fileID: 4584390943641335399}
   m_Father: {fileID: 9092665220310553197}
-  m_LocalEulerAnglesHint: {x: -2.5058963, y: -2.1804743, z: 0.0000008512526}
+  m_LocalEulerAnglesHint: {x: -2.5058963, y: -2.1804743, z: 0.000000767803}
 --- !u!1 &7076554465697594305
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,7 +6727,7 @@ Transform:
   m_Children:
   - {fileID: 6088924719049252659}
   m_Father: {fileID: 6577769003488463438}
-  m_LocalEulerAnglesHint: {x: 28.158585, y: 66.52298, z: 77.7788}
+  m_LocalEulerAnglesHint: {x: 29.991322, y: 95.34754, z: 92.11625}
 --- !u!1 &7354312316373094516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6831,7 +6874,7 @@ Transform:
   m_Children:
   - {fileID: 3203594777637967277}
   m_Father: {fileID: 7931191378543483581}
-  m_LocalEulerAnglesHint: {x: -0.9714474, y: -45.380264, z: 3.1598423}
+  m_LocalEulerAnglesHint: {x: -4.163622, y: 45.23862, z: -4.489092}
 --- !u!1 &7874595429873950110
 GameObject:
   m_ObjectHideFlags: 0
@@ -6898,7 +6941,7 @@ Transform:
   - {fileID: 1748941919420389104}
   - {fileID: 5774186701289875643}
   m_Father: {fileID: 3491594901732088938}
-  m_LocalEulerAnglesHint: {x: -25.162865, y: 21.8743, z: 2.0350282}
+  m_LocalEulerAnglesHint: {x: -28.863388, y: 10.7098255, z: 23.652864}
 --- !u!1 &7923846414731552944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7105,7 +7148,7 @@ Transform:
   - {fileID: 7636269415626836158}
   - {fileID: 3537001020718309478}
   m_Father: {fileID: 924312915486943501}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.474127, y: -61.79347, z: 10.935394}
 --- !u!1 &8287873559593917587
 GameObject:
   m_ObjectHideFlags: 0
@@ -7173,7 +7216,7 @@ Transform:
   - {fileID: 3376862468955899530}
   - {fileID: 8206545413444872239}
   m_Father: {fileID: 892478154163240646}
-  m_LocalEulerAnglesHint: {x: 7.2746444, y: -11.165915, z: -47.834923}
+  m_LocalEulerAnglesHint: {x: -9.35598, y: -2.6315548, z: -35.575428}
 --- !u!1 &8658566658072766803
 GameObject:
   m_ObjectHideFlags: 0
@@ -7299,4 +7342,4 @@ Transform:
   m_Children:
   - {fileID: 1884498445904268502}
   m_Father: {fileID: 5316918100400103202}
-  m_LocalEulerAnglesHint: {x: -18.690746, y: 76.12359, z: -63.92352}
+  m_LocalEulerAnglesHint: {x: -18.347782, y: 106.270546, z: -73.719086}

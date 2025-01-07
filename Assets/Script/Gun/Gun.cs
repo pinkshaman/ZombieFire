@@ -1,39 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Gun : MonoBehaviour
 {
-    public string gunName;
     public BaseGun gunData;
+    [Header("General Properties")]
+    public string gunName;
     private Animation anim;
     public AudioSource audioSource;
-
-    public virtual void Start()
+    public GunAmmo gunAmmo;
+    public Transform aimingPos;
+    public ParticleSystem shellBullet;
+    public bool haveScope;
+   
+    public UnityEvent onShoot;
+    public UnityEvent onAiming;
+    public UnityEvent onReLoad;
+    public  virtual void Start()
     {
-        gunData = GunManager.Instance.GetGun(gunName);
+        gunData = GunManager.Instance.GetGun(gunName);      
         anim = GetComponent<Animation>();
     }
     public void ShootState()
-    {
-        anim.clip = gunData.Fire;
-        anim.Play();
-        audioSource.clip = gunData.ShootingSound;
-        audioSource.Play();
+    {      
+        PlayState(gunData.Fire, gunData.ShootingSound);
+        
     }
     public void ReloadState()
     {
-        anim.clip = gunData.Reload;
-        anim.Play();
-        audioSource.clip= gunData.ReloadSound;
-        audioSource.Play();
+        onReLoad.Invoke();
+        PlayState(gunData.Reload, gunData.ReloadSound);
+        
     }
     public void ReadyState()
     {
-        anim.clip = gunData.Ready;
+        PlayState(gunData.Ready, gunData.ReadySound);
+    }
+    public void OutOfAmmo()
+    {
+        PlayState(null, gunData.OutofAmmoSound);
+    }
+    public void PlayState(AnimationClip clip ,AudioClip sound)
+    {
+        anim.clip = clip;
         anim.Play();
-        audioSource.clip = gunData.ReadySound;
+        audioSource.clip = sound;
         audioSource.Play();
+    }
+    public void Aim()
+    {
+        onAiming?.Invoke();
+    }
+    public void ShellBullet()
+    {
+        onReLoad.AddListener(shellBullet.Play);
     }
   
 }
