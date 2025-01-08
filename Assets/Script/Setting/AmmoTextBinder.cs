@@ -9,13 +9,12 @@ public class AmmoTextBinder : MonoBehaviour
     public Text gunName;
     public Gun gun;
 
-    public void Awake()
-    {
-        gun = FindObjectOfType<Gun>();
-    }
+  
     private void Start()
     {
-        gun.gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);
+        gun = FindObjectOfType<Gun>();
+        UpdateGunAmmo();
+        gun.gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);    
     }
 
     public void UpdateGunAmmo()

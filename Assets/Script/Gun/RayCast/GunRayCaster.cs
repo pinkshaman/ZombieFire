@@ -9,6 +9,12 @@ public class GunRayCaster : MonoBehaviour
     public HitEffectManager hitEffectManager;
     public Gun gun;
 
+
+    public void Start()
+    {
+        hitEffectManager = FindObjectOfType<HitEffectManager>();
+        aimingCamera = FindObjectOfType<Camera>();
+    }
     public void PerformRayCasting()
     {
         Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);

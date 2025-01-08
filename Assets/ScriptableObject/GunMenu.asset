@@ -14,32 +14,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseGunList:
   - GunName: Scarlight
-    BaseModel: {fileID: 160804294792524997, guid: 5e5a6a3656aaf6b4c9b98cf3084c979e, type: 3}
+    BaseModel: {fileID: 5479494405520053317, guid: 644c261c81430a64d97cd664754ae546, type: 3}
     GunType: 1
-    AmmoCapacity: 30
+    AmmoCapacity: 40
     FireRate: 600
     ReloadTime: 2
-    Damage: 1
-    Ready: {fileID: 7400000, guid: 7a65b6f64802655479d572f266ba910a, type: 2}
-    Fire: {fileID: 7400000, guid: 93b46bf796580174693f6a1a808be6be, type: 2}
-    Reload: {fileID: 7400000, guid: b4fc8206526512b41a1473d5fb71a581, type: 2}
-    Hide: {fileID: 7400000, guid: 05998ac09ae8a6945b2511703b0e929e, type: 2}
+    Damage: 40
+    Critical: 8
+    Anim: {fileID: 5362643538213935675, guid: 644c261c81430a64d97cd664754ae546, type: 3}
     ShootingSound: {fileID: 8300000, guid: 78ab0dc3c4344484a8ecf3913c072d7a, type: 3}
     ReloadSound: {fileID: 8300000, guid: 27f104286a77aa148bb88b9c88d696e1, type: 3}
     ReadySound: {fileID: 8300000, guid: 075a008346da5ea4181232e68b72c515, type: 3}
     OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}
   - GunName: RPG
-    BaseModel: {fileID: 744766231063157218, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
+    BaseModel: {fileID: 500659626336976720, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
     GunType: 5
     AmmoCapacity: 5
     FireRate: 20
     ReloadTime: 3
-    Damage: 10
-    Ready: {fileID: 7400000, guid: 5ad52ef2a4c1219498e721595f599284, type: 2}
-    Fire: {fileID: 7400000, guid: 11a30ec1399b9eb4d848e561a9661150, type: 2}
-    Reload: {fileID: 7400000, guid: 19e96e21f5fd45142a620b1a26db678b, type: 2}
-    Hide: {fileID: 7400000, guid: 0ecb24ffb8e36ee4f8e1fd3ce04d6e91, type: 2}
+    Damage: 100
+    Critical: 80
+    Anim: {fileID: 0}
     ShootingSound: {fileID: 8300000, guid: c127ede83e4901542b0757dd2f2c1cf6, type: 3}
     ReloadSound: {fileID: 8300000, guid: f18647206976fe54ea89c09ec50a36c2, type: 3}
     ReadySound: {fileID: 8300000, guid: dded5450beac1c24cb9e3abaf70198fe, type: 3}
+    OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}
+  - GunName: P227
+    BaseModel: {fileID: 2673918368126455702, guid: f3277b10cff290e4d901e26222a83a8a, type: 3}
+    GunType: 0
+    AmmoCapacity: 10
+    FireRate: 20
+    ReloadTime: 1.4
+    Damage: 10
+    Critical: 80
+    Anim: {fileID: 8478059004716540542, guid: f3277b10cff290e4d901e26222a83a8a, type: 3}
+    ShootingSound: {fileID: 8300000, guid: 455ead958367aec4cbdac42defdd69db, type: 3}
+    ReloadSound: {fileID: 8300000, guid: 911b2c6205c0781458c912998034dbde, type: 3}
+    ReadySound: {fileID: 8300000, guid: e47ac9f8a2ad6c6408737c4493595777, type: 3}
     OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}
