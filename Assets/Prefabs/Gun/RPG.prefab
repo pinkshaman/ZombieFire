@@ -348,7 +348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 2684915138242574134}
-  reloadSound: {fileID: 8384222404432562046}
   loadedAmmoChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -370,19 +369,17 @@ MonoBehaviour:
     GunType: 0
     AmmoCapacity: 0
     FireRate: 0
-    ReloadTime: 0
     Damage: 0
     Critical: 0
-    Anim: {fileID: 0}
     ShootingSound: {fileID: 0}
     ReloadSound: {fileID: 0}
     ReadySound: {fileID: 0}
     OutofAmmoSound: {fileID: 0}
   gunName: RPG
+  anim: {fileID: 5071268315224178810}
   audioSource: {fileID: 8384222404432562046}
   gunAmmo: {fileID: 7569597400748614954}
   aimingPos: {fileID: 8313249198236330846}
-  shellBullet: {fileID: 0}
   haveScope: 1
   onShoot:
     m_PersistentCalls:

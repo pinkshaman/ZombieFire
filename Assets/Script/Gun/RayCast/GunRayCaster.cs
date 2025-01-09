@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GunRayCaster : MonoBehaviour
 {
@@ -8,21 +10,17 @@ public class GunRayCaster : MonoBehaviour
     public LayerMask layerMask;
     public HitEffectManager hitEffectManager;
     public Gun gun;
-
-
-    public void Start()
-    {
-        hitEffectManager = FindObjectOfType<HitEffectManager>();
-        aimingCamera = FindObjectOfType<Camera>();
-    }
+    public UnityEvent<RaycastHit> onRaycasting;
+ 
     public void PerformRayCasting()
     {
         Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
         if (Physics.Raycast(aimingRay, out RaycastHit hitInfo, 1000, layerMask))
         {
             Quaternion effectRotation = Quaternion.LookRotation(hitInfo.normal);
-            HitEffect(hitInfo, effectRotation);
+            HitEffect(hitInfo, effectRotation);           
         }
+        onRaycasting.Invoke(hitInfo);
     }
     public void HitEffect(RaycastHit hitInfo, Quaternion effectRotation)
     {

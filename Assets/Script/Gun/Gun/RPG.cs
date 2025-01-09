@@ -9,11 +9,14 @@ public class RPG : Gun
     public GameObject bulletPrefabs;
     public Transform firingPos;
     public float bulletSpeed;
-    public GunAmmo ammo;
-    public GameObject RocketObj;
-    public ParticleSystem muzzleSmoke;
 
+    public GunAmmo ammo;
+    
+    public ParticleSystem muzzleSmoke;
+    private float reloadSpeed;
     public bool isReloading = false;
+
+  
     public void Update()
     {
 
@@ -22,10 +25,7 @@ public class RPG : Gun
             StartCoroutine(ShootBullet());
         }
     }
-    public void DeactiveRocket()
-    {
-        RocketObj.SetActive(false);
-    }
+   
 
     public IEnumerator ShootBullet()
     {
@@ -44,7 +44,8 @@ public class RPG : Gun
         {
             isReloading = true;
             ReloadState();
-            yield return new WaitForSeconds(gunData.ReloadTime);
+            reloadSpeed = ReturnReloadTimes();
+            yield return new WaitForSeconds(reloadSpeed);
             isReloading = false;
             ammo.UnlockShooting();
         }

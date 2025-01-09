@@ -8,8 +8,8 @@ public class GunAmmo : MonoBehaviour
 {   
     public Gun gun;  
     private int _loadedAmmo;
-    public AudioSource reloadSound;
     public UnityEvent loadedAmmoChanged;
+    
     public int LoadedAmmo
     {
         get => _loadedAmmo;
@@ -53,25 +53,23 @@ public class GunAmmo : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (LoadedAmmo == gun.gunData.AmmoCapacity)
+            if (LoadedAmmo >= gun.gunData.AmmoCapacity)
             {
                 return;
             }
             else
-            {
+            {      
                 StartCoroutine(Reload());              
             }
         }
     }
     public IEnumerator Reload()
-    {
-
+    {              
         gun.ReloadState();
         LockShooting();
-        
-        yield return new WaitForSeconds(gun.gunData.ReloadTime);
-        AddAmmo();
-        
+        float animationLength = gun.ReturnReloadTimes();
+        yield return new WaitForSeconds(animationLength);
+        AddAmmo();          
     }
     public void AddAmmo()
     {
@@ -84,7 +82,7 @@ public class GunAmmo : MonoBehaviour
     }
     public void UpdateShootLocking()
     {
-        gun.enabled = _loadedAmmo > 0;
-        
+        gun.enabled = _loadedAmmo > 0;    
     }
+  
 }

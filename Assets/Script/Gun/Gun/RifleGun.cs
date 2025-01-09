@@ -9,6 +9,7 @@ public class RifleGun : Gun
     [Header("-------------------------")]   
     [Header("Rifle Specific Properties")]   
     public GunRayCaster gunRayCaster;
+    public ParticleSystem shellBullet;
     private float lastShoot;
     private float interval;
      
@@ -16,6 +17,8 @@ public class RifleGun : Gun
     {     
         base.Start();
         interval = 60 / gunData.FireRate;
+        onShoot.AddListener(shellBullet.Play);
+        
     }
     public void Update()
     {
@@ -39,6 +42,7 @@ public class RifleGun : Gun
         ShootState();
         gunAmmo.SingleFireAmmoCounter();
         gunRayCaster.PerformRayCasting();
-        onShoot.Invoke();
+        onShoot.Invoke();  
     }
+   
 }

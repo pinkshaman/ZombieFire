@@ -21,10 +21,9 @@ public class BaseGun
     public Guntype GunType;
     public int AmmoCapacity;
     public float FireRate;
-    public float ReloadTime;
     public int Damage;
     public float Critical;
-    public Animator Anim;
+    
   
     [Header("Audio Clips")]
     public AudioClip ShootingSound;
