@@ -84,7 +84,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.017427444
-        value: 33.333336
+        value: 0.59999996
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -93,7 +93,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 3.3333335
+        value: 0.06666667
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -158,3 +158,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 120659122761831476}
   rayCaster: {fileID: 0}
+  firingPos: {fileID: 0}

@@ -13,32 +13,48 @@ public enum Guntype
     Launcher
 }
 [Serializable]
-public class BaseGun 
-{    
-    [Header("General Properties")]
-    public string GunName;
-    public GameObject BaseModel;
-    public Guntype GunType;
-    public int AmmoCapacity;
-    public float FireRate;
-    public int Damage;
-    public float Critical;
-    
-  
-    [Header("Audio Clips")]
-    public AudioClip ShootingSound;
-    public AudioClip ReloadSound;
-    public AudioClip ReadySound;
-    public AudioClip OutofAmmoSound;
+public class GunStats
+{
+    public int ammoCapacity;
+    public float fireRate;
+    public int damage;
+    public float critical;
+}
+[Serializable]
+public class GunModel
+{
+    public Guntype gunType;
+    public GameObject gunModel;
 
 }
+[Serializable]
+public class GunAudio
+{
+    public AudioClip Ready;
+    public AudioClip Shooting;
+    public AudioClip Reload;
+    public AudioClip Hide;
+    public AudioClip DryFire;
+
+}
+
+[Serializable]
+public class BaseGun
+{
+    [Header("General Properties")]
+    public string GunName;
+    public GunStats gunStats;
+}
+
 
 public class GunManager : MonoBehaviour
 {
     public static GunManager Instance { get; private set; }
+
+    public GunBehaviorList behaviorList;
     public GunList gunList;
     public PlayerGunList playerGunList;
-
+    public GunSwicher gunSwicher;
 
     private void Awake()
     {
@@ -53,7 +69,20 @@ public class GunManager : MonoBehaviour
     }
     public void Start()
     {
-
+        
+    }
+   
+    public Gun FindActiveGun()
+    {
+        Gun[] guns = FindObjectsOfType<Gun>();
+        foreach (Gun gun in guns)
+        {
+            if (gun.gameObject.activeInHierarchy)
+            {
+                return gun;
+            }
+        }
+        return null;
     }
     public BaseGun GetGun(string gunName)
     {

@@ -11,14 +11,15 @@ public class GunRayCaster : MonoBehaviour
     public HitEffectManager hitEffectManager;
     public Gun gun;
     public UnityEvent<RaycastHit> onRaycasting;
- 
+
+
     public void PerformRayCasting()
     {
         Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
         if (Physics.Raycast(aimingRay, out RaycastHit hitInfo, 1000, layerMask))
         {
             Quaternion effectRotation = Quaternion.LookRotation(hitInfo.normal);
-            HitEffect(hitInfo, effectRotation);           
+            HitEffect(hitInfo, effectRotation);
         }
         onRaycasting.Invoke(hitInfo);
     }
@@ -39,7 +40,7 @@ public class GunRayCaster : MonoBehaviour
         Health health = hitInfo.collider.GetComponentInParent<Health>();
         if (health != null)
         {
-            health.TakeDamage(gun.gunData.Damage);
+            health.TakeDamage(gun.gunData.gunStats.damage);
         }
     }
 }

@@ -4,73 +4,53 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Gun : MonoBehaviour
+public abstract class Gun : MonoBehaviour
 {
+    public string GunName;
     public BaseGun gunData;
-    [Header("General Properties")]
-    public string gunName;
-    public Animator anim;
     public AudioSource audioSource;
-    public GunAmmo gunAmmo;
-    public Transform aimingPos;
-    public bool haveScope;
-    
 
-    public UnityEvent onShoot;
-    public UnityEvent onAiming;
-    public UnityEvent onReLoad;
-
+    public UnityEvent OnSwitching;
+    public UnityEvent OnShooting;
+    public UnityEvent OnReloading;
 
     public virtual void Start()
     {
-        gunData = GunManager.Instance.GetGun(gunName);
-        Debug.Log($"Loaded GunData:{gunData.GunName} ");
-        anim = GetComponent<Animator>();
-        anim.SetTrigger("Ready");
-        gunAmmo.loadedAmmoChanged.AddListener(OutOfAmmo);
-    }
-    public void ShootState()
-    {
-        PlayState("Fire", gunData.ShootingSound);
-    }
-    public void ReloadState()
-    {      
-        PlayState("Reload", gunData.ReloadSound);
-        onReLoad.Invoke();
-    }
-    public void ReadyState()
-    {
-        PlayState("Ready", gunData.ReadySound);
-
-    }
-    public void OutOfAmmo()
-    {
-        if (gunAmmo.LoadedAmmo <= 0)
+        if (GunManager.Instance == null)
         {
-            PlayState(null, gunData.OutofAmmoSound);
+            Debug.LogError("GunManager instance is missing.");
+            return;
         }
+        var newGun = GunManager.Instance.GetGun(GunName);
+        Initialize(newGun);
     }
 
-    public void PlayState(string animationState, AudioClip clip)
+    public virtual void Initialize(BaseGun gunData)
     {
-        anim.Play(animationState);
-        audioSource.clip = clip;
-        audioSource.Play();
+        this.gunData = gunData;
+        Debug.Log($"SetData :{gunData.GunName}");
     }
-    public void Aim()
+    public virtual void Switching()
     {
-        onAiming?.Invoke();
+       
+        var gun = GunManager.Instance?.FindActiveGun().gunData;
+        Initialize(gun);
+        OnSwitching?.Invoke();
     }
-    public float ReturnReloadTimes()
+    public virtual void RemoveAllLisstenner()
     {
-        foreach (AnimationClip clip in anim.runtimeAnimatorController.animationClips)
-        {
-            if(clip.name == "Reload" )
-            {
-                return (clip.length );
-            }
-           
-        }   
-        return 0;
+
     }
+    public virtual void AddAllLisstenner()
+    {
+
+    }
+    public abstract void Shooting();
+
+    public abstract void ReLoading();
+
+    public abstract void Hiding();
+  
+    public abstract void Ready();
+  
 }

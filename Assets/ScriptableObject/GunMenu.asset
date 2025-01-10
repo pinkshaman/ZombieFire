@@ -14,35 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseGunList:
   - GunName: Scarlight
-    BaseModel: {fileID: 5479494405520053317, guid: 644c261c81430a64d97cd664754ae546, type: 3}
-    GunType: 1
-    AmmoCapacity: 40
-    FireRate: 600
-    Damage: 40
-    Critical: 8
-    ShootingSound: {fileID: 8300000, guid: 78ab0dc3c4344484a8ecf3913c072d7a, type: 3}
-    ReloadSound: {fileID: 8300000, guid: 27f104286a77aa148bb88b9c88d696e1, type: 3}
-    ReadySound: {fileID: 8300000, guid: 075a008346da5ea4181232e68b72c515, type: 3}
-    OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}
+    gunStats:
+      ammoCapacity: 40
+      fireRate: 600
+      damage: 10
+      critical: 20
   - GunName: RPG
-    BaseModel: {fileID: 500659626336976720, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
-    GunType: 5
-    AmmoCapacity: 5
-    FireRate: 20
-    Damage: 100
-    Critical: 80
-    ShootingSound: {fileID: 8300000, guid: c127ede83e4901542b0757dd2f2c1cf6, type: 3}
-    ReloadSound: {fileID: 8300000, guid: f18647206976fe54ea89c09ec50a36c2, type: 3}
-    ReadySound: {fileID: 8300000, guid: dded5450beac1c24cb9e3abaf70198fe, type: 3}
-    OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}
+    gunStats:
+      ammoCapacity: 5
+      fireRate: 20
+      damage: 100
+      critical: 50
   - GunName: P227
-    BaseModel: {fileID: 2673918368126455702, guid: f3277b10cff290e4d901e26222a83a8a, type: 3}
-    GunType: 0
-    AmmoCapacity: 10
-    FireRate: 20
-    Damage: 10
-    Critical: 80
-    ShootingSound: {fileID: 8300000, guid: 455ead958367aec4cbdac42defdd69db, type: 3}
-    ReloadSound: {fileID: 8300000, guid: 911b2c6205c0781458c912998034dbde, type: 3}
-    ReadySound: {fileID: 8300000, guid: e47ac9f8a2ad6c6408737c4493595777, type: 3}
-    OutofAmmoSound: {fileID: 8300000, guid: a889c6b1079773945bd12d2cc1040161, type: 3}
+    gunStats:
+      ammoCapacity: 10
+      fireRate: 200
+      damage: 10
+      critical: 10
