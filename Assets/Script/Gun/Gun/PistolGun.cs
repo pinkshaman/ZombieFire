@@ -34,31 +34,33 @@ public class PistolGun : Gun
 
     public override void Shooting()
     {
-        pistolGun.anim.Play("Fire", layer: -1, normalizedTime: 0);
+        anim.Play("Fire", layer: -1, normalizedTime: 0);
         pistolGun.gunRayCaster.PerformRayCasting();
         audioSource.clip = pistolGun.gunAudio.Shooting;
         audioSource.Play();
+        pistolGun.shellBullet.Play();
         OnShooting.Invoke();
     }
     public override void ReLoading()
     {
-        pistolGun.anim.SetTrigger("Reload");
+        anim.SetTrigger("Reload");
         audioSource.clip = pistolGun.gunAudio.Reload;
         audioSource.Play();
+        OnReloading.Invoke();
     }
 
     public override void Hiding()
     {
-        pistolGun.anim.Play("Hide");
+        base.Hiding();
         audioSource.clip = pistolGun.gunAudio.Hide;
         audioSource.Play();
     }
 
     public override void Ready()
     {
-        pistolGun.anim.SetTrigger("Ready");
+        base.Ready();
         audioSource.clip = pistolGun.gunAudio.Ready;
         audioSource.Play();
     }
-
 }
+

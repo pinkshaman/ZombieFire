@@ -12,15 +12,19 @@ public class AmmoTextBinder : MonoBehaviour
 
     private void Start()
     {       
-        gunAmmo = FindObjectOfType<GunAmmo>();
-        gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);
+        
+        gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);  
         UpdateGunAmmo();
     }
 
     public void UpdateGunAmmo()
     {
         loadedTextAmmo.text = $"{gunAmmo.LoadedAmmo}/{gunAmmo.magSize}";
-        gunName.text = gunAmmo.name;
+        gunName.text = gunAmmo.gunName;
     }
-    
+    public void OnEnable()
+    {
+        UpdateGunAmmo();
+    }
+
 }

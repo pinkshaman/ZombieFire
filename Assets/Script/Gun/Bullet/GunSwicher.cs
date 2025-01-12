@@ -19,6 +19,7 @@ public class GunSwicher : MonoBehaviour
     }
     private void SetAvtiveGun(int gunIndex)
     {
+       
         for (int i = 0; i < GunList.Length; i++)
         {
             bool isActive = (i == gunIndex);

@@ -1,18 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SMG : MonoBehaviour
+[Serializable]
+public class SMG 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GunModel BaseModel;
+    public GunAudio gunAudio;
+    public DrawRay ray;
+    public GunRayCaster gunRayCaster;
+    public ParticleSystem shellBullet;
 
-    // Update is called once per frame
-    void Update()
+
+    public float GetAnimationLength(Animator animator, string animationName)
     {
-        
+        if (animator.runtimeAnimatorController == null)
+        {
+            Debug.LogError("Animator does not have a RuntimeAnimatorController!");
+            return 0f;
+        }
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+
+        foreach (AnimationClip clip in clips)
+        {
+            if (clip.name == animationName)
+            {
+                Debug.Log($"ReloadClip:{clip.length}");
+                return clip.length;
+            }
+        }
+        Debug.LogWarning($"Animation with name '{animationName}' not found!");
+        return 0f;
     }
 }

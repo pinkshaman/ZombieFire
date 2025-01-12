@@ -1,62 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RPG", menuName = "Gun/RPG", order =2)]
-public class RPG : ScriptableObject
+[Serializable]
+public class RPG 
 {
-    [Header("RPG Specific Properties")]
-    public string gunName;
+    public GunModel BaseModel;
     public GameObject bulletPrefabs;
     public GunAudio gunAudio;
     public Transform firingPos;
     public GameObject rocket; 
     public ParticleSystem muzzleSmoke;
-    //private float reloadSpeed;
-    //public bool isReloading = false;
 
-  
-   // public void Update()
-   // {
 
-   //     if (Input.GetMouseButtonDown(0) && !isReloading)
-   //     {
-   //         StartCoroutine(ShootBullet());
-   //     }
-   // }
-   //public void DeavtiveRocket()
-   // {
-   //     rocket.gameObject.SetActive(false);
-   // }
+    public float GetAnimationLength(Animator animator, string animationName)
+    {
+        if (animator.runtimeAnimatorController == null)
+        {
+            Debug.LogError("Animator does not have a RuntimeAnimatorController!");
+            return 0f;
+        }
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
 
-   // public IEnumerator ShootBullet()
-   // {
-   //     ammo.SingleFireAmmoCounter();
-   //     AddProjectile();
-        
-   //     muzzleSmoke.Play();
-   //     ammo.LockShooting();
-   //     yield return new WaitForSeconds(0.5f);
-   //     StartCoroutine(ReLoadRocket());
-
-   // }
-   // public IEnumerator ReLoadRocket()
-   // {
-   //     if (ammo.LoadedAmmo > 0)
-   //     {
-   //         isReloading = true;
-            
-            
-   //         yield return new WaitForSeconds(reloadSpeed);
-   //         isReloading = false;
-   //         ammo.UnlockShooting();
-   //     }
-       
-   // }
-
-   // public void AddProjectile()
-   // {
-   //     GameObject bullet = Instantiate(bulletPrefabs, firingPos.position, firingPos.rotation);
-   //     bullet.GetComponent<Rigidbody>().velocity = firingPos.forward * bulletSpeed;
-    //}
+        foreach (AnimationClip clip in clips)
+        {
+            if (clip.name == animationName)
+            {
+                Debug.Log($"ReloadClip:{clip.length}");
+                return clip.length;
+            }
+        }
+        Debug.LogWarning($"Animation with name '{animationName}' not found!");
+        return 0f;
+    }
 }

@@ -51,7 +51,6 @@ public class GunManager : MonoBehaviour
 {
     public static GunManager Instance { get; private set; }
 
-    public GunBehaviorList behaviorList;
     public GunList gunList;
     public PlayerGunList playerGunList;
     public GunSwicher gunSwicher;

@@ -9,10 +9,15 @@ public abstract class Gun : MonoBehaviour
     public string GunName;
     public BaseGun gunData;
     public AudioSource audioSource;
+    public Transform aimingPos;
+    public Animator anim;
+    public GunAmmo gunAmmo;
+    public bool haveScope;
 
     public UnityEvent OnSwitching;
     public UnityEvent OnShooting;
     public UnityEvent OnReloading;
+    public UnityEvent OnAiming;
 
     public virtual void Start()
     {
@@ -24,19 +29,23 @@ public abstract class Gun : MonoBehaviour
         var newGun = GunManager.Instance.GetGun(GunName);
         Initialize(newGun);
     }
+    public virtual void Aiming()
+    {
+        OnAiming.Invoke();
+    }
 
     public virtual void Initialize(BaseGun gunData)
     {
         this.gunData = gunData;
+
         Debug.Log($"SetData :{gunData.GunName}");
     }
     public virtual void Switching()
     {
-       
-        var gun = GunManager.Instance?.FindActiveGun().gunData;
-        Initialize(gun);
-        OnSwitching?.Invoke();
+        ResetAnimation();
+        OnSwitching.Invoke();
     }
+ 
     public virtual void RemoveAllLisstenner()
     {
 
@@ -49,8 +58,24 @@ public abstract class Gun : MonoBehaviour
 
     public abstract void ReLoading();
 
-    public abstract void Hiding();
-  
-    public abstract void Ready();
-  
+    public virtual void Hiding()
+    {
+        anim.Play("Hide");
+    }
+
+    public virtual void Ready()
+    {
+        anim.SetTrigger("Ready");
+    }
+    public virtual void Idle()
+    {
+        anim.SetTrigger("Idle");
+    }
+    public virtual void ResetAnimation()
+    {
+        anim.ResetTrigger("Reload");
+        anim.ResetTrigger("Fire");
+        anim.SetTrigger("Idle");
+    }
+
 }
