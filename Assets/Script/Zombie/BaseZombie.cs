@@ -31,7 +31,9 @@ public class BaseZombie
     public string ZombieName;
     public int Damage;
     public float RangedAtk;
-    public float Health;
-
+    public int Health;
+    public float Speed;
+    public float duration;
+    
 
 }

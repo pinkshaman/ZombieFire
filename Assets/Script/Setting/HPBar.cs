@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class HPBar : MonoBehaviour
+{
+    public Health health;
+    public Image HPbar;
+    public Image FillBar;
+    public Text healthAmounText;
+
+    private Transform cameraTransform;
+
+    private void Start()
+    {
+        
+        cameraTransform = Camera.main.transform;
+    }
+    public void Fill(int currentHealth, int totalHealth)
+    {
+        var fillPercent = 1f * currentHealth/totalHealth;
+        FillBar.fillAmount = fillPercent;
+        Debug.Log(" HP Filling");
+        
+    }
+    public void FacingPlayer()
+    {
+        transform.forward = -cameraTransform.forward;
+    }
+    public void ShowText()
+    {
+        healthAmounText.text = $"HP : {health.maxHealthPoint}";
+    }
+    
+
+}

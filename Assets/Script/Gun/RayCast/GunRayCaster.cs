@@ -41,6 +41,6 @@ public class GunRayCaster : MonoBehaviour
         if (health != null)
         {
             health.TakeDamage(gun.gunData.gunStats.damage);
-        }
+        }     
     }
 }

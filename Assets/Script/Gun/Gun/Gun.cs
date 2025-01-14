@@ -73,8 +73,8 @@ public abstract class Gun : MonoBehaviour
     }
     public virtual void ResetAnimation()
     {
-        anim.ResetTrigger("Reload");
-        anim.ResetTrigger("Fire");
+        //anim.ResetTrigger("Reload");
+        //anim.ResetTrigger("Fire");
         anim.SetTrigger("Idle");
     }
 

@@ -4,7 +4,28 @@ using UnityEngine;
 
 public class BerserkZombie : Zombie
 {
-    public string ZombieName;
+    private float lastHit;
 
-    
+
+    public override void Attack()
+    {
+        base.Attack();
+        FacingPlayer();
+        if (Time.time - lastHit >= zombieData.duration)
+        {
+            anim.SetTrigger("Attack");
+            lastHit = Time.time;
+        }
+    }
+
+    public override void Move()
+    {       
+        base.Move();
+    }
+
+    public override void Die()
+    {
+        base.Die();
+    }
+
 }
