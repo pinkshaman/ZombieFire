@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public int maxHealthPoint;
-    private int healthPoint;
+    protected int healthPoint;
 
     public UnityEvent onDie;
     public UnityEvent<int, int> OnHealthChange;
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    private bool IsDead => HealthPoint <= 0;
+    protected bool IsDead => HealthPoint <= 0;
 
     public virtual void Start()
     {
@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
     {
         maxHealthPoint = maxHealth;
     }
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         if (IsDead) return;
         HealthPoint -= damage;
@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-    private void Die()
+    protected void Die()
     {
         onDie.Invoke();
     }

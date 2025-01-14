@@ -51,16 +51,21 @@ public abstract class Zombie : MonoBehaviour
         }
     }
 
-    public void Awake()
+    //public void Awake()
+    //{
+    //    zombieData = ZombieManager.Instance.GetZombieData(ZombieName);
+    //    playerTaget = GameObject.FindGameObjectWithTag("Player").transform;
+    //    agent = GetComponent<NavMeshAgent>();
+    //    anim = GetComponent<Animator>();
+    //    playerHealth = FindObjectOfType<PlayerHealth>();
+    //}
+    public void Start()
     {
         zombieData = ZombieManager.Instance.GetZombieData(ZombieName);
         playerTaget = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         playerHealth = FindObjectOfType<PlayerHealth>();
-    }
-    public void Start()
-    {
         OnReachingRadius.AddListener(Attack);
         OnStartMoving.AddListener(StopAttack);
         agent.speed = zombieData.Speed;
