@@ -9,6 +9,7 @@ public class ZombieCount : MonoBehaviour
     public ZombieRepawn zombieRepawn;
     public void Start()
     {
+        valueCount.text = $"{zombieRepawn.Livezombie}/ {zombieRepawn.Livezombie}";
         zombieRepawn.OnZombieChange.AddListener(ShowText);
     }
     public void ShowText(int currentZombie, int totalZombie)

@@ -15,7 +15,7 @@ public class HPBar : MonoBehaviour
     private void Start()
     {
 
-        cameraTransform = Camera.main.transform;
+        cameraTransform = FindObjectOfType<Camera>().transform;
     }
     public void Fill(int currentHealth, int totalHealth)
     {

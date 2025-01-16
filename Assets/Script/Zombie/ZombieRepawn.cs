@@ -5,35 +5,39 @@ using UnityEngine.Events;
 
 public class ZombieRepawn : MonoBehaviour
 {
-    public Stage stage;
     public List<GameObject> SpawnPotisionList;
-    public int spawnTotal;
     private int total;
     public float spawnSpeed;
     private int liveZombie;
     public UnityEvent<int, int> OnZombieChange;
+    public UnityEvent OnZombieClear;
+    public UnityEvent OnSpawnDone;
     public int Livezombie
     {
         get => liveZombie;
         set
         {
             liveZombie = value;
-            OnZombieChange.Invoke(liveZombie, spawnTotal);
+            OnZombieChange.Invoke(liveZombie, total);
         }
     }
-
-    public void Start()
+    public void InitData(int quatity)
     {
-        Livezombie = spawnTotal;
-        total = spawnTotal;
-        StartCoroutine(SpawnZombieByTime());
+        Livezombie = quatity;
+        total = quatity;
     }
-    public IEnumerator SpawnZombieByTime()
+    public IEnumerator SpawnZombieByTime(GameObject zombie, int quatity)
     {
-        while (total > 0)
+        InitData(quatity);
+        while (quatity > 0)
         {
-            //SpawnZombie();
+            SpawnZombie(zombie);
+            quatity--;
             yield return new WaitForSeconds(spawnSpeed);
+            if (quatity == 0)
+            {
+                OnSpawnDone.Invoke();
+            }
         }
     }
     private void SpawnZombie(GameObject zombiePrefabs)
@@ -41,13 +45,16 @@ public class ZombieRepawn : MonoBehaviour
         foreach (var point in SpawnPotisionList)
         {
             Transform SpawnPoint = point.transform;
-            Instantiate(zombiePrefabs, SpawnPoint.transform.position, transform.rotation);
-            total--;
+            Instantiate(zombiePrefabs, SpawnPoint.transform.position, transform.rotation);       
         }
     }
     public void OnzombieDeath()
     {
         Livezombie--;
+        if (Livezombie == 0)
+        {
+            OnZombieClear?.Invoke();
+        }
     }
 
 }
