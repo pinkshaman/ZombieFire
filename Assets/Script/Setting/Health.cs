@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-    protected void Die()
+    public virtual void Die()
     {
         onDie.Invoke();
     }

@@ -1593,7 +1593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1777936682004580266
 Transform:
   m_ObjectHideFlags: 0
@@ -1751,12 +1751,13 @@ MonoBehaviour:
   aimingCamera: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 823
   hitEffectManager: {fileID: 0}
   gun: {fileID: 3605185300675134518}
   onRaycasting:
     m_PersistentCalls:
       m_Calls: []
+  damageTextPooling: {fileID: 0}
 --- !u!114 &3605185300675134518
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,28 +10,37 @@ public class AutoFade : MonoBehaviour
     public CanvasGroup group;
 
     private float startTime;
-
+    
+ 
     public void Start()
     {
         group.alpha = 0;
+        gameObject.SetActive(false);
+        
+       
     }
     public void Show()
     {
         startTime = Time.time;
         group.alpha = 1f;
         gameObject.SetActive(true);
+        
 
     }
-  
-    public void Hide() => gameObject.SetActive(false);
 
-   
+    public void Hide()
+    {
+        group.alpha = 0;
+        gameObject.SetActive(false);       
+    }
 
     public void Update()
     {
         float elapsedTime = Time.time - startTime;
+
         if(elapsedTime < visibleDurtation) return;
 
+    
         elapsedTime -= visibleDurtation;
         if( elapsedTime < fadeDuration)
         {

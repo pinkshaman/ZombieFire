@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
@@ -16,12 +16,13 @@ public abstract class Zombie : MonoBehaviour
     public Transform playerTaget;
     public GameObject RageObj;
     public PlayerHealth playerHealth;
+    public GameObject BoneRig;
     public bool isRage;
     public bool isGetHit;
     public bool isDead;
     public UnityEvent OnReachingRadius;
     public UnityEvent OnStartMoving;
-
+    
 
 
     private bool _isMovingValue;
@@ -51,26 +52,39 @@ public abstract class Zombie : MonoBehaviour
         }
     }
 
-    //public void Awake()
-    //{
-    //    zombieData = ZombieManager.Instance.GetZombieData(ZombieName);
-    //    playerTaget = GameObject.FindGameObjectWithTag("Player").transform;
-    //    agent = GetComponent<NavMeshAgent>();
-    //    anim = GetComponent<Animator>();
-    //    playerHealth = FindObjectOfType<PlayerHealth>();
-    //}
-    public void Start()
+    public void Awake()
     {
-        zombieData = ZombieManager.Instance.GetZombieData(ZombieName);
+        StartCoroutine(InitializeZombieData());
         playerTaget = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         playerHealth = FindObjectOfType<PlayerHealth>();
+    }
+    public IEnumerator InitializeZombieData()
+    {
+        while (ZombieManager.Instance == null)
+        {
+            yield return null;
+        }
+
+        zombieData = ZombieManager.Instance.GetZombieData(ZombieName);
+       
+
+        if (zombieData == null)
+        {
+            Debug.LogWarning($"{gameObject.name} chưa được gắn zombieData!");
+        }
+     
+    }
+    public void Start()
+    {
         OnReachingRadius.AddListener(Attack);
         OnStartMoving.AddListener(StopAttack);
         agent.speed = zombieData.Speed;
         isRage = false;
+        isGetHit = false;
         RageObj.SetActive(false);
+        BoneRig.SetActive(true);
     }
 
     public virtual void Attack()
@@ -95,21 +109,27 @@ public abstract class Zombie : MonoBehaviour
     }
     public void OnGetHit()
     {
+        if (isGetHit) return;
         isGetHit = true;
-        anim.SetTrigger("GetHit");
+        StartCoroutine(GetHit());
     }
-    public void Rage()
+    public IEnumerator GetHit()
     {
-        if (!isGetHit) return;
+        StopMove();
         RageObj.SetActive(true);
-        isRage = true;     
+        isRage = true;
+        agent.speed *= 1.5f;
+        anim.SetTrigger("GetHit");
+        yield return new WaitForSeconds(1.5f);
+        Move();
     }
+  
     public void CheckDistance()
     {
         var distanceToPlayer = Vector3.Distance(transform.position, playerTaget.position);
         IsMoving = distanceToPlayer > zombieData.RangedAtk;
     }
-   
+
     public virtual void Die()
     {
         isDead = true;
@@ -117,16 +137,19 @@ public abstract class Zombie : MonoBehaviour
         Debug.Log("Zombie Dead");
         anim.SetBool("isDead", true);
         RageObj.SetActive(false);
+        BoneRig.SetActive(false);
         Destroy(gameObject, 3.0f);
     }
     public virtual void Move()
-    {      
+    {
+        agent.isStopped = false;
         agent.SetDestination(playerTaget.position);
+       
     }
     public virtual void StopMove()
     {
         agent.isStopped = true;
-        anim.SetBool("isWalking", false);
+        
     }
     public void FacingPlayer()
     {
@@ -137,9 +160,9 @@ public abstract class Zombie : MonoBehaviour
     }
     public virtual void Update()
     {
-        if(isDead) return;
+        if (isDead) return;
         CheckDistance();
-        Rage();
+        
         if (IsMoving)
         {
             Move();

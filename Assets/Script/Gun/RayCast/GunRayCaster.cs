@@ -11,7 +11,7 @@ public class GunRayCaster : MonoBehaviour
     public HitEffectManager hitEffectManager;
     public Gun gun;
     public UnityEvent<RaycastHit> onRaycasting;
-
+    public DamageTextPooling damageTextPooling;
 
     public void PerformRayCasting()
     {
@@ -41,6 +41,8 @@ public class GunRayCaster : MonoBehaviour
         if (health != null)
         {
             health.TakeDamage(gun.gunData.gunStats.damage);
+            damageTextPooling.ShowDamage(hitInfo.point, gun.gunData.gunStats.damage);
         }     
     }
+  
 }
