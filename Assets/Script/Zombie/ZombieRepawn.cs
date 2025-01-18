@@ -12,6 +12,7 @@ public class ZombieRepawn : MonoBehaviour
     public UnityEvent<int, int> OnZombieChange;
     public UnityEvent OnZombieClear;
     public UnityEvent OnSpawnDone;
+    public UnityEvent<int> OnStartSpawn;
     public int Livezombie
     {
         get => liveZombie;
@@ -25,6 +26,7 @@ public class ZombieRepawn : MonoBehaviour
     {
         Livezombie = quatity;
         total = quatity;
+        OnStartSpawn.Invoke(quatity);
     }
     public IEnumerator SpawnZombieByTime(GameObject zombie, int quatity)
     {
@@ -53,6 +55,7 @@ public class ZombieRepawn : MonoBehaviour
         Livezombie--;
         if (Livezombie == 0)
         {
+            Debug.Log("Zombie Clear");
             OnZombieClear?.Invoke();
         }
     }

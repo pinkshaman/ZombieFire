@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6c70054d60ae54fa09118453600fc8, type: 3}
+  m_Name: AlertData
+  m_EditorClassIdentifier: 
+  alertDataList:
+  - alertType: 0
+    textWarning: 
+    clip: {fileID: 7400000, guid: c842b211c69cdb04ca51aeeaa73a7de6, type: 2}
+    audio: {fileID: 8300000, guid: 7a504211037713e4fb4d8f5cc59123ea, type: 3}
+  - alertType: 1
+    textWarning: 
+    clip: {fileID: 7400000, guid: 6a19ad4546a59ae4f96ee267efd92a3d, type: 2}
+    audio: {fileID: 8300000, guid: 4395a61f3bcc892459b3370027ca96a6, type: 3}
+  - alertType: 2
+    textWarning: 
+    clip: {fileID: 7400000, guid: 391837bf888d1734e909c2a4b2f4db1c, type: 2}
+    audio: {fileID: 8300000, guid: 8717566bb1a6b024991677125300f9d5, type: 3}
+  - alertType: 3
+    textWarning: 
+    clip: {fileID: 7400000, guid: 391837bf888d1734e909c2a4b2f4db1c, type: 2}
+    audio: {fileID: 8300000, guid: 355c8ff12a28e614fb696caf837e3f35, type: 3}
+  - alertType: 4
+    textWarning: 
+    clip: {fileID: 7400000, guid: c4aa931275acdac47849d9da25457b06, type: 2}
+    audio: {fileID: 8300000, guid: cc55e55294c2c324e8ee96b76a99b70a, type: 3}
+  - alertType: 5
+    textWarning: 
+    clip: {fileID: 7400000, guid: 4939cee4cafc6de4796fffd73783ca45, type: 2}
+    audio: {fileID: 8300000, guid: b27f8b365f928944c88c95913a051bff, type: 3}

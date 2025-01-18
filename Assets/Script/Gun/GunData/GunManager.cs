@@ -103,6 +103,8 @@ public class GunManager : MonoBehaviour
         playerGunList = JsonUtility.FromJson<PlayerGunList>(json);
         Debug.Log("PlayerGun is Loaded");
     }
+
+
 }
 
 

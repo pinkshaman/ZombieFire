@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    protected bool IsDead => HealthPoint <= 0;
+    public bool IsDead => HealthPoint <= 0;
 
     public virtual void Start()
     {

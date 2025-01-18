@@ -3961,8 +3961,9 @@ MonoBehaviour:
     Prefabs: {fileID: 2466182281165211636}
     clipDie: {fileID: 8300000, guid: 6e0b534997d7ca24296907bf716b6830, type: 3}
     clipDeadbyHS: {fileID: 8300000, guid: 199bbe95656209245b64755b5cb6f7d7, type: 3}
-    clipGetHit: {fileID: 8300000, guid: a2d41c1030bf357478420998ebbb47ef, type: 3}
+    clipShot: {fileID: 8300000, guid: a2d41c1030bf357478420998ebbb47ef, type: 3}
     clipRage: {fileID: 8300000, guid: f5a38d9b93c691a4a85989015a0fd4c5, type: 3}
+    clipAttack: {fileID: 8300000, guid: 0a8b76e8d38d7a846824deb28cb0ccdb, type: 3}
   anim: {fileID: 6251389173691171038}
   audioSource: {fileID: 397907738766266271}
   agent: {fileID: 3692094994883756383}
@@ -4062,6 +4063,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   zombie: {fileID: 4544562147935342968}
+  zombieRepawn: {fileID: 0}
 --- !u!1 &2706470523687883403
 GameObject:
   m_ObjectHideFlags: 0
@@ -9368,7 +9370,7 @@ GameObject:
   - component: {fileID: 949978448196892439}
   m_Layer: 9
   m_Name: Head_M
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

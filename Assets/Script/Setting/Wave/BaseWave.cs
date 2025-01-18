@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class BaseWave 
 {
-    public float waveNumber;
+    public int waveNumber;
     public List<GroupZombie> zombieList;
 
 }

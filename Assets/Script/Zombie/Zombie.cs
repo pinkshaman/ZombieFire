@@ -56,6 +56,7 @@ public abstract class Zombie : MonoBehaviour
     {
         StartCoroutine(InitializeZombieData());
         playerTaget = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         playerHealth = FindObjectOfType<PlayerHealth>();
@@ -97,30 +98,39 @@ public abstract class Zombie : MonoBehaviour
         anim.SetBool("isAttacking", false);
         agent.isStopped = false;
     }
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
     public void OnAttack()
     {
         playerHealth.TakeDamage(zombieData.Damage);
         Debug.Log($"Player Take :{zombieData.Damage} damage");
         PlayerManager.Instance.playerUI.ShowScratch();
+        
     }
     public void Rising()
     {
         anim.SetTrigger("Rise");
+        
     }
     public void OnGetHit()
     {
         if (isGetHit) return;
         isGetHit = true;
+        
         StartCoroutine(GetHit());
     }
     public IEnumerator GetHit()
     {
+        PlaySound(properties.clipRage);
         StopMove();
         RageObj.SetActive(true);
         isRage = true;
-        agent.speed *= 1.5f;
         anim.SetTrigger("GetHit");
         yield return new WaitForSeconds(1.5f);
+        agent.speed *= 1.5f;
         Move();
     }
   
@@ -136,6 +146,7 @@ public abstract class Zombie : MonoBehaviour
         StopMove();
         Debug.Log("Zombie Dead");
         anim.SetBool("isDead", true);
+        PlaySound(properties.clipDie);
         RageObj.SetActive(false);
         BoneRig.SetActive(false);
         Destroy(gameObject, 3.0f);

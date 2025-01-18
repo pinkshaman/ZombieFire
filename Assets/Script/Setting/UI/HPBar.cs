@@ -20,9 +20,7 @@ public class HPBar : MonoBehaviour
     public void Fill(int currentHealth, int totalHealth)
     {
         var fillPercent = 1f * currentHealth / totalHealth;
-        FillBar.fillAmount = fillPercent;
-        Debug.Log(" HP Filling");
-
+        FillBar.fillAmount = fillPercent;    
     }
     public void FacingPlayer()
     {

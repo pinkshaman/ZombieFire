@@ -19,8 +19,9 @@ public class ZombieProperties
     public GameObject Prefabs;
     public AudioClip clipDie;
     public AudioClip clipDeadbyHS;
-    public AudioClip clipGetHit;
+    public AudioClip clipShot;
     public AudioClip clipRage;
+    public AudioClip clipAttack;
 }
 
 

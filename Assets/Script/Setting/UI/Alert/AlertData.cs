@@ -5,10 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+public enum AlertType
+{
+    Start,
+    Wave,
+    Clear,
+    TimeUp,
+    Kill,
+    HeadShot,
+    
+}
 [Serializable]
 public class AlertData 
 {
+    public AlertType alertType;
     public string textWarning;
-    public Animation anim;
-    public AudioClip clip;
+    public AnimationClip clip;
+    public AudioClip audio;
 }

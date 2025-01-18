@@ -11,8 +11,7 @@ public class GunRayCaster : MonoBehaviour
     public HitEffectManager hitEffectManager;
     public Gun gun;
     public UnityEvent<RaycastHit> onRaycasting;
-    public DamageTextPooling damageTextPooling;
-
+    public DamageManagement damageManagement;
     public void PerformRayCasting()
     {
         Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
@@ -40,9 +39,12 @@ public class GunRayCaster : MonoBehaviour
         Health health = hitInfo.collider.GetComponentInParent<Health>();
         if (health != null)
         {
-            health.TakeDamage(gun.gunData.gunStats.damage);
-            damageTextPooling.ShowDamage(hitInfo.point, gun.gunData.gunStats.damage);
+            damageManagement.Calculator(hitInfo, gun.gunData.gunStats.damage,health,gun.gunData.gunStats.critical);          
         }     
     }
-  
+    public void OnEnable()
+    {
+        damageManagement = FindObjectOfType<DamageManagement>();
+    }
+
 }

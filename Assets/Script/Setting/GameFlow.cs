@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameFlow : MonoBehaviour
 {
     public float stageID;
     public Stage stage;
     public ZombieRepawn zombieRepawn;
-    public WarningAlert warningAlert;
-
+    public WaveAlert waveAlert;
+    public StartAlert startAlert;
+    public ClearAlert clearAlert;
     public bool isWaveEnd;
     public bool isSpawnDone;
-
+    public bool isStageClear;
+    public UnityEvent OnStageClear;
     public void Start()
     {
         isSpawnDone = false;
         isWaveEnd = false;
+        isStageClear = false;
         stage = GameManager.Instance.LoadStageData(stageID);
         StartCoroutine(SpawnByNumberWave());
         zombieRepawn.OnZombieClear.AddListener(IsWaveEnd);
         zombieRepawn.OnSpawnDone.AddListener(IsSpawnDone);
+        OnStageClear.AddListener(ClearStage);
     }
 
     public void SpawnEnemy(GameObject zombie, int quatity)
@@ -33,21 +39,31 @@ public class GameFlow : MonoBehaviour
         foreach (var Group in baseWave.zombieList)
         {
             SpawnEnemy(Group.zombie, Group.quatity);
-            if(isSpawnDone)
+            if (isSpawnDone)
             {
                 break;
             }
-        }        
+        }
     }
     public IEnumerator SpawnByNumberWave()
     {
         foreach (var number in stage.waveList)
         {
+            if (number.waveNumber == 1)
+            {
+                StartStage();
+            }
+            else
+            {
+                PlayAlert(number.waveNumber);
+            }
             SpawnWave(number.waveNumber);
-            PlayAlert(number.waveNumber);
-            yield return new WaitUntil(() => isWaveEnd); 
-            isWaveEnd = false ;
+
+            yield return new WaitUntil(() => isWaveEnd);
+            isWaveEnd = false;
         }
+        isStageClear = true;
+        OnStageClear.Invoke();
     }
     public void IsWaveEnd()
     {
@@ -57,10 +73,24 @@ public class GameFlow : MonoBehaviour
     {
         isSpawnDone = true;
     }
-    public void PlayAlert(float number)
+ 
+    public void PlayAlert(int number)
     {
-        warningAlert.gameObject.SetActive(true);
-        warningAlert.WarningPlay(number);
+        waveAlert.gameObject.SetActive(true);
+        waveAlert.WaveWarning(number);
     }
-    
+    public void ClearStage()
+    {
+        if (!isStageClear) return;
+
+        clearAlert.gameObject.SetActive(true);
+        clearAlert.AlertPlay();
+
+    }
+    public void StartStage()
+    {
+        startAlert.gameObject.SetActive(true);
+        startAlert.StartAlerts();
+    }
+
 }
