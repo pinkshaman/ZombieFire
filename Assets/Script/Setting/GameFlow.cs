@@ -21,13 +21,16 @@ public class GameFlow : MonoBehaviour
         isSpawnDone = false;
         isWaveEnd = false;
         isStageClear = false;
-        stage = GameManager.Instance.LoadStageData(stageID);
+        InitData();
         StartCoroutine(SpawnByNumberWave());
         zombieRepawn.OnZombieClear.AddListener(IsWaveEnd);
         zombieRepawn.OnSpawnDone.AddListener(IsSpawnDone);
         OnStageClear.AddListener(ClearStage);
     }
-
+    public void InitData()
+    {
+        stage = GameManager.Instance.LoadStageData(stageID);
+    }
     public void SpawnEnemy(GameObject zombie, int quatity)
     {
         StartCoroutine(zombieRepawn.SpawnZombieByTime(zombie, quatity));

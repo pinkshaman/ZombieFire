@@ -14,16 +14,19 @@ AnimatorStateMachine:
     m_Position: {x: -30, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6327204727045502788}
-    m_Position: {x: -450, y: 210, z: 0}
+    m_Position: {x: -530, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6967931472377635433}
     m_Position: {x: 260, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5773968506576533012}
-    m_Position: {x: -130, y: 160, z: 0}
+    m_Position: {x: -200, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8251098639010534804}
-    m_Position: {x: -330, y: -10, z: 0}
+    m_Position: {x: -450, y: -30, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8493259388716985666}
+    m_Position: {x: -520, y: 110, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 4828376449253436811}
@@ -36,7 +39,7 @@ AnimatorStateMachine:
   - first: {fileID: 4828376449253436811}
     second: []
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -360, y: -190, z: 0}
+  m_AnyStatePosition: {x: -470, y: -190, z: 0}
   m_EntryPosition: {x: -30, y: -200, z: 0}
   m_ExitPosition: {x: 280, y: -190, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -639,6 +642,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &8493259388716985666
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GetHit_2
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: abc041b69bb399640aef96c8a0e7b0d7, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &8574243246344733712
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

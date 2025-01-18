@@ -2933,16 +2933,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ea16d20f18df54a9fb39d174f14c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage:
-    stageID: 0
-    waveList: []
+  gameFlow: {fileID: 2765}
   rankClass: {fileID: 4377}
   scoreText: {fileID: 4337}
   rankExpText: {fileID: 4374}
   damageManagement: {fileID: 1568914887}
-  OnRankChange:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &2821
 Transform:
   m_ObjectHideFlags: 0

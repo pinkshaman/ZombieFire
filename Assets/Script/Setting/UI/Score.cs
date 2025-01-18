@@ -1,65 +1,82 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Stage Stage;
+    public GameFlow gameFlow;
     public Text rankClass;
     public Text scoreText;
     public Text rankExpText;
 
     private float rankExp;
     private int score;
-
+    private float expPerZombie;
+    private float expPerRank;
     public DamageManagement damageManagement;
-    public UnityEvent OnRankChange;
+
     public void Start()
     {
         damageManagement.OnHeadShot.AddListener(GetHeadShotScore);
         damageManagement.OnKill.AddListener(GetSkillScore);
-        OnRankChange.AddListener(UpdateRank);
+        expPerZombie = IntRank();
+        expPerRank = expPerZombie * 25;
     }
-    public void IntRank()
+    public float IntRank()
     {
-        
+        int totalZombie = 0;
+        Debug.Log($"Stage: {gameFlow.stage.stageID}");
+        foreach (var BaseWave in gameFlow.stage.waveList)
+        {
+            foreach (var group in BaseWave.zombieList)
+            {
+                totalZombie += group.quatity;
+            }
+        }
+        float exp = 100 / (float)totalZombie;
+
+        return exp;
     }
-  
+
     public void GetHeadShotScore()
     {
-        score += 100;       
-        UpdateRank();
-        OnRankChange.Invoke();
+        score += 40;
+        rankExp += expPerZombie;
+        UpdateRank(score, rankExp);
     }
 
     public void GetSkillScore()
     {
-        score += 50;
-        UpdateRank();
-        OnRankChange?.Invoke();
+        score += 20;
+        rankExp += (expPerZombie / 100 * 80);
+        UpdateRank(score, rankExp);
     }
-    private void UpdateRank()
+    private void UpdateRank(int score, float exp)
     {
-        if (rankExp >= 100)
+        float x = exp;
+        Debug.Log($"Score {score}, Exp:{exp}");
+        if (exp >= (expPerRank * 4))
         {
             rankClass.text = "S";
         }
-        else if (rankExp >= 70)
+        else if (exp >= (expPerRank * 3))
         {
             rankClass.text = "A";
         }
-        else if (rankExp >= 40)
+        else if (exp >= (expPerRank * 2))
         {
             rankClass.text = "B";
+            
         }
         else
         {
             rankClass.text = "C";
-        }  
+        }
         scoreText.text = $"{score}";
-        rankExpText.text = $"{rankExp}";
+        rankExpText.text = $"{exp}%";
     }
 
 }

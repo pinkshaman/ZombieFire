@@ -117,23 +117,28 @@ public abstract class Zombie : MonoBehaviour
     }
     public void OnGetHit()
     {
-        if (isGetHit) return;
-        isGetHit = true;
-        
-        StartCoroutine(GetHit());
+        AnmGetHit();
+        if (isRage) return;
+        isRage = true;
+        PlaySound(properties.clipRage);
+        RageObj.SetActive(true);
+        agent.speed *= 1.5f;
+
     }
     public IEnumerator GetHit()
     {
-        PlaySound(properties.clipRage);
         StopMove();
-        RageObj.SetActive(true);
-        isRage = true;
         anim.SetTrigger("GetHit");
         yield return new WaitForSeconds(1.5f);
-        agent.speed *= 1.5f;
         Move();
+        isGetHit =false;
     }
-  
+  public void AnmGetHit()
+    {
+        if (isGetHit) return;
+        isGetHit = true;
+        StartCoroutine(GetHit());
+    }
     public void CheckDistance()
     {
         var distanceToPlayer = Vector3.Distance(transform.position, playerTaget.position);
