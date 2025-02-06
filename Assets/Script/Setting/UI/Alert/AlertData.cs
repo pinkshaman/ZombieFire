@@ -13,7 +13,8 @@ public enum AlertType
     TimeUp,
     Kill,
     HeadShot,
-    
+    ButtonClick,
+
 }
 [Serializable]
 public class AlertData 

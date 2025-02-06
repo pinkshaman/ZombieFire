@@ -25,7 +25,7 @@ public class GunModel
 {
     public Guntype gunType;
     public GameObject gunModel;
-
+    public Sprite gunSprite;
 }
 [Serializable]
 public class GunAudio
@@ -44,8 +44,22 @@ public class BaseGun
     [Header("General Properties")]
     public string GunName;
     public GunStats gunStats;
+    public GunModel gunModel;
+    public GunUpgradeList upgradeList;
 }
-
+[Serializable]
+public class GunUpgrade
+{
+    public float fireRateUpgrade;
+    public int powerUpgrade;
+    public float criticalUpgrade;
+    public float reloadUpgrade;
+}
+[Serializable]
+public class GunUpgradeList
+{
+    public List<GunUpgrade> gunUgradeList;
+}
 
 public class GunManager : MonoBehaviour
 {
@@ -68,9 +82,26 @@ public class GunManager : MonoBehaviour
     }
     public void Start()
     {
-        
+        LoadGunData();
+       
     }
-   
+
+    public PlayerGun GetPlayerGun(string gunName)
+    {       
+        var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
+        return gunData;
+    }
+    [ContextMenu("CreatPlayerGunData")]
+    public void CreatPlayerGunData()
+    {
+        playerGunList = new PlayerGunList();
+        playerGunList.playerGuns = new List<PlayerGun>();
+        foreach (var gun in gunList.baseGunList)
+        {
+            playerGunList.playerGuns.Add(new PlayerGun(gun.GunName, false, 0, 0));
+        }
+        SaveGunData();
+    }
     public Gun FindActiveGun()
     {
         Gun[] guns = FindObjectsOfType<Gun>();

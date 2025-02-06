@@ -107,7 +107,7 @@ public abstract class Zombie : MonoBehaviour
     {
         playerHealth.TakeDamage(zombieData.Damage);
         Debug.Log($"Player Take :{zombieData.Damage} damage");
-        PlayerManager.Instance.playerUI.ShowScratch();
+        PlayerManager.Instance.player.ShowScratch();
         
     }
     public void Rising()

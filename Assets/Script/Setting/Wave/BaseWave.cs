@@ -8,7 +8,6 @@ public class BaseWave
 {
     public int waveNumber;
     public List<GroupZombie> zombieList;
-
 }
 [Serializable]
 public class GroupZombie

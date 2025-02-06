@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -16,19 +16,27 @@ public class Score : MonoBehaviour
     private int score;
     private float expPerZombie;
     private float expPerRank;
+
+    private List<string> rankOrder = new List<string> { "C", "B", "A", "S" }; // Thứ tự các rank
+
     public DamageManagement damageManagement;
 
-    public void Start()
+    private void Start()
     {
         damageManagement.OnHeadShot.AddListener(GetHeadShotScore);
         damageManagement.OnKill.AddListener(GetSkillScore);
+
         expPerZombie = IntRank();
-        expPerRank = expPerZombie * 25;
+        expPerRank = 25f;
+        rankClass.text = rankOrder[0];
+        UpdateUI();
     }
+
     public float IntRank()
     {
         int totalZombie = 0;
         Debug.Log($"Stage: {gameFlow.stage.stageID}");
+
         foreach (var BaseWave in gameFlow.stage.waveList)
         {
             foreach (var group in BaseWave.zombieList)
@@ -36,8 +44,7 @@ public class Score : MonoBehaviour
                 totalZombie += group.quatity;
             }
         }
-        float exp = 100 / (float)totalZombie;
-
+        float exp = 100f / totalZombie;
         return exp;
     }
 
@@ -45,38 +52,46 @@ public class Score : MonoBehaviour
     {
         score += 40;
         rankExp += expPerZombie;
-        UpdateRank(score, rankExp);
+        CheckRankUp();
     }
 
     public void GetSkillScore()
     {
         score += 20;
-        rankExp += (expPerZombie / 100 * 80);
-        UpdateRank(score, rankExp);
+        rankExp += (expPerZombie * 0.5f);
+        CheckRankUp();
     }
-    private void UpdateRank(int score, float exp)
+
+    private void CheckRankUp()
     {
-        float x = exp;
-        Debug.Log($"Score {score}, Exp:{exp}");
-        if (exp >= (expPerRank * 4))
+        if (rankExp >= expPerRank)
         {
-            rankClass.text = "S";
+            rankExp -= expPerRank;
+            IncreaseRankClass();
         }
-        else if (exp >= (expPerRank * 3))
+
+        UpdateUI();
+    }
+
+    private void IncreaseRankClass()
+    {
+        int currentRankIndex = rankOrder.IndexOf(rankClass.text);
+
+        if (currentRankIndex < rankOrder.Count - 1)
         {
-            rankClass.text = "A";
-        }
-        else if (exp >= (expPerRank * 2))
-        {
-            rankClass.text = "B";
-            
+            rankClass.text = rankOrder[currentRankIndex + 1];
         }
         else
         {
-            rankClass.text = "C";
+            Debug.Log(" rank is max");
         }
+    }
+
+    private void UpdateUI()
+    {
         scoreText.text = $"{score}";
-        rankExpText.text = $"{exp}%";
+        float rankExpPercentage = (rankExp / expPerRank) * 100f;
+        rankExpText.text = $"{rankExpPercentage:F2}%"; 
     }
 
 }

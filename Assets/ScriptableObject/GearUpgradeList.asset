@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa9d75bfd636ea46bdacbfcc3a9263f, type: 3}
+  m_Name: GearUpgradeList
+  m_EditorClassIdentifier: 
+  gearUpgradeLists:
+  - type: 0
+    Title: Hat
+    Decription: HeadShot effect is increased by
+    priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+    system:
+      upgradeSystem:
+      - levelUpgrade: 0
+        priceUpgrade: 0
+        percentIncrease: 0
+      - levelUpgrade: 1
+        priceUpgrade: 1000
+        percentIncrease: 10
+      - levelUpgrade: 2
+        priceUpgrade: 1500
+        percentIncrease: 20
+      - levelUpgrade: 3
+        priceUpgrade: 2000
+        percentIncrease: 30
+      - levelUpgrade: 4
+        priceUpgrade: 2500
+        percentIncrease: 40
+      - levelUpgrade: 5
+        priceUpgrade: 3000
+        percentIncrease: 50
+      - levelUpgrade: 6
+        priceUpgrade: 3500
+        percentIncrease: 60
+      - levelUpgrade: 7
+        priceUpgrade: 4000
+        percentIncrease: 70
+      - levelUpgrade: 8
+        priceUpgrade: 4500
+        percentIncrease: 80
+      - levelUpgrade: 9
+        priceUpgrade: 5000
+        percentIncrease: 90
+      - levelUpgrade: 10
+        priceUpgrade: 5500
+        percentIncrease: 100
+  - type: 1
+    Title: Mask
+    Decription: 'Grenade effect is increased by '
+    priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+    system:
+      upgradeSystem:
+      - levelUpgrade: 0
+        priceUpgrade: 0
+        percentIncrease: 0
+      - levelUpgrade: 1
+        priceUpgrade: 500
+        percentIncrease: 5
+      - levelUpgrade: 2
+        priceUpgrade: 1000
+        percentIncrease: 10
+      - levelUpgrade: 3
+        priceUpgrade: 1500
+        percentIncrease: 15
+      - levelUpgrade: 4
+        priceUpgrade: 2000
+        percentIncrease: 20
+      - levelUpgrade: 5
+        priceUpgrade: 2500
+        percentIncrease: 25
+      - levelUpgrade: 6
+        priceUpgrade: 3000
+        percentIncrease: 30
+      - levelUpgrade: 7
+        priceUpgrade: 3500
+        percentIncrease: 35
+      - levelUpgrade: 8
+        priceUpgrade: 4000
+        percentIncrease: 40
+      - levelUpgrade: 9
+        priceUpgrade: 4500
+        percentIncrease: 45
+      - levelUpgrade: 10
+        priceUpgrade: 5000
+        percentIncrease: 50
+  - type: 2
+    Title: Jacket
+    Decription: HP is increased by
+    priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+    system:
+      upgradeSystem:
+      - levelUpgrade: 0
+        priceUpgrade: 0
+        percentIncrease: 0
+      - levelUpgrade: 1
+        priceUpgrade: 1000
+        percentIncrease: 10
+      - levelUpgrade: 2
+        priceUpgrade: 1500
+        percentIncrease: 20
+      - levelUpgrade: 3
+        priceUpgrade: 2000
+        percentIncrease: 30
+      - levelUpgrade: 4
+        priceUpgrade: 2500
+        percentIncrease: 40
+      - levelUpgrade: 5
+        priceUpgrade: 3000
+        percentIncrease: 50
+      - levelUpgrade: 6
+        priceUpgrade: 3500
+        percentIncrease: 60
+      - levelUpgrade: 7
+        priceUpgrade: 4000
+        percentIncrease: 70
+      - levelUpgrade: 8
+        priceUpgrade: 4500
+        percentIncrease: 80
+      - levelUpgrade: 9
+        priceUpgrade: 5000
+        percentIncrease: 90
+      - levelUpgrade: 10
+        priceUpgrade: 5500
+        percentIncrease: 100
+  - type: 3
+    Title: Trouser
+    Decription: Crit effect is increased by
+    priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+    system:
+      upgradeSystem:
+      - levelUpgrade: 0
+        priceUpgrade: 0
+        percentIncrease: 0
+      - levelUpgrade: 1
+        priceUpgrade: 1000
+        percentIncrease: 5
+      - levelUpgrade: 2
+        priceUpgrade: 1500
+        percentIncrease: 10
+      - levelUpgrade: 3
+        priceUpgrade: 2000
+        percentIncrease: 15
+      - levelUpgrade: 4
+        priceUpgrade: 2500
+        percentIncrease: 20
+      - levelUpgrade: 5
+        priceUpgrade: 3000
+        percentIncrease: 25
+      - levelUpgrade: 6
+        priceUpgrade: 3500
+        percentIncrease: 30
+      - levelUpgrade: 7
+        priceUpgrade: 4000
+        percentIncrease: 35
+      - levelUpgrade: 8
+        priceUpgrade: 4500
+        percentIncrease: 40
+      - levelUpgrade: 9
+        priceUpgrade: 5000
+        percentIncrease: 45
+      - levelUpgrade: 10
+        priceUpgrade: 5500
+        percentIncrease: 50
+  - type: 4
+    Title: Bag
+    Decription: Weapon effect is increased by
+    priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+    system:
+      upgradeSystem:
+      - levelUpgrade: 0
+        priceUpgrade: 0
+        percentIncrease: 0
+      - levelUpgrade: 1
+        priceUpgrade: 1000
+        percentIncrease: 5
+      - levelUpgrade: 2
+        priceUpgrade: 1500
+        percentIncrease: 10
+      - levelUpgrade: 3
+        priceUpgrade: 2000
+        percentIncrease: 15
+      - levelUpgrade: 4
+        priceUpgrade: 2500
+        percentIncrease: 20
+      - levelUpgrade: 5
+        priceUpgrade: 3000
+        percentIncrease: 25
+      - levelUpgrade: 6
+        priceUpgrade: 3500
+        percentIncrease: 30
+      - levelUpgrade: 7
+        priceUpgrade: 4000
+        percentIncrease: 35
+      - levelUpgrade: 8
+        priceUpgrade: 4500
+        percentIncrease: 40
+      - levelUpgrade: 9
+        priceUpgrade: 5000
+        percentIncrease: 45
+      - levelUpgrade: 10
+        priceUpgrade: 5500
+        percentIncrease: 50
