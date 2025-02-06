@@ -7,6 +7,6 @@ using UnityEngine;
 
 public class StageList : ScriptableObject
 {
-    public List<Stage> stageList;
+    public List<Stage> stageLists;
 
 }

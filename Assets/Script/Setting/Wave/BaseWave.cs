@@ -20,5 +20,20 @@ public class GroupZombie
 public class Stage 
 {
     public float stageID;
+    public Sprite stageImage;
+    public bool isBossWave;
+    public StageRankList rankList;
     public List<BaseWave> waveList;
 }
+[Serializable]
+public class StageRank
+{
+    public string rank;
+    public Sprite rankSprite;
+}
+[Serializable]
+public class StageRankList
+{
+    public List<StageRank> rankLists;
+}
+

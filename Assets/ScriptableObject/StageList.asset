@@ -12,14 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0fae718f64e2e4ba2883262cb68705, type: 3}
   m_Name: StageList
   m_EditorClassIdentifier: 
-  stageList:
-  - stageID: 1.1
+  stageLists:
+  - stageID: 1
+    stageImage: {fileID: 0}
+    isBossWave: 0
+    rankList:
+      rankLists:
+      - rank: s
+        rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+      - rank: a
+        rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+      - rank: b
+        rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+      - rank: c
+        rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+      - rank: d
+        rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
     waveList:
-    - waveNumber: 1
+    - waveNumber: 0
       zombieList:
       - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-        quatity: 3
-    - waveNumber: 2
+        quatity: 0
+    - waveNumber: 0
       zombieList:
-      - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-        quatity: 5
+      - zombie: {fileID: 0}
+        quatity: 0

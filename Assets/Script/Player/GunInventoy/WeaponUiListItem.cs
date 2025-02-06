@@ -6,85 +6,57 @@ using UnityEngine.UI;
 
 public class WeaponUiListItem : MonoBehaviour
 {
-    public LabelList labelList;
     public Image gunImage;
     public Text gunName;
     public WeaponUI weaponUI;
-    private LabelActive selectedLabel;
+    public GameObject Slot1;
+    public GameObject Slot2;
+    public GameObject isLocked;
+    public int slotIndex;
     public void Start()
     {
         weaponUI = FindObjectOfType<WeaponUI>();
     }
-    public void OnEnable()
-    {
-        GunManager.Instance.CreateWeaponInventory();
-    }
+
     public void SetDataUiListItem(BaseGun baseGun, PlayerGun progess, GunSlot gunSlot)
     {
         gunImage.sprite = baseGun.gunModel.gunSprite;
         gunName.text = baseGun.GunName;
-       
 
         if (gunName.text == gunSlot.gunSlot1)
         {
-            selectedLabel = LabelActive.Slot1;
+            Slot1.SetActive(true);
+            Slot2.SetActive(false);
+            slotIndex = 1;
+
         }
         else if (gunName.text == gunSlot.gunSlot2)
         {
-            selectedLabel = LabelActive.Slot2;
+            Slot2.SetActive(true);
+            Slot1.SetActive(false);
+            slotIndex = 2;
         }
         else
         {
-            selectedLabel = LabelActive.Locked;
+            Slot1.SetActive(false);
+            Slot2.SetActive(false);
+
         }
-        labelList.SetActiveLabel(selectedLabel, progess.isUnlocked);
-        weaponUI.SetData(baseGun, progess);
-        
+        isLocked.SetActive(!progess.isUnlocked);
+        if (isLocked)
+        {
+            slotIndex = 3;
+        }
+        else
+        {
+            slotIndex = 4;
+        }
     }
- 
+
     public void SetDataOnclick()
     {
-        
+
     }
 }
 
-[Serializable]
-public class Label
-{
-    public LabelActive label;
-    public GameObject labelObject;
-}
-[Serializable]
-public class LabelList
-{
-    public List<Label> labelLists;
 
-    public void SetActiveLabel(LabelActive activeLabel, bool isUnlocked)
-    {
-        foreach (var item in labelLists)
-        {
-            if (item.label == activeLabel)
-            {
-                item.labelObject.SetActive(true);
-            }
-            else
-            {
-                item.labelObject.SetActive(false);
-            }
-        }
-
-        if (activeLabel == LabelActive.Locked)
-        {
-            foreach (var item in labelLists)
-            {
-                item.labelObject.SetActive(!isUnlocked);
-            }
-        }
-    }
-}
-public enum LabelActive
-{
-    Slot1,
-    Slot2,
-    Locked,
-}
