@@ -26,6 +26,7 @@ public class GunModel
     public Guntype gunType;
     public GameObject gunModel;
     public Sprite gunSprite;
+    public string gunDecription;
 }
 [Serializable]
 public class GunAudio
@@ -60,6 +61,12 @@ public class GunUpgradeList
 {
     public List<GunUpgrade> gunUgradeList;
 }
+[Serializable]
+public class GunSlot
+{
+    public string gunSlot1;
+    public string gunSlot2;
+}
 
 public class GunManager : MonoBehaviour
 {
@@ -68,7 +75,8 @@ public class GunManager : MonoBehaviour
     public GunList gunList;
     public PlayerGunList playerGunList;
     public GunSwicher gunSwicher;
-
+    public GunSlot gunSlot;
+    public GunInventory gunInventory;
     private void Awake()
     {
         if (Instance == null)
@@ -85,7 +93,15 @@ public class GunManager : MonoBehaviour
         LoadGunData();
        
     }
-
+    public void CreateWeaponInventory()
+    {
+        foreach(var gun in gunList.baseGunList)
+        {
+            var progessData = playerGunList.playerGuns.Find(progessData => progessData.gunName == gun.GunName);
+            gunInventory.CreateGunUI(gun, progessData,gunSlot);
+        }
+    }
+  
     public PlayerGun GetPlayerGun(string gunName)
     {       
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
@@ -135,7 +151,21 @@ public class GunManager : MonoBehaviour
         Debug.Log("PlayerGun is Loaded");
     }
 
-
+    [ContextMenu("SaveGunSlot")]
+    public void SaveGunSlot()
+    {
+        var value = JsonUtility.ToJson(gunSlot);
+        PlayerPrefs.SetString(nameof(gunSlot), value);
+        PlayerPrefs.Save();
+    }
+    [ContextMenu("LoadGunSlot")]
+    public void LoadGunSlot()
+    {
+        var defaultValue = JsonUtility.ToJson(gunSlot);
+        var json = PlayerPrefs.GetString(nameof(gunSlot), defaultValue);
+        gunSlot = JsonUtility.FromJson<GunSlot>(json);
+        Debug.Log("GunSlot is Loaded");
+    }
 }
 
 

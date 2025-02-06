@@ -11,7 +11,7 @@ public class PlayerData
     public int health;
     public int coin;
     public int gold;
-    public Gunslot gunSlot;
+    
     public SpecialUpgradeProgess specialUpgradeProgess;
     public ItemList itemList;
 
@@ -43,12 +43,7 @@ public class SpecialUpgradeProgess
 {
     public List<SpecialUpgrade> specialUpdateProgessList;
 }
-[Serializable]
-public class Gunslot
-{
-    public string gunSlot1;
-    public string gunSlot2;
-}
+
 [Serializable]
 public class Item
 {

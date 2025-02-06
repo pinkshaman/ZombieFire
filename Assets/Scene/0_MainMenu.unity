@@ -2061,7 +2061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,7 +5839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &327
 GameObject:
   m_ObjectHideFlags: 0
@@ -25052,9 +25052,9 @@ RectTransform:
   - {fileID: 1402}
   m_Father: {fileID: 1392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 727.5, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 440, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1418
@@ -25639,9 +25639,9 @@ RectTransform:
   - {fileID: 1492}
   m_Father: {fileID: 1392}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 272.5, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 440, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1447
@@ -39918,9 +39918,6 @@ MonoBehaviour:
     health: 100
     coin: 10000
     gold: 100
-    gunSlot:
-      gunSlot1: Scarlight
-      gunSlot2: P227
     specialUpgradeProgess:
       specialUpdateProgessList:
       - title: Hat
@@ -39964,7 +39961,7 @@ MonoBehaviour:
   playerGunList:
     playerGuns:
     - gunName: Scarlight
-      isUnlocked: 0
+      isUnlocked: 1
       ammoStoraged: 0
       starUpgrade: 0
     - gunName: RPG
@@ -39972,7 +39969,7 @@ MonoBehaviour:
       ammoStoraged: 0
       starUpgrade: 0
     - gunName: P227
-      isUnlocked: 0
+      isUnlocked: 1
       ammoStoraged: 0
       starUpgrade: 0
     - gunName: PMX
@@ -39984,6 +39981,10 @@ MonoBehaviour:
       ammoStoraged: 0
       starUpgrade: 0
   gunSwicher: {fileID: 0}
+  gunSlot:
+    gunSlot1: Scarlight
+    gunSlot2: P227
+  gunInventory: {fileID: 6408191021750268810}
 --- !u!114 &1643059228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40241,9 +40242,9 @@ RectTransform:
   - {fileID: 7652049077005290173}
   m_Father: {fileID: 3933479919269362203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -40}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &214156310726738884
@@ -41098,9 +41099,9 @@ RectTransform:
   - {fileID: 5796958060807472273}
   m_Father: {fileID: 3933479919269362203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -120}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1127430625940441980
@@ -42652,13 +42653,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6408191021750268808}
+  - component: {fileID: 6408191021750268810}
+  - component: {fileID: 6408191021750268809}
   m_Layer: 0
   m_Name: Weapon_UI_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2795738066512227620
 GameObject:
   m_ObjectHideFlags: 0
@@ -43060,9 +43063,9 @@ RectTransform:
   - {fileID: 8787831851633874642}
   m_Father: {fileID: 3933479919269362203}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: 0}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3427807296602010483
@@ -43319,7 +43322,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -0.0000053545937, y: 101}
-  m_SizeDelta: {x: 0, y: 99}
+  m_SizeDelta: {x: -1247.9, y: 99}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3651168178484248855
 CanvasRenderer:
@@ -45560,6 +45563,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -1180, y: -620}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6408191021750268809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788324507986595202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79842ee9ada92454691bb1b21f5c2a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: {fileID: 0}
+  unlockRequire: {fileID: 0}
+  starUpgrade: {fileID: 0}
+  ammoAmount: {fileID: 0}
+  ammoPrice: {fileID: 0}
+  ammoPriceImage: {fileID: 0}
+  buyAmmo: {fileID: 0}
+  UpgradeButton: {fileID: 0}
+  upgradePrice: {fileID: 0}
+  priceImage: {fileID: 0}
+  equipButton: {fileID: 0}
+  buyGunButton: {fileID: 0}
+  buyGunPrice: {fileID: 0}
+  buyGunPriceImage: {fileID: 0}
+  gunDecription: {fileID: 0}
+  power: 0
+  critical: 0
+  fireRate: 0
+  reload: 0
+  gunModel: {fileID: 0}
+--- !u!114 &6408191021750268810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788324507986595202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c4cd192efc7fc44a317ee15ae71f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootUi: {fileID: 3645153915686009319}
+  weaponPrefabs: {fileID: 7178887042383890339, guid: 42bb3d448d80b884cadf7701e0b31e7e, type: 3}
 --- !u!222 &6418576337852518585
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46367,9 +46416,9 @@ RectTransform:
   - {fileID: 1127430625940441980}
   m_Father: {fileID: 3933479919269362203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -80}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7332899053360401317

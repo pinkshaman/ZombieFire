@@ -25,11 +25,12 @@ public class PlayerUI : MonoBehaviour
     {
         levelUpdate.SetExp(data);
         currency.LoadCurrencyData(data);
-        UpdateSlotGun(data);
+        UpdateSlotGun();
     }
-    public void UpdateSlotGun(PlayerData data)
+    public void UpdateSlotGun()
     {
-        List<string> gunNames = new List<string> { data.gunSlot.gunSlot1, data.gunSlot.gunSlot2 };
+        var gunSlot = GunManager.Instance.gunSlot;
+        List<string> gunNames = new List<string> { gunSlot.gunSlot1, gunSlot.gunSlot2 };
         for (int i = 0; i < gunsSlotUi.Count; i++)
         {
             BaseGun gunData = GunManager.Instance.GetGun(gunNames[i]);

@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 224379619414646418}
   - component: {fileID: 222480751322374324}
   - component: {fileID: 114106542149156321}
+  - component: {fileID: 7178887042383890339}
   m_Layer: 0
   m_Name: Weapon_List_Item
   m_TagString: Untagged
@@ -177,6 +178,29 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7178887042383890339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257435738336657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccd294d6a0b14c4685718cb6cbc1fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labelList:
+    labelLists:
+    - label: 0
+      labelObject: {fileID: 1400107976783094}
+    - label: 1
+      labelObject: {fileID: 1974996399419021}
+    - label: 2
+      labelObject: {fileID: 1690733278499155}
+  gunImage: {fileID: 114104191034785059}
+  gunName: {fileID: 114083526904353292}
+  weaponUI: {fileID: 0}
 --- !u!1 &1300574213236375
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &224159171296891395
 RectTransform:
   m_ObjectHideFlags: 0
