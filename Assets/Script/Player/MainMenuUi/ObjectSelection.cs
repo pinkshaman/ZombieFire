@@ -33,7 +33,7 @@ public class ObjectSelection : MonoBehaviour
         {
             int index = i;
             Button btn = objects[i].AddComponent<Button>();
-            btn.onClick.AddListener(() => SelectObject(index));
+            btn.onClick.AddListener(() => SelectObject(index));       
         }
     }
     public void SelectObject(int index)
@@ -70,6 +70,7 @@ public class ObjectSelection : MonoBehaviour
         }
 
     }
+
     public void UpgradeSelectedObject()
     {
         if (selectedObject.GetComponent<SpecialUpgrades>().specialType == SpecialType.Gear)

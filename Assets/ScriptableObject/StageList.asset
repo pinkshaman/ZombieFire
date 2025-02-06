@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageLists:
   - stageID: 1
-    stageImage: {fileID: 0}
+    stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
     isBossWave: 0
     rankList:
       rankLists:
@@ -29,11 +29,11 @@ MonoBehaviour:
       - rank: d
         rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
     waveList:
-    - waveNumber: 0
+    - waveNumber: 1
       zombieList:
       - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-        quatity: 0
-    - waveNumber: 0
+        quatity: 3
+    - waveNumber: 2
       zombieList:
-      - zombie: {fileID: 0}
-        quatity: 0
+      - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+        quatity: 5
