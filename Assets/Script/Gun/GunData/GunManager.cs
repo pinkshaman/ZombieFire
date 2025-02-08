@@ -108,12 +108,20 @@ public class GunManager : MonoBehaviour
             var progessData = playerGunList.playerGuns.Find(progessData => progessData.gunName == gun.GunName);
             if (gun.GunName == "RPG")
                 continue;
-            if (progessData != null)
+            if (progessData == null)
             {
                 CreatPlayerGunData(gun);
             }
             gunInventory.CreateGunUI(gun, progessData, gunSlot);
         }
+    }
+    public void UpdateGun1Slot(string gunSlot1Name)
+    {
+        gunSlot.gunSlot1 = gunSlot1Name; 
+    }
+    public void UpdateGun2Slot(string gunSlot2Name)
+    {
+        gunSlot.gunSlot2 = gunSlot2Name;
     }
     public void UpdateAmmo(string gunName, int ammo)
     {

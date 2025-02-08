@@ -20,6 +20,7 @@ public class WeaponUI : MonoBehaviour
     public Image buyGunPriceImage;
     public Text gunDecription;
 
+    public GameObject EquipPanel;
     public List<GameObject> starUI;
     public float power;
     public float critical;
@@ -70,9 +71,9 @@ public class WeaponUI : MonoBehaviour
         buyAmmoButton.interactable = isCanBuyAmmo;
     }
 
-    public void EquipButtonClick()
+    public void ActiveEquipPanel()
     {
-
+        EquipPanel.SetActive(true);
     }
    
 

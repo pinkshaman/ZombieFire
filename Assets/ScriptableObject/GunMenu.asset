@@ -44,6 +44,48 @@ MonoBehaviour:
         powerUpgrade: 1
         criticalUpgrade: 0.3
         reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 1
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
     buyGun:
       ammoPrice: 500
       price:
@@ -90,7 +132,7 @@ MonoBehaviour:
         reloadUpgrade: 0
       - starUpgrade: 1
         priceUpgrade: 1000
-        fireRateUpgrade: 0.3
+        fireRateUpgrade: 0.2
         powerUpgrade: 1
         criticalUpgrade: 0.2
         reloadUpgrade: 0
@@ -98,7 +140,49 @@ MonoBehaviour:
         priceUpgrade: 2000
         fireRateUpgrade: 0.3
         powerUpgrade: 1
-        criticalUpgrade: 0.2
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 1
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
         reloadUpgrade: 0
     buyGun:
       ammoPrice: 500
@@ -118,7 +202,67 @@ MonoBehaviour:
       gunSprite: {fileID: 21300000, guid: 4981b8e9569d30f459e09611775fc6e9, type: 2}
       gunDecription: 
     upgradeList:
-      gunUgradeList: []
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 1
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
     buyGun:
       ammoPrice: 0
       price:
@@ -137,7 +281,67 @@ MonoBehaviour:
       gunSprite: {fileID: 21300000, guid: b4a247796faed554ea36bc7fd571d8d2, type: 2}
       gunDecription: 
     upgradeList:
-      gunUgradeList: []
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 1
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
     buyGun:
       ammoPrice: 0
       price:

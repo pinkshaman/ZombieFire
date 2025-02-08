@@ -32,46 +32,15 @@ public class WeaponUiListItem : MonoBehaviour
         }
     }
 
-    public UnityEvent CanUpgadeWeapon;
-    public UnityEvent CanBuyWeapon;
-    public UnityEvent CanBuyAmmo;
-    private bool _canUpgrade;
-    public bool CanUpgrade
-    {
-        get => _canUpgrade;
-        set
-        {
-            _canUpgrade = value;
-            CanUpgadeWeapon.Invoke();
-        }
-    }
-    public bool _isCanBuy;
-    public bool IsCanBuy
-    {
-        get => _isCanBuy;
-        set
-        {
-            _isCanBuy = value;
-            CanBuyWeapon.Invoke();
-        }
-    }
+    private UnityAction<WeaponUiListItem> _onClickCallback;
 
-    public bool _isCanBuyAmmo;
-    public bool IsCanBuyAmmo
-    {
-        get => _isCanBuyAmmo;
-        set
-        {
-            _isCanBuyAmmo = value;
-            CanBuyAmmo.Invoke();
-        }
-    }
     public void Start()
     {
         currentStar = playerGun.starUpgrade;
         CurrentAmmo = playerGun.ammoStoraged;
+        selectButton.onClick.AddListener(() => _onClickCallback.Invoke(this));
     }
-    public void SetDataUiListItem(BaseGun baseGun, PlayerGun progess, GunSlot gunSlot)
+    public void SetDataUiListItem(BaseGun baseGun, PlayerGun progess, GunSlot gunSlot, UnityAction<WeaponUiListItem> onClickCallback)
     {
         this.baseGun = baseGun;
         this.playerGun = progess;
@@ -79,6 +48,8 @@ public class WeaponUiListItem : MonoBehaviour
         gunImage.SetNativeSize();
         gunName.text = baseGun.GunName;
         isLocked.SetActive(!progess.isUnlocked);
+        _onClickCallback = onClickCallback;
+
         if (!progess.isUnlocked)
         {
             slotIndex = 4;
@@ -143,6 +114,7 @@ public class WeaponUiListItem : MonoBehaviour
         playerGun.starUpgrade = currentStar;
         UpgradeDamage(currentStar);
         GunManager.Instance.UpdateGunData(playerGun.gunName, playerGun);
+        Debug.Log($"Upgrade : {baseGun.GunName} -{playerGun.starUpgrade}");
     }
     public void UpgradeDamage(int star)
     {
@@ -192,6 +164,10 @@ public class WeaponUiListItem : MonoBehaviour
             GunManager.Instance.UpdateAmmo(baseGun.GunName, CurrentAmmo);
 
             Debug.Log($"CurrenAmmo:{playerGun.ammoStoraged}");
+        }
+        else
+        {
+            Debug.Log("Not Enough Money!");
         }
 
     }
