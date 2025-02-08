@@ -7,11 +7,10 @@ public class WeaponUI : MonoBehaviour
 {
     public Text weaponName;
     public Text unlockRequire;
-    public Text starUpgrade;
     public Text ammoAmount;
     public Text ammoPrice;
     public Image ammoPriceImage;
-    public Button buyAmmo;
+    public Button buyAmmoButton;
     public Button UpgradeButton;
     public Text upgradePrice;
     public Image priceImage;
@@ -19,8 +18,9 @@ public class WeaponUI : MonoBehaviour
     public Button buyGunButton;
     public Text buyGunPrice;
     public Image buyGunPriceImage;
-
     public Text gunDecription;
+
+    public List<GameObject> starUI;
     public float power;
     public float critical;
     public float fireRate;
@@ -29,11 +29,51 @@ public class WeaponUI : MonoBehaviour
     public GameObject gunModel;
 
 
-    public void SetData(BaseGun baseGun, PlayerGun gun)
+
+    public void Start()
+    {
+
+    }
+
+    public void SetDataUI(BaseGun baseGun, PlayerGun gun)
     {
         weaponName.text = baseGun.GunName;
-        ammoAmount.text = gun.ammoStoraged.ToString();
+        ammoAmount.text = $"{baseGun.gunStats.ammoCapacity}/{gun.ammoStoraged}";
         gunDecription.text = baseGun.gunModel.gunDecription;
+        ammoPrice.text = baseGun.buyGun.ammoPrice.ToString();
     }
+    public void UpgradePrice(int price)
+    {
+        upgradePrice.text = price.ToString();
+
+    }
+    public void UpdateStar(int star)
+    {
+
+    }
+    public void UpdateAmmo(BaseGun baseGun,int ammo)
+    {
+        ammoAmount.text = $"{baseGun.gunStats.ammoCapacity}/{ammo}";
+    }
+    public void UpdateBuyButtonUi(bool isCanBuy)
+    {
+        buyGunButton.interactable = isCanBuy;
+
+    }
+    public void UpdateUpgradeButonUI(bool isCanUpgrade)
+    {
+        UpgradeButton.interactable = isCanUpgrade;
+       
+    }
+    public void UpdateBuyAmmoButtonUI(bool isCanBuyAmmo)
+    {
+        buyAmmoButton.interactable = isCanBuyAmmo;
+    }
+
+    public void EquipButtonClick()
+    {
+
+    }
+   
 
 }

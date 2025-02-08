@@ -29,6 +29,6 @@ public enum PriceType
 public class Price
 {
     public PriceType priceType;
-    public int price;
+    public int cost;
     public Sprite priceImage;
 }

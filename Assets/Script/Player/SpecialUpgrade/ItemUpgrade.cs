@@ -33,18 +33,18 @@ public class ItemUpgrade : SpecialUpgrades
     }
     public int ReturnPrice()
     {
-        int price = data.price.price;
+        int price = data.price.cost;
         return price;
     }
     public bool IsCanBuy()
     {
         if (data.price.priceType == PriceType.Coin)
         {
-            return PlayerManager.Instance.playerData.coin >= data.price.price;
+            return PlayerManager.Instance.playerData.coin >= data.price.cost;
         }
         else
         {
-            return PlayerManager.Instance.playerData.gold >= data.price.price;
+            return PlayerManager.Instance.playerData.gold >= data.price.cost;
         }
     }
   
@@ -53,11 +53,11 @@ public class ItemUpgrade : SpecialUpgrades
         if (!IsCanBuy()) return;
         if (data.price.priceType == PriceType.Coin)
         {
-            PlayerManager.Instance.playerData.coin -= data.price.price;
+            PlayerManager.Instance.playerData.coin -= data.price.cost;
         }
         else
         {
-            PlayerManager.Instance.playerData.gold -= data.price.price;
+            PlayerManager.Instance.playerData.gold -= data.price.cost;
         }
         CurrentQuatity += data.quatityPerTimes;
         quatity.text = CurrentQuatity.ToString();

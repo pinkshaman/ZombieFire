@@ -18,6 +18,7 @@ public class PlayerGun
         this.ammoStoraged = ammoStoraged;
         this.starUpgrade = starUpgrade;
     }
+   
 }
 
 [Serializable]
