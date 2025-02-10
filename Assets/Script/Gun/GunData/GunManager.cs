@@ -28,6 +28,7 @@ public class GunModel
     public GameObject gunModel;
     public Sprite gunSprite;
     public string gunDecription;
+    public Animator animator;
 }
 [Serializable]
 public class GunAudio
@@ -115,21 +116,33 @@ public class GunManager : MonoBehaviour
             gunInventory.CreateGunUI(gun, progessData, gunSlot);
         }
     }
-    public void UpdateGun1Slot(string gunSlot1Name)
+    public void UpdateGunSlot(string gunSlot1Name, string gunSlot2Name)
     {
-        gunSlot.gunSlot1 = gunSlot1Name; 
-    }
-    public void UpdateGun2Slot(string gunSlot2Name)
-    {
+        gunSlot.gunSlot1 = gunSlot1Name;
         gunSlot.gunSlot2 = gunSlot2Name;
+        SaveGunSlot();
     }
+    public float ReturnReloadTimes(string gunName)
+    {
+        var gunData = gunList.baseGunList.Find(gunData => gunData.GunName == gunName);
+        foreach (var clip in gunData.gunModel.animator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == "Reload")
+            {
+                float reloadTime = clip.length;
+                return reloadTime;
+            }
+        }
+        return 0.0f;
+    }
+
     public void UpdateAmmo(string gunName, int ammo)
     {
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
         gunData.ammoStoraged = ammo;
         //SaveGunData();
     }
-    public void UpdateGunData(string gunName,PlayerGun dataChanged)
+    public void UpdateGunData(string gunName, PlayerGun dataChanged)
     {
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
         gunData = dataChanged;
@@ -140,10 +153,10 @@ public class GunManager : MonoBehaviour
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
         return gunData;
     }
-    [ContextMenu("CreatPlayerGunData")]
+ 
     public void CreatPlayerGunData(BaseGun gun)
     {
-        playerGunList.playerGuns.Add(new PlayerGun(gun.GunName, false, 0, 0));
+        playerGunList.playerGuns.Add(new PlayerGun(gun.GunName, false, 0, 1));
         SaveGunData();
     }
     public Gun FindActiveGun()

@@ -14,20 +14,21 @@ public class GunInventory : MonoBehaviour
     public WeaponUI weaponUI;
     public List<WeaponUiListItem> listItems = new List<WeaponUiListItem>();
     public WeaponChange weaponChange;
+    public List<GunModelInventory> gunModel;
 
     private WeaponUiListItem selectedGunObject;
+    private GunModelInventory selectedGunModel;
     private int currenPrice;
-
     public UnityEvent CanUpgadeWeapon;
     public UnityEvent CanBuyWeapon;
     public UnityEvent CanBuyAmmo;
-    private bool _canUpgrade;
-    public bool CanUpgrade
+    private bool _isCanUpgradeWeapon;
+    public bool IsCanUpgradeWeapon
     {
-        get => _canUpgrade;
+        get => _isCanUpgradeWeapon;
         set
         {
-            _canUpgrade = value;
+            _isCanUpgradeWeapon = value;
             CanUpgadeWeapon.Invoke();
         }
     }
@@ -75,7 +76,7 @@ public class GunInventory : MonoBehaviour
             listItems[i].transform.SetSiblingIndex(i);
         }
     }
-  
+
     public void SelectGun(WeaponUiListItem gubObject)
     {
         if (selectedGunObject == gubObject) return;
@@ -93,19 +94,33 @@ public class GunInventory : MonoBehaviour
     }
     public void ShowGunUiOnClick(WeaponUiListItem data)
     {
+        
         var priceUpgrade = selectedGunObject.ReturnPriceUpgrade();
         int star = selectedGunObject.ReturnCurrenStar();
         weaponUI.SetDataUI(data.baseGun, data.playerGun);
         weaponUI.UpdateAmmo(data.baseGun, data.playerGun.ammoStoraged);
         weaponUI.UpgradePrice(priceUpgrade);
         weaponUI.UpdateStar(star);
+        data.isLocked.SetActive(!data.playerGun.isUnlocked);
+
+        weaponUI.UpDatePriceToBuyGun(data.ReturnPriceToBuy());
+    }
+    public void ShowModel(WeaponUiListItem item)
+    {
+        var model = gunModel.Find(model => model.gunName == item.baseGun.GunName);
+        model.gameObject.SetActive(true);
+    }
+    public void DisableModel(WeaponUiListItem item)
+    {
+        var model = gunModel.Find(model => model.gunName == item.baseGun.GunName);
+        model.gameObject.SetActive(false);
     }
     public void UpdateUpgradeButton()
     {
         weaponUI.UpdateUpgradeButonUI(selectedGunObject.CanUpgradeWeapon());
     }
     public void UpdateBuyButton()
-    { 
+    {
         weaponUI.UpdateBuyButtonUi(selectedGunObject.IsCanBuyGun());
     }
     public void UpdateBuyAmmoButton()
@@ -115,6 +130,7 @@ public class GunInventory : MonoBehaviour
 
     public void AddListenerMethod()
     {
+        ShowModel(selectedGunObject);
         Debug.Log($"Added Listener:{selectedGunObject.gunName}");
         selectedGunObject.selectedObject.SetActive(true);
         weaponUI.buyGunButton.onClick.AddListener(BuySeclectedGun);
@@ -126,16 +142,19 @@ public class GunInventory : MonoBehaviour
         CanUpgadeWeapon.AddListener(UpdateUpgradeButton);
         CanBuyWeapon.AddListener(UpdateBuyButton);
         CanBuyAmmo.AddListener(UpdateBuyAmmoButton);
+        UpdateStatus();
     }
     public void RemoveListenerMethod()
     {
+        DisableModel(selectedGunObject);
+        weaponUI.ResetDataPower();
         Debug.Log($"Removed Listener: {selectedGunObject.gunName}");
         selectedGunObject.selectedObject.SetActive(false);
         weaponUI.buyGunButton.onClick.RemoveListener(BuySeclectedGun);
         weaponUI.UpgradeButton.onClick.RemoveListener(UpgradeSelectedGun);
         weaponUI.buyAmmoButton.onClick.RemoveListener(BuySelectedGunAmmo);
-        weaponUI.equipButton.onClick.AddListener(weaponUI.ActiveEquipPanel);
-        weaponUI.equipButton.onClick.AddListener(EquipButton);
+        weaponUI.equipButton.onClick.RemoveListener(weaponUI.ActiveEquipPanel);
+        weaponUI.equipButton.onClick.RemoveListener(EquipButton);
 
         CanUpgadeWeapon.RemoveListener(UpdateUpgradeButton);
         CanBuyWeapon.RemoveListener(UpdateBuyButton);
@@ -145,7 +164,7 @@ public class GunInventory : MonoBehaviour
     {
         selectedGunObject.Upgrade();
         ShowGunUiOnClick(selectedGunObject);
-        //CanUpgrade = selectedGunObject.CanUpgradeWeapon();
+        UpdateStatus();
     }
     public void BuySelectedGunAmmo()
     {
@@ -153,6 +172,8 @@ public class GunInventory : MonoBehaviour
         {
             selectedGunObject.BuyAmmo();
             ShowGunUiOnClick(selectedGunObject);
+            IsCanBuyAmmo = selectedGunObject.IsCanBuyGunAmmo();
+            UpdateStatus();
         }
 
     }
@@ -162,10 +183,30 @@ public class GunInventory : MonoBehaviour
         selectedGunObject.BuyGun();
         weaponUI.equipButton.gameObject.SetActive(selectedGunObject.playerGun.isUnlocked);
         ShowGunUiOnClick(selectedGunObject);
+        UpdateStatus();
     }
     public void EquipButton()
     {
         weaponChange.SetDataUi(selectedGunObject, GunManager.Instance.gunSlot);
+    }
+    public void UpdateStatus()
+    {
+        IsCanBuyAmmo = selectedGunObject.IsCanBuyGunAmmo();
+        IsCanUpgradeWeapon = selectedGunObject.CanUpgradeWeapon();
+        IsCanBuy = selectedGunObject.IsCanBuyGun();
+    }
+    public void UpdateSlotGunUi()
+    {
+        var slot1Weapon = listItems.FirstOrDefault(w => w.baseGun.GunName == GunManager.Instance.gunSlot.gunSlot1);
+        var slot2Weapon = listItems.FirstOrDefault(w => w.baseGun.GunName == GunManager.Instance.gunSlot.gunSlot2);
+
+        slot1Weapon.slotIndex = 1;
+        slot2Weapon.slotIndex = 2;
+        foreach (var item in listItems)
+        {
+            item.UpdateLabel(item.playerGun, GunManager.Instance.gunSlot);
+        }
+        SortGunUI();
     }
 
 }

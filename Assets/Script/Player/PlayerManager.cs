@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -85,6 +86,20 @@ public class PlayerManager : MonoBehaviour
         return dataUpgrade.priceUpgrade;
     }
 
+    public bool ReturnItemReloadInfor()
+    {
+        foreach (var item in playerData.itemList.itemLists)
+        {
+            if(item.itemName == "QuickReload")
+            {
+                if(item.quatity>0)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     public void UpgradeGearEffect(string title, int level)
     {
         var data = playerData.specialUpgradeProgess.specialUpdateProgessList.Find(data => data.title == title);

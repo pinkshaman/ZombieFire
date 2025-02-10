@@ -13,6 +13,7 @@ public abstract class Gun : MonoBehaviour
     public Animator anim;
     public GunAmmo gunAmmo;
     public bool haveScope;
+    private float originalDuration;
 
     public UnityEvent OnSwitching;
     public UnityEvent OnShooting;
@@ -28,6 +29,7 @@ public abstract class Gun : MonoBehaviour
         }
         var newGun = GunManager.Instance.GetGun(GunName);
         Initialize(newGun);
+        originalDuration = ReturnReloadTime();
     }
     public virtual void Aiming()
     {
@@ -45,7 +47,7 @@ public abstract class Gun : MonoBehaviour
         ResetAnimation();
         OnSwitching.Invoke();
     }
- 
+
     public virtual void RemoveAllLisstenner()
     {
 
@@ -56,11 +58,30 @@ public abstract class Gun : MonoBehaviour
     }
     public abstract void Shooting();
 
-    public abstract void ReLoading();
-
+    public virtual void ReLoading()
+    {
+        bool isAvailable = PlayerManager.Instance.ReturnItemReloadInfor();
+        if (isAvailable)
+        {
+            FastReloadItem();
+        }
+        else
+        {
+            float time = originalDuration;
+            anim.SetTrigger("Reload");
+            anim.speed = time;
+        }
+    }
+    public virtual void FastReloadItem()
+    {
+        float newDuration = originalDuration * (1.0f / 1.5f);
+        float newSpeed = originalDuration / newDuration;
+        anim.SetTrigger("Reload");
+        anim.speed = newSpeed;
+    }
     public virtual void Hiding()
     {
-        anim.Play("Hide");
+        anim.SetTrigger("Hide");
     }
 
     public virtual void Ready()
@@ -77,5 +98,18 @@ public abstract class Gun : MonoBehaviour
         //anim.ResetTrigger("Fire");
         anim.SetTrigger("Idle");
     }
+    public virtual float ReturnReloadTime()
+    {
+        foreach (var clip in anim.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == "Reload")
+            {
+                float reloadTime = clip.length;
+                return reloadTime;
+            }
+        }
+        return 0.0f;
+    }
+
 
 }

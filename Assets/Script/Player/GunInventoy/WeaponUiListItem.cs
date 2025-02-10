@@ -50,6 +50,10 @@ public class WeaponUiListItem : MonoBehaviour
         isLocked.SetActive(!progess.isUnlocked);
         _onClickCallback = onClickCallback;
 
+        UpdateLabel(progess, gunSlot);
+    }
+    public void UpdateLabel(PlayerGun progess, GunSlot gunSlot)
+    {
         if (!progess.isUnlocked)
         {
             slotIndex = 4;
@@ -76,7 +80,12 @@ public class WeaponUiListItem : MonoBehaviour
             slotIndex = 3;
         }
     }
+    public Price ReturnPriceToBuy()
+    {
+        var price = baseGun.buyGun.price;
+        return price;
 
+    }
     public int ReturnPriceUpgrade()
     {
         if (currentStar + 1 >= baseGun.upgradeList.gunUgradeList.Count) return 0;

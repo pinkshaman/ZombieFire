@@ -376,6 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 529}
+  - component: {fileID: 1074130089}
   m_Layer: 8
   m_Name: 16000
   m_TagString: Untagged
@@ -1187,6 +1188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 560}
+  - component: {fileID: 1358667745}
   m_Layer: 8
   m_Name: 13000
   m_TagString: Untagged
@@ -1796,6 +1798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 679}
+  - component: {fileID: 544517179}
   m_Layer: 8
   m_Name: 12000
   m_TagString: Untagged
@@ -2398,6 +2401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534}
+  - component: {fileID: 675621479}
   m_Layer: 8
   m_Name: 17000
   m_TagString: Untagged
@@ -3587,6 +3591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 724}
+  - component: {fileID: 161484509}
   m_Layer: 8
   m_Name: 15000
   m_TagString: Untagged
@@ -3603,6 +3608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651}
+  - component: {fileID: 1344707972}
   m_Layer: 8
   m_Name: 12100
   m_TagString: Untagged
@@ -3691,6 +3697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 729}
+  - component: {fileID: 137825198}
   m_Layer: 8
   m_Name: 15100
   m_TagString: Untagged
@@ -4536,6 +4543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676}
+  - component: {fileID: 185567017}
   m_Layer: 8
   m_Name: 15200
   m_TagString: Untagged
@@ -4640,6 +4648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 598}
+  - component: {fileID: 300822215}
   m_Layer: 8
   m_Name: 14000
   m_TagString: Untagged
@@ -4941,6 +4950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693}
+  - component: {fileID: 1714412516}
   m_Layer: 8
   m_Name: 14100
   m_TagString: Untagged
@@ -5730,6 +5740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 630}
+  - component: {fileID: 678107442}
   m_Layer: 8
   m_Name: 13200
   m_TagString: Untagged
@@ -6051,6 +6062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579}
+  - component: {fileID: 557067567}
   m_Layer: 8
   m_Name: 13300
   m_TagString: Untagged
@@ -6569,6 +6581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 736}
+  - component: {fileID: 1787635392}
   m_Layer: 8
   m_Name: 18000
   m_TagString: Untagged
@@ -6585,6 +6598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733}
+  - component: {fileID: 140907794}
   m_Layer: 8
   m_Name: 11000
   m_TagString: Untagged
@@ -7169,6 +7183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573}
+  - component: {fileID: 813893408}
   m_Layer: 8
   m_Name: 13100
   m_TagString: Untagged
@@ -7548,13 +7563,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662}
+  - component: {fileID: 1053989117}
   m_Layer: 8
   m_Name: 10000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &423
 GameObject:
   m_ObjectHideFlags: 0
@@ -7804,6 +7820,9 @@ GameObject:
   - component: {fileID: 1093}
   - component: {fileID: 1690}
   - component: {fileID: 163035810}
+  - component: {fileID: 163035813}
+  - component: {fileID: 163035812}
+  - component: {fileID: 163035811}
   m_Layer: 0
   m_Name: Change_Button_1
   m_TagString: Untagged
@@ -9016,6 +9035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759}
+  - component: {fileID: 1851040434}
   m_Layer: 8
   m_Name: 19002
   m_TagString: Untagged
@@ -9232,6 +9252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755}
+  - component: {fileID: 1622217533}
   m_Layer: 0
   m_Name: 19004
   m_TagString: Untagged
@@ -21168,7 +21189,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!108 &1069
 Light:
@@ -39828,6 +39849,51 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: MORE GAME
+--- !u!114 &137825198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: CQ16
+  model: {fileID: 206}
+  rotationSpeed: 20
+--- !u!114 &140907794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: RaggingBull
+  model: {fileID: 368}
+  rotationSpeed: 20
+--- !u!114 &161484509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Thumper
+  model: {fileID: 200}
+  rotationSpeed: 20
 --- !u!114 &163035810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39872,6 +39938,116 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &163035811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cacdfb4114002424aa8e760a38642cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1019720098}
+  alertType: 6
+  audioSource: {fileID: 1641}
+  Panel: {fileID: 2788324507986595202}
+--- !u!114 &163035812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d672fe5550d42e40bd445fda270f7f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1019720098}
+  alertType: 6
+  audioSource: {fileID: 1641}
+  Object: {fileID: 326}
+  activateOnClick: 1
+--- !u!114 &163035813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d672fe5550d42e40bd445fda270f7f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1019720098}
+  alertType: 6
+  audioSource: {fileID: 1641}
+  Object: {fileID: 115}
+  activateOnClick: 1
+--- !u!114 &185567017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Striker
+  model: {fileID: 253}
+  rotationSpeed: 20
+--- !u!114 &300822215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: MossBerg
+  model: {fileID: 259}
+  rotationSpeed: 20
+--- !u!114 &544517179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: PMX
+  model: {fileID: 101}
+  rotationSpeed: 20
+--- !u!114 &557067567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Scarlight
+  model: {fileID: 338}
+  rotationSpeed: 20
 --- !u!114 &650736101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39896,6 +40072,51 @@ MonoBehaviour:
     system:
       upgradeSystem: []
   upgradeLevel: {fileID: 1905}
+--- !u!114 &675621479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: M134
+  model: {fileID: 134}
+  rotationSpeed: 20
+--- !u!114 &678107442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: MoeCarbine
+  model: {fileID: 320}
+  rotationSpeed: 20
+--- !u!114 &813893408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: G64C
+  model: {fileID: 401}
+  rotationSpeed: 20
 --- !u!114 &1019720098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39990,6 +40211,36 @@ MonoBehaviour:
   audioSource: {fileID: 1641}
   Object: {fileID: 115}
   activateOnClick: 1
+--- !u!114 &1053989117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: P227
+  model: {fileID: 422}
+  rotationSpeed: 20
+--- !u!114 &1074130089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: M249
+  model: {fileID: 22}
+  rotationSpeed: 20
 --- !u!114 &1338648437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40020,6 +40271,36 @@ MonoBehaviour:
   CanUpgadeEffect:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1344707972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: PDR
+  model: {fileID: 201}
+  rotationSpeed: 20
+--- !u!114 &1358667745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: AKS
+  model: {fileID: 67}
+  rotationSpeed: 20
 --- !u!114 &1363208390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40102,23 +40383,23 @@ MonoBehaviour:
     - gunName: Scarlight
       isUnlocked: 1
       ammoStoraged: 0
-      starUpgrade: 0
+      starUpgrade: 1
     - gunName: RPG
       isUnlocked: 0
       ammoStoraged: 0
-      starUpgrade: 0
+      starUpgrade: 1
     - gunName: P227
       isUnlocked: 1
       ammoStoraged: 0
-      starUpgrade: 0
+      starUpgrade: 1
     - gunName: PMX
       isUnlocked: 0
       ammoStoraged: 0
-      starUpgrade: 0
+      starUpgrade: 1
     - gunName: AKS
       isUnlocked: 0
       ammoStoraged: 0
-      starUpgrade: 0
+      starUpgrade: 1
   gunSwicher: {fileID: 0}
   gunSlot:
     gunSlot1: Scarlight
@@ -40137,6 +40418,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alertDataList: {fileID: 11400000, guid: 90b312eb6f6b5b944922662fcf41d6ff, type: 2}
+--- !u!114 &1622217533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: AK5
+  model: {fileID: 515}
+  rotationSpeed: 20
 --- !u!114 &1643059228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40191,6 +40487,21 @@ MonoBehaviour:
     system:
       upgradeSystem: []
   upgradeLevel: {fileID: 1746}
+--- !u!114 &1714412516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Blaster
+  model: {fileID: 276}
+  rotationSpeed: 20
 --- !u!114 &1736880798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40215,6 +40526,36 @@ MonoBehaviour:
     system:
       upgradeSystem: []
   upgradeLevel: {fileID: 1803}
+--- !u!114 &1787635392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: JackHammer
+  model: {fileID: 367}
+  rotationSpeed: 20
+--- !u!114 &1851040434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344e4d5c4ec8ff244aaf254e1e59dd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: SRS
+  model: {fileID: 503}
+  rotationSpeed: 20
 --- !u!114 &1965751058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41593,7 +41934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &294397117233383298
 GameObject:
   m_ObjectHideFlags: 0
@@ -42240,7 +42581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &1010316933435594722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42861,7 +43202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1645007186895230194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43513,7 +43854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2368755737189343906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45251,7 +45592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4561506259301974181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45889,7 +46230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5281622078251893560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46005,7 +46346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5440635419552409324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46469,7 +46810,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.704
+  m_FillAmount: 0.091
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -46799,7 +47140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6349031199146751001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47003,11 +47344,16 @@ MonoBehaviour:
   - {fileID: 4544614343284420598}
   - {fileID: 1621029115673105011}
   - {fileID: 994349755783496098}
-  power: 0
-  critical: 0
-  fireRate: 0
-  reload: 0
-  gunModel: {fileID: 0}
+  powerBar: {fileID: 2267889518041734596}
+  powerFillBar: {fileID: 7020711916231719143}
+  crittcalBar: {fileID: 1811899701964017398}
+  crittcalFillBar: {fileID: 4663579456516774068}
+  fireRateBar: {fileID: 1836688504962340115}
+  fireRateFillBar: {fileID: 3564810569294690196}
+  reloadBar: {fileID: 4102862134253268801}
+  reloadFillBar: {fileID: 7555763297566633818}
+  detailDamage: {fileID: 2620801305791536996}
+  detailCriticalDamage: {fileID: 1264871424290488936}
 --- !u!114 &6408191021750268810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47025,6 +47371,24 @@ MonoBehaviour:
   weaponUI: {fileID: 6408191021750268809}
   listItems: []
   weaponChange: {fileID: 8186884454430249283}
+  gunModel:
+  - {fileID: 1053989117}
+  - {fileID: 140907794}
+  - {fileID: 544517179}
+  - {fileID: 1344707972}
+  - {fileID: 1358667745}
+  - {fileID: 813893408}
+  - {fileID: 678107442}
+  - {fileID: 557067567}
+  - {fileID: 300822215}
+  - {fileID: 1714412516}
+  - {fileID: 161484509}
+  - {fileID: 185567017}
+  - {fileID: 1074130089}
+  - {fileID: 675621479}
+  - {fileID: 1787635392}
+  - {fileID: 1851040434}
+  - {fileID: 1622217533}
   CanUpgadeWeapon:
     m_PersistentCalls:
       m_Calls: []
@@ -47571,7 +47935,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.627
+  m_FillAmount: 0.293
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -48306,7 +48670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7793000022635819082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48696,7 +49060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &8138630741402373629
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48942,6 +49306,7 @@ GameObject:
   - component: {fileID: 99389007589071768}
   - component: {fileID: 3985515360706096654}
   - component: {fileID: 8353688401478453527}
+  - component: {fileID: 8353688401478453528}
   m_Layer: 0
   m_Name: Equip_Button
   m_TagString: Untagged
@@ -48993,6 +49358,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8353688401478453528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8353688401478453526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9893b32f7a6934c99caa8a6856f8c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 8353688401478453527}
+  alertType: 6
+  audioSource: {fileID: 1641}
 --- !u!114 &8376175947123053297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49172,7 +49552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8610448258925088288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49471,7 +49851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &8893109477515358754
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ public class ObjectSelection : MonoBehaviour
             Button btn = objects[i].AddComponent<Button>();
             btn.onClick.AddListener(() => SelectObject(index));       
         }
+        SelectObject(0);
     }
     public void SelectObject(int index)
     {

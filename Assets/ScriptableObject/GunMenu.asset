@@ -17,13 +17,14 @@ MonoBehaviour:
     gunStats:
       ammoCapacity: 40
       fireRate: 600
-      damage: 10
-      critical: 1.5
+      damage: 13
+      critical: 20
     gunModel:
       gunType: 1
       gunModel: {fileID: 5479494405520053317, guid: 644c261c81430a64d97cd664754ae546, type: 3}
       gunSprite: {fileID: 21300000, guid: 7161d7ac964863744bd1422aed278365, type: 2}
       gunDecription: 
+      animator: {fileID: 5362643538213935675, guid: 644c261c81430a64d97cd664754ae546, type: 3}
     upgradeList:
       gunUgradeList:
       - starUpgrade: 0
@@ -45,37 +46,37 @@ MonoBehaviour:
         criticalUpgrade: 0.3
         reloadUpgrade: 0
       - starUpgrade: 3
-        priceUpgrade: 5000
+        priceUpgrade: 3000
         fireRateUpgrade: 0.4
         powerUpgrade: 2
         criticalUpgrade: 0.4
         reloadUpgrade: 0
       - starUpgrade: 4
-        priceUpgrade: 6000
+        priceUpgrade: 4000
         fireRateUpgrade: 0.5
         powerUpgrade: 3
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 5
-        priceUpgrade: 8000
+        priceUpgrade: 5000
         fireRateUpgrade: 0.5
         powerUpgrade: 1
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
-        priceUpgrade: 1000
+        priceUpgrade: 6000
         fireRateUpgrade: 0.6
         powerUpgrade: 6
         criticalUpgrade: 0.6
         reloadUpgrade: 0
       - starUpgrade: 7
-        priceUpgrade: 10000
+        priceUpgrade: 7000
         fireRateUpgrade: 0.7
         powerUpgrade: 7
         criticalUpgrade: 0.7
         reloadUpgrade: 0
       - starUpgrade: 8
-        priceUpgrade: 10000
+        priceUpgrade: 8000
         fireRateUpgrade: 0.8
         powerUpgrade: 8
         criticalUpgrade: 0.8
@@ -99,29 +100,31 @@ MonoBehaviour:
       damage: 100
       critical: 3
     gunModel:
-      gunType: 0
+      gunType: 5
       gunModel: {fileID: 0}
       gunSprite: {fileID: 0}
       gunDecription: 
+      animator: {fileID: 5071268315224178810, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
     upgradeList:
       gunUgradeList: []
     buyGun:
-      ammoPrice: 0
+      ammoPrice: 10
       price:
-        priceType: 0
+        priceType: 1
         cost: 0
-        priceImage: {fileID: 0}
+        priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
   - GunName: P227
     gunStats:
       ammoCapacity: 10
       fireRate: 200
       damage: 10
-      critical: 1.2
+      critical: 10
     gunModel:
       gunType: 0
       gunModel: {fileID: 2673918368126455702, guid: f3277b10cff290e4d901e26222a83a8a, type: 3}
       gunSprite: {fileID: 21300000, guid: 1ea30a39a1cf4ed4fb650e6268a7615c, type: 2}
       gunDecription: 
+      animator: {fileID: 8478059004716540542, guid: f3277b10cff290e4d901e26222a83a8a, type: 3}
     upgradeList:
       gunUgradeList:
       - starUpgrade: 0
@@ -143,37 +146,37 @@ MonoBehaviour:
         criticalUpgrade: 0.3
         reloadUpgrade: 0
       - starUpgrade: 3
-        priceUpgrade: 5000
+        priceUpgrade: 3000
         fireRateUpgrade: 0.4
         powerUpgrade: 2
         criticalUpgrade: 0.4
         reloadUpgrade: 0
       - starUpgrade: 4
-        priceUpgrade: 6000
+        priceUpgrade: 4000
         fireRateUpgrade: 0.5
         powerUpgrade: 3
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 5
-        priceUpgrade: 8000
+        priceUpgrade: 5000
         fireRateUpgrade: 0.5
         powerUpgrade: 1
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
-        priceUpgrade: 1000
+        priceUpgrade: 6000
         fireRateUpgrade: 0.6
         powerUpgrade: 6
         criticalUpgrade: 0.6
         reloadUpgrade: 0
       - starUpgrade: 7
-        priceUpgrade: 10000
+        priceUpgrade: 7000
         fireRateUpgrade: 0.7
         powerUpgrade: 7
         criticalUpgrade: 0.7
         reloadUpgrade: 0
       - starUpgrade: 8
-        priceUpgrade: 10000
+        priceUpgrade: 8000
         fireRateUpgrade: 0.8
         powerUpgrade: 8
         criticalUpgrade: 0.8
@@ -194,13 +197,14 @@ MonoBehaviour:
     gunStats:
       ammoCapacity: 50
       fireRate: 800
-      damage: 10
-      critical: 1.3
+      damage: 11
+      critical: 15
     gunModel:
       gunType: 4
       gunModel: {fileID: 1848107906792804644, guid: 32c1a717e16a4a9408a308148b95cc66, type: 3}
       gunSprite: {fileID: 21300000, guid: 4981b8e9569d30f459e09611775fc6e9, type: 2}
       gunDecription: 
+      animator: {fileID: 4884241170039410833, guid: 32c1a717e16a4a9408a308148b95cc66, type: 3}
     upgradeList:
       gunUgradeList:
       - starUpgrade: 0
@@ -222,37 +226,37 @@ MonoBehaviour:
         criticalUpgrade: 0.3
         reloadUpgrade: 0
       - starUpgrade: 3
-        priceUpgrade: 5000
+        priceUpgrade: 3000
         fireRateUpgrade: 0.4
         powerUpgrade: 2
         criticalUpgrade: 0.4
         reloadUpgrade: 0
       - starUpgrade: 4
-        priceUpgrade: 6000
+        priceUpgrade: 4000
         fireRateUpgrade: 0.5
         powerUpgrade: 3
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 5
-        priceUpgrade: 8000
+        priceUpgrade: 5000
         fireRateUpgrade: 0.5
         powerUpgrade: 1
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
-        priceUpgrade: 1000
+        priceUpgrade: 6000
         fireRateUpgrade: 0.6
         powerUpgrade: 6
         criticalUpgrade: 0.6
         reloadUpgrade: 0
       - starUpgrade: 7
-        priceUpgrade: 10000
+        priceUpgrade: 7000
         fireRateUpgrade: 0.7
         powerUpgrade: 7
         criticalUpgrade: 0.7
         reloadUpgrade: 0
       - starUpgrade: 8
-        priceUpgrade: 10000
+        priceUpgrade: 8000
         fireRateUpgrade: 0.8
         powerUpgrade: 8
         criticalUpgrade: 0.8
@@ -264,22 +268,23 @@ MonoBehaviour:
         criticalUpgrade: 0.9
         reloadUpgrade: 0
     buyGun:
-      ammoPrice: 0
+      ammoPrice: 500
       price:
         priceType: 0
-        cost: 0
-        priceImage: {fileID: 0}
+        cost: 100
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
   - GunName: AKS
     gunStats:
       ammoCapacity: 50
       fireRate: 600
-      damage: 10
-      critical: 2
+      damage: 18
+      critical: 30
     gunModel:
       gunType: 1
       gunModel: {fileID: 1065152352837122271, guid: c76b1de7fe1338f4cbc7b27218d0c9f5, type: 3}
       gunSprite: {fileID: 21300000, guid: b4a247796faed554ea36bc7fd571d8d2, type: 2}
       gunDecription: 
+      animator: {fileID: 6563573243778804050, guid: c76b1de7fe1338f4cbc7b27218d0c9f5, type: 3}
     upgradeList:
       gunUgradeList:
       - starUpgrade: 0
@@ -301,37 +306,37 @@ MonoBehaviour:
         criticalUpgrade: 0.3
         reloadUpgrade: 0
       - starUpgrade: 3
-        priceUpgrade: 5000
+        priceUpgrade: 3000
         fireRateUpgrade: 0.4
         powerUpgrade: 2
         criticalUpgrade: 0.4
         reloadUpgrade: 0
       - starUpgrade: 4
-        priceUpgrade: 6000
+        priceUpgrade: 4000
         fireRateUpgrade: 0.5
         powerUpgrade: 3
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 5
-        priceUpgrade: 8000
+        priceUpgrade: 5000
         fireRateUpgrade: 0.5
         powerUpgrade: 1
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
-        priceUpgrade: 1000
+        priceUpgrade: 6000
         fireRateUpgrade: 0.6
         powerUpgrade: 6
         criticalUpgrade: 0.6
         reloadUpgrade: 0
       - starUpgrade: 7
-        priceUpgrade: 10000
+        priceUpgrade: 7000
         fireRateUpgrade: 0.7
         powerUpgrade: 7
         criticalUpgrade: 0.7
         reloadUpgrade: 0
       - starUpgrade: 8
-        priceUpgrade: 10000
+        priceUpgrade: 8000
         fireRateUpgrade: 0.8
         powerUpgrade: 8
         criticalUpgrade: 0.8
@@ -343,8 +348,8 @@ MonoBehaviour:
         criticalUpgrade: 0.9
         reloadUpgrade: 0
     buyGun:
-      ammoPrice: 0
+      ammoPrice: 500
       price:
-        priceType: 0
-        cost: 0
-        priceImage: {fileID: 0}
+        priceType: 1
+        cost: 10000
+        priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}

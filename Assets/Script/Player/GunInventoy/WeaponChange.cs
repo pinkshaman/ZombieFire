@@ -30,13 +30,13 @@ public class WeaponChange : MonoBehaviour
 
         var gunData1 = GunManager.Instance.GetGun(gunSlot.gunSlot1);
         slot1Image.sprite = gunData1.gunModel.gunSprite;
-  
+
         var gunData2 = GunManager.Instance.GetGun(gunSlot.gunSlot2);
-        slot2Image.sprite = gunData2.gunModel.gunSprite;    
+        slot2Image.sprite = gunData2.gunModel.gunSprite;
 
         selectedWeapon.text = data.baseGun.GunName;
         selectedWeaponImage.sprite = data.baseGun.gunModel.gunSprite;
-        SetNativeImage(slot1Image,slot2Image,selectedWeaponImage);
+        SetNativeImage(slot1Image, slot2Image, selectedWeaponImage);
     }
     public void SetNativeImage(Image image1, Image image2, Image selectIMG)
     {
@@ -46,43 +46,43 @@ public class WeaponChange : MonoBehaviour
     }
     public void SetDataSlot1()
     {
-        if (slot1Name.text == selectedWeapon.name) return;
-        if(slot2Name.text == selectedWeapon.text)
+        if (slot1Name.text == selectedWeapon.text) return;
+        if (slot2Name.text == selectedWeapon.text)
         {
             slot2Name.text = slot1Name.text;
-            slot2Image.sprite = slot1Image.sprite;
-            slot1Name.text = selectedWeapon.name;
-            slot1Image.sprite = selectedWeaponImage.sprite;
-            return;
+            slot2Image.sprite = slot1Image.sprite; 
         }
         slot1Name.text = selectedWeapon.text;
         slot1Image.sprite = selectedWeaponImage.sprite;
-        GunManager.Instance.UpdateGun1Slot(slot1Name.text);
-        slot1Image.SetNativeSize();
+        SetNativeImage(slot1Image, slot2Image, selectedWeaponImage);
+        UpdateData(slot1Name.text, slot2Name.text);
+
+
     }
     public void SetDataSlot2()
     {
-        if (slot2Name.text == selectedWeapon.name) return;
-        if (slot1Name.text == selectedWeapon.name)
+        if (slot2Name.text == selectedWeapon.text) return;
+        if (slot1Name.text == selectedWeapon.text)
         {
             slot1Name.text = slot2Name.text;
             slot1Image.sprite = slot2Image.sprite;
-            slot2Name.text = selectedWeapon.name;
-            slot2Image.sprite = selectedWeaponImage.sprite;
-            return ;
         }
         slot2Name.text = selectedWeapon.text;
         slot2Image.sprite = selectedWeaponImage.sprite;
-        GunManager.Instance.UpdateGun2Slot(slot2Name.text);
-        slot2Image.SetNativeSize();
+        SetNativeImage(slot1Image, slot2Image, selectedWeaponImage);
+        UpdateData(slot1Name.text, slot2Name.text);
+
     }
     public void ClosePanel()
     {
         gameObject.SetActive(false);
+
     }
     public void UpdateData(string slot1, string slot2)
     {
-        
+        GunManager.Instance.UpdateGunSlot(slot1,slot2);
+        GunManager.Instance.gunInventory.UpdateSlotGunUi();
+
     }
-    
+
 }
