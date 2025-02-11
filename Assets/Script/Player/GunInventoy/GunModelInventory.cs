@@ -10,6 +10,7 @@ public class GunModelInventory : MonoBehaviour
     public float rotationSpeed = 20f;
     private bool isHolding = false;
     private Vector3 lastMousePosition;
+ 
     public void Rotate()
     {
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);

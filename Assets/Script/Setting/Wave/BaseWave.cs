@@ -37,7 +37,7 @@ public class StageRankList
     public List<StageRank> rankLists;
 }
 [Serializable]
-public class Arera
+public class Arena
 {
     public int areaNumber;
     public Sprite areraImage;

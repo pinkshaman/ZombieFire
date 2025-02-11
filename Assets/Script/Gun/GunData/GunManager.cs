@@ -28,8 +28,7 @@ public class GunModel
     public GameObject gunModel;
     public Sprite gunSprite;
     public string gunDecription;
-    public Animation reloadAnimation;
-
+    public AnimationClip reloadAnimationClip;
 }
 [Serializable]
 public class GunAudio
@@ -126,7 +125,7 @@ public class GunManager : MonoBehaviour
     public float ReturnReloadTimes(string gunName)
     {
         var gunData = gunList.baseGunList.Find(gunData => gunData.GunName == gunName);
-        float reloadTime = gunData.gunModel.reloadAnimation.clip.length;
+        float reloadTime = gunData.gunModel.reloadAnimationClip.length;
         return reloadTime;
 
     }

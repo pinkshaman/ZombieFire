@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    public ScratchShow scratchShow;
     public LevelUpdate levelUpdate;
     public Currency currency;
     public List<GunSlotUi> gunsSlotUi;
@@ -42,12 +41,5 @@ public class PlayerUI : MonoBehaviour
             }
         }
     }
-
-    public void ShowScratch()
-    {
-        scratchShow.ShowRandomScratch();
-    }
-
-
 }
 

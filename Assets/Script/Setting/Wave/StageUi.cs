@@ -13,6 +13,7 @@ public class StageUi : MonoBehaviour
     public Stage stageData;
     public StageProgess stageProgess;
     public Button chooseButton;
+    
     public void Start()
     {
         chooseButton.onClick.AddListener(LoadStage);
@@ -30,6 +31,10 @@ public class StageUi : MonoBehaviour
         lockObject.SetActive(!stageProgess.isComplete);
         bossLabel.SetActive(stageData.isBossWave);
         stageRank.gameObject.SetActive(stageProgess.isComplete);
+        if (stageProgess.isCanPlay )
+        {
+            lockObject.SetActive(!stageProgess.isCanPlay);
+        }
         if (stageProgess.isComplete)
         {
             var rank = stageData.rankList.rankLists.Find(rank => rank.rank == stageProgess.stageRank);
