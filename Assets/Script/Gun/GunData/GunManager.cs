@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -96,11 +96,12 @@ public class GunManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
     public void Start()
     {
         LoadGunData();
-
+        DontDestroyOnLoad(gameObject);
     }
     public void CreateWeaponInventory()
     {
@@ -150,7 +151,7 @@ public class GunManager : MonoBehaviour
 
     public void CreatPlayerGunData(BaseGun gun)
     {
-        playerGunList.playerGuns.Add(new PlayerGun(gun.GunName, false, 0, 1));
+        playerGunList.playerGuns.Add(new PlayerGun(gun.GunName, false, 1, 1));
         SaveGunData();
     }
     public Gun FindActiveGun()

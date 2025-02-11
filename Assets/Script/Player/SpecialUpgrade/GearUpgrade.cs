@@ -50,5 +50,28 @@ public class GearUpgrade : SpecialUpgrades
         upgradeLevel.text = currentLevel.ToString();
         PlayerManager.Instance.UpgradeGearEffect(data.Title, currentLevel);
     }
+    public void GearEffect(GearUpgradeType type)
+    {
+        if(type == GearUpgradeType.Hat)
+        {
+
+        }
+        if(type==GearUpgradeType.Mask)
+        {
+
+        }
+        if(type == GearUpgradeType.Jacket)
+        {
+
+        }
+        if(type == GearUpgradeType.Trouser)
+        {
+
+        }
+        if(type == GearUpgradeType.Bag)
+        {
+
+        }
+    }
    
 }

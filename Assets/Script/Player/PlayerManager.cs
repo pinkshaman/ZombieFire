@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
+
 
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
-   
+
     public PlayerData playerData;
+    public PlayerDataBase playerDataBase;
     public GearUpgradeList gearUpgradeList;
     public ItemDataList itemDataList;
 
@@ -24,15 +26,17 @@ public class PlayerManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
     public void Start()
     {
         LoadPlayerData();
-      
+
         if (playerData.specialUpgradeProgess == null || playerData.specialUpgradeProgess.specialUpdateProgessList == null)
         {
             InitNewGearUpgrade();
         }
+        DontDestroyOnLoad(gameObject);
 
     }
     [ContextMenu("InitNewGearUpgrade")]
@@ -90,10 +94,11 @@ public class PlayerManager : MonoBehaviour
     {
         foreach (var item in playerData.itemList.itemLists)
         {
-            if(item.itemName == "QuickReload")
+            if (item.itemName == "QuickReload")
             {
-                if(item.quatity>0)
+                if (item.quatity > 0)
                 {
+                    Debug.Log($"QuickReLoadQutity: {item.quatity}");
                     return true;
                 }
             }
@@ -116,8 +121,20 @@ public class PlayerManager : MonoBehaviour
     {
         this.playerData = changedData;
         OnPlayerDataChange.Invoke(playerData);
+        SavePlayerData();
     }
+    public void UseGearEffect(string title, int level)
+    {
+        foreach (var gear in gearUpgradeList.gearUpgradeLists)
+        {
+            var playerDataGear = playerData.specialUpgradeProgess.specialUpdateProgessList.Find(playerDataGear => playerDataGear.title == title);
+            var upgrade = gear.system.upgradeSystem.Find(upgrade => upgrade.levelUpgrade == level);
+            {
+                playerDataBase.health*= upgrade.percentIncrease;
 
+            }
+        }
+    }
     [ContextMenu("SavePlayerData")]
     public void SavePlayerData()
     {

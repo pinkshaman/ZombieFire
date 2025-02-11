@@ -22,6 +22,7 @@ public class Stage
     public float stageID;
     public Sprite stageImage;
     public bool isBossWave;
+    public int sceneID;
     public StageRankList rankList;
     public List<BaseWave> waveList;
 }

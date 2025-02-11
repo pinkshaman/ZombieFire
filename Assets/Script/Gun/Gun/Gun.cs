@@ -61,15 +61,16 @@ public abstract class Gun : MonoBehaviour
     public virtual void ReLoading()
     {
         bool isAvailable = PlayerManager.Instance.ReturnItemReloadInfor();
-        if (isAvailable)
-        {
-            FastReloadItem();
-        }
-        else
+        Debug.Log($"FastReloadItem : {isAvailable}");
+        if (!isAvailable)
         {
             float time = originalDuration;
             anim.SetTrigger("Reload");
-            anim.speed = time;
+            anim.speed = time; ;
+        }
+        else
+        {
+            FastReloadItem();
         }
     }
     public virtual void FastReloadItem()
@@ -77,6 +78,7 @@ public abstract class Gun : MonoBehaviour
         float newDuration = originalDuration * (1.0f / 1.5f);
         float newSpeed = originalDuration / newDuration;
         anim.SetTrigger("Reload");
+       
         anim.speed = newSpeed;
         StartCoroutine(ResetController(newSpeed));
     }
@@ -106,6 +108,7 @@ public abstract class Gun : MonoBehaviour
             if (clip.name == "Reload")
             {
                 float reloadTime = clip.length;
+                Debug.Log($"ReloadTime : {reloadTime}-{GunName}");
                 return reloadTime;
             }
         }
@@ -113,8 +116,10 @@ public abstract class Gun : MonoBehaviour
     }
     IEnumerator ResetController(float duration)
     {
+       
         yield return new WaitForSeconds(duration);
         anim.speed = originalDuration;
+        Debug.Log($"ResetReloadTime: {anim.speed} ");
 
     }
 }

@@ -16,14 +16,14 @@ public class PlayerData
     public ItemList itemList;
 
 
-    public PlayerData(int level, float exp, int health, int coin, int gold, SpecialUpgradeProgess specialUpdate)
+    public PlayerData(int level, float exp, int health, int coin, int gold, SpecialUpgradeProgess specialUpgradeProgess)
     {
         this.level = level;
         this.exp = exp;
         this.health = health;
         this.coin = coin;
         this.gold = gold;
-        this.specialUpgradeProgess = specialUpdate;
+        this.specialUpgradeProgess = specialUpgradeProgess;
     }
 }
 [Serializable]
@@ -31,6 +31,7 @@ public class SpecialUpgrade
 {
     public string title;
     public int upgradeLevel;
+ 
    
     public SpecialUpgrade(string title, int level)
     {
@@ -61,4 +62,5 @@ public class ItemList
 {
     public List<Item> itemLists;
 }
+
 

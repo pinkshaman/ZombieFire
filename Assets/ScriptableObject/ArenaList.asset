@@ -20,8 +20,19 @@ MonoBehaviour:
       - stageID: 1
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
+        sceneID: 1
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -32,7 +43,9 @@ MonoBehaviour:
           - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
             quatity: 5
         - waveNumber: 3
-          zombieList: []
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
         - waveNumber: 4
           zombieList:
           - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
@@ -44,8 +57,19 @@ MonoBehaviour:
       - stageID: 2
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
+        sceneID: 2
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: 
+            rankSprite: {fileID: 0}
+          - rank: 
+            rankSprite: {fileID: 0}
+          - rank: 
+            rankSprite: {fileID: 0}
+          - rank: 
+            rankSprite: {fileID: 0}
+          - rank: 
+            rankSprite: {fileID: 0}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -68,8 +92,19 @@ MonoBehaviour:
       - stageID: 3
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
+        sceneID: 3
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -92,8 +127,19 @@ MonoBehaviour:
       - stageID: 4
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
+        sceneID: 4
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -116,8 +162,19 @@ MonoBehaviour:
       - stageID: 5
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
+        sceneID: 5
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -140,8 +197,19 @@ MonoBehaviour:
       - stageID: 6
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
+        sceneID: 6
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -164,8 +232,19 @@ MonoBehaviour:
       - stageID: 7
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
+        sceneID: 7
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -188,8 +267,19 @@ MonoBehaviour:
       - stageID: 8
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
+        sceneID: 8
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -212,8 +302,19 @@ MonoBehaviour:
       - stageID: 9
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
+        sceneID: 9
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -236,8 +337,19 @@ MonoBehaviour:
       - stageID: 10
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
+        sceneID: 10
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -260,8 +372,19 @@ MonoBehaviour:
       - stageID: 11
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
+        sceneID: 11
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -284,8 +407,19 @@ MonoBehaviour:
       - stageID: 12
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
+        sceneID: 12
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -308,8 +442,19 @@ MonoBehaviour:
       - stageID: 13
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
+        sceneID: 13
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -332,8 +477,19 @@ MonoBehaviour:
       - stageID: 14
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
+        sceneID: 14
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -356,8 +512,19 @@ MonoBehaviour:
       - stageID: 15
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
+        sceneID: 15
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -380,8 +547,19 @@ MonoBehaviour:
       - stageID: 16
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
+        sceneID: 16
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -404,8 +582,19 @@ MonoBehaviour:
       - stageID: 17
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
+        sceneID: 17
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -428,8 +617,19 @@ MonoBehaviour:
       - stageID: 18
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -452,8 +652,19 @@ MonoBehaviour:
       - stageID: 19
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
+        sceneID: 19
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -476,8 +687,19 @@ MonoBehaviour:
       - stageID: 20
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
+        sceneID: 20
         rankList:
-          rankLists: []
+          rankLists:
+          - rank: S
+            rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
+          - rank: A
+            rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
+          - rank: B
+            rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
+          - rank: C
+            rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
+          - rank: D
+            rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
           zombieList:
@@ -504,6 +726,7 @@ MonoBehaviour:
       - stageID: 1
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -528,6 +751,7 @@ MonoBehaviour:
       - stageID: 2
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -552,6 +776,7 @@ MonoBehaviour:
       - stageID: 3
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -576,6 +801,7 @@ MonoBehaviour:
       - stageID: 4
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -600,6 +826,7 @@ MonoBehaviour:
       - stageID: 5
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -624,6 +851,7 @@ MonoBehaviour:
       - stageID: 6
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -648,6 +876,7 @@ MonoBehaviour:
       - stageID: 7
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -672,6 +901,7 @@ MonoBehaviour:
       - stageID: 8
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -696,6 +926,7 @@ MonoBehaviour:
       - stageID: 9
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -720,6 +951,7 @@ MonoBehaviour:
       - stageID: 10
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -744,6 +976,7 @@ MonoBehaviour:
       - stageID: 11
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -768,6 +1001,7 @@ MonoBehaviour:
       - stageID: 12
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -792,6 +1026,7 @@ MonoBehaviour:
       - stageID: 13
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -816,6 +1051,7 @@ MonoBehaviour:
       - stageID: 14
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -840,6 +1076,7 @@ MonoBehaviour:
       - stageID: 15
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -864,6 +1101,7 @@ MonoBehaviour:
       - stageID: 16
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -888,6 +1126,7 @@ MonoBehaviour:
       - stageID: 17
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -912,6 +1151,7 @@ MonoBehaviour:
       - stageID: 18
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -936,6 +1176,7 @@ MonoBehaviour:
       - stageID: 19
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -960,6 +1201,7 @@ MonoBehaviour:
       - stageID: 20
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -988,6 +1230,7 @@ MonoBehaviour:
       - stageID: 1
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1012,6 +1255,7 @@ MonoBehaviour:
       - stageID: 2
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1036,6 +1280,7 @@ MonoBehaviour:
       - stageID: 3
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1060,6 +1305,7 @@ MonoBehaviour:
       - stageID: 4
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1084,6 +1330,7 @@ MonoBehaviour:
       - stageID: 5
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1108,6 +1355,7 @@ MonoBehaviour:
       - stageID: 6
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1132,6 +1380,7 @@ MonoBehaviour:
       - stageID: 7
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1156,6 +1405,7 @@ MonoBehaviour:
       - stageID: 8
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1180,6 +1430,7 @@ MonoBehaviour:
       - stageID: 9
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1204,6 +1455,7 @@ MonoBehaviour:
       - stageID: 10
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1228,6 +1480,7 @@ MonoBehaviour:
       - stageID: 11
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1252,6 +1505,7 @@ MonoBehaviour:
       - stageID: 12
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1276,6 +1530,7 @@ MonoBehaviour:
       - stageID: 13
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1300,6 +1555,7 @@ MonoBehaviour:
       - stageID: 14
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1324,6 +1580,7 @@ MonoBehaviour:
       - stageID: 15
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1348,6 +1605,7 @@ MonoBehaviour:
       - stageID: 16
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1372,6 +1630,7 @@ MonoBehaviour:
       - stageID: 17
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1396,6 +1655,7 @@ MonoBehaviour:
       - stageID: 18
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1420,6 +1680,7 @@ MonoBehaviour:
       - stageID: 19
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1444,6 +1705,7 @@ MonoBehaviour:
       - stageID: 20
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1472,6 +1734,7 @@ MonoBehaviour:
       - stageID: 1
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1496,6 +1759,7 @@ MonoBehaviour:
       - stageID: 2
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1520,6 +1784,7 @@ MonoBehaviour:
       - stageID: 3
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1544,6 +1809,7 @@ MonoBehaviour:
       - stageID: 4
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1568,6 +1834,7 @@ MonoBehaviour:
       - stageID: 5
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1592,6 +1859,7 @@ MonoBehaviour:
       - stageID: 6
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1616,6 +1884,7 @@ MonoBehaviour:
       - stageID: 7
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1640,6 +1909,7 @@ MonoBehaviour:
       - stageID: 8
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1664,6 +1934,7 @@ MonoBehaviour:
       - stageID: 9
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1688,6 +1959,7 @@ MonoBehaviour:
       - stageID: 10
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1712,6 +1984,7 @@ MonoBehaviour:
       - stageID: 11
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1736,6 +2009,7 @@ MonoBehaviour:
       - stageID: 12
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1760,6 +2034,7 @@ MonoBehaviour:
       - stageID: 13
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1784,6 +2059,7 @@ MonoBehaviour:
       - stageID: 14
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1808,6 +2084,7 @@ MonoBehaviour:
       - stageID: 15
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1832,6 +2109,7 @@ MonoBehaviour:
       - stageID: 16
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1856,6 +2134,7 @@ MonoBehaviour:
       - stageID: 17
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1880,6 +2159,7 @@ MonoBehaviour:
       - stageID: 18
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1904,6 +2184,7 @@ MonoBehaviour:
       - stageID: 19
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:
@@ -1928,6 +2209,7 @@ MonoBehaviour:
       - stageID: 20
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
+        sceneID: 0
         rankList:
           rankLists: []
         waveList:

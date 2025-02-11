@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6267331914606487007}
   - component: {fileID: 656734061339004225}
   - component: {fileID: 3510320593345038959}
-  - component: {fileID: 5687293762760734674}
   - component: {fileID: 7481872115029122859}
   - component: {fileID: 7161688010503298452}
   m_Layer: 8
@@ -170,26 +169,6 @@ MonoBehaviour:
     hitEffect: {fileID: 1933668532524464, guid: 6e03f9a484d280d41acf9758f5c9e2b5, type: 3}
   - surfaceType: 1
     hitEffect: {fileID: 1920747252733958, guid: fc9de35a3788dfc419302d9cd1ba5ad1, type: 3}
---- !u!114 &5687293762760734674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244383650949368840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6268615e43ef72e41a952d0c5d819ad5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunList: {fileID: 11400000, guid: 572e4a36934118c45ac71abfe9256ebc, type: 2}
-  playerGunList:
-    playerGuns: []
-  gunSwicher: {fileID: 7481872115029122859}
-  gunSlot:
-    gunSlot1: 
-    gunSlot2: 
-  gunInventory: {fileID: 0}
 --- !u!114 &7481872115029122859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +565,6 @@ GameObject:
   - component: {fileID: 8554124715812883282}
   - component: {fileID: 7115159697433637935}
   - component: {fileID: 5305196386608872059}
-  - component: {fileID: 7454807459279845204}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -675,34 +653,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnTakeDamage:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7454807459279845204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740936891333880984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f16dd6fc24d91114ca3a4901554dc21f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerData:
-    level: 0
-    exp: 0
-    health: 0
-    coin: 0
-    gold: 0
-    specialUpgradeProgess:
-      specialUpdateProgessList: []
-    itemList:
-      itemLists: []
-  gearUpgradeList: {fileID: 11400000, guid: 21f763450938608498dc9660e8248a4a, type: 2}
-  itemDataList: {fileID: 11400000, guid: 507c3a203448a124d914fd8a66db5132, type: 2}
-  OnPlayerDataChange:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &383656690315302934

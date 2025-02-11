@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
+
 
 public class GunInventory : MonoBehaviour
 {
@@ -131,7 +131,7 @@ public class GunInventory : MonoBehaviour
     public void AddListenerMethod()
     {
         ShowModel(selectedGunObject);
-        Debug.Log($"Added Listener:{selectedGunObject.gunName}");
+        Debug.Log($"Added Listener:{selectedGunObject.baseGun.GunName}");
         selectedGunObject.selectedObject.SetActive(true);
         weaponUI.buyGunButton.onClick.AddListener(BuySeclectedGun);
         weaponUI.UpgradeButton.onClick.AddListener(UpgradeSelectedGun);
@@ -148,7 +148,7 @@ public class GunInventory : MonoBehaviour
     {
         DisableModel(selectedGunObject);
         weaponUI.ResetDataPower();
-        Debug.Log($"Removed Listener: {selectedGunObject.gunName}");
+        Debug.Log($"Removed Listener: {selectedGunObject.baseGun.GunName}");
         selectedGunObject.selectedObject.SetActive(false);
         weaponUI.buyGunButton.onClick.RemoveListener(BuySeclectedGun);
         weaponUI.UpgradeButton.onClick.RemoveListener(UpgradeSelectedGun);

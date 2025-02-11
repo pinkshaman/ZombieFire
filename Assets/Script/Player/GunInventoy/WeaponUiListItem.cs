@@ -121,17 +121,8 @@ public class WeaponUiListItem : MonoBehaviour
         PlayerManager.Instance.UpdatePlayerData(PlayerManager.Instance.playerData);
         currentStar++;
         playerGun.starUpgrade = currentStar;
-        UpgradeDamage(currentStar);
         GunManager.Instance.UpdateGunData(playerGun.gunName, playerGun);
         Debug.Log($"Upgrade : {baseGun.GunName} -{playerGun.starUpgrade}");
-    }
-    public void UpgradeDamage(int star)
-    {
-        //var dataUpgrade = baseGun.upgradeList.gunUgradeList.Find(dataUpgrade => dataUpgrade.starUpgrade == star);
-        //var data = baseGun.gunStats;
-        ////var damage = data.damage += dataUpgrade.powerUpgrade;
-        ////var crit = data.critical += dataUpgrade.criticalUpgrade;
-        ////var fireRate = data.fireRate += dataUpgrade.fireRateUpgrade;       
     }
     public int ReturnCurrenStar()
     {

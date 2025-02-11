@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -73,5 +72,9 @@ public class ItemUpgrade : SpecialUpgrades
     public void AddItem(int amount)
     {
         CurrentQuatity += amount;
+    }
+    public void ItemEffect(ItemType type)
+    {
+        
     }
 }

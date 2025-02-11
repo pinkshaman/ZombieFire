@@ -103,7 +103,8 @@ public class WeaponUI : MonoBehaviour
     {
         for (int i = 0; i < starUI.Count; i++)
         {
-            int starUpdate = star - 1;
+            
+            int starUpdate = star ;
             starUI[i].gameObject.SetActive(i < starUpdate);
 
         }

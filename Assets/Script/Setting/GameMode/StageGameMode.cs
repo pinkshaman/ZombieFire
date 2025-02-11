@@ -3,8 +3,6 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using Unity.PlasticSCM.Editor.WebApi;
-using UnityEditor.SceneManagement;
 using System.Linq;
 
 
@@ -44,19 +42,36 @@ public class ArenaProgessList
 }
 
 
-public class StageGameMode : GameMode
+public class StageGameMode : MonoBehaviour
 {
+    public static StageGameMode Instance { get; private set; }
     public ArenaList arenaListed;
     public ArenaProgessList arenaProgessListed;
     public GameObject selectStagePanel;
     public StageSelect stageSelect;
     private int currentArena = 1;
-
-    public void Start()
+    public float currentStage = 0;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+        public void Start()
     {
         LoadStageData();
         InitArenaProgessData();
         stageSelect.InitButton(ChangeArena);
+    }
+
+    public void SetCurrentStage(float index)
+    {
+        currentStage = index;
     }
     public void ChangeArena(int index  )
     {
@@ -76,16 +91,18 @@ public class StageGameMode : GameMode
         CreateArena(currentArena);
         stageSelect.UpdateButtonState(currentArena, arenaListed.areraList.Count);
     }
-    public override void StartGameMode()
+    public  void StartGameMode()
     {
         selectStagePanel.SetActive(true);
         CreateArena(currentArena);
     }
 
-    public Stage LoadData(float stageID, int arena)
+    public Stage LoadData(/*int arenaID, int stageID*/)
     {
-        var arenaData = arenaListed.areraList.Find(arenaData => arenaData.areaNumber == arena);
-        var stageData = arenaData.stageList.stageLists.Find(stageData => stageData.stageID == stageID);
+        Debug.Log($"CurrenArena : {currentArena}");
+        Debug.Log($"CurrentStage: {currentStage}");
+        var arenaData = arenaListed.areraList.Find(arenaData => arenaData.areaNumber == currentArena);
+        var stageData = arenaData.stageList.stageLists.Find(stageData => stageData.stageID == currentStage);
         return stageData;
     }
     public void CreateArena(int arena)

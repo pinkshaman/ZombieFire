@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StageUi : MonoBehaviour
@@ -43,6 +45,8 @@ public class StageUi : MonoBehaviour
     }
     public void LoadStage()
     {
+        Debug.Log($"Data :{stageData.sceneID}");
+        ScenesManager.Instance.LoadSceneByStageID(stageData);
 
     }
 }

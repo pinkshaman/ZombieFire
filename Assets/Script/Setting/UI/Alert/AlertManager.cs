@@ -18,6 +18,10 @@ public class AlertManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     public AlertData InitAlertData(AlertType type)
     {

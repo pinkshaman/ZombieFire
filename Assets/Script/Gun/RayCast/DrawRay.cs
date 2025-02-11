@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
+
 using UnityEngine;
-using static UnityEngine.UI.Image;
+
 
 public class DrawRay : MonoBehaviour
 {
