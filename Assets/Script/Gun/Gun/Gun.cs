@@ -78,6 +78,7 @@ public abstract class Gun : MonoBehaviour
         float newSpeed = originalDuration / newDuration;
         anim.SetTrigger("Reload");
         anim.speed = newSpeed;
+        StartCoroutine(ResetController(newSpeed));
     }
     public virtual void Hiding()
     {
@@ -110,6 +111,10 @@ public abstract class Gun : MonoBehaviour
         }
         return 0.0f;
     }
+    IEnumerator ResetController(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        anim.speed = originalDuration;
 
-
+    }
 }

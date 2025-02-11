@@ -183,7 +183,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunList: {fileID: 11400000, guid: 572e4a36934118c45ac71abfe9256ebc, type: 2}
+  playerGunList:
+    playerGuns: []
   gunSwicher: {fileID: 7481872115029122859}
+  gunSlot:
+    gunSlot1: 
+    gunSlot2: 
+  gunInventory: {fileID: 0}
 --- !u!114 &7481872115029122859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +586,6 @@ GameObject:
   - component: {fileID: 8554124715812883282}
   - component: {fileID: 7115159697433637935}
   - component: {fileID: 5305196386608872059}
-  - component: {fileID: 8371075461666332193}
   - component: {fileID: 7454807459279845204}
   m_Layer: 6
   m_Name: Player
@@ -597,7 +602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740936891333880984}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: -3.42, y: 1.4, z: 18.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -672,19 +677,6 @@ MonoBehaviour:
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8371075461666332193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740936891333880984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d67188e5873990498cece1ba06e4e8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scratchShow: {fileID: 0}
 --- !u!114 &7454807459279845204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,7 +689,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16dd6fc24d91114ca3a4901554dc21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerUI: {fileID: 8371075461666332193}
+  player: {fileID: 0}
+  playerData:
+    level: 0
+    exp: 0
+    health: 0
+    coin: 0
+    gold: 0
+    specialUpgradeProgess:
+      specialUpdateProgessList: []
+    itemList:
+      itemLists: []
+  gearUpgradeList: {fileID: 11400000, guid: 21f763450938608498dc9660e8248a4a, type: 2}
+  itemDataList: {fileID: 11400000, guid: 507c3a203448a124d914fd8a66db5132, type: 2}
+  OnPlayerDataChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &383656690315302934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -828,6 +835,14 @@ PrefabInstance:
       propertyPath: aimingCamera
       value: 
       objectReference: {fileID: 7227950404606154909}
+    - target: {fileID: 3605185300675134518, guid: 644c261c81430a64d97cd664754ae546, type: 3}
+      propertyPath: gunData.gunModel.animator
+      value: 
+      objectReference: {fileID: 4883297571007708604}
+    - target: {fileID: 3605185300675134518, guid: 644c261c81430a64d97cd664754ae546, type: 3}
+      propertyPath: gunData.gunModel.gunModel
+      value: 
+      objectReference: {fileID: 5018146362269332418}
     - target: {fileID: 5479494405520053317, guid: 644c261c81430a64d97cd664754ae546, type: 3}
       propertyPath: m_Name
       value: Scarlight
@@ -840,6 +855,11 @@ PrefabInstance:
 --- !u!4 &1225934952747311149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1777936682004580266, guid: 644c261c81430a64d97cd664754ae546, type: 3}
+  m_PrefabInstance: {fileID: 697805768274487175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4883297571007708604 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5362643538213935675, guid: 644c261c81430a64d97cd664754ae546, type: 3}
   m_PrefabInstance: {fileID: 697805768274487175}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5018146362269332418 stripped

@@ -43,23 +43,23 @@ public class PistolGun : Gun
     }
     public override void ReLoading()
     {
-        anim.SetTrigger("Reload");
         audioSource.clip = pistolGun.gunAudio.Reload;
+        base.ReLoading();
         audioSource.Play();
         OnReloading.Invoke();
     }
 
     public override void Hiding()
     {
-        base.Hiding();
         audioSource.clip = pistolGun.gunAudio.Hide;
+        base.Hiding();
         audioSource.Play();
     }
 
     public override void Ready()
     {
-        base.Ready();
         audioSource.clip = pistolGun.gunAudio.Ready;
+        base.Ready();
         audioSource.Play();
     }
 }

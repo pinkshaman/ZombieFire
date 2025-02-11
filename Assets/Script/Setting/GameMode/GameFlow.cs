@@ -29,7 +29,7 @@ public class GameFlow : MonoBehaviour
     }
     public void InitData()
     {
-        stage = GameManager.Instance.LoadStageData(stageID);
+        //stage = GameModeManager.Instance.ReturnGameStage(stageID);
     }
     public void SpawnEnemy(GameObject zombie, int quatity)
     {

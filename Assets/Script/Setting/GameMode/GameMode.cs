@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class GameMode : MonoBehaviour
+
+public abstract class GameMode : MonoBehaviour
 {
-   
-}
-public class StageGame: GameMode
-{
+    public GameType type;
+    public abstract void StartGameMode();
+
+
 
 }

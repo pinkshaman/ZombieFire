@@ -1,0 +1,1951 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0fae718f64e2e4ba2883262cb68705, type: 3}
+  m_Name: ArenaList
+  m_EditorClassIdentifier: 
+  areraList:
+  - areaNumber: 1
+    areraImage: {fileID: 21300000, guid: dc2bd4fab75821642af6bd0dd6d541bc, type: 2}
+    stageList:
+      stageLists:
+      - stageID: 1
+        stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 2
+        stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 3
+        stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 4
+        stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 5
+        stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 6
+        stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 7
+        stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 8
+        stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 9
+        stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 10
+        stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 11
+        stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 12
+        stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 13
+        stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 14
+        stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 15
+        stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 16
+        stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 17
+        stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 18
+        stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 19
+        stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 20
+        stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
+        isBossWave: 1
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+  - areaNumber: 2
+    areraImage: {fileID: 21300000, guid: ef4fe7992e7bf4c4b95c418651e94484, type: 2}
+    stageList:
+      stageLists:
+      - stageID: 1
+        stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 2
+        stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 3
+        stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 4
+        stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 5
+        stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 6
+        stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 7
+        stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 8
+        stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 9
+        stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 10
+        stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 11
+        stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 12
+        stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 13
+        stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 14
+        stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 15
+        stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 16
+        stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 17
+        stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 18
+        stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 19
+        stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 20
+        stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
+        isBossWave: 1
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+  - areaNumber: 3
+    areraImage: {fileID: 21300000, guid: b6a5ca76535ace84a9ce0390cabb35a0, type: 2}
+    stageList:
+      stageLists:
+      - stageID: 1
+        stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 2
+        stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 3
+        stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 4
+        stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 5
+        stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 6
+        stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 7
+        stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 8
+        stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 9
+        stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 10
+        stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 11
+        stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 12
+        stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 13
+        stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 14
+        stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 15
+        stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 16
+        stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 17
+        stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 18
+        stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 19
+        stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 20
+        stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
+        isBossWave: 1
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+  - areaNumber: 4
+    areraImage: {fileID: 21300000, guid: 11514c53239f900409c7fdbd2d089475, type: 2}
+    stageList:
+      stageLists:
+      - stageID: 1
+        stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 2
+        stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 3
+        stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 4
+        stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 5
+        stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 6
+        stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 7
+        stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 8
+        stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 9
+        stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 10
+        stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 11
+        stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 12
+        stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 13
+        stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 14
+        stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 15
+        stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 16
+        stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 17
+        stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 18
+        stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 19
+        stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
+        isBossWave: 0
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+      - stageID: 20
+        stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
+        isBossWave: 1
+        rankList:
+          rankLists: []
+        waveList:
+        - waveNumber: 1
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 3
+        - waveNumber: 2
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 3
+          zombieList: []
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5
+        - waveNumber: 4
+          zombieList:
+          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+            quatity: 5

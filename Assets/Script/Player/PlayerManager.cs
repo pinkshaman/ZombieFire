@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
-    public PlayerUI player;
+   
     public PlayerData playerData;
     public GearUpgradeList gearUpgradeList;
     public ItemDataList itemDataList;
@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     public void Start()
     {
         LoadPlayerData();
-        player.SetDataPlayer(playerData);
+      
         if (playerData.specialUpgradeProgess == null || playerData.specialUpgradeProgess.specialUpdateProgessList == null)
         {
             InitNewGearUpgrade();

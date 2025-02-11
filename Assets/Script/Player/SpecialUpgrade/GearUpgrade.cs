@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +19,11 @@ public class GearUpgrade : SpecialUpgrades
     }
     public int ReturnInfor()
     {
+        if (data.system.upgradeSystem.Count == 0)
+        {
+            Debug.LogError("Lỗi: upgradeSystem rỗng, không thể truy cập.");
+            return 0;
+        }
         int power = data.system.upgradeSystem[currentLevel].percentIncrease;
         return power;
     }

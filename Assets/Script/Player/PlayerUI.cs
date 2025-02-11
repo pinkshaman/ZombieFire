@@ -14,7 +14,7 @@ public class PlayerUI : MonoBehaviour
     public void Start()
     {
         PlayerManager.Instance.OnPlayerDataChange.AddListener(UpdateUi);
-
+        SetDataPlayer(PlayerManager.Instance.playerData);
     }
     public void SetDataPlayer(PlayerData data)
     {

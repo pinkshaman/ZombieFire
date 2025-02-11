@@ -28,7 +28,8 @@ public class GunModel
     public GameObject gunModel;
     public Sprite gunSprite;
     public string gunDecription;
-    public Animator animator;
+    public Animation reloadAnimation;
+
 }
 [Serializable]
 public class GunAudio
@@ -125,15 +126,9 @@ public class GunManager : MonoBehaviour
     public float ReturnReloadTimes(string gunName)
     {
         var gunData = gunList.baseGunList.Find(gunData => gunData.GunName == gunName);
-        foreach (var clip in gunData.gunModel.animator.runtimeAnimatorController.animationClips)
-        {
-            if (clip.name == "Reload")
-            {
-                float reloadTime = clip.length;
-                return reloadTime;
-            }
-        }
-        return 0.0f;
+        float reloadTime = gunData.gunModel.reloadAnimation.clip.length;
+        return reloadTime;
+
     }
 
     public void UpdateAmmo(string gunName, int ammo)
@@ -153,7 +148,7 @@ public class GunManager : MonoBehaviour
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
         return gunData;
     }
- 
+
     public void CreatPlayerGunData(BaseGun gun)
     {
         playerGunList.playerGuns.Add(new PlayerGun(gun.GunName, false, 0, 1));

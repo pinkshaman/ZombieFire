@@ -17,7 +17,7 @@ public class GroupZombie
 
 }
 [Serializable]
-public class Stage 
+public class Stage
 {
     public float stageID;
     public Sprite stageImage;
@@ -36,4 +36,19 @@ public class StageRankList
 {
     public List<StageRank> rankLists;
 }
+[Serializable]
+public class Arera
+{
+    public int areaNumber;
+    public Sprite areraImage;
+    public StageList stageList;
+}
+[Serializable]
+public class StageList 
+{
+    public List<Stage> stageLists;
+
+}
+
+
 

@@ -1960,6 +1960,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8327507717219535865, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
+      propertyPath: m_HDR
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327507717219535865, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327507717219535865, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327507717219535865, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327507717219535865, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327507717219535865, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.87
