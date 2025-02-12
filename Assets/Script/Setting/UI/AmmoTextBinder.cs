@@ -19,7 +19,7 @@ public class AmmoTextBinder : MonoBehaviour
 
     public void UpdateGunAmmo()
     {
-        loadedTextAmmo.text = $"{gunAmmo.LoadedAmmo}/{gunAmmo.magSize}";
+        loadedTextAmmo.text = $"{gunAmmo.LoadedAmmo}/{gunAmmo.gun.gunPlayer.ammoStoraged}";
         gunName.text = gunAmmo.gunName;
     }
     public void OnEnable()

@@ -81,8 +81,6 @@ public class WeaponChange : MonoBehaviour
     public void UpdateData(string slot1, string slot2)
     {
         GunManager.Instance.UpdateGunSlot(slot1,slot2);
-        GunManager.Instance.gunInventory.UpdateSlotGunUi();
-
     }
 
 }

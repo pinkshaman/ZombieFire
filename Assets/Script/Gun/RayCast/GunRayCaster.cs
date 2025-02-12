@@ -12,14 +12,17 @@ public class GunRayCaster : MonoBehaviour
     public Gun gun;
     public UnityEvent<RaycastHit> onRaycasting;
     public DamageManagement damageManagement;
+    public Recoil recoil;
     public void PerformRayCasting()
     {
-        Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
+        //Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
+        Ray aimingRay = recoil.CalculateRecoilRay();
         if (Physics.Raycast(aimingRay, out RaycastHit hitInfo, 1000, layerMask))
         {
             Quaternion effectRotation = Quaternion.LookRotation(hitInfo.normal);
             HitEffect(hitInfo, effectRotation);
         }
+        recoil.ApplyRecoil();
         onRaycasting.Invoke(hitInfo);
     }
     public void HitEffect(RaycastHit hitInfo, Quaternion effectRotation)

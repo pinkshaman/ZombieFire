@@ -8,6 +8,7 @@ public abstract class Gun : MonoBehaviour
 {
     public string GunName;
     public BaseGun gunData;
+    public PlayerGun gunPlayer;
     public AudioSource audioSource;
     public Transform aimingPos;
     public Animator anim;
@@ -22,12 +23,9 @@ public abstract class Gun : MonoBehaviour
 
     public virtual void Start()
     {
-        if (GunManager.Instance == null)
-        {
-            Debug.LogError("GunManager instance is missing.");
-            return;
-        }
+        
         var newGun = GunManager.Instance.GetGun(GunName);
+        gunPlayer = GunManager.Instance.ReturnPlayerGun(newGun.GunName);
         Initialize(newGun);
         originalDuration = ReturnReloadTime();
     }
@@ -39,7 +37,7 @@ public abstract class Gun : MonoBehaviour
     public virtual void Initialize(BaseGun gunData)
     {
         this.gunData = gunData;
-
+        UpgradeGearEffect(this.gunData);
         Debug.Log($"SetData :{gunData.GunName}");
     }
     public virtual void Switching()
@@ -60,25 +58,25 @@ public abstract class Gun : MonoBehaviour
 
     public virtual void ReLoading()
     {
-        bool isAvailable = PlayerManager.Instance.ReturnItemReloadInfor();
-        Debug.Log($"FastReloadItem : {isAvailable}");
-        if (!isAvailable)
-        {
-            float time = originalDuration;
+        //bool isAvailable = PlayerManager.Instance.ReturnItemReloadInfor();
+        //Debug.Log($"FastReloadItem : {isAvailable}");
+        //if (!isAvailable)
+        //{
+            //float time = originalDuration;
             anim.SetTrigger("Reload");
-            anim.speed = time; ;
-        }
-        else
-        {
-            FastReloadItem();
-        }
+            //anim.speed = time; 
+        //}
+        //else
+        //{
+        //    FastReloadItem();
+        //}
     }
     public virtual void FastReloadItem()
     {
         float newDuration = originalDuration * (1.0f / 1.5f);
         float newSpeed = originalDuration / newDuration;
         anim.SetTrigger("Reload");
-       
+
         anim.speed = newSpeed;
         StartCoroutine(ResetController(newSpeed));
     }
@@ -116,10 +114,20 @@ public abstract class Gun : MonoBehaviour
     }
     IEnumerator ResetController(float duration)
     {
-       
+
         yield return new WaitForSeconds(duration);
-        anim.speed = originalDuration;
+        anim.speed = 1;
         Debug.Log($"ResetReloadTime: {anim.speed} ");
 
+    }
+    public void UpgradeGearEffect(BaseGun gun)
+    {
+        for (int i = 0; i < gunPlayer.starUpgrade; i++)
+        {
+            var baseUpgrade = gun.upgradeList.gunUgradeList.Find(baseUpgrade => baseUpgrade.starUpgrade == gunPlayer.starUpgrade);
+            gun.gunStats.damage += baseUpgrade.powerUpgrade;
+            gun.gunStats.critical += baseUpgrade.criticalUpgrade;
+            gun.gunStats.fireRate += baseUpgrade.fireRateUpgrade;
+        }
     }
 }

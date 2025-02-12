@@ -1587,6 +1587,7 @@ GameObject:
   - component: {fileID: 2121129026315136888}
   - component: {fileID: 843422036397541547}
   - component: {fileID: 4647867814783867785}
+  - component: {fileID: 2972565439756613880}
   m_Layer: 8
   m_Name: Scarlight
   m_TagString: Untagged
@@ -1757,7 +1758,8 @@ MonoBehaviour:
   onRaycasting:
     m_PersistentCalls:
       m_Calls: []
-  damageTextPooling: {fileID: 0}
+  damageManagement: {fileID: 0}
+  recoil: {fileID: 0}
 --- !u!114 &3605185300675134518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1778,6 +1780,25 @@ MonoBehaviour:
       fireRate: 0
       damage: 0
       critical: 0
+    gunModel:
+      gunType: 0
+      gunModel: {fileID: 5479494405520053317}
+      gunSprite: {fileID: 0}
+      gunDecription: 
+      reloadAnimationClip: {fileID: 0}
+    upgradeList:
+      gunUgradeList: []
+    buyGun:
+      ammoPrice: 0
+      price:
+        priceType: 0
+        cost: 0
+        priceImage: {fileID: 0}
+  gunPlayer:
+    gunName: 
+    isUnlocked: 0
+    ammoStoraged: 0
+    starUpgrade: 0
   audioSource: {fileID: 1766412779212607801}
   aimingPos: {fileID: 9214889157403682302}
   anim: {fileID: 5362643538213935675}
@@ -1799,6 +1820,9 @@ MonoBehaviour:
     BaseModel:
       gunType: 1
       gunModel: {fileID: 5479494405520053317}
+      gunSprite: {fileID: 0}
+      gunDecription: 
+      reloadAnimationClip: {fileID: 0}
     gunAudio:
       Ready: {fileID: 8300000, guid: 075a008346da5ea4181232e68b72c515, type: 3}
       Shooting: {fileID: 8300000, guid: 78ab0dc3c4344484a8ecf3913c072d7a, type: 3}
@@ -1857,6 +1881,24 @@ MonoBehaviour:
   loadedTextAmmo: {fileID: 0}
   gunName: {fileID: 0}
   gunAmmo: {fileID: 2121129026315136888}
+--- !u!114 &2972565439756613880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479494405520053317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca06401e02ddbb142a0462da7390c488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimingCamera: {fileID: 0}
+  cameraHolder: {fileID: 0}
+  recoilRecoverySpeed: 5
+  horizontalRecoil: 1
+  verticalRecoil: 1
+  recoilAmount: 2
 --- !u!1 &5556095373969247027
 GameObject:
   m_ObjectHideFlags: 0

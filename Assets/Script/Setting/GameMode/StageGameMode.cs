@@ -15,7 +15,7 @@ public class StageProgess
     public string stageRank;
     public bool isCanPlay;
 
-    public StageProgess(float stageID, bool isComplete, string stageRank,bool isCanPlay)
+    public StageProgess(float stageID, bool isComplete, string stageRank, bool isCanPlay)
     {
         this.stageID = stageID;
         this.isComplete = isComplete;
@@ -62,7 +62,7 @@ public class StageGameMode : MonoBehaviour
             Destroy(gameObject);
         }
     }
-        public void Start()
+    public void Start()
     {
         LoadStageData();
         InitArenaProgessData();
@@ -73,7 +73,7 @@ public class StageGameMode : MonoBehaviour
     {
         currentStage = index;
     }
-    public void ChangeArena(int index  )
+    public void ChangeArena(int index)
     {
         int newArena = currentArena + index;
         if (IsValidArena(newArena))
@@ -91,7 +91,7 @@ public class StageGameMode : MonoBehaviour
         CreateArena(currentArena);
         stageSelect.UpdateButtonState(currentArena, arenaListed.areraList.Count);
     }
-    public  void StartGameMode()
+    public void StartGameMode()
     {
         selectStagePanel.SetActive(true);
         CreateArena(currentArena);
@@ -99,8 +99,6 @@ public class StageGameMode : MonoBehaviour
 
     public Stage LoadData(/*int arenaID, int stageID*/)
     {
-        Debug.Log($"CurrenArena : {currentArena}");
-        Debug.Log($"CurrentStage: {currentStage}");
         var arenaData = arenaListed.areraList.Find(arenaData => arenaData.areaNumber == currentArena);
         var stageData = arenaData.stageList.stageLists.Find(stageData => stageData.stageID == currentStage);
         return stageData;
@@ -115,7 +113,7 @@ public class StageGameMode : MonoBehaviour
     }
     public void IntNewProgessStage(Stage stage, ArenaProgess arenaProgess)
     {
-        arenaProgess.stageProgessList.stageProgessLists.Add(new StageProgess(stage.stageID, false, null,false));
+        arenaProgess.stageProgessList.stageProgessLists.Add(new StageProgess(stage.stageID, false, null, false));
         SaveStageData();
     }
 

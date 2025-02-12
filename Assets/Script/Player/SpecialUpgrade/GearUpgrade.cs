@@ -19,11 +19,6 @@ public class GearUpgrade : SpecialUpgrades
     }
     public int ReturnInfor()
     {
-        if (data.system.upgradeSystem.Count == 0)
-        {
-            Debug.LogError("Lỗi: upgradeSystem rỗng, không thể truy cập.");
-            return 0;
-        }
         int power = data.system.upgradeSystem[currentLevel].percentIncrease;
         return power;
     }
@@ -50,28 +45,6 @@ public class GearUpgrade : SpecialUpgrades
         upgradeLevel.text = currentLevel.ToString();
         PlayerManager.Instance.UpgradeGearEffect(data.Title, currentLevel);
     }
-    public void GearEffect(GearUpgradeType type)
-    {
-        if(type == GearUpgradeType.Hat)
-        {
-
-        }
-        if(type==GearUpgradeType.Mask)
-        {
-
-        }
-        if(type == GearUpgradeType.Jacket)
-        {
-
-        }
-        if(type == GearUpgradeType.Trouser)
-        {
-
-        }
-        if(type == GearUpgradeType.Bag)
-        {
-
-        }
-    }
+    
    
 }

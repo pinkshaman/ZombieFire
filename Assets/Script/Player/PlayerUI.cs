@@ -33,7 +33,7 @@ public class PlayerUI : MonoBehaviour
         for (int i = 0; i < gunsSlotUi.Count; i++)
         {
             BaseGun gunData = GunManager.Instance.GetGun(gunNames[i]);
-            PlayerGun playerGun = GunManager.Instance.GetPlayerGun(gunNames[i]);
+            PlayerGun playerGun = GunManager.Instance.ReturnPlayerGun(gunNames[i]);
 
             if (gunData != null && playerGun != null)
             {

@@ -83,45 +83,41 @@ public class GunManager : MonoBehaviour
 
     public GunList gunList;
     public PlayerGunList playerGunList;
-    public GunSwicher gunSwicher;
     public GunSlot gunSlot;
-    public GunInventory gunInventory;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-        
+
     }
     public void Start()
     {
         LoadGunData();
-        DontDestroyOnLoad(gameObject);
     }
-    public void CreateWeaponInventory()
+    public List<BaseGun> ReturnListBaseGun()
     {
-        foreach (var gun in gunList.baseGunList)
-        {
-            var progessData = playerGunList.playerGuns.Find(progessData => progessData.gunName == gun.GunName);
-            if (gun.GunName == "RPG")
-                continue;
-            if (progessData == null)
-            {
-                CreatPlayerGunData(gun);
-            }
-            gunInventory.CreateGunUI(gun, progessData, gunSlot);
-        }
+        return gunList.baseGunList;
+    }
+    public List<PlayerGun> ReturnPlayerGunList()
+    {
+        return playerGunList.playerGuns;
     }
     public void UpdateGunSlot(string gunSlot1Name, string gunSlot2Name)
     {
         gunSlot.gunSlot1 = gunSlot1Name;
         gunSlot.gunSlot2 = gunSlot2Name;
         SaveGunSlot();
+    }
+    public GunSlot ReturnGunSlot()
+    {
+        return gunSlot;
     }
     public float ReturnReloadTimes(string gunName)
     {
@@ -130,20 +126,19 @@ public class GunManager : MonoBehaviour
         return reloadTime;
 
     }
-
     public void UpdateAmmo(string gunName, int ammo)
     {
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
         gunData.ammoStoraged = ammo;
-        //SaveGunData();
+        SaveGunData();
     }
     public void UpdateGunData(string gunName, PlayerGun dataChanged)
     {
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
         gunData = dataChanged;
-        //SaveGunData();
+        SaveGunData();
     }
-    public PlayerGun GetPlayerGun(string gunName)
+    public PlayerGun ReturnPlayerGun(string gunName)
     {
         var gunData = playerGunList.playerGuns.Find(gunData => gunData.gunName == gunName);
         return gunData;
@@ -154,6 +149,7 @@ public class GunManager : MonoBehaviour
         playerGunList.playerGuns.Add(new PlayerGun(gun.GunName, false, 1, 1));
         SaveGunData();
     }
+
     public Gun FindActiveGun()
     {
         Gun[] guns = FindObjectsOfType<Gun>();

@@ -17,10 +17,19 @@ public class Score : MonoBehaviour
     private float expPerZombie;
     private float expPerRank;
 
-    private List<string> rankOrder = new List<string> { "C", "B", "A", "S" }; // Thứ tự các rank
+    private List<string> rankOrder = new List<string> { "C", "B", "A", "S" }; 
 
     public DamageManagement damageManagement;
 
+    private void Awake()
+    {
+        // Đảm bảo GameObject UI đã khởi tạo trước khi truy cập
+        if (rankClass == null || scoreText == null || rankExpText == null)
+        {
+            Debug.LogError("UI Text References are missing!");
+            return;
+        }
+    }
     private void Start()
     {
         damageManagement.OnHeadShot.AddListener(GetHeadShotScore);

@@ -15,37 +15,47 @@ public class DamageManagement : MonoBehaviour
     public UnityEvent OnKill;
     public void Calculator(RaycastHit hitInfo, int damage, Health healthTarget, float critical)
     {
-        if (hitInfo.collider.CompareTag("Head"))
+        bool isHeadShot = hitInfo.collider.CompareTag("Head");
+        if (isHeadShot)
         {
-            damage = Mathf.RoundToInt(damage * critical);
-            healthTarget.TakeDamage(damage);
-            damageTextPooling.ShowDamage(hitInfo.point, damage);
-            if (healthTarget.IsDead)
-            {
-                headShotCount++;
-                headShotAlert.gameObject.SetActive(true);
-                headShotAlert.HeadShotAlertCount(headShotCount);
-                OnHeadShot?.Invoke();
-                if (comboHeadShot != null)
-                {
-                    StopCoroutine(comboHeadShot);
-                }
-                comboHeadShot = StartCoroutine(ResetHeadShotCombo());
-            }
+            damage = Mathf.RoundToInt(damage * (1 + critical / 100f));
         }
-        else
+
+        healthTarget.TakeDamage(damage);
+        damageTextPooling.ShowDamage(hitInfo.point, damage);
+
+        if (healthTarget.IsDead)
         {
-            healthTarget.TakeDamage(damage);
-            damageTextPooling.ShowDamage(hitInfo.point, damage);
-            if (healthTarget.IsDead)
+            if (isHeadShot)
             {
-                killAlert.gameObject.SetActive(true);
-                killAlert.KillAlertPlay();
-                OnKill?.Invoke();
+                HandleHeadShotKill();
+            }
+            else
+            {
+                HandleNormalKill();
             }
         }
     }
+    private void HandleHeadShotKill()
+    {
+        headShotCount++;
+        headShotAlert.gameObject.SetActive(true);
+        headShotAlert.HeadShotAlertCount(headShotCount);
+        OnHeadShot?.Invoke();
 
+        if (comboHeadShot != null)
+        {
+            StopCoroutine(comboHeadShot);
+        }
+        comboHeadShot = StartCoroutine(ResetHeadShotCombo());
+    }
+
+    private void HandleNormalKill()
+    {
+        killAlert.gameObject.SetActive(true);
+        killAlert.KillAlertPlay();
+        OnKill?.Invoke();
+    }
     private IEnumerator ResetHeadShotCombo()
     {
         yield return new WaitForSeconds(4.0f);

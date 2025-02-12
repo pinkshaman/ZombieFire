@@ -11,7 +11,7 @@ public class GunAmmo : MonoBehaviour
     private int _loadedAmmo;
     public bool isReloadComplete;
     public UnityEvent loadedAmmoChanged;
-
+    private int cost;
     public int LoadedAmmo
     {
         get => _loadedAmmo;
@@ -35,6 +35,7 @@ public class GunAmmo : MonoBehaviour
         InitializeGun();
         gun.OnShooting.AddListener(SingleFireAmmoCounter);
         gun.OnSwitching.AddListener(OnSelectedGun);
+        cost = gun.gunData.buyGun.ammoPrice;
     }
     public void SingleFireAmmoCounter()
     {
@@ -50,7 +51,7 @@ public class GunAmmo : MonoBehaviour
     }
     private void ReFillAmmo()
     {
-        LoadedAmmo = magSize;
+        LoadedAmmo += magSize;
     }
 
     public void Update()
@@ -68,9 +69,22 @@ public class GunAmmo : MonoBehaviour
         }
     }
     public void Reload()
-    {
-        LockShooting();
-        gun.ReLoading();
+    {      
+        if (gun.gunPlayer.ammoStoraged <= 0 )
+        {
+            AutoBuy();
+        }
+        else
+        {
+            int ammoToReload = Mathf.Min(magSize - LoadedAmmo, gun.gunData.gunStats.ammoCapacity);
+            if (gun.gunPlayer.ammoStoraged <= 0) return;
+            LockShooting();
+            gun.ReLoading();
+            gun.gunPlayer.ammoStoraged -= ammoToReload;
+            LoadedAmmo += ammoToReload;
+            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+            
+        }
     }
     public void AddAmmo()
     {
@@ -78,7 +92,7 @@ public class GunAmmo : MonoBehaviour
     }
     public void OnDisable()
     {
-        gun.ResetAnimation();       
+        gun.ResetAnimation();
     }
     public void OnEnable()
     {
@@ -108,6 +122,16 @@ public class GunAmmo : MonoBehaviour
         this.gun.gunData = newGun;
         magSize = newGun.gunStats.ammoCapacity;
         ReFillAmmo();
+    }
+    public void AutoBuy()
+    {
+        if (PlayerManager.Instance.playerData.coin >= cost)
+        {
+            PlayerManager.Instance.playerData.coin -= cost;
+            PlayerManager.Instance.UpdatePlayerData(PlayerManager.Instance.playerData);
+            gun.gunPlayer.ammoStoraged += gun.gunData.gunStats.ammoCapacity;
+            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+        }  
     }
 
 

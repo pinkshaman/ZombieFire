@@ -10,17 +10,18 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance { get; private set; }
 
     public PlayerData playerData;
-    public PlayerDataBase playerDataBase;
     public GearUpgradeList gearUpgradeList;
     public ItemDataList itemDataList;
 
     public UnityEvent<PlayerData> OnPlayerDataChange;
 
+    private PlayerData playerDataAftereffected;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -36,8 +37,6 @@ public class PlayerManager : MonoBehaviour
         {
             InitNewGearUpgrade();
         }
-        DontDestroyOnLoad(gameObject);
-
     }
     [ContextMenu("InitNewGearUpgrade")]
     public void InitNewGearUpgrade()
@@ -98,7 +97,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (item.quatity > 0)
                 {
-                    Debug.Log($"QuickReLoadQutity: {item.quatity}");
+                    
                     return true;
                 }
             }
@@ -123,16 +122,26 @@ public class PlayerManager : MonoBehaviour
         OnPlayerDataChange.Invoke(playerData);
         SavePlayerData();
     }
-    public void UseGearEffect(string title, int level)
+    public int ReturnGearEffect(GearUpgradeType type)
     {
-        foreach (var gear in gearUpgradeList.gearUpgradeLists)
-        {
-            var playerDataGear = playerData.specialUpgradeProgess.specialUpdateProgessList.Find(playerDataGear => playerDataGear.title == title);
-            var upgrade = gear.system.upgradeSystem.Find(upgrade => upgrade.levelUpgrade == level);
-            {
-                playerDataBase.health*= upgrade.percentIncrease;
+        var gear = gearUpgradeList.gearUpgradeLists.Find(gear => gear.type == type);
+        var level = playerData.specialUpgradeProgess.specialUpdateProgessList.Find(level => level.title == gear.Title);
+        var upgrade = gear.system.upgradeSystem.Find(upgrade => upgrade.levelUpgrade == level.upgradeLevel);
+        return upgrade.percentIncrease;
 
+    }
+    public void UseGearEffect()
+    {
+        foreach (var upgradeData in playerData.specialUpgradeProgess.specialUpdateProgessList)
+        {
+            var gearUpgrade = gearUpgradeList.gearUpgradeLists.Find(upgrade => upgrade.Title == upgradeData.title);
+            var level = gearUpgrade.system.upgradeSystem.Find(level => level.levelUpgrade == upgradeData.upgradeLevel);
+            if (gearUpgrade.type == GearUpgradeType.Jacket)
+            {
+                playerData.health*=level.percentIncrease;
             }
+
+
         }
     }
     [ContextMenu("SavePlayerData")]

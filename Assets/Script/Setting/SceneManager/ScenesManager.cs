@@ -12,22 +12,19 @@ public class ScenesManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this;     
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    public void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     [ContextMenu("LoadSceneByStageID")]
     public void LoadSceneByStageID(Stage data)
-    {
-        SceneManager.LoadScene(data.sceneID); 
+    { 
         StageGameMode.Instance.SetCurrentStage(data.stageID);
+        SceneManager.LoadScene(data.sceneID);
     }
 }

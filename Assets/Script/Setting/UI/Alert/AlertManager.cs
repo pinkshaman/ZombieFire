@@ -12,16 +12,14 @@ public class AlertManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    public void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+
 
     public AlertData InitAlertData(AlertType type)
     {
