@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,12 +12,16 @@ public class Score : MonoBehaviour
     public Text scoreText;
     public Text rankExpText;
 
+    private int killCount;
+    private int headshotCount;
     private float rankExp;
     private int score;
     private float expPerZombie;
     private float expPerRank;
     private Stage stage;
     private List<string> RankOrder;
+
+    private float totalExp;
 
     public DamageManagement damageManagement;
 
@@ -27,6 +32,8 @@ public class Score : MonoBehaviour
         expPerZombie = IntRank();
         expPerRank = 25f;
         rankClass.text = RankOrder[0];
+        killCount = 0;
+        headshotCount = 0;
         damageManagement.OnHeadShot.AddListener(GetHeadShotScore);
         damageManagement.OnKill.AddListener(GetSkillScore);
         UpdateUI();
@@ -50,6 +57,8 @@ public class Score : MonoBehaviour
     {
         score += 40;
         rankExp += expPerZombie;
+        totalExp += expPerZombie;
+        headshotCount++;
         CheckRankUp();
         UpdateUI();
     }
@@ -58,6 +67,8 @@ public class Score : MonoBehaviour
     {
         score += 20;
         rankExp += (expPerZombie * 0.5f);
+        totalExp += (expPerZombie * 0.5f);
+        killCount++;    
         CheckRankUp();
         UpdateUI();
     }
@@ -91,5 +102,29 @@ public class Score : MonoBehaviour
         scoreText.text = $"{score}";
         float rankExpPercentage = (rankExp / expPerRank) * 100f;
         rankExpText.text = $"{rankExpPercentage:F2}%";
+    }
+    public string ReturnRank()
+    {
+        return rankClass.text;
+    }
+    public string ReturnScore()
+    {
+        return score.ToString();
+    }
+    public string ReturnExp()
+    {
+        return totalExp.ToString();
+    }
+    public int ReturnRewardCoin()
+    {
+        return stage.coinReward;
+    }
+    public string ReturnKillCount()
+    {
+        return killCount.ToString();
+    }
+    public string ReturnHeadShotCount()
+    {
+        return headshotCount.ToString();
     }
 }

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,19 +13,32 @@ public class DamageManagement : MonoBehaviour
     private Coroutine comboHeadShot;
     public UnityEvent OnHeadShot;
     public UnityEvent OnKill;
-    private float criticalDamageGearUpgrade;
+
+    private float critticalDamageEffect;
+    private float headShotEffect;
+    private float damageIncease;
+    private int maxHeadshotKill;
+    private float totalCritical;
     public void Start()
     {
-        criticalDamageGearUpgrade = PlayerManager.Instance.ReturnGearEffect(GearUpgradeType.Hat);
-
+        critticalDamageEffect = PlayerManager.Instance.ReturnGearEffect(GearUpgradeType.Trouser);
+        headShotEffect = PlayerManager.Instance.ReturnGearEffect(GearUpgradeType.Hat);
+        damageIncease = PlayerManager.Instance.ReturnGearEffect(GearUpgradeType.Bag);
+        maxHeadshotKill = 0;
     }
+  
     public void Calculator(RaycastHit hitInfo, int damage, Health healthTarget, float critical)
     {
+        totalCritical = critical + critticalDamageEffect;
+        var newDamage = Mathf.RoundToInt(damage * (1 + damageIncease / 100f));
+        damage = newDamage;
+
+
         bool isHeadShot = hitInfo.collider.CompareTag("Head");
         if (isHeadShot)
         {
-            float totalCritical = critical + criticalDamageGearUpgrade;
-            damage = Mathf.RoundToInt(damage * (1 + totalCritical / 100f));
+            var newHeadShotDamage = Mathf.RoundToInt(damage * (1 + headShotEffect / 100f));
+            damage = newHeadShotDamage;
         }
 
         healthTarget.TakeDamage(damage);
@@ -45,6 +59,10 @@ public class DamageManagement : MonoBehaviour
     public void HandleHeadShotKill()
     {
         headShotCount++;
+        if(headShotCount > maxHeadshotKill)
+        {
+            maxHeadshotKill = headShotCount;
+        }
         headShotAlert.gameObject.SetActive(true);
         headShotAlert.HeadShotAlertCount(headShotCount);
         OnHeadShot?.Invoke();
@@ -67,5 +85,10 @@ public class DamageManagement : MonoBehaviour
         yield return new WaitForSeconds(4.0f);
         headShotCount = 0;
         comboHeadShot = null;
+    }
+    public string ReturnMaxHeadShotKill()
+    {
+        int value = maxHeadshotKill;
+        return value.ToString();
     }
 }

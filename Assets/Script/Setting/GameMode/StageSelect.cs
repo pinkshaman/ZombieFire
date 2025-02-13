@@ -29,10 +29,14 @@ public class StageSelect : MonoBehaviour
     { 
         currentArena = StageGameMode.Instance.ReturnArena(choosedArena);
         progessArena = StageGameMode.Instance.ReturnProgessArena(choosedArena);
+        if(progessArena.arenaNumber ==1)
+        {
+            progessArena.isActiveArena = true;
+        }
         StageGameMode.Instance.currentArenaLoad = choosedArena;
         LoadStageSelectData(currentArena.stageList.stageLists, progessArena.stageProgessList.stageProgessLists);
         SetUiArena(currentArena);
-
+        
     }
     public void SetUiArena(Arena arena)
     {

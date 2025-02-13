@@ -131,7 +131,7 @@ public class PlayerManager : MonoBehaviour
 
     }
    
-    public void UseGearEffect()
+    public PlayerData ReturnPlayerDataAfterEffected()
     {
         foreach (var upgradeData in playerData.specialUpgradeProgess.specialUpdateProgessList)
         {
@@ -139,12 +139,18 @@ public class PlayerManager : MonoBehaviour
             var level = gearUpgrade.system.upgradeSystem.Find(level => level.levelUpgrade == upgradeData.upgradeLevel);
             if (gearUpgrade.type == GearUpgradeType.Jacket)
             {
-                playerData.health*=level.percentIncrease;
+                if (level.levelUpgrade > 0)
+                {
+                   var newHealth = Mathf.RoundToInt(playerData.health * (1 + level.percentIncrease / 100f));
+                    playerData.health = newHealth;
+                    Debug.Log($"PlayerHealth: {playerData.health}");
+                    return playerData;
+                }
             }
-
-
         }
+        return playerData;
     }
+ 
     [ContextMenu("SavePlayerData")]
     public void SavePlayerData()
     {

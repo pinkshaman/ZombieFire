@@ -76,7 +76,7 @@ public class WeaponUI : MonoBehaviour
         crittcalFillBar.fillAmount = currenCrit / CriticalTotal;
         detailCriticalDamage.text = $"+{currenCrit}";
         fireRateFillBar.fillAmount = currentFirate / FireRateTotal;
-        reloadFillBar.fillAmount = (currentReload / reloadTotal);
+        reloadFillBar.fillAmount = 1-(currentReload / reloadTotal);
     }
     public void ResetDataPower()
     {
@@ -105,7 +105,7 @@ public class WeaponUI : MonoBehaviour
         {
             
             int starUpdate = star ;
-            starUI[i].gameObject.SetActive(i < starUpdate);
+            starUI[i].SetActive(i < starUpdate);
 
         }
     }

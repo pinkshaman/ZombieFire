@@ -21,17 +21,18 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
         sceneID: 1
+        coinReward: 20
         rankList:
           rankLists:
-          - rank: S
+          - rank: s
             rankSprite: {fileID: 21300000, guid: d68b84bc7ce02f745bb1d48ffec25b63, type: 2}
-          - rank: A
+          - rank: a
             rankSprite: {fileID: 21300000, guid: 0a5d1e9126a49894aaa4723a3bc0867a, type: 2}
-          - rank: B
+          - rank: b
             rankSprite: {fileID: 21300000, guid: 861651dcd8811f24dbafa93290f239db, type: 2}
-          - rank: C
+          - rank: c
             rankSprite: {fileID: 21300000, guid: 8db7db1446db0c841845fda03a71e5e0, type: 2}
-          - rank: D
+          - rank: d
             rankSprite: {fileID: 21300000, guid: 8e31fd5a7d2d6674fbc32b0265a923a2, type: 2}
         waveList:
         - waveNumber: 1
@@ -58,6 +59,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
         sceneID: 2
+        coinReward: 50
         rankList:
           rankLists:
           - rank: 
@@ -93,6 +95,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
         sceneID: 3
+        coinReward: 50
         rankList:
           rankLists:
           - rank: S
@@ -128,6 +131,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
         sceneID: 4
+        coinReward: 70
         rankList:
           rankLists:
           - rank: S
@@ -163,6 +167,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
         sceneID: 5
+        coinReward: 100
         rankList:
           rankLists:
           - rank: S
@@ -198,6 +203,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
         sceneID: 6
+        coinReward: 150
         rankList:
           rankLists:
           - rank: S
@@ -233,6 +239,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
         sceneID: 7
+        coinReward: 200
         rankList:
           rankLists:
           - rank: S
@@ -268,6 +275,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
         sceneID: 8
+        coinReward: 400
         rankList:
           rankLists:
           - rank: S
@@ -303,6 +311,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
         sceneID: 9
+        coinReward: 600
         rankList:
           rankLists:
           - rank: S
@@ -338,6 +347,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
         sceneID: 10
+        coinReward: 800
         rankList:
           rankLists:
           - rank: S
@@ -373,6 +383,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
         sceneID: 11
+        coinReward: 1000
         rankList:
           rankLists:
           - rank: S
@@ -408,6 +419,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
         sceneID: 12
+        coinReward: 0
         rankList:
           rankLists:
           - rank: S
@@ -443,6 +455,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
         sceneID: 13
+        coinReward: 1300
         rankList:
           rankLists:
           - rank: S
@@ -478,6 +491,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
         sceneID: 14
+        coinReward: 1600
         rankList:
           rankLists:
           - rank: S
@@ -513,6 +527,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
         sceneID: 15
+        coinReward: 1900
         rankList:
           rankLists:
           - rank: S
@@ -548,6 +563,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
         sceneID: 16
+        coinReward: 2200
         rankList:
           rankLists:
           - rank: S
@@ -583,6 +599,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
         sceneID: 17
+        coinReward: 2500
         rankList:
           rankLists:
           - rank: S
@@ -617,7 +634,8 @@ MonoBehaviour:
       - stageID: 18
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
-        sceneID: 0
+        sceneID: 18
+        coinReward: 2800
         rankList:
           rankLists:
           - rank: S
@@ -653,6 +671,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
         sceneID: 19
+        coinReward: 3100
         rankList:
           rankLists:
           - rank: S
@@ -688,6 +707,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
         sceneID: 20
+        coinReward: 4000
         rankList:
           rankLists:
           - rank: S
@@ -727,6 +747,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -752,6 +773,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -777,6 +799,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -802,6 +825,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -827,6 +851,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -852,6 +877,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -877,6 +903,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -902,6 +929,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -927,6 +955,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -952,6 +981,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -977,6 +1007,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1002,6 +1033,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1027,6 +1059,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1052,6 +1085,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1077,6 +1111,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1102,6 +1137,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1127,6 +1163,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1152,6 +1189,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1177,6 +1215,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1202,6 +1241,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1231,6 +1271,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1256,6 +1297,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1281,6 +1323,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1306,6 +1349,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1331,6 +1375,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1356,6 +1401,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1381,6 +1427,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1406,6 +1453,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1431,6 +1479,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1456,6 +1505,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1481,6 +1531,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1506,6 +1557,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1531,6 +1583,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1556,6 +1609,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1581,6 +1635,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1606,6 +1661,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1631,6 +1687,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1656,6 +1713,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1681,6 +1739,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1706,6 +1765,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1735,6 +1795,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d77dce0e5947634faaca8b653955075, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1760,6 +1821,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 460218cd5b48e2943ae644b32496c087, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1785,6 +1847,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1810,6 +1873,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 29d42b0ba4d4a0b48adfb5777cef93c0, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1835,6 +1899,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fc3a9a881e02cf8439b4f63390bcbff4, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1860,6 +1925,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 49c903cac4ba2e54eb2028c467c83dd8, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1885,6 +1951,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7d356570ca7de1e45b1097c82cd4dfa0, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1910,6 +1977,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: c65023aa1efb2f54e82fd1b6b2d85e8b, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1935,6 +2003,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 71765b09ae123db46b5f5b115823c5a6, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1960,6 +2029,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 6b0d94b0ad07dd6448c420aa0bb514d4, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -1985,6 +2055,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 0c93fb4631402cf4f81c0119da730437, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2010,6 +2081,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 4237f4686c09e234294cb6e8ee6b0f26, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2035,6 +2107,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: ee84a717068e515409fdb15892e03753, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2060,6 +2133,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 7b2370416a0de6b47bbb2db6f6f1f2ae, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2085,6 +2159,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: fb3c7ffd2135b9940a28f8ddef28d3bb, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2110,6 +2185,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: bf03955e88556cc458bf44e9b4c1b720, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2135,6 +2211,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 82b1adfb33e525a498c6c3f9e6f06393, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2160,6 +2237,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: eda91a3fe1eca874daa4d5c3d2af5daf, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2185,6 +2263,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: 886cd72824ff3b248b00b22f9361b37a, type: 2}
         isBossWave: 0
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:
@@ -2210,6 +2289,7 @@ MonoBehaviour:
         stageImage: {fileID: 21300000, guid: b9f17924c098fc9499939d7f8c04cf2d, type: 2}
         isBossWave: 1
         sceneID: 0
+        coinReward: 0
         rankList:
           rankLists: []
         waveList:

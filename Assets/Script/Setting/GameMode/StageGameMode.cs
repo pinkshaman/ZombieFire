@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using System.Linq;
+using UnityEditor.SceneManagement;
 
 
 
@@ -47,8 +48,6 @@ public class StageGameMode : MonoBehaviour
     public static StageGameMode Instance { get; private set; }
     public ArenaList arenaListed;
     public ArenaProgessList arenaProgessListed;
-    public GameObject selectStagePanel;
-    public StageSelect stageSelect;
     public int currentArenaLoad = 1;
     public int currentStageLoad = 0;
     private void Awake()
@@ -56,7 +55,7 @@ public class StageGameMode : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -78,6 +77,12 @@ public class StageGameMode : MonoBehaviour
         var stageData = arenaData.stageList.stageLists.Find(stageData => stageData.stageID == currentStageLoad);
         return stageData;
     }
+    public StageProgess ReturnCurrentStageProgessForPlay()
+    {
+        var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaProgess => arenaProgess.arenaNumber == currentArenaLoad);
+        var stageProgess = arenaProgess.stageProgessList.stageProgessLists.Find(stageProgess => stageProgess.stageID == currentStageLoad);
+        return stageProgess;
+    }
     public int ReturnArenaList()
     {
         return arenaListed.areraList.Count;
@@ -91,6 +96,23 @@ public class StageGameMode : MonoBehaviour
     {
         var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaProgess => arenaProgess.arenaNumber == arena);
         return arenaProgess;
+    }
+    public void UpdateRankStageProgess(string rank)
+    {
+        
+    }
+    public void UpdateDataArenaProgess(int stage, bool isClear, string rankText)
+    {
+        var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaProgess => arenaProgess.arenaNumber == currentArenaLoad);
+        var stageData = arenaProgess.stageProgessList.stageProgessLists.Find(stageData => stageData.stageID == stage);
+        stageData.isComplete = isClear;
+        stageData.stageRank = rankText;
+        UnlockNextState(currentStageLoad+1);
+        if(stageData.stageID ==20)
+        {
+            ActiveNextArena(currentArenaLoad+1);
+        }
+        SaveStageData();
     }
     public void IntNewProgessStage(Stage stage, ArenaProgess arenaProgess)
     {
@@ -134,17 +156,25 @@ public class StageGameMode : MonoBehaviour
                 if (!arenaprogess.stageProgessList.stageProgessLists.Exists(stageProgess => stageProgess.stageID == stage.stageID))
                 {
                     arenaprogess.stageProgessList.stageProgessLists.Add(new StageProgess(stage.stageID, false, null, false));
+
                 }
             }
         }
 
         SaveStageData();
     }
-    public void SaveProgessArena(int arenaIndex)
+    public void ActiveNextArena(int arenaIndex)
     {
         var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaprogess => arenaprogess.arenaNumber == arenaIndex);
         arenaProgess.isActiveArena = true;
         Debug.Log($"Arena {arenaIndex} isComplete");
+        SaveStageData();
+    }
+    public void UnlockNextState(int stageIndex)
+    {
+        var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaProgess => arenaProgess.arenaNumber == currentArenaLoad);
+        var stageData = arenaProgess.stageProgessList.stageProgessLists.Find(stageData => stageData.stageID == stageIndex);
+        stageData.isCanPlay = true;
         SaveStageData();
     }
 

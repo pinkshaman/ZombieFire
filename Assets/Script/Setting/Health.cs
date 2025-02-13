@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
     {
         HealthPoint = maxHealthPoint;
     }
-    public void InitHealth(int maxHealth)
+    public virtual void InitHealth(int maxHealth)
     {
         maxHealthPoint = maxHealth;
     }

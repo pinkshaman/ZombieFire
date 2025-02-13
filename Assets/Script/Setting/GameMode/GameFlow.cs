@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class GameFlow : MonoBehaviour
 {
-    public float stageID;
     public Stage stage;
     public ZombieRepawn zombieRepawn;
     public WaveAlert waveAlert;
@@ -16,6 +15,9 @@ public class GameFlow : MonoBehaviour
     public bool isSpawnDone;
     public bool isStageClear;
     public UnityEvent OnStageClear;
+
+    public GameObject resutlPanel;
+
     public void Start()
     {
         LoadGamePlay();
@@ -30,6 +32,7 @@ public class GameFlow : MonoBehaviour
         zombieRepawn.OnZombieClear.AddListener(IsWaveEnd);
         zombieRepawn.OnSpawnDone.AddListener(IsSpawnDone);
         OnStageClear.AddListener(ClearStage);
+        
         StartCoroutine(SpawnByNumberWave());
     }
     public void InitData()
@@ -93,12 +96,30 @@ public class GameFlow : MonoBehaviour
 
         clearAlert.gameObject.SetActive(true);
         clearAlert.AlertPlay();
-
+        ActiveResultPanel();
+        //Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;         
+    }
+    public void GameEnd()
+    {
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     public void StartStage()
     {
         startAlert.gameObject.SetActive(true);
         startAlert.StartAlerts();
     }
+    [ContextMenu("ActiveResultPanel")]
+    public void ActiveResultPanel()
+    {
+        resutlPanel.SetActive(true);
+        var result = FindObjectOfType<Result>();
+        string rankClass = result.ReturnRank();
+        Debug.Log($"RankClass:{rankClass}");
+        StageGameMode.Instance.UpdateDataArenaProgess(stage.stageID, isStageClear,rankClass);
 
+    }
 }

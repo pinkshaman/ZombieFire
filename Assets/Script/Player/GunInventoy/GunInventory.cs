@@ -116,7 +116,7 @@ public class GunInventory : MonoBehaviour
         weaponUI.SetDataUI(data.baseGun, data.playerGun);
         weaponUI.UpdateAmmo(data.baseGun, data.playerGun.ammoStoraged);
         weaponUI.UpgradePrice(priceUpgrade);
-        weaponUI.UpdateStar(star);
+        //weaponUI.UpdateStar(star);
         data.isLocked.SetActive(!data.playerGun.isUnlocked);
 
         weaponUI.UpDatePriceToBuyGun(data.ReturnPriceToBuy());

@@ -55,7 +55,7 @@ public class ObjectSelection : MonoBehaviour
             price.text = effect.ReturnPrice().ToString();
             priceImage.sprite = effect.data.priceImage;
             title.text = effect.data.Title.ToString();
-            decription.text = $"{effect.data.Decription} {effect.ReturnInfor()}";
+            decription.text = $"{effect.data.Decription} {effect.ReturnInfor()} %";
             CanUpgrade = effect.CanUpgrade();
         }
         else
