@@ -10,12 +10,12 @@ using System.Linq;
 [Serializable]
 public class StageProgess
 {
-    public float stageID;
+    public int stageID;
     public bool isComplete;
     public string stageRank;
     public bool isCanPlay;
 
-    public StageProgess(float stageID, bool isComplete, string stageRank, bool isCanPlay)
+    public StageProgess(int stageID, bool isComplete, string stageRank, bool isCanPlay)
     {
         this.stageID = stageID;
         this.isComplete = isComplete;
@@ -49,13 +49,14 @@ public class StageGameMode : MonoBehaviour
     public ArenaProgessList arenaProgessListed;
     public GameObject selectStagePanel;
     public StageSelect stageSelect;
-    private int currentArena = 1;
-    public float currentStage = 0;
+    public int currentArenaLoad = 1;
+    public int currentStageLoad = 0;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);  
         }
         else
         {
@@ -65,51 +66,31 @@ public class StageGameMode : MonoBehaviour
     public void Start()
     {
         LoadStageData();
-        InitArenaProgessData();
-        stageSelect.InitButton(ChangeArena);
     }
+    public void SetCurrentArenaAndStage(int stage)
+    {
+        currentStageLoad = stage;
 
-    public void SetCurrentStage(float index)
-    {
-        currentStage = index;
     }
-    public void ChangeArena(int index)
+    public Stage ReturnCurrentStageforPlay()
     {
-        int newArena = currentArena + index;
-        if (IsValidArena(newArena))
-        {
-            currentArena = newArena;
-            CreateArena(currentArena);
-        }
-    }
-    public bool IsValidArena(int arena)
-    {
-        return arena >= 1 && arena <= arenaListed.areraList.Count;
-    }
-    public void UpdateArena()
-    {
-        CreateArena(currentArena);
-        stageSelect.UpdateButtonState(currentArena, arenaListed.areraList.Count);
-    }
-    public void StartGameMode()
-    {
-        selectStagePanel.SetActive(true);
-        CreateArena(currentArena);
-    }
-
-    public Stage LoadData(/*int arenaID, int stageID*/)
-    {
-        var arenaData = arenaListed.areraList.Find(arenaData => arenaData.areaNumber == currentArena);
-        var stageData = arenaData.stageList.stageLists.Find(stageData => stageData.stageID == currentStage);
+        var arenaData = arenaListed.areraList.Find(arenaData => arenaData.areaNumber == currentArenaLoad);
+        var stageData = arenaData.stageList.stageLists.Find(stageData => stageData.stageID == currentStageLoad);
         return stageData;
     }
-    public void CreateArena(int arena)
+    public int ReturnArenaList()
+    {
+        return arenaListed.areraList.Count;
+    }
+    public Arena ReturnArena(int arena)
     {
         var arenaData = arenaListed.areraList.Find(arenaData => arenaData.areaNumber == arena);
+        return arenaData;
+    }
+    public ArenaProgess ReturnProgessArena(int arena)
+    {
         var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaProgess => arenaProgess.arenaNumber == arena);
-
-        stageSelect.LoadStageSelectData(arenaData.stageList.stageLists, arenaProgess.stageProgessList.stageProgessLists, arenaData);
-        CheckAndUnlockNextArena(arena);
+        return arenaProgess;
     }
     public void IntNewProgessStage(Stage stage, ArenaProgess arenaProgess)
     {
@@ -159,23 +140,12 @@ public class StageGameMode : MonoBehaviour
 
         SaveStageData();
     }
-    public void CheckAndUnlockNextArena(int currentArenaNumber)
+    public void SaveProgessArena(int arenaIndex)
     {
-        var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaprogess => arenaprogess.arenaNumber == currentArenaNumber);
-        if (arenaProgess == null) return;
-
-        bool allStagesCompleted = arenaProgess.stageProgessList.stageProgessLists.All(stage => stage.isComplete);
-
-        if (allStagesCompleted)
-        {
-            var nextArena = arenaProgessListed.arenaProgressList.Find(arena => arena.arenaNumber == currentArenaNumber + 1);
-            if (nextArena != null)
-            {
-                nextArena.isActiveArena = true;
-                Debug.Log($"Arena {nextArena.arenaNumber} isActived");
-                SaveStageData();
-            }
-        }
+        var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaprogess => arenaprogess.arenaNumber == arenaIndex);
+        arenaProgess.isActiveArena = true;
+        Debug.Log($"Arena {arenaIndex} isComplete");
+        SaveStageData();
     }
 
 
@@ -194,7 +164,5 @@ public class StageGameMode : MonoBehaviour
         arenaProgessListed = JsonUtility.FromJson<ArenaProgessList>(json);
         Debug.Log("ArenVsStage are Loaded");
     }
-
-
 
 }

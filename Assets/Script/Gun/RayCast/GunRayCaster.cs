@@ -13,6 +13,11 @@ public class GunRayCaster : MonoBehaviour
     public UnityEvent<RaycastHit> onRaycasting;
     public DamageManagement damageManagement;
     public Recoil recoil;
+
+    public void Start()
+    {
+        damageManagement = FindObjectOfType<DamageManagement>();
+    }
     public void PerformRayCasting()
     {
         //Ray aimingRay = new Ray(aimingCamera.transform.position, aimingCamera.transform.forward);
@@ -45,9 +50,9 @@ public class GunRayCaster : MonoBehaviour
             damageManagement.Calculator(hitInfo, gun.gunData.gunStats.damage,health,gun.gunData.gunStats.critical);          
         }     
     }
-    public void OnEnable()
-    {
-        damageManagement = FindObjectOfType<DamageManagement>();
-    }
+    //public void OnEnable()
+    //{
+    //    damageManagement = FindObjectOfType<DamageManagement>();
+    //}
 
 }

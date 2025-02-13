@@ -21,6 +21,6 @@ public class AlertData
 {
     public AlertType alertType;
     public string textWarning;
-    public AnimationClip clip;
+
     public AudioClip audio;
 }

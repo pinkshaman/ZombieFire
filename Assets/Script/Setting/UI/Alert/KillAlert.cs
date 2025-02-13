@@ -13,7 +13,6 @@ public class KillAlert : WarningAlert
     }
     public  void KillAlertPlay()
     {      
-        anim.clip = alertData.clip;
         anim.Play();
     }
 

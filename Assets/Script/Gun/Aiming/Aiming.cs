@@ -77,10 +77,10 @@ public class Aiming : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            AimCamera();
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    AimCamera();
+        //}
 
     }
 }

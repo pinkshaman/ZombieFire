@@ -1594,7 +1594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1777936682004580266
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,7 +1759,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damageManagement: {fileID: 0}
-  recoil: {fileID: 0}
+  recoil: {fileID: 2972565439756613880}
 --- !u!114 &3605185300675134518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,9 +1896,9 @@ MonoBehaviour:
   aimingCamera: {fileID: 0}
   cameraHolder: {fileID: 0}
   recoilRecoverySpeed: 5
-  horizontalRecoil: 1
-  verticalRecoil: 1
-  recoilAmount: 2
+  horizontalRecoil: 0.015
+  verticalRecoil: 0.015
+  recoilAmount: 0.04
 --- !u!1 &5556095373969247027
 GameObject:
   m_ObjectHideFlags: 0

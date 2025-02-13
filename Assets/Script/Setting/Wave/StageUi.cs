@@ -15,7 +15,7 @@ public class StageUi : MonoBehaviour
     public Stage stageData;
     public StageProgess stageProgess;
     public Button chooseButton;
-    
+    public GameObject LoadingPanel;
     public void Start()
     {
         chooseButton.onClick.AddListener(LoadStage);
@@ -43,10 +43,11 @@ public class StageUi : MonoBehaviour
             stageRank.sprite = rank.rankSprite;
         }
     }
+  
     public void LoadStage()
-    {
+    {      
         Debug.Log($"Data :{stageData.sceneID}");
-        ScenesManager.Instance.LoadSceneByStageID(stageData);
-
+        StageGameMode.Instance.SetCurrentArenaAndStage(stageData.stageID);
+        LoadingPanel.SetActive(true);
     }
 }

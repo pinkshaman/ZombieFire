@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,15 +14,33 @@ public class StageSelect : MonoBehaviour
     public Text arenaName;
     public List<StageUi> stageUiList;
     public UnityAction<int> OnChangeArena;
+    private Arena currentArena;
+    private ArenaProgess progessArena;
+    private int choosedArena = 1;
+    private int maxArena;
 
-    public void SetArena(Arena arena)
+    public void Start()
+    {
+        maxArena = StageGameMode.Instance.ReturnArenaList();
+        SetDataArena();
+        UpdateButtonState();
+    }
+    public void SetDataArena()
+    { 
+        currentArena = StageGameMode.Instance.ReturnArena(choosedArena);
+        progessArena = StageGameMode.Instance.ReturnProgessArena(choosedArena);
+        StageGameMode.Instance.currentArenaLoad = choosedArena;
+        LoadStageSelectData(currentArena.stageList.stageLists, progessArena.stageProgessList.stageProgessLists);
+        SetUiArena(currentArena);
+
+    }
+    public void SetUiArena(Arena arena)
     {
         arenaImage.sprite = arena.areraImage;
         arenaName.text = $"ARENA {arena.areaNumber}";
     }
-    public void LoadStageSelectData(List<Stage> stageList, List<StageProgess> stageProgessList,Arena arena)
+    public void LoadStageSelectData(List<Stage> stageList, List<StageProgess> stageProgessList)
     {
-        SetArena(arena);
         for (int i = 0; i < stageUiList.Count; i++)
         {
             if (i < stageList.Count)
@@ -41,7 +60,7 @@ public class StageSelect : MonoBehaviour
                 stageUiList[i].gameObject.SetActive(false);
             }
         }
-
+        CheckAndUnlockNextArena(stageProgessList);
     }
 
     public void InitButton(UnityAction<int> changeArenaAction)
@@ -50,13 +69,28 @@ public class StageSelect : MonoBehaviour
         nextArena.onClick.AddListener(() => OnChangeArena?.Invoke(1));
         prevArena.onClick.AddListener(() => OnChangeArena?.Invoke(-1));
     }
-
-    public void UpdateButtonState(int currentArena, int maxArena)
+    public void UpdateButtonState()
     {
-        nextArena.interactable = (currentArena < maxArena);
-        prevArena.interactable = (currentArena > 1);
+        nextArena.interactable = (choosedArena < maxArena);
+        prevArena.interactable = (choosedArena > 1);
     }
-
-
+    public bool CheckAndUnlockNextArena(List<StageProgess> stageProgessList)
+    {
+        bool allStagesCompleted = stageProgessList.All(stage => stage.isComplete);
+        return allStagesCompleted;
+    }
+    public bool IsValidArena(int arena)
+    {
+        return arena >= 1 && arena <= maxArena;
+    }
+    public void ChangeArena(int index)
+    {
+        int newArena = choosedArena + index;
+        if (IsValidArena(newArena))
+        {
+            choosedArena = newArena;
+            SetDataArena();
+        }
+    }
 
 }

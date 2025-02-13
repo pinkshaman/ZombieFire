@@ -1,4 +1,4 @@
-
+﻿
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,9 +9,10 @@ public class GunAmmo : MonoBehaviour
     public Gun gun;
     public int magSize;
     private int _loadedAmmo;
-    public bool isReloadComplete;
+
     public UnityEvent loadedAmmoChanged;
     private int cost;
+    private bool isReloading = false;
     public int LoadedAmmo
     {
         get => _loadedAmmo;
@@ -51,40 +52,39 @@ public class GunAmmo : MonoBehaviour
     }
     private void ReFillAmmo()
     {
-        LoadedAmmo += magSize;
+        int ammoToReload = Mathf.Min(magSize - LoadedAmmo, gun.gunPlayer.ammoStoraged);
+        if (ammoToReload <= 0 && AutoBuy())
+        {
+            ammoToReload = Mathf.Min(magSize - LoadedAmmo, gun.gunPlayer.ammoStoraged);
+        }
+        ammoToReload = Mathf.Min(ammoToReload, gun.gunPlayer.ammoStoraged);
+        if (ammoToReload > 0)
+        {
+            gun.gunPlayer.ammoStoraged -= ammoToReload;
+            LoadedAmmo += ammoToReload;
+            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+        }
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (LoadedAmmo >= magSize)
-            {
-                return;
-            }
-            else
+            if (Input.GetKeyDown(KeyCode.R) && LoadedAmmo < magSize)
             {
                 Reload();
             }
         }
     }
     public void Reload()
-    {      
-        if (gun.gunPlayer.ammoStoraged <= 0 )
+    {
+        if (gun.gunPlayer.ammoStoraged <= 0 && !AutoBuy()|| isReloading)
         {
-            AutoBuy();
+            return;
         }
-        else
-        {
-            int ammoToReload = Mathf.Min(magSize - LoadedAmmo, gun.gunData.gunStats.ammoCapacity);
-            if (gun.gunPlayer.ammoStoraged <= 0) return;
-            LockShooting();
-            gun.ReLoading();
-            gun.gunPlayer.ammoStoraged -= ammoToReload;
-            LoadedAmmo += ammoToReload;
-            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
-            
-        }
+        isReloading = true;
+        LockShooting();
+        gun.ReLoading();
     }
     public void AddAmmo()
     {
@@ -103,18 +103,17 @@ public class GunAmmo : MonoBehaviour
         Debug.Log("Reload Complete");
         AddAmmo();
         UnlockShooting();
-
+        isReloading = false;
     }
     public void OnSelectedGun()
     {
-        gun.Ready();
+        gun.ResetAnimation();
         UpdateShootLocking();
-        InitializeGun();
     }
     private void UpdateShootLocking()
     {
         gun.enabled = LoadedAmmo > 0;
-        gun.Idle();
+        isReloading = false;
     }
     public void InitializeGun()
     {
@@ -123,7 +122,7 @@ public class GunAmmo : MonoBehaviour
         magSize = newGun.gunStats.ammoCapacity;
         ReFillAmmo();
     }
-    public void AutoBuy()
+    private bool AutoBuy()
     {
         if (PlayerManager.Instance.playerData.coin >= cost)
         {
@@ -131,7 +130,9 @@ public class GunAmmo : MonoBehaviour
             PlayerManager.Instance.UpdatePlayerData(PlayerManager.Instance.playerData);
             gun.gunPlayer.ammoStoraged += gun.gunData.gunStats.ammoCapacity;
             GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
-        }  
+            return true;
+        }
+        return false; 
     }
 
 

@@ -130,6 +130,7 @@ public class PlayerManager : MonoBehaviour
         return upgrade.percentIncrease;
 
     }
+   
     public void UseGearEffect()
     {
         foreach (var upgradeData in playerData.specialUpgradeProgess.specialUpdateProgessList)

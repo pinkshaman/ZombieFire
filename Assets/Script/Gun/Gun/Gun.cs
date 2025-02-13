@@ -95,8 +95,8 @@ public abstract class Gun : MonoBehaviour
     }
     public virtual void ResetAnimation()
     {
-        //anim.ResetTrigger("Reload");
-        //anim.ResetTrigger("Fire");
+        anim.ResetTrigger("Reload");
+        anim.ResetTrigger("Fire");
         anim.SetTrigger("Idle");
     }
     public virtual float ReturnReloadTime()
@@ -108,6 +108,19 @@ public abstract class Gun : MonoBehaviour
                 float reloadTime = clip.length;
                 Debug.Log($"ReloadTime : {reloadTime}-{GunName}");
                 return reloadTime;
+            }
+        }
+        return 0.0f;
+    }
+    public virtual float ReturnHideTime()
+    {
+        foreach (var clip in anim.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == "Hide")
+            {
+                float hideTime = clip.length;
+                Debug.Log($"ReloadTime : {hideTime}-{GunName}");
+                return hideTime;
             }
         }
         return 0.0f;

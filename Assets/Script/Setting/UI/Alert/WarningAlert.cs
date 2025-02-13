@@ -17,7 +17,6 @@ public class WarningAlert : MonoBehaviour
     }
     public virtual void AlertPlay()
     {
-        anim.clip = alertData.clip;
         anim.Play();
     }
     public virtual void PlaySoundAlert()

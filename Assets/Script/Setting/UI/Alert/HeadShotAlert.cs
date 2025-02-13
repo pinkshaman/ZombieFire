@@ -17,7 +17,7 @@ public class HeadShotAlert : WarningAlert
         {
             headShotCount.text = $"{number}";
         }
-        anim.clip = alertData.clip;
+        
         anim.Play();
     }
 

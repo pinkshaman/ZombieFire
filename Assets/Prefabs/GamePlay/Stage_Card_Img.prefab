@@ -368,8 +368,8 @@ GameObject:
   - component: {fileID: 2327457507800145105}
   - component: {fileID: 3422257841588444723}
   - component: {fileID: 5148848720502093386}
-  - component: {fileID: 2522022257180705248}
   - component: {fileID: 5369923010082615359}
+  - component: {fileID: 2522022257180705248}
   m_Layer: 0
   m_Name: Stage_Card_Img
   m_TagString: Untagged
@@ -441,35 +441,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2522022257180705248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6858379173613312662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2de1ae61d9a25468b745ca0af141c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stageName: {fileID: 4200149673243875698}
-  stageRank: {fileID: 7587244257141959593}
-  lockObject: {fileID: 7972771124109818314}
-  stageImage: {fileID: 2597466731696571947}
-  bossLabel: {fileID: 427493220716391447}
-  stageData:
-    stageID: 0
-    stageImage: {fileID: 0}
-    isBossWave: 0
-    rankList:
-      rankLists: []
-    waveList: []
-  stageProgess:
-    stageID: 0
-    isComplete: 0
-    stageRank: 
-  chooseButton: {fileID: 5369923010082615359}
 --- !u!114 &5369923010082615359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +485,38 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2522022257180705248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6858379173613312662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2de1ae61d9a25468b745ca0af141c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageName: {fileID: 4200149673243875698}
+  stageRank: {fileID: 7587244257141959593}
+  lockObject: {fileID: 7972771124109818314}
+  stageImage: {fileID: 2597466731696571947}
+  bossLabel: {fileID: 427493220716391447}
+  stageData:
+    stageID: 0
+    stageImage: {fileID: 0}
+    isBossWave: 0
+    sceneID: 0
+    rankList:
+      rankLists: []
+    waveList: []
+  stageProgess:
+    stageID: 0
+    isComplete: 0
+    stageRank: 
+    isCanPlay: 0
+  chooseButton: {fileID: 5369923010082615359}
+  LoadingPanel: {fileID: 0}
 --- !u!1 &6960864756417080163
 GameObject:
   m_ObjectHideFlags: 0

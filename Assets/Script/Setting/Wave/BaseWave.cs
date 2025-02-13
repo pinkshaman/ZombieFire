@@ -19,7 +19,7 @@ public class GroupZombie
 [Serializable]
 public class Stage
 {
-    public float stageID;
+    public int stageID;
     public Sprite stageImage;
     public bool isBossWave;
     public int sceneID;

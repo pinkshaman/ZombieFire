@@ -1,51 +1,62 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GunSwicher : MonoBehaviour
 {
-    public GameObject[] GunList;
-    public AudioSource swichingSound;
-    private string gunSlot1;
-    private string gunSlot2;
+    public GameObject[] gunListed;
+    public AudioSource switchingSound;
+
+    private int gunIndex1, gunIndex2;
+    private bool isSwitching = false;
 
     public void Start()
     {
-        SetActiveGun();
-
+        InitializeGuns();
     }
-    public void SetActiveGun()
+    private void InitializeGuns()
     {
         var gunSlot = GunManager.Instance.ReturnGunSlot();
-        gunSlot1 = gunSlot.gunSlot1;
-        gunSlot2 = gunSlot.gunSlot2;
+        for (int i = 0; i < gunListed.Length; i++)
+        {
+            var gun = gunListed[i].GetComponent<Gun>();
+            if (gun.GunName == gunSlot.gunSlot1) gunIndex1 = i;
+            if (gun.GunName == gunSlot.gunSlot2) gunIndex2 = i;
+        }
+        gunListed[gunIndex1].SetActive(true);
     }
     private void Update()
     {
-        for (int i = 0; i < GunList.Length; i++)
+        if (Input.GetKeyDown(KeyCode.F) && !isSwitching)
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                SetAvtiveGun(i);
-            }
+            StartCoroutine(SwitchGun());
         }
     }
-    private void SetAvtiveGun(int gunIndex)
+    private IEnumerator SwitchGun()
     {
+        isSwitching = true;
 
-        for (int i = 0; i < GunList.Length; i++)
-        {
-            var gun =GunList[i].GetComponent<Gun>();
-            bool isActive = (i == gunIndex);
-            if (gun.GunName == gunSlot1 || gun.GunName == gunSlot2)
-            {
-                GunList[i].SetActive(isActive);
-                if (isActive)
-                {
-                    swichingSound.Play();
-                    GunList[i].SendMessage("OnGunSelected", SendMessageOptions.DontRequireReceiver);
-                }
-            }
-        }
-    }   
+        int currentGunIndex = gunListed[gunIndex1].activeSelf ? gunIndex1 : gunIndex2;
+        int newGunIndex = (currentGunIndex == gunIndex1) ? gunIndex2 : gunIndex1;
+
+        Gun currentGun = gunListed[currentGunIndex].GetComponent<Gun>();
+        Gun newGun = gunListed[newGunIndex].GetComponent<Gun>();
+      
+        currentGun.Hiding();
+        currentGun.Switching();
+
+        var timetoHide = currentGun.ReturnHideTime();
+        yield return new WaitForSeconds(timetoHide);
+
+        gunListed[currentGunIndex].SetActive(false);
+        gunListed[newGunIndex].SetActive(true);
+        switchingSound.Play();
+
+        newGun.Switching();
+        newGun.Ready();
+
+        isSwitching = false; 
+    }
 }
+
+
