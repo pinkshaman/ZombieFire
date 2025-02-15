@@ -44,11 +44,11 @@ public class ZombieRepawn : MonoBehaviour
     }
     private void SpawnZombie(GameObject zombiePrefabs)
     {
-        foreach (var point in SpawnPotisionList)
-        {
-            Transform SpawnPoint = point.transform;
-            Instantiate(zombiePrefabs, SpawnPoint.transform.position, transform.rotation);       
-        }
+        int pointIndex = Random.Range(1, SpawnPotisionList.Count);
+        Transform SpawnPoint = SpawnPotisionList[pointIndex].transform;
+        Instantiate(zombiePrefabs, SpawnPoint.transform.position, transform.rotation);
+
+
     }
     public void OnzombieDeath()
     {

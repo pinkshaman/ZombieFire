@@ -106,7 +106,14 @@ public abstract class Zombie : MonoBehaviour
     {
         playerHealth.TakeDamage(zombieData.Damage);
         Debug.Log($"Player Take :{zombieData.Damage} damage");
-        GamePlayUI.Instance.ShowScratch();
+        if (!playerHealth._isShieldActive)
+        {
+            GamePlayUI.Instance.ShowScratch();
+        }
+        else
+        {
+            GamePlayUI.Instance.ShieldEffectShow();
+        }
 
     }
     public void Rising()
@@ -154,6 +161,7 @@ public abstract class Zombie : MonoBehaviour
         RageObj.SetActive(false);
         BoneRig.SetActive(false);
         Destroy(gameObject, 3.0f);
+
     }
     public virtual void Move()
     {

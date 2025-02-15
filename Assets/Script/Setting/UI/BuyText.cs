@@ -9,19 +9,19 @@ public class BuyText : MonoBehaviour
     public float speed;
     public float visibleDuration;
     private float timer;
-
+    public RectTransform rectObject;
     private void OnEnable()
     {
         timer = visibleDuration;
     }
     private void OnDisable()
     {
-        gameObject.transform.position = Vector3.zero;
+        gameObject.transform.position = rectObject.position;
     }
 
     public void Update()
     {
-        transform.Translate(speed * Time.deltaTime * Vector3.up);
+        transform.position = speed * Time.deltaTime * Vector2.up;
         timer -= Time.deltaTime;
         if (timer <= 0)
         {

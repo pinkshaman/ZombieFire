@@ -96,14 +96,16 @@ public class GameFlow : MonoBehaviour
 
         clearAlert.gameObject.SetActive(true);
         clearAlert.AlertPlay();
-        ActiveResultPanel();
-        GameEnd();
+        StartCoroutine(GameEnd());
+       
     }
-    public void GameEnd()
+    public IEnumerator GameEnd()
     {
+        yield return new WaitForSeconds(5.0f);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        ActiveResultPanel();
     }
     public void StartStage()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
     public GamePlayUI itemUI;
-    private bool _isShieldActive = false;
+    public bool _isShieldActive = false;
 
 
 

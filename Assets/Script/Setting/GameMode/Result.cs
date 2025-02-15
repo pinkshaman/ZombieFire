@@ -34,7 +34,7 @@ public class Result : MonoBehaviour
     }
     public void SetData()
     {
-        stageNumber.text = StageGameMode.Instance.ReturnCurrentStageforPlay().stageID.ToString();
+        stageNumber.text = $"Stage {StageGameMode.Instance.ReturnCurrentStageforPlay().stageID.ToString()}";
         maxHeadShotComboText.text = damageManagement.ReturnMaxHeadShotKill().ToString();
         killText.text = score.ReturnKillCount();
         headShotText.text = score.ReturnHeadShotCount();
@@ -105,6 +105,17 @@ public class Result : MonoBehaviour
     }
     public string ReturnRank()
     {
-       return rankText.text;
+        return rankText.text;
+    }
+    public void UpdateReward()
+    {
+        var playerData = PlayerManager.Instance.playerData;
+
+        int coin = int.Parse(coinReward.text);
+        playerData.coin += coin;
+        int exp = int.Parse(expText.text);
+        playerData.exp += exp;
+
+        PlayerManager.Instance.UpdatePlayerData(playerData);
     }
 }

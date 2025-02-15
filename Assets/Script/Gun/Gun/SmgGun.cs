@@ -47,7 +47,7 @@ public class SmgGun : Gun
         audioSource.clip = smgGun.gunAudio.Reload;
         base.ReLoading();
         audioSource.Play();
-        OnReloading.Invoke();
+
     }
 
     public override void Hiding()

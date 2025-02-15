@@ -34,7 +34,7 @@ public class GunAmmo : MonoBehaviour
 
     private void Start()
     {
-        gamePlayUI =FindFirstObjectByType<GamePlayUI>();
+        gamePlayUI = FindFirstObjectByType<GamePlayUI>();
         InitializeGun();
         gun.OnShooting.AddListener(SingleFireAmmoCounter);
         gun.OnSwitching.AddListener(OnSelectedGun);
@@ -72,17 +72,15 @@ public class GunAmmo : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && LoadedAmmo < magSize)
         {
-            if (Input.GetKeyDown(KeyCode.R) && LoadedAmmo < magSize)
-            {
-                Reload();
-            }
+            Reload();
         }
+
     }
     public void Reload()
     {
-        if (gun.gunPlayer.ammoStoraged <= 0 && !AutoBuy()|| isReloading)
+        if (gun.gunPlayer.ammoStoraged <= 0 && !AutoBuy() || isReloading)
         {
             return;
         }
@@ -137,7 +135,7 @@ public class GunAmmo : MonoBehaviour
             onBuyAmmo.Invoke();
             return true;
         }
-        return false; 
+        return false;
     }
 
 

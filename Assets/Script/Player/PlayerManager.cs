@@ -77,6 +77,7 @@ public class PlayerManager : MonoBehaviour
         SavePlayerData();
     }
 
+    
     public GearUpgradeData ReturnSpecialUpgradeData(GearUpgradeType type)
     {
         var data = gearUpgradeList.gearUpgradeLists.Find(data => data.type == type);

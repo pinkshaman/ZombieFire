@@ -49,7 +49,7 @@ public class RifleGun : Gun
         audioSource.clip = rifleGun.gunAudio.Reload;
         base.ReLoading();
         audioSource.Play();
-        OnReloading.Invoke();
+       
     }
 
     public override void Hiding()

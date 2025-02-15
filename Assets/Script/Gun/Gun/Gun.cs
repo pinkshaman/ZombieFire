@@ -75,7 +75,7 @@ public abstract class Gun : MonoBehaviour
     }
     public virtual void FastReloadItem()
     {
-        float newSpeed = 2.0f;
+        float newSpeed = 3.0f;
         anim.SetTrigger("Reload");
         itemUI.UserReloadItem();
         anim.speed = newSpeed;
@@ -178,17 +178,21 @@ public abstract class Gun : MonoBehaviour
     {
         isReloading = false;
         anim.speed = 1f;
-        Debug.Log("Reload Canceled , animator Speed reset to default");
+        Debug.Log("FastReload Canceled , animator Speed reset to default");
     }
     public virtual void Update()
     {
-        //if (isReloading)
-        //{
-        //    AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        //    if (!stateInfo.IsName("Reload"))
-        //    {
-        //        CancelReload();
-        //    }
-        //}
+        if (isReloading)
+        {
+            AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+            if (!stateInfo.IsName("Reload"))
+            {
+                CancelReload();
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            itemUI.UserShieldItem();
+        }
     }
 }

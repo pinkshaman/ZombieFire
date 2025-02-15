@@ -16,6 +16,7 @@ public class AmmoTextBinder : MonoBehaviour
     {
         gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);
         buyAmmo.onClick.AddListener(IsBuyAmmo);
+        gunAmmo.onBuyAmmo.AddListener(IsBuyAmmo);
         UpdateGunAmmo();
         cost = gunAmmo.gun.gunData.buyGun.ammoPrice;
     }
@@ -29,10 +30,10 @@ public class AmmoTextBinder : MonoBehaviour
     {
         UpdateGunAmmo();
     }
+    [ContextMenu("IsBuyAmmo")]
     public void IsBuyAmmo()
     {
-        var isBought = gunAmmo.AutoBuy();
-        buyText.gameObject.SetActive(isBought);
+        buyText.gameObject.SetActive(true);
         buyText.SetText(cost.ToString());
     }
 }

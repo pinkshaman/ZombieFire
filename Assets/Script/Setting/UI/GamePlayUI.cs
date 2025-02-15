@@ -8,6 +8,7 @@ public class GamePlayUI : MonoBehaviour
 {
     public static GamePlayUI Instance { get; private set; }
 
+    public int shieldDuration;
     public Text fastRealoadQuatityText;
     public Text shieldQuatityText;
     public int fastRealoadCount;
@@ -15,7 +16,7 @@ public class GamePlayUI : MonoBehaviour
     public Button buttonShield;
     public Button reloadButton;
     public ScratchShow scratchShow;
-    public AutoFade ShieldEffect;
+    public GameObject ShieldEffect;
     public UnityEvent OnUsingShield;
 
     private bool _isUsingShield;
@@ -59,6 +60,7 @@ public class GamePlayUI : MonoBehaviour
     {
         if (fastRealoadCount <= 0) return;
         fastRealoadCount--;
+        Debug.Log($"ReloadCount{fastRealoadCount}");
         PlayerManager.Instance.UpdateItemData("QuickReload", fastRealoadCount);
         UpdateTextUi();
     }
@@ -68,15 +70,16 @@ public class GamePlayUI : MonoBehaviour
         shieldCount--;
         buttonShield.interactable = false;
         IsUsingShield = true;
+        ShieldEffectShow();
         PlayerManager.Instance.UpdateItemData("Shield", shieldCount);
         UpdateTextUi();
-        StartCoroutine(DisableShieldAfterTime(5f));
+        StartCoroutine(DisableShieldAfterTime(shieldDuration));
     }
     private IEnumerator DisableShieldAfterTime(float duration)
     {
         yield return new WaitForSeconds(duration);
         IsUsingShield = false;
-        buttonShield.interactable = true;
+        buttonShield.interactable = true;     
     }
     public void ShowScratch()
     {
@@ -84,9 +87,10 @@ public class GamePlayUI : MonoBehaviour
     }
     public void ShieldEffectShow()
     {
-        ShieldEffect.fadeDuration = 1;
-        ShieldEffect.visibleDurtation = 5;
-        ShieldEffect.Show();
+        ShieldEffect.SetActive(true);
+        var clip = ShieldEffect.GetComponent<Animation>();
+        clip.Play();
+
     }
 
 }
