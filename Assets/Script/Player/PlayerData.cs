@@ -1,24 +1,24 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class PlayerData 
+public class PlayerData
 {
-    public int level;
     public float exp;
     public int health;
     public int coin;
     public int gold;
-    
+
     public SpecialUpgradeProgess specialUpgradeProgess;
     public ItemList itemList;
+    public LevelRewardProgessList levelRewardProgessList;
 
-
-    public PlayerData(int level, float exp, int health, int coin, int gold, SpecialUpgradeProgess specialUpgradeProgess)
+    public PlayerData(LevelRewardProgessList levelRewardProgessList, float exp, int health, int coin, int gold, SpecialUpgradeProgess specialUpgradeProgess)
     {
-        this.level = level;
+        this.levelRewardProgessList = levelRewardProgessList;
         this.exp = exp;
         this.health = health;
         this.coin = coin;
@@ -27,12 +27,28 @@ public class PlayerData
     }
 }
 [Serializable]
+public class LeveRewardProgess
+{
+    public int levelProgess;
+    public bool isTook;
+    public LeveRewardProgess(int levelProgess, bool isTook)
+    {
+        this.levelProgess = levelProgess;
+        this.isTook = isTook;
+    }   
+}
+[Serializable]
+public class LevelRewardProgessList
+{
+    public List<LeveRewardProgess> leveRewardProgesses;
+}
+[Serializable]
 public class SpecialUpgrade
 {
     public string title;
     public int upgradeLevel;
- 
-   
+
+
     public SpecialUpgrade(string title, int level)
     {
         this.title = title;

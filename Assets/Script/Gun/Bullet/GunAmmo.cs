@@ -9,7 +9,8 @@ public class GunAmmo : MonoBehaviour
     public Gun gun;
     public int magSize;
     private int _loadedAmmo;
-
+    public GamePlayUI gamePlayUI;
+    public UnityEvent onBuyAmmo;
     public UnityEvent loadedAmmoChanged;
     private int cost;
     private bool isReloading = false;
@@ -33,10 +34,13 @@ public class GunAmmo : MonoBehaviour
 
     private void Start()
     {
+        gamePlayUI =FindFirstObjectByType<GamePlayUI>();
         InitializeGun();
         gun.OnShooting.AddListener(SingleFireAmmoCounter);
         gun.OnSwitching.AddListener(OnSelectedGun);
+        gamePlayUI.reloadButton.onClick.AddListener(Reload);
         cost = gun.gunData.buyGun.ammoPrice;
+
     }
     public void SingleFireAmmoCounter()
     {
@@ -122,7 +126,7 @@ public class GunAmmo : MonoBehaviour
         magSize = newGun.gunStats.ammoCapacity;
         ReFillAmmo();
     }
-    private bool AutoBuy()
+    public bool AutoBuy()
     {
         if (PlayerManager.Instance.playerData.coin >= cost)
         {
@@ -130,6 +134,7 @@ public class GunAmmo : MonoBehaviour
             PlayerManager.Instance.UpdatePlayerData(PlayerManager.Instance.playerData);
             gun.gunPlayer.ammoStoraged += gun.gunData.gunStats.ammoCapacity;
             GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+            onBuyAmmo.Invoke();
             return true;
         }
         return false; 

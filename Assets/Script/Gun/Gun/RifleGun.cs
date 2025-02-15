@@ -16,8 +16,9 @@ public class RifleGun : Gun
         base.Start();
         interval = 60f / gunData.gunStats.fireRate;
     }
-    private void Update()
+    public override void Update()
     {
+        base.Update();
         if (Input.GetMouseButton(0))
         {
             UpdateFiring();

@@ -12,13 +12,12 @@ public class GunInventory : MonoBehaviour
     public Transform rootUi;
     public WeaponUiListItem weaponPrefabs;
     public WeaponUI weaponUI;
+    public WeaponUnlock weaponUnlock;
     public List<WeaponUiListItem> listItems = new List<WeaponUiListItem>();
     public WeaponChange weaponChange;
     public List<GunModelInventory> gunModel;
 
     private WeaponUiListItem selectedGunObject;
-    private GunModelInventory selectedGunModel;
-    private int currenPrice;
     public UnityEvent CanUpgradeWeapon;
     public UnityEvent CanBuyWeapon;
     public UnityEvent CanBuyAmmo;
@@ -198,6 +197,7 @@ public class GunInventory : MonoBehaviour
         if (!IsCanBuy) return;
         selectedGunObject.BuyGun();
         weaponUI.equipButton.gameObject.SetActive(selectedGunObject.playerGun.isUnlocked);
+        weaponUnlock.SetData(selectedGunObject);
         ShowGunUiOnClick(selectedGunObject);
         UpdateStatus();
     }

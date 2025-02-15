@@ -13,8 +13,9 @@ public abstract class Gun : MonoBehaviour
     public Transform aimingPos;
     public Animator anim;
     public GunAmmo gunAmmo;
+    public GamePlayUI itemUI;
     public bool haveScope;
-    private float originalDuration;
+    private bool isReloading;
 
     public UnityEvent OnSwitching;
     public UnityEvent OnShooting;
@@ -22,12 +23,12 @@ public abstract class Gun : MonoBehaviour
     public UnityEvent OnAiming;
 
     public virtual void Start()
-    {
-        
+    {     
         var newGun = GunManager.Instance.GetGun(GunName);
         gunPlayer = GunManager.Instance.ReturnPlayerGun(newGun.GunName);
         Initialize(newGun);
-        originalDuration = ReturnReloadTime();
+        itemUI= FindObjectOfType<GamePlayUI>();
+        OnReloading.AddListener(itemUI.UserReloadItem);
     }
     public virtual void Aiming()
     {
@@ -58,27 +59,27 @@ public abstract class Gun : MonoBehaviour
 
     public virtual void ReLoading()
     {
-        //bool isAvailable = PlayerManager.Instance.ReturnItemReloadInfor();
-        //Debug.Log($"FastReloadItem : {isAvailable}");
-        //if (!isAvailable)
-        //{
-            //float time = originalDuration;
+        bool isAvailable = itemUI.fastRealoadCount > 0;
+        Debug.Log($"FastReloadItem : {isAvailable}");
+        if (!isAvailable)
+        {
             anim.SetTrigger("Reload");
-            //anim.speed = time; 
-        //}
-        //else
-        //{
-        //    FastReloadItem();
-        //}
+            anim.speed = 1;
+        }
+        else
+        {
+            FastReloadItem();
+        }
+        isReloading = true;
     }
     public virtual void FastReloadItem()
     {
-        float newDuration = originalDuration * (1.0f / 1.5f);
-        float newSpeed = originalDuration / newDuration;
+        float newSpeed = 2.0f;  
         anim.SetTrigger("Reload");
-
+        itemUI.UserReloadItem();
         anim.speed = newSpeed;
-        StartCoroutine(ResetController(newSpeed));
+        isReloading = true;
+        StartCoroutine(ResetController());
     }
     public virtual void Hiding()
     {
@@ -99,19 +100,7 @@ public abstract class Gun : MonoBehaviour
         anim.ResetTrigger("Fire");
         anim.SetTrigger("Idle");
     }
-    public virtual float ReturnReloadTime()
-    {
-        foreach (var clip in anim.runtimeAnimatorController.animationClips)
-        {
-            if (clip.name == "Reload")
-            {
-                float reloadTime = clip.length;
-                Debug.Log($"ReloadTime : {reloadTime}-{GunName}");
-                return reloadTime;
-            }
-        }
-        return 0.0f;
-    }
+  
     public virtual float ReturnHideTime()
     {
         foreach (var clip in anim.runtimeAnimatorController.animationClips)
@@ -125,13 +114,14 @@ public abstract class Gun : MonoBehaviour
         }
         return 0.0f;
     }
-    IEnumerator ResetController(float duration)
+    IEnumerator ResetController()
     {
-
-        yield return new WaitForSeconds(duration);
-        anim.speed = 1;
-        Debug.Log($"ResetReloadTime: {anim.speed} ");
-
+        while (anim.GetCurrentAnimatorStateInfo(0).IsName("Reload"))
+        {
+            yield return null;
+        }
+        anim.speed = 1f;
+        Debug.Log($"ResetReloadTime: {anim.speed}");
     }
     public void UpgradeGearEffect(BaseGun gun)
     {
@@ -141,6 +131,23 @@ public abstract class Gun : MonoBehaviour
             gun.gunStats.damage += baseUpgrade.powerUpgrade;
             gun.gunStats.critical += baseUpgrade.criticalUpgrade;
             gun.gunStats.fireRate += baseUpgrade.fireRateUpgrade;
+        }
+    }
+    private void CancelReload()
+    {
+        isReloading = false;
+        anim.speed = 1f;
+        Debug.Log("Reload Canceled , animator Speed reset to default");
+    }
+    public virtual void Update()
+    {
+        if (isReloading)
+        {
+            AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+            if (!stateInfo.IsName("Reload"))
+            {
+                CancelReload();
+            }
         }
     }
 }

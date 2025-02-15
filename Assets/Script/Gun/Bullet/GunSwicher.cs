@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GunSwicher : MonoBehaviour
 {
     public GameObject[] gunListed;
     public AudioSource switchingSound;
-
+    public Button buttonSwitch;
     private int gunIndex1, gunIndex2;
     private bool isSwitching = false;
 
     public void Start()
     {
         InitializeGuns();
+        buttonSwitch.onClick.AddListener(Switch);
     }
     private void InitializeGuns()
     {
@@ -31,6 +34,10 @@ public class GunSwicher : MonoBehaviour
         {
             StartCoroutine(SwitchGun());
         }
+    }
+    public void Switch()
+    {
+        StartCoroutine(SwitchGun());
     }
     private IEnumerator SwitchGun()
     {

@@ -1,0 +1,321 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a02171d6d829c445ba47075cacb1be7, type: 3}
+  m_Name: LevelReawardList
+  m_EditorClassIdentifier: 
+  listLevelReward:
+  - level: 0
+    reward:
+      rewardType: 1
+      rewardAmmout: 0
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 1
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 2
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 3
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 4
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 5
+    reward:
+      rewardType: 0
+      rewardAmmout: 10
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 6
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 7
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 8
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 9
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 10
+    reward:
+      rewardType: 0
+      rewardAmmout: 20
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 11
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 12
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 13
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 14
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 15
+    reward:
+      rewardType: 0
+      rewardAmmout: 20
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 16
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 17
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 18
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 19
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 20
+    reward:
+      rewardType: 0
+      rewardAmmout: 20
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 21
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 22
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 23
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 24
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 25
+    reward:
+      rewardType: 0
+      rewardAmmout: 20
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 26
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 27
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 28
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 29
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 30
+    reward:
+      rewardType: 0
+      rewardAmmout: 30
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 31
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 32
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 33
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 34
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 35
+    reward:
+      rewardType: 0
+      rewardAmmout: 30
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 36
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 37
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 38
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 39
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 40
+    reward:
+      rewardType: 0
+      rewardAmmout: 30
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 41
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 42
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 43
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 44
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 45
+    reward:
+      rewardType: 0
+      rewardAmmout: 30
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - level: 46
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 47
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 48
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 49
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - level: 50
+    reward:
+      rewardType: 0
+      rewardAmmout: 30
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold

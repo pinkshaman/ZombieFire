@@ -97,9 +97,7 @@ public class GameFlow : MonoBehaviour
         clearAlert.gameObject.SetActive(true);
         clearAlert.AlertPlay();
         ActiveResultPanel();
-        //Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;         
+           
     }
     public void GameEnd()
     {

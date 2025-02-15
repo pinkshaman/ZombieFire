@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Android.Types;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,13 +9,15 @@ public class AmmoTextBinder : MonoBehaviour
     public Text loadedTextAmmo;
     public Text gunName;
     public GunAmmo gunAmmo;
-
-
-    private void Start()
-    {       
-        
-        gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);  
+    public Button buyAmmo;
+    public BuyText buyText;
+    private int cost;
+     private void Start()
+    {
+        gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);
+        buyAmmo.onClick.AddListener(IsBuyAmmo);
         UpdateGunAmmo();
+        cost = gunAmmo.gun.gunData.buyGun.ammoPrice;
     }
 
     public void UpdateGunAmmo()
@@ -26,5 +29,10 @@ public class AmmoTextBinder : MonoBehaviour
     {
         UpdateGunAmmo();
     }
-
+    public void IsBuyAmmo()
+    {
+        var isBought = gunAmmo.AutoBuy();
+        buyText.gameObject.SetActive(isBought);
+        buyText.SetText(cost.ToString());
+    }
 }

@@ -14,8 +14,9 @@ public class PistolGun : Gun
         base.Start();
         interval = 60f / gunData.gunStats.fireRate;
     }
-    private void Update()
+    public override void Update()
     {
+        base.Update();
         if (Input.GetMouseButtonDown(0))
         {
             UpdateFiring();

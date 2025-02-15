@@ -8,12 +8,12 @@ public class RpgGun : Gun
     public RPG rpgGun;
     private float reloadSpeed;
     public float bulletSpeed;
-    public bool isReloading = false;
+    public bool isRPGReloading = false;
 
-    public void Update()
+    public  override void Update()
     {
-
-        if (Input.GetMouseButtonDown(0) && !isReloading)
+        base.Update();
+        if (Input.GetMouseButtonDown(0) && !isRPGReloading)
         {
             Shooting();
         }
@@ -26,8 +26,9 @@ public class RpgGun : Gun
     public IEnumerator ShootBullet()
     {
         gunAmmo.SingleFireAmmoCounter();
-        AddProjectile();
         anim.Play("Fire");
+        AddProjectile();
+
         audioSource.clip = rpgGun.gunAudio.Shooting;
         audioSource.Play();
         rpgGun.muzzleSmoke.Play();
@@ -40,11 +41,11 @@ public class RpgGun : Gun
     {
         if (gunAmmo.LoadedAmmo > 0)
         {
-            isReloading = true;
+            isRPGReloading = true;
             reloadSpeed = 1.5f;
 
             yield return new WaitForSeconds(reloadSpeed);
-            isReloading = false;
+            isRPGReloading = false;
             gunAmmo.UnlockShooting();
         }
 

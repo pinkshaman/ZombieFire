@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class PlayerHealth : Health
 {
-    public PlayerData playerData;
+    public GamePlayUI itemUI;
+    private bool _isShieldActive = false;
+
 
 
     public override void Start()
     {
-        playerData = PlayerManager.Instance.ReturnPlayerDataAfterEffected();
-        maxHealthPoint = playerData.health;
+        maxHealthPoint = PlayerManager.Instance.ReturnPlayerHealthAfterEffected();
         HealthPoint = maxHealthPoint;
-        Debug.Log($"Player Health Effect:{playerData.health}");
+        itemUI.OnUsingShield.AddListener(UpdateShieldState);
+        Debug.Log($"Player Health Effect:{maxHealthPoint}");
+    }
+    private void UpdateShieldState()
+    {
+        _isShieldActive = itemUI.IsUsingShield;
+        Debug.Log($"Shield Status: {_isShieldActive}");
+    }
+    public override void TakeDamage(int damage)
+    {
+        if (IsDead) return;
+        if (_isShieldActive)
+        {
+            Debug.Log("Shield is Actived, doesn't take damage");
+            return;
+        }
+        HealthPoint -= damage;
+        OnTakeDamage.Invoke();
+        if (IsDead)
+        {
+            Die();
+        }
+
     }
 
 }

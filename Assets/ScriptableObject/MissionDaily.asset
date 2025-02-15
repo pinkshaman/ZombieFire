@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19721bfbddc29dd41a400c593811ba39, type: 3}
+  m_Name: MissionDaily
+  m_EditorClassIdentifier: 
+  missionType: 0
+  missionList:
+  - missionID: 1
+    missionRequireType: 0
+    missionName: Kill 3 zombie
+    missionDecription: 
+    missionRequire: 3
+    tagertName: BerSerkZombie
+  - missionID: 2
+    missionRequireType: 0
+    missionName: Kill 5 zombie
+    missionDecription: 
+    missionRequire: 5
+    tagertName: BerserkZombie
+  - missionID: 3
+    missionRequireType: 2
+    missionName: Play 1 Game
+    missionDecription: 
+    missionRequire: 1
+    tagertName: Game

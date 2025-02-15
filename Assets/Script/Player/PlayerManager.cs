@@ -12,10 +12,10 @@ public class PlayerManager : MonoBehaviour
     public PlayerData playerData;
     public GearUpgradeList gearUpgradeList;
     public ItemDataList itemDataList;
+    public LevelRewardList levelRewardList;
 
     public UnityEvent<PlayerData> OnPlayerDataChange;
 
-    private PlayerData playerDataAftereffected;
     private void Awake()
     {
         if (Instance == null)
@@ -62,6 +62,21 @@ public class PlayerManager : MonoBehaviour
             playerData.itemList.itemLists.Add(new Item(item.itemName, 0));
         }
     }
+
+    [ContextMenu("InitNewLevelRewardProgess")]
+    public void InitNewLevelRewardProgess()
+    {
+
+        playerData.levelRewardProgessList = new LevelRewardProgessList();
+        playerData.levelRewardProgessList.leveRewardProgesses = new List<LeveRewardProgess>();
+    
+        foreach (var levelReward in levelRewardList.listLevelReward)
+        {
+            playerData.levelRewardProgessList.leveRewardProgesses.Add(new LeveRewardProgess(levelReward.level,false));
+        }
+        SavePlayerData();
+    }
+
     public GearUpgradeData ReturnSpecialUpgradeData(GearUpgradeType type)
     {
         var data = gearUpgradeList.gearUpgradeLists.Find(data => data.type == type);
@@ -131,7 +146,7 @@ public class PlayerManager : MonoBehaviour
 
     }
    
-    public PlayerData ReturnPlayerDataAfterEffected()
+    public int ReturnPlayerHealthAfterEffected()
     {
         foreach (var upgradeData in playerData.specialUpgradeProgess.specialUpdateProgessList)
         {
@@ -144,13 +159,19 @@ public class PlayerManager : MonoBehaviour
                    var newHealth = Mathf.RoundToInt(playerData.health * (1 + level.percentIncrease / 100f));
                     playerData.health = newHealth;
                     Debug.Log($"PlayerHealth: {playerData.health}");
-                    return playerData;
+                    return newHealth;
                 }
             }
         }
-        return playerData;
+        return 0;
     }
- 
+    public LevelRewardBase ReturnLevelRewardBase(int level)
+    {
+        var rewardBase = levelRewardList.listLevelReward.Find(rewardBase=>rewardBase.level == level);
+        return rewardBase;  
+    }
+   
+
     [ContextMenu("SavePlayerData")]
     public void SavePlayerData()
     {
@@ -166,5 +187,7 @@ public class PlayerManager : MonoBehaviour
         playerData = JsonUtility.FromJson<PlayerData>(json);
         Debug.Log("PlayerData is Loaded");
     }
+
+  
 
 }
