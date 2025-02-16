@@ -11,9 +11,10 @@ public class GunSwicher : MonoBehaviour
     public Button buttonSwitch;
     private int gunIndex1, gunIndex2;
     private bool isSwitching = false;
-
+    private RotateByMouse cameraRotation;
     public void Start()
     {
+        cameraRotation = FindObjectOfType<RotateByMouse>();
         InitializeGuns();
         buttonSwitch.onClick.AddListener(Switch);
     }
@@ -32,7 +33,7 @@ public class GunSwicher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && !isSwitching)
         {
-            StartCoroutine(SwitchGun());
+            Switch();
         }
     }
     public void Switch()
@@ -48,12 +49,16 @@ public class GunSwicher : MonoBehaviour
 
         Gun currentGun = gunListed[currentGunIndex].GetComponent<Gun>();
         Gun newGun = gunListed[newGunIndex].GetComponent<Gun>();
-      
+
         currentGun.Hiding();
         currentGun.Switching();
 
         var timetoHide = currentGun.ReturnHideTime();
         yield return new WaitForSeconds(timetoHide);
+
+
+        newGun.transform.rotation = cameraRotation.verticalPivot.rotation;
+
 
         gunListed[currentGunIndex].SetActive(false);
         gunListed[newGunIndex].SetActive(true);
@@ -62,7 +67,7 @@ public class GunSwicher : MonoBehaviour
         newGun.Switching();
         newGun.Ready();
 
-        isSwitching = false; 
+        isSwitching = false;
     }
 }
 

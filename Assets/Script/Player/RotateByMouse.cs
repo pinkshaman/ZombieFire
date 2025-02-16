@@ -42,6 +42,11 @@ public class RotateByMouse : MonoBehaviour
         pitch = Mathf.Clamp(pitch + deltaPitch, minPitch, maxPitch);
         verticalPivot.localEulerAngles = new Vector3(pitch, 0, 0);
     }
- 
+
+    public void ResetCameraRotation(Transform newGun)
+    {
+        // Lấy góc hiện tại của camera
+        newGun.rotation = verticalPivot.rotation;
+    }
 
 }

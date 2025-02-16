@@ -157,7 +157,6 @@ public class PlayerManager : MonoBehaviour
                 if (level.levelUpgrade > 0)
                 {
                    var newHealth = Mathf.RoundToInt(playerData.health * (1 + level.percentIncrease / 100f));
-                    playerData.health = newHealth;
                     Debug.Log($"PlayerHealth: {playerData.health}");
                     return newHealth;
                 }

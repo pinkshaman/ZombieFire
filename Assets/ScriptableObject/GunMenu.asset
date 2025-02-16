@@ -16,9 +16,9 @@ MonoBehaviour:
   - GunName: Scarlight
     gunStats:
       ammoCapacity: 40
-      fireRate: 608.1002
-      damage: 93
-      critical: 18.099997
+      fireRate: 600
+      damage: 12
+      critical: 10
     gunModel:
       gunType: 1
       gunModel: {fileID: 5479494405520053317, guid: 644c261c81430a64d97cd664754ae546, type: 3}
@@ -60,7 +60,7 @@ MonoBehaviour:
       - starUpgrade: 5
         priceUpgrade: 5000
         fireRateUpgrade: 0.5
-        powerUpgrade: 1
+        powerUpgrade: 4
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
@@ -116,9 +116,9 @@ MonoBehaviour:
   - GunName: P227
     gunStats:
       ammoCapacity: 10
-      fireRate: 201.19998
-      damage: 16
-      critical: 12.199999
+      fireRate: 200
+      damage: 10
+      critical: 10
     gunModel:
       gunType: 0
       gunModel: {fileID: 2673918368126455702, guid: f3277b10cff290e4d901e26222a83a8a, type: 3}
@@ -160,7 +160,7 @@ MonoBehaviour:
       - starUpgrade: 5
         priceUpgrade: 5000
         fireRateUpgrade: 0.5
-        powerUpgrade: 1
+        powerUpgrade: 4
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
@@ -240,7 +240,7 @@ MonoBehaviour:
       - starUpgrade: 5
         priceUpgrade: 5000
         fireRateUpgrade: 0.5
-        powerUpgrade: 1
+        powerUpgrade: 4
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
@@ -320,7 +320,7 @@ MonoBehaviour:
       - starUpgrade: 5
         priceUpgrade: 5000
         fireRateUpgrade: 0.5
-        powerUpgrade: 1
+        powerUpgrade: 4
         criticalUpgrade: 0.5
         reloadUpgrade: 0
       - starUpgrade: 6
