@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DamageTextPooling : MonoBehaviour
 {
@@ -29,12 +30,13 @@ public class DamageTextPooling : MonoBehaviour
             }
         return null;
     }
-    public void ShowDamage(Vector3 potision, int damage)
+    public void ShowDamage(Vector3 potision, int damage, bool isCritHit)
     {
-        DamageText damageText = GetPoolObject();  
+        DamageText damageText = GetPoolObject();
         damageText.gameObject.SetActive(true);
-        damageText.SetText(damage.ToString(),potision);
 
+        Color damageColor = isCritHit ? Color.yellow : Color.white;
+        damageText.SetText(damage.ToString(), potision, damageColor);
 
     }
 }

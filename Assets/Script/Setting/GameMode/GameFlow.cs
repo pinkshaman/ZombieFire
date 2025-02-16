@@ -24,7 +24,7 @@ public class GameFlow : MonoBehaviour
     }
     public void LoadGamePlay()
     {
-      
+
         isSpawnDone = false;
         isWaveEnd = false;
         isStageClear = false;
@@ -32,7 +32,7 @@ public class GameFlow : MonoBehaviour
         zombieRepawn.OnZombieClear.AddListener(IsWaveEnd);
         zombieRepawn.OnSpawnDone.AddListener(IsSpawnDone);
         OnStageClear.AddListener(ClearStage);
-        
+
         StartCoroutine(SpawnByNumberWave());
     }
     public void InitData()
@@ -84,7 +84,7 @@ public class GameFlow : MonoBehaviour
     {
         isSpawnDone = true;
     }
- 
+
     public void PlayAlert(int number)
     {
         waveAlert.gameObject.SetActive(true);
@@ -97,7 +97,7 @@ public class GameFlow : MonoBehaviour
         clearAlert.gameObject.SetActive(true);
         clearAlert.AlertPlay();
         ActiveResultPanel();
-           
+        GameEnd();
     }
     public void GameEnd()
     {
@@ -117,7 +117,7 @@ public class GameFlow : MonoBehaviour
         var result = FindObjectOfType<Result>();
         string rankClass = result.ReturnRank();
         Debug.Log($"RankClass:{rankClass}");
-        StageGameMode.Instance.UpdateDataArenaProgess(stage.stageID, isStageClear,rankClass);
+        StageGameMode.Instance.UpdateDataArenaProgess(stage.stageID, isStageClear, rankClass);
 
     }
 }

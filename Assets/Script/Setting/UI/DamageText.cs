@@ -25,9 +25,10 @@ public class DamageText : MonoBehaviour
         }
 
     }
-    public void SetText(string value, Vector3 potision)
+    public void SetText(string value, Vector3 potision, Color textColor)
     {
         text.text = value;
+        text.color = textColor;
         transform.position = potision;
     }
    

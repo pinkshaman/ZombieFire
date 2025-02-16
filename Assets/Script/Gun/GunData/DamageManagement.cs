@@ -32,7 +32,11 @@ public class DamageManagement : MonoBehaviour
         totalCritical = critical + critticalDamageEffect;
         var newDamage = Mathf.RoundToInt(damage * (1 + damageIncease / 100f));
         damage = newDamage;
-
+        bool isCriticalShot = Random.value < (totalCritical / 100f);
+        if (isCriticalShot)
+        {
+            damage = Mathf.RoundToInt(damage * 1.5f);
+        }
 
         bool isHeadShot = hitInfo.collider.CompareTag("Head");
         if (isHeadShot)
@@ -42,7 +46,7 @@ public class DamageManagement : MonoBehaviour
         }
 
         healthTarget.TakeDamage(damage);
-        damageTextPooling.ShowDamage(hitInfo.point, damage);
+        damageTextPooling.ShowDamage(hitInfo.point, damage,isCriticalShot);
 
         if (healthTarget.IsDead)
         {
