@@ -22,8 +22,10 @@ public abstract class Zombie : MonoBehaviour
     public UnityEvent OnReachingRadius;
     public UnityEvent OnStartMoving;
     public List<Rigidbody> bodyParts;
-    private bool hasLanded = false;
+
+    public bool isFalling;
     private bool _isMovingValue;
+
     public bool IsMoving
     {
         get => _isMovingValue;
@@ -67,13 +69,13 @@ public abstract class Zombie : MonoBehaviour
         }
 
         zombieData = ZombieManager.Instance.GetZombieData(ZombieName);
-       
+
 
         if (zombieData == null)
         {
             Debug.LogWarning($"{gameObject.name} chưa được gắn zombieData!");
         }
-     
+
     }
     public void Start()
     {
@@ -87,36 +89,19 @@ public abstract class Zombie : MonoBehaviour
         bodyParts = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>()); ;
     }
 
-    public virtual void Rise()
+    public virtual void CheckOffMesh()
     {
-        if (!hasLanded)
+        if (agent.isOnOffMeshLink)
         {
-            bool allLanded = true;
-
-            foreach (Rigidbody rb in bodyParts)
-            {
-                if (rb.velocity.y < -0.1f)
-                {
-                    allLanded = false;
-                    break;
-                }
-            }
-            if (agent.isOnOffMeshLink)
-            {
-                
-            }
-            if (allLanded)
-            {
-                hasLanded = true;
-                Rising();
-                Debug.Log("Zombie đã chạm đất, gọi hành động Rise!");
-            }
-            Move();
+            isFalling = true;
+            
+            var EndPos = agent.currentOffMeshLinkData.endPos;
+            var StarPos = agent.currentOffMeshLinkData.startPos;
+            transform.position = Vector3.Lerp(StarPos, EndPos, 0.0001f);
+            agent.Warp(EndPos);
+            Rising();
         }
     }
-
-
-
     public virtual void Attack()
     {
         anim.SetBool("isAttacking", true);
@@ -148,8 +133,9 @@ public abstract class Zombie : MonoBehaviour
     }
     public void Rising()
     {
+        if (!isFalling) return;
         agent.isStopped = true;
-        anim.SetTrigger("Rise");     
+        anim.SetTrigger("Rise");
     }
     public void OnGetHit()
     {
@@ -167,9 +153,9 @@ public abstract class Zombie : MonoBehaviour
         anim.SetTrigger("GetHit");
         yield return new WaitForSeconds(1.5f);
         Move();
-        isGetHit =false;
+        isGetHit = false;
     }
-  public void AnmGetHit()
+    public void AnmGetHit()
     {
         if (isGetHit) return;
         isGetHit = true;
@@ -197,12 +183,12 @@ public abstract class Zombie : MonoBehaviour
     {
         agent.isStopped = false;
         agent.SetDestination(playerTaget.position);
-       
+
     }
     public virtual void StopMove()
     {
         agent.isStopped = true;
-        
+
     }
     public void FacingPlayer()
     {
@@ -215,7 +201,7 @@ public abstract class Zombie : MonoBehaviour
     {
         if (isDead) return;
         CheckDistance();
-        Rise();
+        CheckOffMesh();
         if (IsMoving)
         {
             Move();
