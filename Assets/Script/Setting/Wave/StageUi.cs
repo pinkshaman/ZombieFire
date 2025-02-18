@@ -15,7 +15,7 @@ public class StageUi : MonoBehaviour
     public Stage stageData;
     public StageProgess stageProgess;
     public Button chooseButton;
-    public GameObject LoadingPanel;
+    public LoadingGame LoadingPanel;
     public void Start()
     {
         chooseButton.onClick.AddListener(LoadStage);
@@ -48,6 +48,7 @@ public class StageUi : MonoBehaviour
     {      
         Debug.Log($"Data :{stageData.sceneID}");
         StageGameMode.Instance.SetCurrentArenaAndStage(stageData.stageID);
-        LoadingPanel.SetActive(true);
+        LoadingPanel.gameObject.SetActive(true);
+        LoadingPanel.StartCoroutine(LoadingPanel.LoadGameScene());
     }
 }

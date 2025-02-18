@@ -36,16 +36,8 @@ public class MySceneManager : MonoBehaviour
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
         asyncLoad.allowSceneActivation = false;
-
-        while (!asyncLoad.isDone)
-        {
-            if (asyncLoad.progress >= 0.9f)
-            {
-                yield return StartCoroutine(EnsureGameDataLoaded());
-                asyncLoad.allowSceneActivation = true;
-            }
-            yield return null;
-        }
+        yield return StartCoroutine(EnsureGameDataLoaded());
+        asyncLoad.allowSceneActivation = true;
     }
     private IEnumerator EnsureGameDataLoaded()
     {

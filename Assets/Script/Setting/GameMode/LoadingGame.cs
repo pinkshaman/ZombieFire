@@ -8,11 +8,8 @@ public class LoadingGame : MonoBehaviour
 {
     public Text loadingText;
     public int sceneID;
-    private IEnumerator Start()
-    {
-        yield return StartCoroutine(LoadGameScene());
-    }
 
+    
     public IEnumerator LoadGameScene()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(StageGameMode.Instance.currentStageLoad);

@@ -21,9 +21,8 @@ public abstract class Zombie : MonoBehaviour
     public bool isDead;
     public UnityEvent OnReachingRadius;
     public UnityEvent OnStartMoving;
-    
-
-
+    public List<Rigidbody> bodyParts;
+    private bool hasLanded = false;
     private bool _isMovingValue;
     public bool IsMoving
     {
@@ -85,8 +84,54 @@ public abstract class Zombie : MonoBehaviour
         isGetHit = false;
         RageObj.SetActive(false);
         BoneRig.SetActive(true);
+        bodyParts = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>()); ;
     }
+    // public virtual void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Floor"))
+    //     {
+    //         isGrounded = true;
+    //         if (isFalling)
+    //         {
+    //             isFalling = false;
+    //             anim.SetBool("isFalling", false);
+    //         }
+    //     }
+    // }
+    //public void OnTriggerExit(Collider other)
+    // {
+    //     if (other.CompareTag("Floor"))
+    //     {
+    //         isGrounded = false;
+    //         isFalling = true;  // Khi rời khỏi mặt đất, zombie có thể rơi lại
+    //         anim.SetBool("isGrounded", false);
+    //     }
+    // }
+    public virtual void Rise()
+    {
+        if (!hasLanded)
+        {
+            bool allLanded = true;
 
+            // Kiểm tra trạng thái velocity.y của từng bộ phận
+            foreach (Rigidbody rb in bodyParts)
+            {
+                if (rb.velocity.y < -0.1f)  // Nếu có bộ phận vẫn đang rơi (velocity y < 0)
+                {
+                    allLanded = false;
+                    break;
+                }
+            }
+
+            // Nếu tất cả các bộ phận đã chạm đất, kích hoạt hành động Rise
+            if (allLanded)
+            {
+                hasLanded = true;
+                anim.SetTrigger("Rise");  // Gọi hành động "Rise"
+                Debug.Log("Zombie đã chạm đất, gọi hành động Rise!");
+            }
+        }
+    }
     public virtual void Attack()
     {
         anim.SetBool("isAttacking", true);
@@ -185,7 +230,7 @@ public abstract class Zombie : MonoBehaviour
     {
         if (isDead) return;
         CheckDistance();
-        
+        Rise();
         if (IsMoving)
         {
             Move();

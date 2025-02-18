@@ -28330,7 +28330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.9229126, y: -15.480896}
+  m_AnchoredPosition: {x: 2.9228516, y: -15.480896}
   m_SizeDelta: {x: 1927.4631, y: 681.099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1590
@@ -40309,6 +40309,66 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
+--- !u!1 &484407653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1820975784747703, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+  m_PrefabInstance: {fileID: 2616943980475021604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &484407655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114834960031329935, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+  m_PrefabInstance: {fileID: 2616943980475021604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484407653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &484407657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484407653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 484407655}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &511312361
 GameObject:
   m_ObjectHideFlags: 0
@@ -42252,6 +42312,7 @@ MonoBehaviour:
   gunsSlotUi:
   - {fileID: 1678}
   - {fileID: 2006}
+  mainMenuAnimatin: {fileID: 1073}
 --- !u!1001 &1375256043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45745,6 +45806,10 @@ PrefabInstance:
       value: -524
       objectReference: {fileID: 0}
     - target: {fileID: 9132571398745603499, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: getAllRewardButton
+      value: 
+      objectReference: {fileID: 484407657}
+    - target: {fileID: 9132571398745603499, guid: ea666e97219cf9448a3cac8559758479, type: 3}
       propertyPath: rootUiDailyMission
       value: 
       objectReference: {fileID: 1307068076}
@@ -45758,6 +45823,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1322017336906965, guid: ea666e97219cf9448a3cac8559758479, type: 3}
       insertIndex: -1
       addedObject: {fileID: 247626785}
+    - targetCorrespondingSourceObject: {fileID: 1820975784747703, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484407657}
   m_SourcePrefab: {fileID: 100100000, guid: ea666e97219cf9448a3cac8559758479, type: 3}
 --- !u!114 &2620801305791536996
 MonoBehaviour:
