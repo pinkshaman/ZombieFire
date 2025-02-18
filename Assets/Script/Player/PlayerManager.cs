@@ -33,10 +33,6 @@ public class PlayerManager : MonoBehaviour
     {
         LoadPlayerData();
 
-        if (playerData.specialUpgradeProgess == null || playerData.specialUpgradeProgess.specialUpdateProgessList == null)
-        {
-            InitNewGearUpgrade();
-        }
     }
     [ContextMenu("InitNewGearUpgrade")]
     public void InitNewGearUpgrade()

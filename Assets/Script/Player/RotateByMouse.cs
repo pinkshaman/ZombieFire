@@ -45,7 +45,6 @@ public class RotateByMouse : MonoBehaviour
 
     public void ResetCameraRotation(Transform newGun)
     {
-        // Lấy góc hiện tại của camera
         newGun.rotation = verticalPivot.rotation;
     }
 

@@ -12,12 +12,12 @@ public class HPBar : MonoBehaviour
 
     private Transform cameraTransform;
 
-    private void Start()
+    public virtual void Start()
     {
 
         cameraTransform = FindObjectOfType<Camera>().transform;
     }
-    public void Fill(int currentHealth, int totalHealth)
+    public virtual void Fill(int currentHealth, int totalHealth)
     {
         var fillPercent = 1f * currentHealth / totalHealth;
         FillBar.fillAmount = fillPercent;    
@@ -39,7 +39,7 @@ public class HPBar : MonoBehaviour
         }
         transform.forward = -cameraTransform.forward;
     }
-    public void ShowText()
+    public virtual void ShowText()
     {
         healthAmounText.text = $"HP : {health.maxHealthPoint}";
     }

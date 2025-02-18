@@ -407,6 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8554124715812883282}
   - component: {fileID: 7115159697433637935}
+  - component: {fileID: 1630680473507538881}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -451,6 +452,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1630680473507538881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740936891333880984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea9cf7473e991e4681057589d36b1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoint: 500
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  itemUI: {fileID: 0}
+  _isShieldActive: 0
 --- !u!1001 &79068455033335520
 PrefabInstance:
   m_ObjectHideFlags: 0
