@@ -20,6 +20,7 @@ public class GameFlow : MonoBehaviour
 
     public void Start()
     {
+
         LoadGamePlay();
     }
     public void LoadGamePlay()

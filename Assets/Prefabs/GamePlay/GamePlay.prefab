@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4478842887148280901}
   - component: {fileID: 2792116988061932896}
   - component: {fileID: 201164530792217147}
-  - component: {fileID: 8439309226032269337}
-  - component: {fileID: 4663766406758234648}
-  - component: {fileID: 5780860037435945933}
+  - component: {fileID: 1714945029338627316}
+  - component: {fileID: 3652550882872965216}
+  - component: {fileID: 8915776869164681996}
+  - component: {fileID: 1475839107957611920}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -62,9 +63,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb73201bf99f6641a944d4f63ca18d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageID: 1.1
   stage:
     stageID: 0
+    stageImage: {fileID: 0}
+    isBossWave: 0
+    sceneID: 0
+    coinReward: 0
+    rankList:
+      rankLists: []
     waveList: []
   zombieRepawn: {fileID: 0}
   waveAlert: {fileID: 0}
@@ -76,7 +82,8 @@ MonoBehaviour:
   OnStageClear:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8439309226032269337
+  resutlPanel: {fileID: 0}
+--- !u!114 &1714945029338627316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,11 +92,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 806718952014108884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeee4f5aaded4514ab338e49957676c9, type: 3}
+  m_Script: {fileID: 11500000, guid: e61c46999123f484c99fde7913a523f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageList: {fileID: 11400000, guid: 70d2c0e1c8138574eb6c8c27fa5cd758, type: 2}
---- !u!114 &4663766406758234648
+  killAlert: {fileID: 0}
+  headShotAlert: {fileID: 0}
+  damageTextPooling: {fileID: 2792116988061932896}
+  OnHeadShot:
+    m_PersistentCalls:
+      m_Calls: []
+  OnKill:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3652550882872965216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,11 +113,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 806718952014108884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb3663c0cde8b914c9f7cb33836be29d, type: 3}
+  m_Script: {fileID: 11500000, guid: a2b0ca5b935451547a83cb145ed22a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alertDataList: {fileID: 11400000, guid: 90b312eb6f6b5b944922662fcf41d6ff, type: 2}
---- !u!114 &5780860037435945933
+  effectMap:
+  - surfaceType: 0
+    hitEffect: {fileID: 1933668532524464, guid: 6e03f9a484d280d41acf9758f5c9e2b5, type: 3}
+  - surfaceType: 1
+    hitEffect: {fileID: 1920747252733958, guid: fc9de35a3788dfc419302d9cd1ba5ad1, type: 3}
+--- !u!114 &8915776869164681996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,11 +130,110 @@ MonoBehaviour:
   m_GameObject: {fileID: 806718952014108884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ea16d20f18df54a9fb39d174f14c05, type: 3}
+  m_Script: {fileID: 11500000, guid: 3814d55c92884b3448e99d16d0b2d4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameFlow: {fileID: 201164530792217147}
-  rankClass: {fileID: 0}
-  scoreText: {fileID: 0}
-  rankExpText: {fileID: 0}
-  damageManagement: {fileID: 0}
+  gunListed:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  switchingSound: {fileID: 1475839107957611920}
+  buttonSwitch: {fileID: 0}
+--- !u!82 &1475839107957611920
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806718952014108884}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2426f6def8d8f74458b735cf9ef3f714, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

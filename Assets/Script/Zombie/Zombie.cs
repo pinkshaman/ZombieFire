@@ -86,52 +86,37 @@ public abstract class Zombie : MonoBehaviour
         BoneRig.SetActive(true);
         bodyParts = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>()); ;
     }
-    // public virtual void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Floor"))
-    //     {
-    //         isGrounded = true;
-    //         if (isFalling)
-    //         {
-    //             isFalling = false;
-    //             anim.SetBool("isFalling", false);
-    //         }
-    //     }
-    // }
-    //public void OnTriggerExit(Collider other)
-    // {
-    //     if (other.CompareTag("Floor"))
-    //     {
-    //         isGrounded = false;
-    //         isFalling = true;  // Khi rời khỏi mặt đất, zombie có thể rơi lại
-    //         anim.SetBool("isGrounded", false);
-    //     }
-    // }
+
     public virtual void Rise()
     {
         if (!hasLanded)
         {
             bool allLanded = true;
 
-            // Kiểm tra trạng thái velocity.y của từng bộ phận
             foreach (Rigidbody rb in bodyParts)
             {
-                if (rb.velocity.y < -0.1f)  // Nếu có bộ phận vẫn đang rơi (velocity y < 0)
+                if (rb.velocity.y < -0.1f)
                 {
                     allLanded = false;
                     break;
                 }
             }
-
-            // Nếu tất cả các bộ phận đã chạm đất, kích hoạt hành động Rise
+            if (agent.isOnOffMeshLink)
+            {
+                
+            }
             if (allLanded)
             {
                 hasLanded = true;
-                anim.SetTrigger("Rise");  // Gọi hành động "Rise"
+                Rising();
                 Debug.Log("Zombie đã chạm đất, gọi hành động Rise!");
             }
+            Move();
         }
     }
+
+
+
     public virtual void Attack()
     {
         anim.SetBool("isAttacking", true);
@@ -163,8 +148,8 @@ public abstract class Zombie : MonoBehaviour
     }
     public void Rising()
     {
-        anim.SetTrigger("Rise");
-        
+        agent.isStopped = true;
+        anim.SetTrigger("Rise");     
     }
     public void OnGetHit()
     {

@@ -24,6 +24,7 @@ public abstract class Gun : MonoBehaviour
 
     public virtual void Start()
     {
+
         var originalGun = GunManager.Instance.GetGun(GunName);
         var newGun = CloneGunData(originalGun);
         gunPlayer = GunManager.Instance.ReturnPlayerGun(newGun.GunName);

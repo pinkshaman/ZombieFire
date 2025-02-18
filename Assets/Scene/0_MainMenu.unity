@@ -39775,7 +39775,7 @@ MonoBehaviour:
   playerData:
     exp: 1000
     health: 100
-    coin: 10000
+    coin: 1000000
     gold: 100
     specialUpgradeProgess:
       specialUpdateProgessList:
@@ -41832,7 +41832,7 @@ PrefabInstance:
     - target: {fileID: 2522022257180705248, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
       propertyPath: LoadingPanel
       value: 
-      objectReference: {fileID: 1267935078}
+      objectReference: {fileID: 1267935081}
     - target: {fileID: 6858379173613312662, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
       propertyPath: m_Name
       value: Stage_Card_Img
@@ -42203,6 +42203,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224426500339674667, guid: 7e3e08de18795144ea3798c956b2a963, type: 3}
   m_PrefabInstance: {fileID: 778251175}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1267935081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3892440334264750105, guid: 7e3e08de18795144ea3798c956b2a963, type: 3}
+  m_PrefabInstance: {fileID: 778251175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267935078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5c4ce740d6b6b48b34df12ac0ba1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1269314656 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2327457507800145105, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
@@ -43061,7 +43072,7 @@ PrefabInstance:
     - target: {fileID: 2522022257180705248, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
       propertyPath: LoadingPanel
       value: 
-      objectReference: {fileID: 1267935078}
+      objectReference: {fileID: 1267935081}
     - target: {fileID: 2522022257180705248, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
       propertyPath: chooseButton
       value: 

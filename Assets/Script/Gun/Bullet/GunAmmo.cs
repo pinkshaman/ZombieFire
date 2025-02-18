@@ -14,6 +14,8 @@ public class GunAmmo : MonoBehaviour
     public UnityEvent loadedAmmoChanged;
     private int cost;
     private bool isReloading = false;
+
+    public AmmoTextBinder ammoTextUI;
     public int LoadedAmmo
     {
         get => _loadedAmmo;
@@ -35,12 +37,20 @@ public class GunAmmo : MonoBehaviour
     private void Start()
     {
         gamePlayUI = FindFirstObjectByType<GamePlayUI>();
+        ammoTextUI = FindObjectOfType<AmmoTextBinder>();
         InitializeGun();
+        UpdateTextAmmo();
+        ammoTextUI.buyAmmo.onClick.AddListener(() => AutoBuy());
+        loadedAmmoChanged.AddListener(UpdateTextAmmo);
         gun.OnShooting.AddListener(SingleFireAmmoCounter);
         gun.OnSwitching.AddListener(OnSelectedGun);
         gamePlayUI.reloadButton.onClick.AddListener(Reload);
         cost = gun.gunData.buyGun.ammoPrice;
 
+    }
+    public void UpdateTextAmmo()
+    {
+        ammoTextUI.UpdateGunAmmo(LoadedAmmo,gun.gunPlayer.ammoStoraged,gun.GunName);
     }
     public void SingleFireAmmoCounter()
     {
@@ -132,6 +142,7 @@ public class GunAmmo : MonoBehaviour
             PlayerManager.Instance.UpdatePlayerData(PlayerManager.Instance.playerData);
             gun.gunPlayer.ammoStoraged += gun.gunData.gunStats.ammoCapacity;
             GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+            ammoTextUI.IsBuyAmmo(cost);
             onBuyAmmo.Invoke();
             return true;
         }

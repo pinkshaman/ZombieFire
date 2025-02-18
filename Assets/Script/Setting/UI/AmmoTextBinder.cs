@@ -8,30 +8,18 @@ public class AmmoTextBinder : MonoBehaviour
 {
     public Text loadedTextAmmo;
     public Text gunName;
-    public GunAmmo gunAmmo;
     public Button buyAmmo;
     public BuyText buyText;
-    private int cost;
-     private void Start()
-    {
-        gunAmmo.loadedAmmoChanged.AddListener(UpdateGunAmmo);
-        buyAmmo.onClick.AddListener(IsBuyAmmo);
-        gunAmmo.onBuyAmmo.AddListener(IsBuyAmmo);
-        UpdateGunAmmo();
-        cost = gunAmmo.gun.gunData.buyGun.ammoPrice;
-    }
 
-    public void UpdateGunAmmo()
+ 
+    public void UpdateGunAmmo(int loadedAmmo, int ammoStoraged, string name)
     {
-        loadedTextAmmo.text = $"{gunAmmo.LoadedAmmo}/{gunAmmo.gun.gunPlayer.ammoStoraged}";
-        gunName.text = gunAmmo.gunName;
+        loadedTextAmmo.text = $"{loadedAmmo}/{ammoStoraged}";
+        gunName.text = name;
     }
-    public void OnEnable()
-    {
-        UpdateGunAmmo();
-    }
+  
     [ContextMenu("IsBuyAmmo")]
-    public void IsBuyAmmo()
+    public void IsBuyAmmo(int cost)
     {
         buyText.gameObject.SetActive(true);
         buyText.SetText(cost.ToString());

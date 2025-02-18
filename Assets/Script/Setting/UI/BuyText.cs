@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,33 +6,58 @@ using UnityEngine.UI;
 public class BuyText : MonoBehaviour
 {
     public Text text;
-    public float speed;
-    public float visibleDuration;
+    public float moveSpeed = 50f; // Tốc độ chạy lên trên
+    public float fadeDuration = 0.5f; // Thời gian mờ dần
+    public float visibleDuration = 1.5f; // Thời gian hiển thị trước khi mờ
     private float timer;
-    public RectTransform rectObject;
+    private Vector3 startPosition;
+    private Color startColor;
+    private CanvasGroup canvasGroup;
+    private void Awake()
+    {
+        startPosition = transform.position;
+        canvasGroup = GetComponent<CanvasGroup>();
+
+        if (canvasGroup == null)
+        {
+            canvasGroup = gameObject.AddComponent<CanvasGroup>(); // Tạo CanvasGroup nếu chưa có
+        }
+    }
+
     private void OnEnable()
     {
         timer = visibleDuration;
-    }
-    private void OnDisable()
-    {
-        gameObject.transform.position = rectObject.position;
+        transform.position = startPosition;
+        canvasGroup.alpha = 1; // Hiện full opacity
+        StartCoroutine(AnimateText());
     }
 
-    public void Update()
+    private IEnumerator AnimateText()
     {
-        transform.position = speed * Time.deltaTime * Vector2.up;
-        timer -= Time.deltaTime;
-        if (timer <= 0)
+        while (timer > 0)
         {
-            gameObject.SetActive(false);
+            transform.position += moveSpeed * Time.deltaTime * Vector3.up; // Chạy lên trên
+            timer -= Time.deltaTime;
+            yield return null;
         }
 
+        // Bắt đầu hiệu ứng mờ dần
+        float fadeTimer = fadeDuration;
+        while (fadeTimer > 0)
+        {
+            fadeTimer -= Time.deltaTime;
+            canvasGroup.alpha = fadeTimer / fadeDuration; // Giảm alpha dần
+            yield return null;
+        }
+
+        // Reset về trạng thái ban đầu
+        gameObject.SetActive(false);
+        transform.position = startPosition;
     }
+
     public void SetText(string value)
     {
-        text.text = value;
-        transform.position = gameObject.transform.position;
+        text.text = $" -{value}";
     }
 
 }
