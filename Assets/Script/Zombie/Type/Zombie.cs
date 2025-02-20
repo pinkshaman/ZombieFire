@@ -202,7 +202,7 @@ public abstract class Zombie : MonoBehaviour
         agent.SetDestination(playerTaget.position);
         if(isRage)
         {
-            int moveType = Random.Range(4, 5);
+            int moveType = Random.Range(4, 7);
             anim.SetInteger("MoveType", moveType);
         }
         else

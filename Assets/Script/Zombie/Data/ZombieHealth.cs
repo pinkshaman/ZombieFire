@@ -8,10 +8,17 @@ public class ZombieHealth : Health
     public Zombie zombie;
     public ZombieRepawn zombieRepawn;
     private bool isDeadByHeadShot;
+    public HPBar healthBar;
     public override void Start()
     {
         Initialize();
+        var hpBar = GetComponentInChildren<HPBar>();
+        healthBar =FindObjectOfType<HPBar>(hpBar);
         zombieRepawn = FindObjectOfType<ZombieRepawn>();
+        OnHealthChange.AddListener(healthBar.Fill);
+        OnTakeDamage.AddListener(zombie.OnGetHit);
+        OnTakeDamage.AddListener(healthBar.FacingPlayer);
+        OnTakeDamage.AddListener(healthBar.ShowText);
     }
     public void Initialize()
     {

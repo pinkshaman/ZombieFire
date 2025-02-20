@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BerserkZombie : Zombie
+public class ShieldedZombie : Zombie
 {
     private float lastHit;
 
@@ -27,5 +27,4 @@ public class BerserkZombie : Zombie
     {
         base.Die(isHeadShot);
     }
-
 }

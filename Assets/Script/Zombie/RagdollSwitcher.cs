@@ -63,4 +63,17 @@ public class RagdollSwitcher : MonoBehaviour
             }
         }
     }
+    [ContextMenu("DisableCollier")]
+    public void DisableCollier()
+    {
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = false;
+            if (collider.gameObject.CompareTag("Helmet") || collider.gameObject.CompareTag("Shield"))
+            {
+                collider.enabled = true;
+            }
+        }
+    }
 }

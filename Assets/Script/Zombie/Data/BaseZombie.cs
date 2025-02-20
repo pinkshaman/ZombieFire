@@ -6,9 +6,13 @@ using UnityEngine;
 
 public enum ZombieType
 {
-    Berserk,
-    Varial,
+    Normal,
+    Helmet,
+    Shield,
     DoberMan,
+    Bat,
+    Boss,
+
 
 }
 

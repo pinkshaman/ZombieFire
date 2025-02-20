@@ -9,13 +9,14 @@ public class HPBar : MonoBehaviour
     public Image HPbar;
     public Image FillBar;
     public Text healthAmounText;
-
+    public AutoFade autoFade;
     private Transform cameraTransform;
 
     public virtual void Start()
     {
-
         cameraTransform = FindObjectOfType<Camera>().transform;
+        var currentZombieHp = GetComponentInParent<ZombieHealth>();
+        health = FindObjectOfType<ZombieHealth>(currentZombieHp);
     }
     public virtual void Fill(int currentHealth, int totalHealth)
     {
@@ -41,6 +42,7 @@ public class HPBar : MonoBehaviour
     }
     public virtual void ShowText()
     {
+        autoFade.Show();
         healthAmounText.text = $"HP : {health.maxHealthPoint}";
     }
 
