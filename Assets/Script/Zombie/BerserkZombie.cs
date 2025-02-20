@@ -19,13 +19,13 @@ public class BerserkZombie : Zombie
     }
 
     public override void Move()
-    {       
+    {
         base.Move();
     }
 
-    public override void Die()
+    public override void Die(bool isHeadShot)
     {
-        base.Die();
+        base.Die(isHeadShot);
     }
 
 }

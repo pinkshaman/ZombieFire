@@ -53,6 +53,7 @@ public class DamageManagement : MonoBehaviour
             if (isHeadShot)
             {
                 HandleHeadShotKill();
+
             }
             else
             {

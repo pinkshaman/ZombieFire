@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -21,10 +22,8 @@ public abstract class Zombie : MonoBehaviour
     public bool isDead;
     public UnityEvent OnReachingRadius;
     public UnityEvent OnStartMoving;
-    public List<Rigidbody> bodyParts;
-
-    public bool isFalling;
     private bool _isMovingValue;
+    public bool isFalling = false;
 
     public bool IsMoving
     {
@@ -60,6 +59,7 @@ public abstract class Zombie : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         playerHealth = FindObjectOfType<PlayerHealth>();
+
     }
     public IEnumerator InitializeZombieData()
     {
@@ -84,23 +84,33 @@ public abstract class Zombie : MonoBehaviour
         agent.speed = zombieData.Speed;
         isRage = false;
         isGetHit = false;
+        isDead = false;
         RageObj.SetActive(false);
         BoneRig.SetActive(true);
-        bodyParts = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>()); ;
+    }
+
+    public virtual void CheckHeight()
+    {
+        if (isFalling) return;
+        isFalling = true;
+        Rising();
     }
 
     public virtual void CheckOffMesh()
     {
         if (agent.isOnOffMeshLink)
         {
-            isFalling = true;
-            
             var EndPos = agent.currentOffMeshLinkData.endPos;
             var StarPos = agent.currentOffMeshLinkData.startPos;
-            transform.position = Vector3.Lerp(StarPos, EndPos, 0.0001f);
+            transform.position = Vector3.Lerp(StarPos, EndPos, 0.1f * Time.deltaTime);
             agent.Warp(EndPos);
             Rising();
         }
+    }
+    public void Rising()
+    {
+        agent.isStopped = true;
+        anim.SetTrigger("Rise");
     }
     public virtual void Attack()
     {
@@ -131,12 +141,6 @@ public abstract class Zombie : MonoBehaviour
         }
 
     }
-    public void Rising()
-    {
-        if (!isFalling) return;
-        agent.isStopped = true;
-        anim.SetTrigger("Rise");
-    }
     public void OnGetHit()
     {
         AnmGetHit();
@@ -152,7 +156,7 @@ public abstract class Zombie : MonoBehaviour
         StopMove();
         anim.SetTrigger("GetHit");
         yield return new WaitForSeconds(1.5f);
-        Move();
+        if (!isDead) Move();
         isGetHit = false;
     }
     public void AnmGetHit()
@@ -167,28 +171,50 @@ public abstract class Zombie : MonoBehaviour
         IsMoving = distanceToPlayer > zombieData.RangedAtk;
     }
 
-    public virtual void Die()
+    public virtual void Die(bool isHeadShot)
     {
+        if (isDead) return;
         isDead = true;
         StopMove();
         Debug.Log("Zombie Dead");
-        anim.SetBool("isDead", true);
         PlaySound(properties.clipDie);
         RageObj.SetActive(false);
         BoneRig.SetActive(false);
-        Destroy(gameObject, 3.0f);
 
+        anim.SetBool("isDead", true);
+
+        if (isHeadShot)
+        {
+            anim.SetTrigger("HeadShot");
+        }
+        else
+        {
+            int deathType = Random.Range(1, 3);
+            anim.SetInteger("DeathType", deathType);
+        }
+        Destroy(gameObject, 2.0f);
     }
+
     public virtual void Move()
     {
+        if (isDead || agent == null || !agent.isOnNavMesh) return;
         agent.isStopped = false;
         agent.SetDestination(playerTaget.position);
-
+        if(isRage)
+        {
+            int moveType = Random.Range(4, 5);
+            anim.SetInteger("MoveType", moveType);
+        }
+        else
+        {
+            int moveType = Random.Range(1, 3);
+            anim.SetInteger("MoveType", moveType);
+        }
     }
     public virtual void StopMove()
     {
+        agent.ResetPath();
         agent.isStopped = true;
-
     }
     public void FacingPlayer()
     {
@@ -202,6 +228,8 @@ public abstract class Zombie : MonoBehaviour
         if (isDead) return;
         CheckDistance();
         CheckOffMesh();
+        CheckHeight();
+
         if (IsMoving)
         {
             Move();

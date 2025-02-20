@@ -99,11 +99,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &388506746237410413
@@ -345,11 +345,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &519367961217283175
@@ -451,11 +451,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &613359595127410622
@@ -979,11 +979,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &1653537279620435642
@@ -1210,7 +1210,7 @@ GameObject:
   - component: {fileID: 1960528879044479295}
   m_Layer: 0
   m_Name: Road_set_v1_s_floor
-  m_TagString: WALL
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1295,11 +1295,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &1742865935505030082
@@ -2936,11 +2936,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &3751890961545792140
@@ -3619,7 +3619,7 @@ Transform:
   m_GameObject: {fileID: 4382837396397020641}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -46.2, y: 0.16, z: 26.83}
+  m_LocalPosition: {x: -44.64, y: 0.16, z: 27.7}
   m_LocalScale: {x: 0.5, y: 0.099999994, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4473,11 +4473,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &4805823097813996215
@@ -7100,11 +7100,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &7808303234431797008
@@ -7327,14 +7327,14 @@ OffMeshLink:
   m_GameObject: {fileID: 7861629429847178765}
   m_Enabled: 1
   serializedVersion: 3
-  m_AreaIndex: 0
+  m_AreaIndex: 2
   m_AgentTypeID: 0
   m_Start: {fileID: 6771863087060243317}
   m_End: {fileID: 8627688249309207757}
   m_CostOverride: -1
-  m_BiDirectional: 0
+  m_BiDirectional: 1
   m_Activated: 1
-  m_AutoUpdatePositions: 1
+  m_AutoUpdatePositions: 0
 --- !u!1 &7979027219804535170
 GameObject:
   m_ObjectHideFlags: 0
@@ -7451,7 +7451,7 @@ GameObject:
   - component: {fileID: 6113226813735563802}
   - component: {fileID: 2693990375979493151}
   - component: {fileID: 6663372840230170364}
-  - component: {fileID: 8788839854928123831}
+  - component: {fileID: 4140252935241524177}
   m_Layer: 0
   m_Name: Road_set_v1_b_floor (10)
   m_TagString: WALL
@@ -7524,8 +7524,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8788839854928123831
-MeshCollider:
+--- !u!65 &4140252935241524177
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7539,13 +7539,12 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c6b56464de210324b8d7b4fddf1e9537, type: 2}
+  serializedVersion: 3
+  m_Size: {x: 20, y: 2, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8094664198617876107
 GameObject:
   m_ObjectHideFlags: 0
@@ -7645,11 +7644,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &8271302572134702520
@@ -7666,7 +7665,7 @@ GameObject:
   - component: {fileID: 7498926482592663319}
   m_Layer: 0
   m_Name: Road_set_v1_s_floor (11)
-  m_TagString: WALL
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -7751,11 +7750,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &8294909144891363082
@@ -8067,11 +8066,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b325d0812792f7549b89df970940dbc7, type: 2}
 --- !u!1 &8597518944485351134
@@ -8085,7 +8084,7 @@ GameObject:
   - component: {fileID: 8875308153515302202}
   - component: {fileID: 8170883734877824235}
   - component: {fileID: 1589270413602404211}
-  - component: {fileID: 110150906417882829}
+  - component: {fileID: 6372079675635445351}
   m_Layer: 0
   m_Name: Road_set_v1_b_floor (9)
   m_TagString: WALL
@@ -8158,8 +8157,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &110150906417882829
-MeshCollider:
+--- !u!65 &6372079675635445351
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8173,13 +8172,12 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: c6b56464de210324b8d7b4fddf1e9537, type: 2}
+  serializedVersion: 3
+  m_Size: {x: 20, y: 2, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8696006251541062618
 GameObject:
   m_ObjectHideFlags: 0

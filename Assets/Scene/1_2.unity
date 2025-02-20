@@ -2291,7 +2291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09edf5c11513e8343b2ab1d16a129f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1876719586
+--- !u!1001 &2082058648
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2303,33 +2303,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BerserkZombie
       objectReference: {fileID: 0}
-    - target: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3692094994883756383, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-      propertyPath: m_AutoTraverseOffMeshLink
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544562147935342968, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-      propertyPath: endOFfMeshLink
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544562147935342968, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-      propertyPath: startOFfMeshLink
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.74
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.47
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.614
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2337,15 +2321,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6042573469479755208, guid: fc98077329bba4b468b54cf890f49080, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2372,17 +2356,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1887083615495956308, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
-      propertyPath: m_AreaIndex
-      value: 2
+    - target: {fileID: 254547701040520310, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
-    - target: {fileID: 1887083615495956308, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
-      propertyPath: m_BiDirectional
-      value: 1
+    - target: {fileID: 441208654522625354, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
-    - target: {fileID: 1887083615495956308, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
-      propertyPath: m_AutoUpdatePositions
-      value: 0
+    - target: {fileID: 519367961217283175, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444480473004601579, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625260924069213548, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751890961545792140, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 4406770718580794089, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2424,13 +2420,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 8627688249309207757, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -44.64
+    - target: {fileID: 4748431395970621107, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
-    - target: {fileID: 8627688249309207757, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 27.7
+    - target: {fileID: 7694788278086463792, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084426384274939375, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094664198617876107, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557311566167337097, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597518944485351134, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
+      propertyPath: m_TagString
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 8724993508019199351, guid: cf4a110aa8874624c8066d0f6d759baf, type: 3}
       propertyPath: m_Name
@@ -2454,4 +2466,4 @@ SceneRoots:
   - {fileID: 1819}
   - {fileID: 1002635176}
   - {fileID: 1449670359}
-  - {fileID: 1876719586}
+  - {fileID: 2082058648}

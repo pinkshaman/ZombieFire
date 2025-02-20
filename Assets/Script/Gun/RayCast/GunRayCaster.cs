@@ -45,15 +45,14 @@ public class GunRayCaster : MonoBehaviour
     }
     public void DeliverDamage(RaycastHit hitInfo)
     {
-        Health health = hitInfo.collider.GetComponentInParent<Health>();
+        ZombieHealth health = hitInfo.collider.GetComponentInParent<ZombieHealth>();
         if (health != null)
         {
-            damageManagement.Calculator(hitInfo, gun.gunData.gunStats.damage,health,gun.gunData.gunStats.critical);          
-        }     
+            health.CheckHeadShot(hitInfo);
+            damageManagement.Calculator(hitInfo, gun.gunData.gunStats.damage, health, gun.gunData.gunStats.critical);
+            health.TakeDamage(gun.gunData.gunStats.damage);
+        }
     }
-    //public void OnEnable()
-    //{
-    //    damageManagement = FindObjectOfType<DamageManagement>();
-    //}
+
 
 }
