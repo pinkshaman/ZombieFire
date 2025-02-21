@@ -39968,6 +39968,9 @@ MonoBehaviour:
     missionProgessList: []
   missionDaily: {fileID: 11400000, guid: d802c3ca1a9f61049903c5113c5a454a, type: 2}
   missionRepeat: {fileID: 11400000, guid: 909f27b296b76b04baa4d071171805d1, type: 2}
+  achievementList: {fileID: 11400000, guid: 3e92e22d16f678b4b8f977a591f68805, type: 2}
+  achievementProgessList:
+    achivementProgessList: []
 --- !u!114 &393691454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40309,6 +40312,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
+--- !u!224 &483720154 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224172686787166721, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+  m_PrefabInstance: {fileID: 2616943980475021604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &484407653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1820975784747703, guid: ea666e97219cf9448a3cac8559758479, type: 3}
@@ -45817,6 +45825,14 @@ PrefabInstance:
       value: -524
       objectReference: {fileID: 0}
     - target: {fileID: 9132571398745603499, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: questPrefabsUi
+      value: 
+      objectReference: {fileID: 4103922661585208176, guid: ae37774405df3af42993e0ce5c037ef1, type: 3}
+    - target: {fileID: 9132571398745603499, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: rootUiAchievement
+      value: 
+      objectReference: {fileID: 483720154}
+    - target: {fileID: 9132571398745603499, guid: ea666e97219cf9448a3cac8559758479, type: 3}
       propertyPath: getAllRewardButton
       value: 
       objectReference: {fileID: 484407657}
@@ -45824,6 +45840,10 @@ PrefabInstance:
       propertyPath: rootUiDailyMission
       value: 
       objectReference: {fileID: 1307068076}
+    - target: {fileID: 9132571398745603499, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: AchievementPrefabsUi
+      value: 
+      objectReference: {fileID: -5029150725647127728, guid: e410db42232f8d84e8b2d6d71c8d06ee, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

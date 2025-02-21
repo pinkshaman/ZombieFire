@@ -10,6 +10,7 @@ public class AchievementBase
     public string achievementDescription;
     public  int achievementRequire;
     public string targetAchievement;
+    public MissionRequireType achievementRequireType;
     public Reward reward;
 }
 
@@ -17,13 +18,17 @@ public class AchievementBase
 public class AchievementProgess
 {
     public int progessID;
+    public MissionRequireType achievementRequireType;
+    public int currenProgess;
     public string progessTarget;
     public bool isComplete;
     public bool isTook;
 
-    public AchievementProgess(int progessID, string progessTarget,bool isComplete, bool isTook)
+    public AchievementProgess(int progessID,MissionRequireType achievementRequireType,int currentProgess, string progessTarget,bool isComplete, bool isTook)
     {
         this.progessID = progessID;
+        this.achievementRequireType = achievementRequireType;
+        this.currenProgess = currentProgess;
         this.progessTarget = progessTarget;
         this.isComplete = isComplete;
         this.isTook = isTook;

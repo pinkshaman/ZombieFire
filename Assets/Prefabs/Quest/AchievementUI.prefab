@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 224660382660442296}
   - component: {fileID: 222118425105520935}
   - component: {fileID: 114283555670172763}
-  - component: {fileID: 5535824286551490612}
+  - component: {fileID: -5029150725647127728}
   m_Layer: 0
-  m_Name: Quest_List_Item
+  m_Name: AchievementUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5535824286551490612
+--- !u!114 &-5029150725647127728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1301527970530592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eadab9912114ea4ab735a2fd25f046f, type: 3}
+  m_Script: {fileID: 11500000, guid: fe22f0991b74723458bca4dea6eaa0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   missionName: {fileID: 114767650672384636}
@@ -195,6 +195,8 @@ MonoBehaviour:
   progessText: {fileID: 114587370566700458}
   getRewardButton: {fileID: 6469049541902970203}
   uncompleteLabel: {fileID: 1775315179740093}
+  rewardImage: {fileID: 114271018647007352}
+  rewardAmout: {fileID: 114534165696940870}
 --- !u!1 &1403636886218749
 GameObject:
   m_ObjectHideFlags: 0

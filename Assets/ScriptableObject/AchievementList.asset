@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb9f00bbd4477e4e9ac2a4588e7c575, type: 3}
+  m_Name: AchievementList
+  m_EditorClassIdentifier: 
+  achievementList:
+  - id: 1
+    achievementName: Kill 100 Zombie
+    achievementDescription: Kill 100 Zombie
+    achievementRequire: 100
+    targetAchievement: Zombie
+    achievementRequireType: 0
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - id: 2
+    achievementName: Collect 10000 Coin
+    achievementDescription: Collect 10000 Coin
+    achievementRequire: 10000
+    targetAchievement: Coin
+    achievementRequireType: 1
+    reward:
+      rewardType: 0
+      rewardAmmout: 100
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
+  - id: 3
+    achievementName: Play 1 game
+    achievementDescription: Play 1 game
+    achievementRequire: 1
+    targetAchievement: Game
+    achievementRequireType: 2
+    reward:
+      rewardType: 2
+      rewardAmmout: 100
+      rewardImage: {fileID: 21300000, guid: e20589f151e1b9d438e01f195cf8f173, type: 2}
+      rewardName: Exp
+  - id: 4
+    achievementName: Buy a Shield
+    achievementDescription: Buy a Shield
+    achievementRequire: 1
+    targetAchievement: Shield
+    achievementRequireType: 3
+    reward:
+      rewardType: 4
+      rewardAmmout: 5
+      rewardImage: {fileID: 21300000, guid: a5d6ebc8cd01444488f68ab8a942bb95, type: 2}
+      rewardName: Shield

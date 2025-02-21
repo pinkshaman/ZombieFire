@@ -12,18 +12,14 @@ public class ZombieHealth : Health
     public override void Start()
     {
         Initialize();
-        
-        var hpBar = GetComponentInChildren<HPBar>();
-        healthBar =FindObjectOfType<HPBar>(hpBar);
         zombieRepawn = FindObjectOfType<ZombieRepawn>();
         OnHealthChange.AddListener(healthBar.Fill);
         OnTakeDamage.AddListener(zombie.OnGetHit);
         OnTakeDamage.AddListener(healthBar.FacingPlayer);
-        OnTakeDamage.AddListener(healthBar.ShowText);
+        
     }
     public void Initialize()
     {
-        zombie.zombieData = ZombieManager.Instance.GetZombieData(zombie.ZombieName);
         maxHealthPoint = zombie.zombieData.Health;
         HealthPoint = maxHealthPoint;
         Debug.Log($"zombieHP:{zombie.zombieData.Health}");

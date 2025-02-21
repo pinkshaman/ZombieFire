@@ -237,6 +237,8 @@ GameObject:
   - component: {fileID: 2796417246105865053}
   - component: {fileID: 7783266818614604766}
   - component: {fileID: 1282004669483876351}
+  - component: {fileID: 514023728718348608}
+  - component: {fileID: 7029792253601997448}
   m_Layer: 9
   m_Name: ZombieAC_B_Head
   m_TagString: Head
@@ -394,6 +396,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ac707e894a5c4864cb3af21ea5bd8cdf, type: 2}
+--- !u!114 &514023728718348608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335429015648951895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
+--- !u!54 &7029792253601997448
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335429015648951895}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &378597672338278637
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +579,7 @@ GameObject:
   - component: {fileID: 6400566521156363465}
   - component: {fileID: 8714741827491360460}
   - component: {fileID: 4271234681752890589}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_HP_Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6914,6 +6956,8 @@ GameObject:
   - component: {fileID: 6847526388522294265}
   - component: {fileID: 3544714595671367353}
   - component: {fileID: 5289829144992426315}
+  - component: {fileID: 3472461213898419339}
+  - component: {fileID: 6837729588394549940}
   m_Layer: 9
   m_Name: ZombieAC_B_Body
   m_TagString: Untagged
@@ -7034,6 +7078,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8a7b7260fba287a49906e25eb133f05e, type: 2}
+--- !u!114 &3472461213898419339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210676487417759979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
+--- !u!54 &6837729588394549940
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210676487417759979}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5218248608425269973
 GameObject:
   m_ObjectHideFlags: 0
@@ -7110,7 +7194,7 @@ GameObject:
   - component: {fileID: 3934143180523658276}
   - component: {fileID: 3178642164820458174}
   - component: {fileID: 6866255477070885707}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Helmet_OJ
   m_TagString: Helmet
   m_Icon: {fileID: 0}
@@ -7247,7 +7331,7 @@ GameObject:
   - component: {fileID: 7832707642683195863}
   - component: {fileID: 5825762602137753979}
   - component: {fileID: 1772378872034327500}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7863,7 +7947,7 @@ GameObject:
   - component: {fileID: 8950457304998968289}
   - component: {fileID: 4259056748806558368}
   - component: {fileID: 7019629220707747882}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8002,7 +8086,7 @@ GameObject:
   - component: {fileID: 5391808593375495066}
   - component: {fileID: 3097465546301743061}
   - component: {fileID: 125108083519532509}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8283,14 +8367,14 @@ MonoBehaviour:
   isRage: 0
   isGetHit: 0
   isDead: 0
+  hasRisen: 0
+  isRising: 0
   OnReachingRadius:
     m_PersistentCalls:
       m_Calls: []
   OnStartMoving:
     m_PersistentCalls:
       m_Calls: []
-  hasRisen: 0
-  isRising: 0
   helmet: {fileID: 5435859597044860880}
 --- !u!114 &4487499532109707340
 MonoBehaviour:
@@ -8316,7 +8400,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 8883550471336315875}
   zombieRepawn: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 6400566521156363465}
 --- !u!1 &6691009330143354677
 GameObject:
   m_ObjectHideFlags: 0
@@ -9302,7 +9386,7 @@ GameObject:
   - component: {fileID: 6881144568527418761}
   - component: {fileID: 3262301950439256779}
   - component: {fileID: 4850088719371296547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

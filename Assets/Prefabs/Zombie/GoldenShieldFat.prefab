@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3163b6a5f85d754ba3395e847c1ea82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 1819163210814611118}
   HPbar: {fileID: 4626926451525339719}
   FillBar: {fileID: 8992081679750442605}
   healthAmounText: {fileID: 0}
@@ -1744,6 +1744,8 @@ GameObject:
   - component: {fileID: 699535272796931066}
   - component: {fileID: 5166132294084654450}
   - component: {fileID: 915104138262515828}
+  - component: {fileID: 4498271791814175910}
+  - component: {fileID: 4411246781168373336}
   m_Layer: 0
   m_Name: ZombieAB_v2
   m_TagString: Untagged
@@ -1914,6 +1916,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 72072ef310c8a6145924f50b1f465e81, type: 2}
+--- !u!114 &4498271791814175910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736254683119857432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
+--- !u!54 &4411246781168373336
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4736254683119857432}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5019282684081768599
 GameObject:
   m_ObjectHideFlags: 0
@@ -9263,7 +9305,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 772925864690282814}
   zombieRepawn: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 4358805181166003724}
 --- !u!1 &9164212108152352383
 GameObject:
   m_ObjectHideFlags: 0

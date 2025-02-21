@@ -19,16 +19,31 @@ MonoBehaviour:
     missionName: Kill 3 zombie
     missionDecription: 
     missionRequire: 3
-    tagertName: BerSerkZombie
+    tagertName: Berserk
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: coin
   - missionID: 2
     missionRequireType: 0
     missionName: Kill 5 zombie
     missionDecription: 
     missionRequire: 5
-    tagertName: BerserkZombie
+    tagertName: Berserk
+    reward:
+      rewardType: 0
+      rewardAmmout: 10
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: gold
   - missionID: 3
     missionRequireType: 2
     missionName: Play 1 Game
     missionDecription: 
     missionRequire: 1
     tagertName: Game
+    reward:
+      rewardType: 0
+      rewardAmmout: 10
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold

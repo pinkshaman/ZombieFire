@@ -612,6 +612,8 @@ GameObject:
   - component: {fileID: 90250429631234766}
   - component: {fileID: 6325378150331189382}
   - component: {fileID: 3983680402886912506}
+  - component: {fileID: 4849270123022171708}
+  - component: {fileID: 2239818309810286999}
   m_Layer: 9
   m_Name: ZombieAB_v2
   m_TagString: Untagged
@@ -782,6 +784,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4849270123022171708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957163172114452035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
+--- !u!54 &2239818309810286999
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957163172114452035}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &982368688078444135
 GameObject:
   m_ObjectHideFlags: 0
@@ -7636,7 +7678,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 4702914066109076717}
   zombieRepawn: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 7001136549357161520}
 --- !u!1 &6800382379949153497
 GameObject:
   m_ObjectHideFlags: 0
@@ -8852,7 +8894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3163b6a5f85d754ba3395e847c1ea82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 5118897215811580688}
   HPbar: {fileID: 1764271245437799911}
   FillBar: {fileID: 1420845768192717273}
   healthAmounText: {fileID: 0}

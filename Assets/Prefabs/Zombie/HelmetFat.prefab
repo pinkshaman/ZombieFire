@@ -3861,7 +3861,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 3342311234705336035}
   zombieRepawn: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 7741129426567104898}
 --- !u!1 &4574926098145220386
 GameObject:
   m_ObjectHideFlags: 0
@@ -5620,7 +5620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3163b6a5f85d754ba3395e847c1ea82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 2120275653612516034}
   HPbar: {fileID: 2344822584895644721}
   FillBar: {fileID: 690529569946766426}
   healthAmounText: {fileID: 0}
@@ -8680,6 +8680,8 @@ GameObject:
   - component: {fileID: 8321360672013778330}
   - component: {fileID: 1443983908915113188}
   - component: {fileID: 568414580706562067}
+  - component: {fileID: 8086240112245330692}
+  - component: {fileID: 86001962027005833}
   m_Layer: 0
   m_Name: ZombieAB_v2
   m_TagString: Untagged
@@ -8850,6 +8852,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 72072ef310c8a6145924f50b1f465e81, type: 2}
+--- !u!114 &8086240112245330692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035988254371722399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
+--- !u!54 &86001962027005833
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035988254371722399}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8047166929951988106
 GameObject:
   m_ObjectHideFlags: 0

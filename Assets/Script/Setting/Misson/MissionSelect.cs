@@ -8,12 +8,14 @@ public class MissionSelect : MonoBehaviour
     public Transform rootUiRepeatMisson;
     public Transform rootUiDailyMission;
     public Transform rootUiAchievement;
-    public MissonUi UiPrefabs;
+    public QuestUi questPrefabsUi;
+    public AchievementUi AchievementPrefabsUi;
     public Button getAllRewardButton;
 
     public void Start()
     {
         CreateAllMission();
+        CreateAllAchievement();
         getAllRewardButton.onClick.AddListener(TakeAllReward);
     }
     public void CreateAllMission()
@@ -24,7 +26,7 @@ public class MissionSelect : MonoBehaviour
             var (missionType, missionID) = mission.Key;
             var (progress, missionBase) = mission.Value;
 
-            var missionUiInstance = Instantiate(UiPrefabs);
+            var missionUiInstance = Instantiate(questPrefabsUi);
             missionUiInstance.SetMissionData(missionBase, progress);
 
             if (missionType == MissionType.Daily)
@@ -37,10 +39,25 @@ public class MissionSelect : MonoBehaviour
             }
         }
     }
+    public void CreateAllAchievement()
+    {
+        var AllAchievement = MissonManager.Instance.achievementDictionary;
+        foreach (var achievement in AllAchievement)
+        {
+            var key = achievement.Key;
+            var (achievementBase, progess) = achievement.Value;
+
+            var achievementUIInstance = Instantiate(AchievementPrefabsUi,rootUiAchievement);
+           achievementUIInstance.SetAchievementData(achievementBase, progess);
+        }
+    }
     public void TakeAllReward()
     {
-       
+      
     }
-
+    public void TakeAllMission()
+    {
+        
+    }
 
 }

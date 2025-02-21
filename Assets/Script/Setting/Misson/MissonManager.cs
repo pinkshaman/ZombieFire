@@ -171,6 +171,7 @@ public class MissonManager : MonoBehaviour
         {
             achievementProgessList.achivementProgessList = new List<AchievementProgess>();
         }
+
         if (achievementDictionary == null)
         {
             achievementDictionary = new Dictionary<int, (AchievementBase, AchievementProgess)>();
@@ -185,13 +186,20 @@ public class MissonManager : MonoBehaviour
 
             if (!achievementDictionary.ContainsKey(key))
             {
-                AchievementProgess newProgress = new AchievementProgess(achievement.id, achievement.targetAchievement, false, false);
+                AchievementProgess newProgress = new AchievementProgess(achievement.id, achievement.achievementRequireType,0, achievement.targetAchievement, false, false);
                 achievementProgessList.achivementProgessList.Add(newProgress);
                 achievementDictionary[key] = (achievement, newProgress);
 
+                Debug.Log($"Added Achievement: {achievement.achievementName}");
             }
-            SaveAchievementProgess();
         }
+        SaveAchievementProgess();
+    }
+    public void UpdateAchievementProgessData(AchievementProgess progess)
+    {
+        var AchievementIndex = achievementProgessList.achivementProgessList.FindIndex(achievement => achievement.progessID == progess.progessID);
+        achievementProgessList.achivementProgessList[AchievementIndex] = progess;
+        SaveAchievementProgess();
     }
 
 
@@ -210,7 +218,7 @@ public class MissonManager : MonoBehaviour
         var defaultValue = JsonUtility.ToJson(achievementProgessList);
         var json = PlayerPrefs.GetString(nameof(achievementProgessList), defaultValue);
         achievementProgessList = JsonUtility.FromJson<AchievementProgessList>(json);
-        Debug.Log("Mission Progress is Loaded");
+        Debug.Log("Achievement Progress is Loaded");
     }
 }
 

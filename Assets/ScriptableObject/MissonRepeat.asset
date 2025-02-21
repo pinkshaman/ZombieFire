@@ -19,22 +19,42 @@ MonoBehaviour:
     missionName: Kill 10
     missionDecription: 
     missionRequire: 10
-    tagertName: BerserkZombie
+    tagertName: Berserk
+    reward:
+      rewardType: 2
+      rewardAmmout: 100
+      rewardImage: {fileID: 21300000, guid: e20589f151e1b9d438e01f195cf8f173, type: 2}
+      rewardName: Exp
   - missionID: 2
     missionRequireType: 0
     missionName: 'Kill 20 '
     missionDecription: 
     missionRequire: 20
-    tagertName: BerserkZombie
-  - missionID: 1
+    tagertName: Berserk
+    reward:
+      rewardType: 1
+      rewardAmmout: 2000
+      rewardImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+      rewardName: Coin
+  - missionID: 3
     missionRequireType: 2
     missionName: Play 1
     missionDecription: 
     missionRequire: 10
     tagertName: Game
+    reward:
+      rewardType: 0
+      rewardAmmout: 10
+      rewardImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+      rewardName: Gold
   - missionID: 4
     missionRequireType: 1
     missionName: Collect 5
     missionDecription: 
     missionRequire: 5
     tagertName: QuickReload
+    reward:
+      rewardType: 4
+      rewardAmmout: 5
+      rewardImage: {fileID: 21300000, guid: 8ab3e49adc2abe14f8be3ead4efd5afd, type: 2}
+      rewardName: QuickReload

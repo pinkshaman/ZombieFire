@@ -15,13 +15,12 @@ public class HPBar : MonoBehaviour
     public virtual void Start()
     {
         cameraTransform = FindObjectOfType<Camera>().transform;
-        var currentZombieHp = GetComponentInParent<ZombieHealth>();
-        health = FindObjectOfType<ZombieHealth>(currentZombieHp);
     }
     public virtual void Fill(int currentHealth, int totalHealth)
     {
+        autoFade.Show();
         var fillPercent = 1f * currentHealth / totalHealth;
-        FillBar.fillAmount = fillPercent;    
+        FillBar.fillAmount = fillPercent;
     }
     public void FacingPlayer()
     {
@@ -42,7 +41,6 @@ public class HPBar : MonoBehaviour
     }
     public virtual void ShowText()
     {
-        autoFade.Show();
         healthAmounText.text = $"HP : {health.maxHealthPoint}";
     }
 
