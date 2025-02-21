@@ -203,7 +203,7 @@ public abstract class Zombie : MonoBehaviour
 
     public virtual void Move()
     {
-        if (isDead || agent == null || !agent.isOnNavMesh||isRising) return;
+        if (isDead || agent == null || !agent.isOnNavMesh) return;
         agent.isStopped = false;
         agent.SetDestination(playerTaget.position);
         if(isRage)

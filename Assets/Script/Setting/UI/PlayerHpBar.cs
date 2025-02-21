@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHpBar : HPBar
 {
-
+    public Text healthAmounText;
     public override void Start()
     {
         health = FindObjectOfType<PlayerHealth>();
@@ -18,7 +19,7 @@ public class PlayerHpBar : HPBar
         FillBar.fillAmount = fillPercent;
         ShowText();
     }
-    public override void ShowText()
+    public  void ShowText()
     {
         healthAmounText.text = $"HP : {health.HealthPoint}";
     }

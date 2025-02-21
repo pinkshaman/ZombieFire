@@ -8,7 +8,6 @@ public class HPBar : MonoBehaviour
     public Health health;
     public Image HPbar;
     public Image FillBar;
-    public Text healthAmounText;
     public AutoFade autoFade;
     private Transform cameraTransform;
 
@@ -39,10 +38,5 @@ public class HPBar : MonoBehaviour
         }
         transform.forward = -cameraTransform.forward;
     }
-    public virtual void ShowText()
-    {
-        healthAmounText.text = $"HP : {health.maxHealthPoint}";
-    }
-
-
+   
 }
