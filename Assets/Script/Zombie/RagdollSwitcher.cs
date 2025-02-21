@@ -70,7 +70,7 @@ public class RagdollSwitcher : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             collider.enabled = false;
-            if (collider.gameObject.CompareTag("Helmet") || collider.gameObject.CompareTag("Shield"))
+            if (collider.gameObject.CompareTag("Helmet") || collider.gameObject.CompareTag("Unbreakable"))
             {
                 collider.enabled = true;
             }

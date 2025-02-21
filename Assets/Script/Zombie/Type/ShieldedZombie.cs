@@ -5,7 +5,8 @@ using UnityEngine;
 public class ShieldedZombie : Zombie
 {
     private float lastHit;
-
+    public GameObject helmet;
+    public GameObject shield;
 
     public override void Attack()
     {

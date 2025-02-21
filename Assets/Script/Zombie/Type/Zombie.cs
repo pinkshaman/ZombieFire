@@ -20,10 +20,11 @@ public abstract class Zombie : MonoBehaviour
     public bool isRage;
     public bool isGetHit;
     public bool isDead;
+    public bool hasRisen = false;
+    public bool isRising;
     public UnityEvent OnReachingRadius;
     public UnityEvent OnStartMoving;
     private bool _isMovingValue;
-    public bool isFalling = false;
 
     public bool IsMoving
     {
@@ -91,8 +92,8 @@ public abstract class Zombie : MonoBehaviour
 
     public virtual void CheckHeight()
     {
-        if (isFalling) return;
-        isFalling = true;
+        if (hasRisen) return;
+        hasRisen = true;
         Rising();
     }
 
@@ -110,7 +111,12 @@ public abstract class Zombie : MonoBehaviour
     public void Rising()
     {
         agent.isStopped = true;
+        isRising = true;
         anim.SetTrigger("Rise");
+    }
+    public void IsRising()
+    {
+        isRising = false;
     }
     public virtual void Attack()
     {
@@ -197,7 +203,7 @@ public abstract class Zombie : MonoBehaviour
 
     public virtual void Move()
     {
-        if (isDead || agent == null || !agent.isOnNavMesh) return;
+        if (isDead || agent == null || !agent.isOnNavMesh||isRising) return;
         agent.isStopped = false;
         agent.SetDestination(playerTaget.position);
         if(isRage)

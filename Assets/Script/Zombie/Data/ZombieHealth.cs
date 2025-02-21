@@ -12,6 +12,7 @@ public class ZombieHealth : Health
     public override void Start()
     {
         Initialize();
+        
         var hpBar = GetComponentInChildren<HPBar>();
         healthBar =FindObjectOfType<HPBar>(hpBar);
         zombieRepawn = FindObjectOfType<ZombieRepawn>();
