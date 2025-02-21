@@ -11,6 +11,10 @@ public class MissonManager : MonoBehaviour
     public MissionDaily missionDaily;
     public MissonRepeat missionRepeat;
 
+    public AchievementList achievementList;
+    public AchievementProgessList achievementProgessList;
+
+    public Dictionary<int, (AchievementBase achievementBase, AchievementProgess achievementtProgess)> achievementDictionary = new Dictionary<int, (AchievementBase, AchievementProgess)>();
 
     private void Awake()
     {
@@ -27,6 +31,7 @@ public class MissonManager : MonoBehaviour
     public void Start()
     {
         CreateDictionary();
+        CreateAchievementDictionary();
     }
 
     [ContextMenu("CreateDictionary")]
@@ -149,6 +154,62 @@ public class MissonManager : MonoBehaviour
         var defaultValue = JsonUtility.ToJson(missionProgessList);
         var json = PlayerPrefs.GetString(nameof(missionProgessList), defaultValue);
         missionProgessList = JsonUtility.FromJson<MissonProgessList>(json);
+        Debug.Log("Mission Progress is Loaded");
+    }
+
+    //-------------------------------------//
+
+
+    [ContextMenu("CreateAchievementDictionary")]
+    public void CreateAchievementDictionary()
+    {
+        if (achievementProgessList == null)
+        {
+            achievementProgessList = new AchievementProgessList();
+        }
+        if (achievementProgessList.achivementProgessList == null)
+        {
+            achievementProgessList.achivementProgessList = new List<AchievementProgess>();
+        }
+        if (achievementDictionary == null)
+        {
+            achievementDictionary = new Dictionary<int, (AchievementBase, AchievementProgess)>();
+        }
+        AddAchievementToDictionary();
+    }
+    public void AddAchievementToDictionary()
+    {
+        foreach (var achievement in achievementList.achievementList)
+        {
+            var key = achievement.id;
+
+            if (!achievementDictionary.ContainsKey(key))
+            {
+                AchievementProgess newProgress = new AchievementProgess(achievement.id, achievement.targetAchievement, false, false);
+                achievementProgessList.achivementProgessList.Add(newProgress);
+                achievementDictionary[key] = (achievement, newProgress);
+
+            }
+            SaveAchievementProgess();
+        }
+    }
+
+
+
+    [ContextMenu("SaveAchievementProgess")]
+    public void SaveAchievementProgess()
+    {
+        var value = JsonUtility.ToJson(achievementProgessList);
+        PlayerPrefs.SetString(nameof(achievementProgessList), value);
+        PlayerPrefs.Save();
+    }
+
+    [ContextMenu("LoadAchievementProgess")]
+    public void LoadAchievementProgess()
+    {
+        var defaultValue = JsonUtility.ToJson(achievementProgessList);
+        var json = PlayerPrefs.GetString(nameof(achievementProgessList), defaultValue);
+        achievementProgessList = JsonUtility.FromJson<AchievementProgessList>(json);
         Debug.Log("Mission Progress is Loaded");
     }
 }

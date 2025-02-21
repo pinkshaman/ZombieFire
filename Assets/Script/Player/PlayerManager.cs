@@ -65,15 +65,15 @@ public class PlayerManager : MonoBehaviour
 
         playerData.levelRewardProgessList = new LevelRewardProgessList();
         playerData.levelRewardProgessList.leveRewardProgesses = new List<LeveRewardProgess>();
-    
+
         foreach (var levelReward in levelRewardList.listLevelReward)
         {
-            playerData.levelRewardProgessList.leveRewardProgesses.Add(new LeveRewardProgess(levelReward.level,false));
+            playerData.levelRewardProgessList.leveRewardProgesses.Add(new LeveRewardProgess(levelReward.level, false));
         }
         SavePlayerData();
     }
 
-    
+
     public GearUpgradeData ReturnSpecialUpgradeData(GearUpgradeType type)
     {
         var data = gearUpgradeList.gearUpgradeLists.Find(data => data.type == type);
@@ -109,7 +109,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (item.quatity > 0)
                 {
-                    
+
                     return true;
                 }
             }
@@ -142,7 +142,7 @@ public class PlayerManager : MonoBehaviour
         return upgrade.percentIncrease;
 
     }
-   
+
     public int ReturnPlayerHealthAfterEffected()
     {
         foreach (var upgradeData in playerData.specialUpgradeProgess.specialUpdateProgessList)
@@ -153,7 +153,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (level.levelUpgrade > 0)
                 {
-                   var newHealth = Mathf.RoundToInt(playerData.health * (1 + level.percentIncrease / 100f));
+                    var newHealth = Mathf.RoundToInt(playerData.health * (1 + level.percentIncrease / 100f));
                     Debug.Log($"PlayerHealth: {playerData.health}");
                     return newHealth;
                 }
@@ -163,10 +163,31 @@ public class PlayerManager : MonoBehaviour
     }
     public LevelRewardBase ReturnLevelRewardBase(int level)
     {
-        var rewardBase = levelRewardList.listLevelReward.Find(rewardBase=>rewardBase.level == level);
-        return rewardBase;  
+        var rewardBase = levelRewardList.listLevelReward.Find(rewardBase => rewardBase.level == level);
+        return rewardBase;
     }
-   
+
+    public void TakeReward(Reward reward)
+    {
+        if (reward.rewardType == RewardType.Gold)
+        {
+            playerData.gold += reward.rewardAmmout;
+        }
+        if (reward.rewardType == RewardType.Coin)
+        {
+            playerData.coin += reward.rewardAmmout;
+        }
+        if (reward.rewardType == RewardType.Exp)
+        {
+            playerData.exp += reward.rewardAmmout;
+        }
+        if (reward.rewardType == RewardType.Item)
+        {
+            var item = playerData.itemList.itemLists.Find(item => item.itemName == reward.rewardName);
+            item.quatity += reward.rewardAmmout;
+        }
+        UpdatePlayerData(playerData);
+    }
 
     [ContextMenu("SavePlayerData")]
     public void SavePlayerData()
@@ -184,6 +205,6 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("PlayerData is Loaded");
     }
 
-  
+
 
 }

@@ -50,10 +50,11 @@ public class DamageManagement : MonoBehaviour
 
         if (healthTarget.IsDead)
         {
+
+
             if (isHeadShot)
             {
                 HandleHeadShotKill();
-
             }
             else
             {

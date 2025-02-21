@@ -11,6 +11,8 @@ public class MissonUi : MonoBehaviour
     public Text progessText;
     public Button getRewardButton;
     public GameObject uncompleteLabel;
+    public Image rewardImage;
+    public Text rewardAmout;
     private MissionBase missionBase;
     private MissionProgess missionProgess;
 
@@ -24,6 +26,9 @@ public class MissonUi : MonoBehaviour
         this.missionProgess = missionProgess;
         missionName.text = $"{missionBase.missionRequireType} {missionBase.missionRequire} {missionBase.tagertName}";
         progessText.text = $"{missionProgess.missionProgessRequire}/{missionBase.missionRequire}";
+        rewardImage.sprite = missionBase.reward.rewardImage;
+        rewardAmout.text = missionBase.reward.rewardAmmout.ToString();
+
         FillProgess(missionProgess.missionProgessRequire, missionBase.missionRequire);
         CheckStatus(missionProgess);
     }
@@ -47,6 +52,7 @@ public class MissonUi : MonoBehaviour
     }
     public void TakeReward()
     {
+        PlayerManager.Instance.TakeReward(missionBase.reward);
         missionProgess.isTook = true;
         UpdateStatus();
     }

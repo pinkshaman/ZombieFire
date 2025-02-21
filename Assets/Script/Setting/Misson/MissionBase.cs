@@ -20,6 +20,7 @@ public class MissionBase
     public string missionDecription;
     public int missionRequire;
     public string tagertName;
+    public Reward reward;
 }
 public enum MissionRequireType
 {
