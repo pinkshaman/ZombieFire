@@ -48,8 +48,6 @@ public class GameOption : MonoBehaviour
     public void ReturnToGameButton()
     {
         Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
 
         this.gameObject.SetActive(false);
     }

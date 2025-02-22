@@ -15,6 +15,7 @@ public class ObjectSelection : MonoBehaviour
     public UnityEvent CanUpgadeEffect;
     private GameObject selectedObject;
     private bool _canUpgrade;
+    
     public bool CanUpgrade
     {
         get => _canUpgrade;

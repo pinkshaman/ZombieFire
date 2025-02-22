@@ -17,7 +17,7 @@ public class PistolGun : Gun
     public override void Update()
     {
         base.Update();
-        if (Input.GetMouseButtonDown(0))
+        if (IsValidFireInput())
         {
             UpdateFiring();
         }

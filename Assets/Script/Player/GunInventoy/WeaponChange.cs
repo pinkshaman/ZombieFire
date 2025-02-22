@@ -16,7 +16,7 @@ public class WeaponChange : MonoBehaviour
     public Button buttonSlot2;
 
     public Button closePanel;
-
+    public PlayerUI playerUi;
     public void Start()
     {
         buttonSlot1.onClick.AddListener(SetDataSlot1);
@@ -81,6 +81,7 @@ public class WeaponChange : MonoBehaviour
     public void UpdateData(string slot1, string slot2)
     {
         GunManager.Instance.UpdateGunSlot(slot1,slot2);
+        playerUi.UpdateSlotGun();
     }
 
 }

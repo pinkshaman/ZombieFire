@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public abstract class Gun : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public abstract class Gun : MonoBehaviour
     public GamePlayUI itemUI;
     public bool haveScope;
     private bool isReloading;
-
     public UnityEvent OnSwitching;
     public UnityEvent OnShooting;
     public UnityEvent OnReloading;
@@ -24,7 +24,6 @@ public abstract class Gun : MonoBehaviour
 
     public virtual void Start()
     {
-
         var originalGun = GunManager.Instance.GetGun(GunName);
         var newGun = CloneGunData(originalGun);
         gunPlayer = GunManager.Instance.ReturnPlayerGun(newGun.GunName);
@@ -181,6 +180,61 @@ public abstract class Gun : MonoBehaviour
         anim.speed = 1f;
         Debug.Log("FastReload Canceled , animator Speed reset to default");
     }
+    public bool IsValidFireInput()
+    {
+        if (IsTouchingUI()) return false;
+
+        if (Input.GetMouseButton(0) && IsInFireZone(Input.mousePosition))
+        {
+            return true;
+        }
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began && IsInFireZone(touch.position))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    private bool IsTouchingUI()
+    {
+        if (Input.touchCount > 0)
+        {
+            return EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
+        }
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            // Raycast kiểm tra xem UI có tag "Enemy" hay không
+            PointerEventData pointerData = new PointerEventData(EventSystem.current)
+            {
+                position = Input.mousePosition
+            };
+
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointerData, results);
+
+            // Duyệt qua danh sách các UI bị chạm và bỏ qua UI có tag "Enemy"
+            foreach (var result in results)
+            {
+                if (result.gameObject.CompareTag("Enemy"))
+                {
+                    return false; // Không tính là chạm vào UI nếu UI có tag "Enemy"
+                }
+            }
+
+            return true; // Nếu không phải UI "Enemy", thì vẫn là UI -> bỏ qua Input
+        }
+
+        return false; // Không chạm vào UI -> tiếp tục bắn
+    }
+    private bool IsInFireZone(Vector2 position)
+    {
+        return position.x > Screen.width / 2;
+    }
     public virtual void Update()
     {
         if (isReloading)
@@ -195,5 +249,6 @@ public abstract class Gun : MonoBehaviour
         {
             itemUI.UserShieldItem();
         }
+       
     }
 }

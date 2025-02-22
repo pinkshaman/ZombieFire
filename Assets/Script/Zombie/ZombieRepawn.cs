@@ -46,7 +46,7 @@ public class ZombieRepawn : MonoBehaviour
     {
         int pointIndex = Random.Range(1, SpawnPotisionList.Count);
         Transform SpawnPoint = SpawnPotisionList[pointIndex].transform;
-        Instantiate(zombiePrefabs, SpawnPoint.transform.position, transform.rotation);
+        Instantiate(zombiePrefabs, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
 
 
     }

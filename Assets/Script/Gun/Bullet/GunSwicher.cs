@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -11,10 +12,10 @@ public class GunSwicher : MonoBehaviour
     public Button buttonSwitch;
     private int gunIndex1, gunIndex2;
     private bool isSwitching = false;
-    private RotateByMouse cameraRotation;
+
     public void Start()
     {
-        cameraRotation = FindObjectOfType<RotateByMouse>();
+
         InitializeGuns();
         buttonSwitch.onClick.AddListener(Switch);
     }
@@ -56,17 +57,12 @@ public class GunSwicher : MonoBehaviour
         var timetoHide = currentGun.ReturnHideTime();
         yield return new WaitForSeconds(timetoHide);
 
-
-        newGun.transform.rotation = cameraRotation.verticalPivot.rotation;
-
-
         gunListed[currentGunIndex].SetActive(false);
         gunListed[newGunIndex].SetActive(true);
         switchingSound.Play();
 
         newGun.Switching();
         newGun.Ready();
-
         isSwitching = false;
     }
 }

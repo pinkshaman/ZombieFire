@@ -32,7 +32,7 @@ public class WeaponUiListItem : MonoBehaviour
         }
     }
 
-    private UnityAction<WeaponUiListItem> _onClickCallback;
+    public UnityAction<WeaponUiListItem> _onClickCallback;
 
     public void Start()
     {

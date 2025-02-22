@@ -10,7 +10,6 @@ public class RifleGun : Gun
     private float interval;
     private float lastShoot;
 
-
     public override void Start()
     {
         base.Start();
@@ -19,7 +18,7 @@ public class RifleGun : Gun
     public override void Update()
     {
         base.Update();
-        if (Input.GetMouseButton(0))
+        if (IsValidFireInput())
         {
             UpdateFiring();
         }
@@ -36,7 +35,7 @@ public class RifleGun : Gun
     }
 
     public override void Shooting()
-    {
+    { 
         anim.Play("Fire", layer: -1, normalizedTime: 0);
         rifleGun.gunRayCaster.PerformRayCasting();
         audioSource.clip = rifleGun.gunAudio.Shooting;

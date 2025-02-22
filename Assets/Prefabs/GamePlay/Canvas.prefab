@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 5411971601761728719}
-  moveSpeed: 1
+  moveSpeed: 50
   fadeDuration: 1
   visibleDuration: 2
 --- !u!1 &1555554306221849320
@@ -5176,6 +5176,7 @@ MonoBehaviour:
   health: {fileID: 0}
   HPbar: {fileID: 8382016848823564139}
   FillBar: {fileID: 7345948771276896571}
+  autoFade: {fileID: 0}
   healthAmounText: {fileID: 7107054959631434946}
 --- !u!1 &7276165173136647781
 GameObject:
@@ -7110,7 +7111,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5258210435023679888, guid: 914e111f1d768d04e86e3fd090c0e4f6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 914e111f1d768d04e86e3fd090c0e4f6, type: 3}

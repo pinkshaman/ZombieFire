@@ -44,7 +44,7 @@ public class GunAmmo : MonoBehaviour
         loadedAmmoChanged.AddListener(UpdateTextAmmo);
         gun.OnShooting.AddListener(SingleFireAmmoCounter);
         gun.OnSwitching.AddListener(OnSelectedGun);
-        gamePlayUI.reloadButton.onClick.AddListener(Reload);
+        gamePlayUI.reloadButton.onClick.AddListener(IsCanReload);
         cost = gun.gunData.buyGun.ammoPrice;
 
     }
@@ -88,6 +88,13 @@ public class GunAmmo : MonoBehaviour
         }
 
     }
+    public void IsCanReload()
+    {
+        if(LoadedAmmo < magSize)
+        {
+            Reload();
+        }
+    }
     public void Reload()
     {
         if (gun.gunPlayer.ammoStoraged <= 0 && !AutoBuy() || isReloading)
@@ -120,6 +127,7 @@ public class GunAmmo : MonoBehaviour
     public void OnSelectedGun()
     {
         gun.ResetAnimation();
+        UpdateTextAmmo();
         UpdateShootLocking();
     }
     private void UpdateShootLocking()
