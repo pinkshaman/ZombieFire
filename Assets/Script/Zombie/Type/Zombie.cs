@@ -103,7 +103,7 @@ public abstract class Zombie : MonoBehaviour
         {
             var EndPos = agent.currentOffMeshLinkData.endPos;
             var StarPos = agent.currentOffMeshLinkData.startPos;
-            transform.position = Vector3.Lerp(StarPos, EndPos, 0.1f * Time.deltaTime);
+            transform.position = Vector3.Lerp(StarPos, EndPos, 0.01f * Time.deltaTime);
             agent.Warp(EndPos);
             Rising();
         }
@@ -147,9 +147,9 @@ public abstract class Zombie : MonoBehaviour
         }
 
     }
-    public void OnGetHit()
+    public void CheckGetHit()
     {
-        AnmGetHit();
+        OnGetHit();
         if (isRage) return;
         isRage = true;
         PlaySound(properties.clipRage);
@@ -161,11 +161,14 @@ public abstract class Zombie : MonoBehaviour
     {
         StopMove();
         anim.SetTrigger("GetHit");
+        var getHitIndex = Random.Range(0, 1);
+        anim.SetInteger("GetHitType", getHitIndex);
+
         yield return new WaitForSeconds(1.5f);
         if (!isDead) Move();
         isGetHit = false;
     }
-    public void AnmGetHit()
+    public void OnGetHit()
     {
         if (isGetHit) return;
         isGetHit = true;

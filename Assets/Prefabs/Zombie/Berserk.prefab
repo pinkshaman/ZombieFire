@@ -3169,7 +3169,6 @@ MonoBehaviour:
   health: {fileID: 6021751411746618773}
   HPbar: {fileID: 4408537132672368186}
   FillBar: {fileID: 4227113718589344379}
-  healthAmounText: {fileID: 0}
   autoFade: {fileID: 1203976636368213057}
 --- !u!114 &1203976636368213057
 MonoBehaviour:
@@ -3736,9 +3735,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1624074910900025823}
   - component: {fileID: 4235251004118318967}
-  - component: {fileID: 845321568391471317}
-  - component: {fileID: 6028214854725363069}
-  - component: {fileID: 7435861325919624641}
   m_Layer: 9
   m_Name: ZombieAC_Head
   m_TagString: Head
@@ -3874,68 +3870,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.07941899, y: 0.07073885, z: 0.0017712414}
     m_Extent: {x: 0.4911708, y: 0.35876787, z: 0.66732776}
   m_DirtyAABB: 0
---- !u!114 &845321568391471317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2420822968572779333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSurFaceType: 0
---- !u!54 &6028214854725363069
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2420822968572779333}
-  serializedVersion: 4
-  m_Mass: 3
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &7435861325919624641
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2420822968572779333}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: ac707e894a5c4864cb3af21ea5bd8cdf, type: 2}
 --- !u!1 &2461713112459588300
 GameObject:
   m_ObjectHideFlags: 0
@@ -9056,9 +8990,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1246001455136204240}
   - component: {fileID: 4179940801017185476}
-  - component: {fileID: 7402185277957217448}
-  - component: {fileID: 2160921163657079174}
-  - component: {fileID: 4878690495838253738}
   m_Layer: 9
   m_Name: ZombieAC_Body
   m_TagString: Untagged
@@ -9157,68 +9088,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.16064239, y: -0.011139974, z: -0.009066135}
     m_Extent: {x: 0.81385636, y: 0.20039473, z: 0.41447356}
   m_DirtyAABB: 0
---- !u!54 &7402185277957217448
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288369358517031270}
-  serializedVersion: 4
-  m_Mass: 3.14
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &2160921163657079174
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288369358517031270}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 0825c59f4f175eb4bad50607e7f33f19, type: 2}
---- !u!114 &4878690495838253738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288369358517031270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitSurFaceType: 1
 --- !u!1 &6308293881673767137
 GameObject:
   m_ObjectHideFlags: 0

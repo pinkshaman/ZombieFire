@@ -75,22 +75,32 @@ MonoBehaviour:
         waveList:
         - waveNumber: 1
           zombieList:
-          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+          - zombie: {fileID: 1334191681617113990, guid: a158e9e36f9be8b4f90518027b73f575, type: 3}
             quatity: 3
         - waveNumber: 2
           zombieList:
           - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
             quatity: 5
         - waveNumber: 3
-          zombieList: []
+          zombieList:
+          - zombie: {fileID: 1334191681617113990, guid: a158e9e36f9be8b4f90518027b73f575, type: 3}
+            quatity: 1
         - waveNumber: 4
           zombieList:
-          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-            quatity: 5
+          - zombie: {fileID: 292221279573374220, guid: 67b113227708cfb49b633f580f2d12c9, type: 3}
+            quatity: 2
+          - zombie: {fileID: 6741506080007547240, guid: eef6488b82c0c3a40be660dda0ea93b1, type: 3}
+            quatity: 3
+          - zombie: {fileID: 9194656839513661718, guid: f5ed33c35c283f24294fc8310cac0cc5, type: 3}
+            quatity: 3
         - waveNumber: 4
           zombieList:
-          - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
-            quatity: 5
+          - zombie: {fileID: 1996681407264920842, guid: 81efeb28da5b00343886cdf12ac1340c, type: 3}
+            quatity: 2
+          - zombie: {fileID: 7229139807350980311, guid: 2e28fb6125c10974c8c011392d7d3ff4, type: 3}
+            quatity: 2
+          - zombie: {fileID: 1551875999176445215, guid: 256611cbd6830524bab681a7b6539b2c, type: 3}
+            quatity: 2
       - stageID: 3
         stageImage: {fileID: 21300000, guid: 0209f4d13b02c4a4a82e1d18fe79852d, type: 2}
         isBossWave: 0
