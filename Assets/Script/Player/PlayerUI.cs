@@ -10,6 +10,7 @@ public class PlayerUI : MonoBehaviour
     public Currency currency;
     public List<GunSlotUi> gunsSlotUi;
 
+
     public void Start()
     {
         Time.timeScale = 1;
