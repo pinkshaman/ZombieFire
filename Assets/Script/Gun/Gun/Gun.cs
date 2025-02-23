@@ -208,7 +208,6 @@ public abstract class Gun : MonoBehaviour
         }
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            // Raycast kiểm tra xem UI có tag "Enemy" hay không
             PointerEventData pointerData = new PointerEventData(EventSystem.current)
             {
                 position = Input.mousePosition
@@ -217,19 +216,16 @@ public abstract class Gun : MonoBehaviour
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointerData, results);
 
-            // Duyệt qua danh sách các UI bị chạm và bỏ qua UI có tag "Enemy"
             foreach (var result in results)
             {
                 if (result.gameObject.CompareTag("Enemy"))
                 {
-                    return false; // Không tính là chạm vào UI nếu UI có tag "Enemy"
+                    return false;
                 }
             }
-
-            return true; // Nếu không phải UI "Enemy", thì vẫn là UI -> bỏ qua Input
+            return true;
         }
-
-        return false; // Không chạm vào UI -> tiếp tục bắn
+        return false;
     }
     private bool IsInFireZone(Vector2 position)
     {

@@ -49,6 +49,6 @@ public class StageUi : MonoBehaviour
         Debug.Log($"Data :{stageData.sceneID}");
         StageGameMode.Instance.SetCurrentArenaAndStage(stageData.stageID);
         LoadingPanel.gameObject.SetActive(true);
-        LoadingPanel.StartCoroutine(LoadingPanel.LoadGameScene());
+        LoadingPanel.StartLoadingScene();
     }
 }

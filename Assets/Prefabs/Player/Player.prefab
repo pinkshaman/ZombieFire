@@ -176,7 +176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064304863227145005}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -185,7 +185,7 @@ Transform:
   - {fileID: 1576138485535721356}
   - {fileID: 7392281931108736666}
   m_Father: {fileID: 7531471334921721621}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8327507717219535865
 Camera:
   m_ObjectHideFlags: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   maxYaw: 40
   horizontalPivot: {fileID: 7531471334921721621}
   verticalPivot: {fileID: 1752241487316183353}
+  gameOption: {fileID: 0}
 --- !u!1 &1124981220477884602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,7 +1621,7 @@ PrefabInstance:
     - target: {fileID: 2972565439756613880, guid: 644c261c81430a64d97cd664754ae546, type: 3}
       propertyPath: cameraHolder
       value: 
-      objectReference: {fileID: 8554124715812883282}
+      objectReference: {fileID: 1752241487316183353}
     - target: {fileID: 3106440317505601171, guid: 644c261c81430a64d97cd664754ae546, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 2.3972986
@@ -1949,7 +1950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimingCamera: {fileID: 8327507717219535865}
-  cameraHolder: {fileID: 7531471334921721621}
+  cameraHolder: {fileID: 1752241487316183353}
   recoilRecoverySpeed: 5
   horizontalRecoil: 0.015
   verticalRecoil: 0.015

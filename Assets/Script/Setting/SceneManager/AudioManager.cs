@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -26,8 +27,7 @@ public class AudioManager : MonoBehaviour
     }
     public void SetVolume(float volume)
     {
-        AudioListener.volume = volume;
-      
+        AudioListener.volume = volume;   
     }
     public void UpadateData(OptionData newData)
     {

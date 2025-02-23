@@ -5,7 +5,6 @@ using UnityEngine;
 public class Recoil : MonoBehaviour
 {
     public Camera aimingCamera;
-    public Transform cameraHolder;
     public float recoilRecoverySpeed = 5f;
     public float horizontalRecoil = 1f;
     public float verticalRecoil = 1f;
@@ -33,6 +32,5 @@ public class Recoil : MonoBehaviour
     private void Update()
     {
         currentRecoil = Vector3.Lerp(currentRecoil, Vector3.zero, Time.deltaTime * recoilRecoverySpeed);
-        cameraHolder.localRotation = Quaternion.Euler(currentRecoil);
     }
 }

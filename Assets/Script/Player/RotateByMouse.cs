@@ -5,30 +5,49 @@ using UnityEngine.EventSystems;
 
 public class RotateByMouse : MonoBehaviour
 {
-    public float sensitivity = 0.1f; // Độ nhạy xoay camera
-    public float minPitch = -30f;
-    public float maxPitch = 60f;
-    public float minYaw = -90f;
-    public float maxYaw = 90f;
+    public float sensitivity;
+    public float minPitch;
+    public float maxPitch;
+    public float minYaw;
+    public float maxYaw;
 
     private float pitch;
     private float yaw;
     private Vector2 lastInputPosition;
     private bool isDragging = false;
 
-    public Transform horizontalPivot; // Quay ngang (yaw)
-    public Transform verticalPivot; // Quay dọc (pitch)
-
+    public Transform horizontalPivot;
+    public Transform verticalPivot;
+    public GameOption gameOption;
     private void Start()
     {
+        gameOption.controlSlider.onValueChanged.AddListener(SetDataSensitivity);
+        SetDataSensitivity(gameOption.controlSlider.value);
         yaw = horizontalPivot.localEulerAngles.y;
         pitch = verticalPivot.localEulerAngles.x;
+        
     }
-
+    public void SetDataSensitivity(float ammout)
+    {
+        sensitivity = ammout;
+    }
     private void Update()
     {
         HandleMouseRotation();
         HandleTouchRotation();
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
     }
 
     private bool IsInRotationZone(Vector2 position)
@@ -39,26 +58,12 @@ public class RotateByMouse : MonoBehaviour
 
     private void HandleMouseRotation()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (IsInRotationZone(Input.mousePosition))
-            {
-                lastInputPosition = Input.mousePosition;
-                isDragging = true;
-            }
-        }
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
 
-        if (Input.GetMouseButton(0) && isDragging)
+        if (mouseX != 0 || mouseY != 0)
         {
-            Vector2 delta = (Vector2)Input.mousePosition - lastInputPosition;
-            lastInputPosition = Input.mousePosition;
-
-            RotateCamera(delta);
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            isDragging = false;
+            RotateCamera(new Vector2(mouseX, mouseY) * 10f);
         }
     }
 
@@ -105,25 +110,22 @@ public class RotateByMouse : MonoBehaviour
         foreach (RaycastResult result in results)
         {
             if (result.gameObject.CompareTag("Enemy"))
-                continue; // Bỏ qua UI có tag "Enemy"
-
-            return true; // Nếu có UI khác "Enemy", không cho phép xoay
+                continue;
+            return true;
         }
 
-        return false; // Không có UI nào cản trở, cho phép xoay
+        return false;
     }
+
 
     private void RotateCamera(Vector2 delta)
     {
-        // Cập nhật góc yaw (xoay ngang)
-        yaw += delta.x * sensitivity;
-        yaw = Mathf.Clamp(yaw, minYaw, maxYaw);
-        horizontalPivot.localRotation = Quaternion.Euler(0, yaw, 0);
+        float deltaYaw = delta.x * sensitivity;
+        yaw = Mathf.Clamp(yaw + deltaYaw, minYaw, maxYaw);
+        horizontalPivot.localEulerAngles = new Vector3(0, yaw, 0);
 
-        // Cập nhật góc pitch (xoay dọc)
-        pitch -= delta.y * sensitivity;
-        pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
-        verticalPivot.localRotation = Quaternion.Euler(pitch, 0, 0);
+        float deltaPitch = -delta.y * sensitivity;
+        pitch = Mathf.Clamp(pitch + deltaPitch, minPitch, maxPitch);
+        verticalPivot.localEulerAngles = new Vector3(pitch, 0, 0);
     }
-
 }

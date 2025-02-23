@@ -18,7 +18,7 @@ public class RifleGun : Gun
     public override void Update()
     {
         base.Update();
-        if (IsValidFireInput())
+        if (IsValidFireInput() || Input.GetKey(KeyCode.V)) 
         {
             UpdateFiring();
         }

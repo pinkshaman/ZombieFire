@@ -27574,9 +27574,9 @@ RectTransform:
   - {fileID: 1612}
   m_Father: {fileID: 1355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 641, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1, y: 0}
   m_SizeDelta: {x: 1282, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1554
@@ -39429,8 +39429,6 @@ GameObject:
   m_Component:
   - component: {fileID: 325439932}
   - component: {fileID: 325439931}
-  - component: {fileID: 325439934}
-  - component: {fileID: 325439933}
   m_Layer: 0
   m_Name: GameMode
   m_TagString: Untagged
@@ -39634,30 +39632,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &325439933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325439930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fda715fe126c4f478f3f0f12e60d7c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &325439934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325439930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 587fee14f9a5abc4ea1d0250ed79715b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &377996969 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2327457507800145105, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
@@ -39699,6 +39673,7 @@ GameObject:
   - component: {fileID: 379490133}
   - component: {fileID: 379490137}
   - component: {fileID: 379490138}
+  - component: {fileID: 379490139}
   m_Layer: 0
   m_Name: DontDestroyOnLoadObject
   m_TagString: Untagged
@@ -39955,6 +39930,21 @@ MonoBehaviour:
   achievementList: {fileID: 11400000, guid: 3e92e22d16f678b4b8f977a591f68805, type: 2}
   achievementProgessList:
     achivementProgessList: []
+--- !u!114 &379490139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379490132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af07a4e7b616e474e9bf77a13eda172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionData:
+    vomlume: 0
+    control: 0
 --- !u!114 &393691454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41476,6 +41466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3892440334264750105, guid: 7e3e08de18795144ea3798c956b2a963, type: 3}
+      propertyPath: chooseStage
+      value: 
+      objectReference: {fileID: 8440644025366071775}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42268,27 +42262,22 @@ MonoBehaviour:
   CanUpgadeEffect:
     m_PersistentCalls:
       m_Calls: []
---- !u!95 &1338648438
-Animator:
-  serializedVersion: 5
+--- !u!111 &1338648438
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e059898ebfedaf46bdab745963ba121, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8c8d6b72d45ad104ba5830fdd6ebdcd1, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8c8d6b72d45ad104ba5830fdd6ebdcd1, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &1344707972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42336,7 +42325,6 @@ MonoBehaviour:
   gunsSlotUi:
   - {fileID: 1678}
   - {fileID: 2006}
-  animMaimenu: {fileID: 1338648438}
 --- !u!1001 &1375256043
 PrefabInstance:
   m_ObjectHideFlags: 0

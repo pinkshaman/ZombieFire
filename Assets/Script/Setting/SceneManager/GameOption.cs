@@ -11,6 +11,8 @@ public class GameOption : MonoBehaviour
     public Button mainMenuButton;
     public Button returnToGameButton;
     private OptionData optionData;
+    
+
     public void Start()
     {
         Time.timeScale = 0;
@@ -39,7 +41,8 @@ public class GameOption : MonoBehaviour
     }
     public void FillControl(float value)
     {
-
+        optionData.control = value;
+        AudioManager.Instance.UpadateData(optionData);
     }
     public void MainMenuButton()
     {
