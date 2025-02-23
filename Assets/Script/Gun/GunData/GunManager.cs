@@ -100,6 +100,7 @@ public class GunManager : MonoBehaviour
     public void Start()
     {
         LoadGunData();
+        LoadGunSlot();
     }
     public List<BaseGun> ReturnListBaseGun()
     {

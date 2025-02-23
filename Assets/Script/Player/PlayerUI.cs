@@ -9,11 +9,10 @@ public class PlayerUI : MonoBehaviour
     public LevelUpdate levelUpdate;
     public Currency currency;
     public List<GunSlotUi> gunsSlotUi;
-    public Animator animMaimenu;
+
     public void Start()
     {
-        animMaimenu.Rebind();
-        animMaimenu.SetTrigger("PlayMainMenu");
+        Time.timeScale = 1;
         PlayerManager.Instance.OnPlayerDataChange.AddListener(UpdateUi);
         SetDataPlayer(PlayerManager.Instance.playerData);
     }
