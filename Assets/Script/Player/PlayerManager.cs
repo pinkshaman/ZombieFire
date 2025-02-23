@@ -159,7 +159,7 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
-        return 0;
+        return playerData.health;
     }
     public LevelRewardBase ReturnLevelRewardBase(int level)
     {

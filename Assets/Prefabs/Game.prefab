@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: itemUI
       value: 
       objectReference: {fileID: 480304317030563687}
+    - target: {fileID: 1630680473507538881, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
+      propertyPath: playerHpBar
+      value: 
+      objectReference: {fileID: 8591396026137075628}
     - target: {fileID: 2228849455247595746, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: gameOption
       value: 
@@ -170,6 +174,10 @@ PrefabInstance:
       propertyPath: damageManagement
       value: 
       objectReference: {fileID: 8307583937397429116}
+    - target: {fileID: 1154791485802234283, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1845342082601388703, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -186,10 +194,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3543332014128362745, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a504211037713e4fb4d8f5cc59123ea, type: 3}
     - target: {fileID: 3621614132584837601, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
       propertyPath: zombieRepawn
       value: 
       objectReference: {fileID: 7175625126329278869}
+    - target: {fileID: 3648756936291008501, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: alertData.alertType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5286796197183997370, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
       propertyPath: damageManagement
       value: 
@@ -208,6 +224,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6063441785022981755, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281707243237595165, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_PlayAutomatically
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6501902949693530352, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
@@ -290,9 +310,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 7351245705124322890, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7720707312355237974, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173940158791861775, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173940158791861775, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173940158791861775, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: c4aa931275acdac47849d9da25457b06, type: 2}
+    - target: {fileID: 8585792554608889602, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -422,6 +462,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffa70649138169e418359867bad15793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8591396026137075628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1514208519048260686, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+  m_PrefabInstance: {fileID: 7077769149583700962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09edf5c11513e8343b2ab1d16a129f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7243691422578929544

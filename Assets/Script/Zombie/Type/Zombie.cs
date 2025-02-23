@@ -128,12 +128,12 @@ public abstract class Zombie : MonoBehaviour
         anim.SetBool("isAttacking", false);
         agent.isStopped = false;
     }
-    public void PlaySound(AudioClip clip)
+    public void PlaySound()
     {
-        audioSource.clip = clip;
+        audioSource.clip = properties.clipAttack;
         audioSource.Play();
     }
-    public void OnAttack()
+    public virtual void OnAttack()
     {
         playerHealth.TakeDamage(zombieData.Damage);
         Debug.Log($"Player Take :{zombieData.Damage} damage");
@@ -152,7 +152,8 @@ public abstract class Zombie : MonoBehaviour
         OnGetHit();
         if (isRage) return;
         isRage = true;
-        PlaySound(properties.clipRage);
+        audioSource.clip =properties.clipRage;
+        audioSource.Play(); 
         RageObj.SetActive(true);
         agent.speed *= 1.5f;
 
@@ -186,7 +187,8 @@ public abstract class Zombie : MonoBehaviour
         isDead = true;
         StopMove();
         Debug.Log("Zombie Dead");
-        PlaySound(properties.clipDie);
+        audioSource.clip = properties.clipDie;
+        audioSource.Play();
         RageObj.SetActive(false);
         BoneRig.SetActive(false);
 

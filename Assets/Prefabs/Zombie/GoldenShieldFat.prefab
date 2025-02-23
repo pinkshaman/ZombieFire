@@ -1954,7 +1954,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 113805397664301477}
   m_Father: {fileID: 1093506374753139130}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
 --- !u!137 &5166132294084654450
@@ -4654,6 +4655,8 @@ GameObject:
   - component: {fileID: 9132666605168571139}
   - component: {fileID: 9112734502758903137}
   - component: {fileID: 3076555623103695991}
+  - component: {fileID: 7602409450297749268}
+  - component: {fileID: 476879708674470116}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Unbreakable
@@ -4747,6 +4750,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7602409450297749268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512971025204553895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 0
+--- !u!54 &476879708674470116
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512971025204553895}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5514005872947067913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5763,6 +5806,8 @@ GameObject:
   - component: {fileID: 7685065724852317405}
   - component: {fileID: 2526071707717537817}
   - component: {fileID: 4892527458189139880}
+  - component: {fileID: 2526632835322797472}
+  - component: {fileID: 8912322944631280169}
   m_Layer: 0
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -5857,6 +5902,46 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2526632835322797472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246694136261741658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 0
+--- !u!54 &8912322944631280169
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246694136261741658}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7311985928290791800
 GameObject:
   m_ObjectHideFlags: 0
@@ -6327,9 +6412,11 @@ GameObject:
   - component: {fileID: 113805397664301477}
   - component: {fileID: 7416669035723795070}
   - component: {fileID: 8775500470393843995}
+  - component: {fileID: 3192884606001866577}
+  - component: {fileID: 5295229674821554346}
   m_Layer: 11
   m_Name: Head_Shot_Target_OJ
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6342,12 +6429,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8159749385674501724}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000068291575, y: 0.00000071767886, z: 0.0000007003545, w: 1}
-  m_LocalPosition: {x: -0.06, y: -0, z: 0}
+  m_LocalRotation: {x: 0.30851024, y: -0.50632894, z: -0.3825959, w: 0.708571}
+  m_LocalPosition: {x: -0.011670053, y: 1.5857031, z: -0.013074659}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5937512329979484621}
+  m_Father: {fileID: 699535272796931066}
   m_LocalEulerAnglesHint: {x: -0.00007825632, y: -0.000082239996, z: -0.00008025466}
 --- !u!33 &7416669035723795070
 MeshFilter:
@@ -6374,10 +6461,50 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.133
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3192884606001866577
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159749385674501724}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5295229674821554346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159749385674501724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &8275605233640063609
 GameObject:
   m_ObjectHideFlags: 0
@@ -8951,7 +9078,6 @@ Transform:
   - {fileID: 6777885831890474035}
   - {fileID: 2530880606877322227}
   - {fileID: 5818112516970318325}
-  - {fileID: 113805397664301477}
   - {fileID: 2632171093988156872}
   - {fileID: 7170491620016374221}
   m_Father: {fileID: 7241037136686602031}

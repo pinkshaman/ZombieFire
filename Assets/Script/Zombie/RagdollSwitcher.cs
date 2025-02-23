@@ -72,7 +72,17 @@ public class RagdollSwitcher : MonoBehaviour
             collider.enabled = false;
             if (collider.gameObject.CompareTag("Helmet") || collider.gameObject.CompareTag("Unbreakable"))
             {
+                if (gameObject.GetComponent<Rigidbody>() == null)
+                {
+                    var rigid = collider.gameObject.AddComponent<Rigidbody>();
+                    rigid.isKinematic = true;
+                }
                 collider.enabled = true;
+                if (gameObject.GetComponent<HitSurface>() == null)
+                {
+                    var hitSurface = collider.gameObject.AddComponent<HitSurface>();
+                    hitSurface.hitSurFaceType = HitSurfaceType.Dirt;
+                }
             }
         }
     }

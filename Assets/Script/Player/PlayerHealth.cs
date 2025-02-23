@@ -7,6 +7,7 @@ public class PlayerHealth : Health
     public GamePlayUI itemUI;
     public bool _isShieldActive = false;
 
+    public PlayerHpBar playerHpBar;
 
 
     public override void Start()
@@ -15,6 +16,7 @@ public class PlayerHealth : Health
         maxHealthPoint = PlayerManager.Instance.ReturnPlayerHealthAfterEffected();
         HealthPoint = maxHealthPoint;
         itemUI.OnUsingShield.AddListener(UpdateShieldState);
+        OnHealthChange.AddListener(playerHpBar.Fill);
         Debug.Log($"Player Health Effect:{maxHealthPoint}");
     }
     private void UpdateShieldState()
