@@ -9,4 +9,5 @@ public class OptionData
 {
     public float vomlume;
     public float control;
+    public float bmg;
 }
