@@ -8,7 +8,7 @@ public class ZombieHealth : Health
     public Zombie zombie;
     public ZombieRepawn zombieRepawn;
     private bool isDeadByHeadShot;
-    public HPBar healthBar;
+    public BossHPBar healthBar;
     public override void Start()
     {
         Initialize();
@@ -28,6 +28,7 @@ public class ZombieHealth : Health
     {
         zombieRepawn.OnzombieDeath();
         zombie.Die(isDeadByHeadShot);
+        healthBar.ActiveZombieCount();
         base.Die();
     }
     public void CheckHeadShot(RaycastHit hitInfo)

@@ -6,9 +6,11 @@ using UnityEngine.Events;
 public class ZombieRepawn : MonoBehaviour
 {
     public List<GameObject> SpawnPotisionList;
+    public List<GameObject> BossSpawnPos;
     private int total;
     public float spawnSpeed;
     private int liveZombie;
+    public GameObject HpBoss;
     public UnityEvent<int, int> OnZombieChange;
     public UnityEvent OnZombieClear;
     public UnityEvent OnSpawnDone;
@@ -44,7 +46,14 @@ public class ZombieRepawn : MonoBehaviour
     }
     private void SpawnZombie(GameObject zombiePrefabs)
     {
-        int pointIndex = Random.Range(1, SpawnPotisionList.Count);
+        if (zombiePrefabs.CompareTag("Boss"))
+        {
+            int bossPointIndex = Random.Range(0, BossSpawnPos.Count);
+            var spawnPoint = BossSpawnPos[bossPointIndex].transform;
+            Instantiate(zombiePrefabs, spawnPoint.position, spawnPoint.rotation);
+            HpBoss.SetActive(true);
+        }
+        int pointIndex = Random.Range(0, SpawnPotisionList.Count);
         Transform SpawnPoint = SpawnPotisionList[pointIndex].transform;
         Instantiate(zombiePrefabs, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
 

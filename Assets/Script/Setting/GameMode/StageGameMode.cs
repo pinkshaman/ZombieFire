@@ -50,6 +50,8 @@ public class StageGameMode : MonoBehaviour
     public ArenaProgessList arenaProgessListed;
     public int currentArenaLoad = 1;
     public int currentStageLoad = 0;
+    private int highestStageUnocked;
+    private int highestArenaUnlocked;
     private void Awake()
     {
         if (Instance == null)
@@ -65,11 +67,19 @@ public class StageGameMode : MonoBehaviour
     public void Start()
     {
         LoadStageData();
+        DefineHighestStageUnlonked();
     }
     public void SetCurrentArenaAndStage(int stage)
     {
         currentStageLoad = stage;
-
+    }
+    public void DefineHighestStageUnlonked()
+    {
+        var activeArenas = arenaProgessListed.arenaProgressList
+       .Where(arena => arena.isActiveArena)
+       .OrderByDescending(arena => arena.arenaNumber)
+       .FirstOrDefault();
+        highestArenaUnlocked = activeArenas.arenaNumber;
     }
     public Stage ReturnCurrentStageforPlay()
     {
@@ -83,9 +93,13 @@ public class StageGameMode : MonoBehaviour
         var stageProgess = arenaProgess.stageProgessList.stageProgessLists.Find(stageProgess => stageProgess.stageID == currentStageLoad);
         return stageProgess;
     }
-    public int ReturnArenaList()
+    public ArenaList ReturnArenaList()
     {
-        return arenaListed.areraList.Count;
+        return arenaListed;
+    }
+    public ArenaProgessList ReturnArenaProgessList()
+    {
+        return arenaProgessListed;
     }
     public Arena ReturnArena(int arena)
     {
@@ -99,7 +113,7 @@ public class StageGameMode : MonoBehaviour
     }
     public void UpdateRankStageProgess(string rank)
     {
-        
+
     }
     public void UpdateDataArenaProgess(int stage, bool isClear, string rankText)
     {
@@ -107,10 +121,10 @@ public class StageGameMode : MonoBehaviour
         var stageData = arenaProgess.stageProgessList.stageProgessLists.Find(stageData => stageData.stageID == stage);
         stageData.isComplete = isClear;
         stageData.stageRank = rankText;
-        UnlockNextState(currentStageLoad+1);
-        if(stageData.stageID ==20)
+        UnlockNextState(currentStageLoad + 1, arenaProgess);
+        if (stageData.stageID == 20 && stageData.isComplete == true)
         {
-            ActiveNextArena(currentArenaLoad+1);
+            ActiveNextArena(currentArenaLoad + 1);
         }
         SaveStageData();
     }
@@ -130,7 +144,6 @@ public class StageGameMode : MonoBehaviour
 
         foreach (var arenaData in arenaListed.areraList)
         {
-            // Kiểm tra xem ArenaProgess có tồn tại không, nếu không thì tạo mới
             var arenaprogess = arenaProgessListed.arenaProgressList.Find(arenaprogess => arenaprogess.arenaNumber == arenaData.areaNumber);
             if (arenaprogess == null)
             {
@@ -144,7 +157,6 @@ public class StageGameMode : MonoBehaviour
                 arenaProgessListed.arenaProgressList.Add(arenaprogess);
             }
 
-            // Đảm bảo stageProgessList không null
             if (arenaprogess.stageProgessList == null)
             {
                 arenaprogess.stageProgessList = new StageProgessList { stageProgessLists = new List<StageProgess>() };
@@ -152,7 +164,6 @@ public class StageGameMode : MonoBehaviour
 
             foreach (var stage in arenaData.stageList.stageLists)
             {
-                // Kiểm tra xem stage đã tồn tại chưa trước khi thêm
                 if (!arenaprogess.stageProgessList.stageProgessLists.Exists(stageProgess => stageProgess.stageID == stage.stageID))
                 {
                     arenaprogess.stageProgessList.stageProgessLists.Add(new StageProgess(stage.stageID, false, null, false));
@@ -166,14 +177,22 @@ public class StageGameMode : MonoBehaviour
     public void ActiveNextArena(int arenaIndex)
     {
         var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaprogess => arenaprogess.arenaNumber == arenaIndex);
+        var arenaCount = arenaListed.areraList.Count;
+        if (arenaIndex < highestArenaUnlocked|| arenaIndex> arenaCount ) return;
         arenaProgess.isActiveArena = true;
-        Debug.Log($"Arena {arenaIndex} isComplete");
+        Debug.Log($"Arena {arenaIndex - 1} isComplete");
         SaveStageData();
     }
-    public void UnlockNextState(int stageIndex)
+    public void UnlockNextState(int stageIndex, ArenaProgess arenaProgess)
     {
-        var arenaProgess = arenaProgessListed.arenaProgressList.Find(arenaProgess => arenaProgess.arenaNumber == currentArenaLoad);
+        var stageCount = arenaProgess.stageProgessList.stageProgessLists.Count;
         var stageData = arenaProgess.stageProgessList.stageProgessLists.Find(stageData => stageData.stageID == stageIndex);
+        var completedStage = arenaProgess.stageProgessList.stageProgessLists
+            .Where(stage => stage.isComplete)
+            .OrderByDescending(stage => stage.stageID)
+            .FirstOrDefault();
+        highestStageUnocked = completedStage.stageID;
+        if (stageIndex <= highestStageUnocked || stageIndex > stageCount) return;
         stageData.isCanPlay = true;
         SaveStageData();
     }

@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 567419005262895744}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -963.42
+      value: -968.57
       objectReference: {fileID: 0}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.91
+      value: 4.65
       objectReference: {fileID: 0}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -109,11 +109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.9999961
       objectReference: {fileID: 0}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.0027925079
       objectReference: {fileID: 0}
     - target: {fileID: 8554124715812883282, guid: 496ea06f3e45fd74db85a71d947ef70b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -337,7 +337,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3943487267006751303, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5155793209628514253}
+    - targetCorrespondingSourceObject: {fileID: 3943487267006751303, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2961419383403387131}
   m_SourcePrefab: {fileID: 100100000, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
 --- !u!114 &480304317030563687 stripped
 MonoBehaviour:
@@ -369,6 +375,11 @@ MonoBehaviour:
 --- !u!1 &2073335810590788200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9150397887962413450, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+  m_PrefabInstance: {fileID: 7077769149583700962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2121968736530398401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9172696473748852515, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
   m_PrefabInstance: {fileID: 7077769149583700962}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2635682418474666641 stripped
@@ -431,6 +442,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dbb080cbd968e644a1786ba92361806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6089813702755815845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3943487267006751303, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+  m_PrefabInstance: {fileID: 7077769149583700962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5155793209628514253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089813702755815845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a4efa861e35e84a9e712825510fb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoint: 0
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  zombie: {fileID: 0}
+  zombieRepawn: {fileID: 0}
+  healthBar: {fileID: 2961419383403387131}
+--- !u!114 &2961419383403387131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089813702755815845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac68a3cc41f7a74dafee29ff7a57346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 5155793209628514253}
+  HPbar: {fileID: 8128820733264029368}
+  FillBar: {fileID: 7272265301785305681}
+  autoFade: {fileID: 0}
+  zombieCount: {fileID: 2121968736530398401}
+--- !u!114 &7272265301785305681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 492316543467147699, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+  m_PrefabInstance: {fileID: 7077769149583700962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7513283112915540894 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 755974328966850684, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
@@ -440,6 +509,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8128820733264029368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1366304730194629978, guid: 4fd0156b545c74b4da9dccc0c1ea5780, type: 3}
+  m_PrefabInstance: {fileID: 7077769149583700962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8387369920980550957 stripped
@@ -620,6 +700,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2358999871532447929}
     m_Modifications:
+    - target: {fileID: 1339250484183465156, guid: 914e111f1d768d04e86e3fd090c0e4f6, type: 3}
+      propertyPath: HpBoss
+      value: 
+      objectReference: {fileID: 6089813702755815845}
+    - target: {fileID: 1339250484183465156, guid: 914e111f1d768d04e86e3fd090c0e4f6, type: 3}
+      propertyPath: SpawnPotisionList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1585936178290148348, guid: 914e111f1d768d04e86e3fd090c0e4f6, type: 3}
       propertyPath: m_SortingLayer
       value: 0
