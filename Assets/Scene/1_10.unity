@@ -9374,7 +9374,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 1dc58ddd7887e3845837c6ac2947bc60, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0812384f37943a24881686ee15392234, type: 2}
 --- !u!208 &3914
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9529,6 +9529,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -944.52
@@ -9609,6 +9625,22 @@ PrefabInstance:
       propertyPath: SpawnPotisionList.Array.data[9]
       value: 
       objectReference: {fileID: 1022}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

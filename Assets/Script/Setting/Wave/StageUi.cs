@@ -17,7 +17,7 @@ public class StageUi : MonoBehaviour
     public Stage stageData;
     public StageProgess stageProgess;
     public Button chooseButton;
-    public LoadingGame LoadingPanel;
+
 
     public UnityAction<StageUi> chooseStage;
 

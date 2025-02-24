@@ -159532,13 +159532,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -963.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 6614402971531923485, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_Name
       value: Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
-      propertyPath: BossSpawnPos.Array.size
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: BossSpawnPos.Array.data[0]
@@ -159588,14 +159600,6 @@ PrefabInstance:
       propertyPath: SpawnPotisionList.Array.data[9]
       value: 
       objectReference: {fileID: 1033}
-    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
-      propertyPath: SpawnPotisionList.Array.data[10]
-      value: 
-      objectReference: {fileID: 193}
-    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
-      propertyPath: SpawnPotisionList.Array.data[11]
-      value: 
-      objectReference: {fileID: 1307}
     - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

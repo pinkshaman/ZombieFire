@@ -67,7 +67,7 @@ public class StageSelect : MonoBehaviour
         nextArena.interactable = choosedArena < maxArena && arenaProgessList.arenaProgressList[choosedArena].isActiveArena;
         prevArena.interactable = choosedArena > 1 && currentArenaProgess.isActiveArena;
     }
-    public void LoadStage(StageUi stageUI)
+    public virtual void LoadStage(StageUi stageUI)
     {
         Debug.Log($"Data :{stageUI.stageData.sceneID}");
         StageGameMode.Instance.SetCurrentArenaAndStage(stageUI.stageData.stageID);

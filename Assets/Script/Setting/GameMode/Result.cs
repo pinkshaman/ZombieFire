@@ -22,6 +22,7 @@ public class Result : MonoBehaviour
 
     public DamageManagement damageManagement;
     public Score score;
+    public GameObject chooseStage;
     public void Start()
     {
         SetData();
@@ -29,7 +30,6 @@ public class Result : MonoBehaviour
         selectStageButton.onClick.AddListener(SelectStageButton);
         reTryButton.onClick.AddListener(RetryButton);
         nextStageButton.onClick.AddListener(NextStageButton);
-        watchAdsAndx3Reward.onClick.AddListener(WatchAdsButton);
 
     }
     public void SetData()
@@ -45,6 +45,7 @@ public class Result : MonoBehaviour
         int coin = score.ReturnRewardCoin();
         int reward = RewardCoinCalculator(coin, rankText.text);
         coinReward.text = reward.ToString();
+        UpdateReward();
     }
     public int RewardCoinCalculator(int coin, string currenRank)
     {
@@ -76,7 +77,7 @@ public class Result : MonoBehaviour
     }
     public void SelectStageButton()
     {
-        MySceneManager.Instance.SelectStageScene();
+        chooseStage.SetActive(true);
     }
     public void RetryButton()
     {
@@ -101,7 +102,12 @@ public class Result : MonoBehaviour
     }
     public void WatchAdsButton()
     {
-
+        var playerData = PlayerManager.Instance.playerData;
+        int coin = int.Parse(coinReward.text);
+        playerData.coin += (2 * coin);
+        int exp = int.Parse(expText.text);
+        playerData.exp += (2 * exp);
+        PlayerManager.Instance.UpdatePlayerData(playerData);
     }
     public string ReturnRank()
     {
@@ -118,4 +124,5 @@ public class Result : MonoBehaviour
 
         PlayerManager.Instance.UpdatePlayerData(playerData);
     }
+
 }
