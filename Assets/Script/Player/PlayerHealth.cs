@@ -8,16 +8,17 @@ public class PlayerHealth : Health
     public bool _isShieldActive = false;
 
     public PlayerHpBar playerHpBar;
-
+    public GameOver gameOver;
 
     public override void Start()
     {
-        itemUI =FindObjectOfType<GamePlayUI>();
+        itemUI = FindObjectOfType<GamePlayUI>();
         maxHealthPoint = PlayerManager.Instance.ReturnPlayerHealthAfterEffected();
         HealthPoint = maxHealthPoint;
         itemUI.OnUsingShield.AddListener(UpdateShieldState);
         OnHealthChange.AddListener(playerHpBar.Fill);
         Debug.Log($"Player Health Effect:{maxHealthPoint}");
+        gameOver.ContinueButton.onClick.AddListener(OnRespawn);
     }
     private void UpdateShieldState()
     {
@@ -36,9 +37,21 @@ public class PlayerHealth : Health
         OnTakeDamage.Invoke();
         if (IsDead)
         {
+            StartCoroutine(ShowGameOver());
             Die();
         }
-
+    }
+    public IEnumerator ShowGameOver()
+    {
+        gameOver.Show();
+        yield return new WaitForSecondsRealtime(gameOver.anim.clip.length);
+        Time.timeScale = 0;
+        gameOver.EnableButtons();
     }
 
+    public void OnRespawn()
+    {
+        HealthPoint = maxHealthPoint;
+        
+    }
 }

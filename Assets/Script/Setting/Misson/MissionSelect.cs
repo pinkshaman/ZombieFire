@@ -12,6 +12,8 @@ public class MissionSelect : MonoBehaviour
     public AchievementUi AchievementPrefabsUi;
     public Button getAllRewardButton;
 
+    public AllReward allReward;
+
     public void Start()
     {
         CreateAllMission();
@@ -53,11 +55,31 @@ public class MissionSelect : MonoBehaviour
     }
     public void TakeAllReward()
     {
-      
-    }
-    public void TakeAllMission()
-    {
-        
-    }
+        var allDailyMisson = GetComponentsInChildren<QuestUi>(rootUiDailyMission);
+        var allRepeatMisson = GetComponentsInChildren<QuestUi>(rootUiRepeatMisson);
+        var allAchievement = GetComponentsInChildren<AchievementUi>(rootUiAchievement);
 
+        foreach (var daily in allDailyMisson)
+        {
+            if(daily.missionProgess.isComplete && !daily.missionProgess.isTook)
+            {
+                allReward.rewardListToShow.Add(daily.missionBase.reward);
+            }
+        }
+        foreach (var repeat in allRepeatMisson)
+        {
+            if(repeat.missionProgess.isComplete&& !repeat.missionProgess.isTook)
+            {
+                allReward.rewardListToShow.Add(repeat.missionBase.reward);
+            }
+        }
+        foreach(var achievemnt in allAchievement)
+        {
+            if(achievemnt.achievementProgess.isComplete&& !achievemnt.achievementProgess.isTook)
+            {
+                allReward.rewardListToShow.Add(achievemnt.achievementBase.reward);
+            }
+        }
+        allReward.ShowReward();
+    }
 }

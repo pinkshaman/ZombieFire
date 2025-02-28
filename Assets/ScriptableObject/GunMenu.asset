@@ -16,14 +16,14 @@ MonoBehaviour:
   - GunName: Scarlight
     gunStats:
       ammoCapacity: 40
-      fireRate: 600
-      damage: 12
-      critical: 10
+      fireRate: 800
+      damage: 40
+      critical: 35
     gunModel:
       gunType: 1
       gunModel: {fileID: 5479494405520053317, guid: 644c261c81430a64d97cd664754ae546, type: 3}
       gunSprite: {fileID: 21300000, guid: 7161d7ac964863744bd1422aed278365, type: 2}
-      gunDecription: 
+      gunDecription: Extra Ammo Rifle
       reloadAnimationClip: {fileID: 7400000, guid: 4320e6b2a27116d46a2d0a392f8502ee, type: 2}
     upgradeList:
       gunUgradeList:
@@ -90,9 +90,9 @@ MonoBehaviour:
     buyGun:
       ammoPrice: 500
       price:
-        priceType: 1
-        cost: 5000
-        priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+        priceType: 0
+        cost: 2000
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
   - GunName: RPG
     gunStats:
       ammoCapacity: 5
@@ -123,7 +123,7 @@ MonoBehaviour:
       gunType: 0
       gunModel: {fileID: 2673918368126455702, guid: f3277b10cff290e4d901e26222a83a8a, type: 3}
       gunSprite: {fileID: 21300000, guid: 1ea30a39a1cf4ed4fb650e6268a7615c, type: 2}
-      gunDecription: 
+      gunDecription: Basic Issued Pistol
       reloadAnimationClip: {fileID: 7400000, guid: a11dd6f9a93e6524c9f8ad91569228e3, type: 2}
     upgradeList:
       gunUgradeList:
@@ -195,15 +195,15 @@ MonoBehaviour:
         priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
   - GunName: PMX
     gunStats:
-      ammoCapacity: 50
-      fireRate: 800
-      damage: 11
+      ammoCapacity: 20
+      fireRate: 1800
+      damage: 15
       critical: 15
     gunModel:
       gunType: 4
       gunModel: {fileID: 1848107906792804644, guid: 32c1a717e16a4a9408a308148b95cc66, type: 3}
       gunSprite: {fileID: 21300000, guid: 4981b8e9569d30f459e09611775fc6e9, type: 2}
-      gunDecription: 
+      gunDecription: Easy to Use Submachine Gun
       reloadAnimationClip: {fileID: 7400000, guid: 3a8c89cc20984ba498c8bcd653a4acf5, type: 2}
     upgradeList:
       gunUgradeList:
@@ -271,19 +271,19 @@ MonoBehaviour:
       ammoPrice: 500
       price:
         priceType: 0
-        cost: 100
+        cost: 750
         priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
   - GunName: AKS
     gunStats:
-      ammoCapacity: 50
-      fireRate: 600
-      damage: 18
-      critical: 30
+      ammoCapacity: 30
+      fireRate: 1100
+      damage: 10
+      critical: 15
     gunModel:
       gunType: 1
       gunModel: {fileID: 1065152352837122271, guid: c76b1de7fe1338f4cbc7b27218d0c9f5, type: 3}
       gunSprite: {fileID: 21300000, guid: b4a247796faed554ea36bc7fd571d8d2, type: 2}
-      gunDecription: 
+      gunDecription: Basic Issued Rifle
       reloadAnimationClip: {fileID: 7400000, guid: 2a93a13545ff78543bee75dc55735267, type: 2}
     upgradeList:
       gunUgradeList:
@@ -353,3 +353,1123 @@ MonoBehaviour:
         priceType: 1
         cost: 10000
         priceImage: {fileID: 21300000, guid: c4c161025c36819459c6d4504c2bde63, type: 2}
+  - GunName: CQ16
+    gunStats:
+      ammoCapacity: 10
+      fireRate: 900
+      damage: 15
+      critical: 25
+    gunModel:
+      gunType: 2
+      gunModel: {fileID: 3932145809358073127, guid: a342a480d68670346826c3e54a6fb1f0, type: 3}
+      gunSprite: {fileID: 21300000, guid: e38a666f584989b4aaea397e27dfbea3, type: 2}
+      gunDecription: Magazine Load Auto Shotgun
+      reloadAnimationClip: {fileID: 7400000, guid: 6ae3fcd699bd02c4283855960fd11531, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 1
+        cost: 2250
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: JackHammer
+    gunStats:
+      ammoCapacity: 5
+      fireRate: 50
+      damage: 120
+      critical: 50
+    gunModel:
+      gunType: 2
+      gunModel: {fileID: 1677965866140146597, guid: 00678836fe38a2f44b83689483a62429, type: 3}
+      gunSprite: {fileID: 21300000, guid: b9599544c8705444a81a6dd99f4e59a3, type: 2}
+      gunDecription: Grenade Launcher
+      reloadAnimationClip: {fileID: 7400000, guid: 59e4dab58f9ab1a449fec09def2b7a46, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 4500
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: M64C
+    gunStats:
+      ammoCapacity: 30
+      fireRate: 800
+      damage: 20
+      critical: 20
+    gunModel:
+      gunType: 1
+      gunModel: {fileID: 6631509325952290355, guid: 58125a0bbfd65e949a978f0113b2efb2, type: 3}
+      gunSprite: {fileID: 21300000, guid: ac58b4139f43c6e4190f9f98e38b5ded, type: 2}
+      gunDecription: Bullpup Rifle
+      reloadAnimationClip: {fileID: 7400000, guid: 79ecc35936e59754a9e85671fbaac5a7, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 1000
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: M134
+    gunStats:
+      ammoCapacity: 80
+      fireRate: 1700
+      damage: 45
+      critical: 20
+    gunModel:
+      gunType: 1
+      gunModel: {fileID: 8786200985215159706, guid: 2c099feeafebfe747968912e099c4abd, type: 3}
+      gunSprite: {fileID: 21300000, guid: 2f59e26f6d96ed74fb3f9c4c6d9df710, type: 2}
+      gunDecription: Zombie Trembling Minigun
+      reloadAnimationClip: {fileID: 7400000, guid: 821ffaf3ab0b9c34f9875ccfbc7aecb6, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 4000
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: M249
+    gunStats:
+      ammoCapacity: 50
+      fireRate: 1600
+      damage: 40
+      critical: 20
+    gunModel:
+      gunType: 1
+      gunModel: {fileID: 8786200985215159706, guid: 2c099feeafebfe747968912e099c4abd, type: 3}
+      gunSprite: {fileID: 21300000, guid: 6e6b1556d2028cc4e8c6e0e1ed397bf2, type: 2}
+      gunDecription: overwhelming Heavy Machine Gun
+      reloadAnimationClip: {fileID: 7400000, guid: 0029d43d45ee143419938e7d89f7ac6d, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 3500
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: MoeCarbine
+    gunStats:
+      ammoCapacity: 35
+      fireRate: 1600
+      damage: 30
+      critical: 30
+    gunModel:
+      gunType: 1
+      gunModel: {fileID: 8786200985215159706, guid: 2c099feeafebfe747968912e099c4abd, type: 3}
+      gunSprite: {fileID: 21300000, guid: 4c2ec3c125aa13842a10084dc9dcfb6c, type: 2}
+      gunDecription: Powerful Rifle
+      reloadAnimationClip: {fileID: 7400000, guid: 0029d43d45ee143419938e7d89f7ac6d, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 3500
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: MossBerg
+    gunStats:
+      ammoCapacity: 4
+      fireRate: 30
+      damage: 15
+      critical: 25
+    gunModel:
+      gunType: 2
+      gunModel: {fileID: 271606354999652761, guid: bcbb0d0a3ea53884d88da56cde78e276, type: 3}
+      gunSprite: {fileID: 21300000, guid: 60a963ff8c0556a4c9a2fb7de3d20b0c, type: 2}
+      gunDecription: Single Load Pump Shotgun
+      reloadAnimationClip: {fileID: 7400000, guid: eed4a05efba282f49828d0a6b75adb85, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 1750
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: PDR
+    gunStats:
+      ammoCapacity: 25
+      fireRate: 2000
+      damage: 30
+      critical: 20
+    gunModel:
+      gunType: 4
+      gunModel: {fileID: 3172814869443021299, guid: b18f92487984ee94e96a7923ddedb9cb, type: 3}
+      gunSprite: {fileID: 21300000, guid: f35fc38488ad89e48a0f6cd2aee6dad0, type: 2}
+      gunDecription: Bullpup Submachine Gun
+      reloadAnimationClip: {fileID: 7400000, guid: 968cc55337b718a4babdf9b2a986eb6e, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 1750
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: RaggingBull
+    gunStats:
+      ammoCapacity: 6
+      fireRate: 1500
+      damage: 20
+      critical: 20
+    gunModel:
+      gunType: 0
+      gunModel: {fileID: 6550174029923840269, guid: 60efbdb3e0bbe79448d50257903a9dce, type: 3}
+      gunSprite: {fileID: 21300000, guid: 8ec9d88a2b0a2bd48a254f5fc5a6d5e8, type: 2}
+      gunDecription: High Penetration Revolver
+      reloadAnimationClip: {fileID: 7400000, guid: e5b1d6218521d80479e5e92b641dd8d1, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 500
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: SRS
+    gunStats:
+      ammoCapacity: 4
+      fireRate: 1000
+      damage: 25
+      critical: 20
+    gunModel:
+      gunType: 3
+      gunModel: {fileID: 3308856934756478593, guid: 6a785805f4457504cb5f3d8c8ecb9020, type: 3}
+      gunSprite: {fileID: 21300000, guid: 56a15917a9841ce49a1883e40d9e447c, type: 2}
+      gunDecription: High Penetration Rifle
+      reloadAnimationClip: {fileID: 7400000, guid: 24911442c10f0414ba5d84dbce4cf03a, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 500
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: Striker
+    gunStats:
+      ammoCapacity: 12
+      fireRate: 800
+      damage: 20
+      critical: 25
+    gunModel:
+      gunType: 2
+      gunModel: {fileID: 3308856934756478593, guid: 6a785805f4457504cb5f3d8c8ecb9020, type: 3}
+      gunSprite: {fileID: 21300000, guid: 0190b890244ea784fa1e51386e69e033, type: 2}
+      gunDecription: Extra Ammo Auto Shotgun
+      reloadAnimationClip: {fileID: 7400000, guid: f70261e09f065e54aaf3e224b8b30c14, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 3000
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: Thumper
+    gunStats:
+      ammoCapacity: 2
+      fireRate: 1100
+      damage: 20
+      critical: 25
+    gunModel:
+      gunType: 2
+      gunModel: {fileID: 4751757382426360832, guid: ed2a51847b3013649a3edf472266ca5d, type: 3}
+      gunSprite: {fileID: 21300000, guid: 0c9ced5fae2989a4ab88e520f41d3dce, type: 2}
+      gunDecription: Double Load Shotgun
+      reloadAnimationClip: {fileID: 7400000, guid: a900e687f73caf847a2e929dca97e425, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 1
+        cost: 3000
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: AK5
+    gunStats:
+      ammoCapacity: 10
+      fireRate: 1100
+      damage: 30
+      critical: 50
+    gunModel:
+      gunType: 1
+      gunModel: {fileID: 1110234744944232438, guid: c146185c442ef474c8352bde57b2eafa, type: 3}
+      gunSprite: {fileID: 21300000, guid: 2abb5d62f1033a3479edf9f094e9d859, type: 2}
+      gunDecription: new concept to new penetrace and explode Rifle
+      reloadAnimationClip: {fileID: 7400000, guid: 11a809658ea428f41b59cc8185d9227f, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 3000
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}
+  - GunName: Blaster
+    gunStats:
+      ammoCapacity: 8
+      fireRate: 300
+      damage: 30
+      critical: 40
+    gunModel:
+      gunType: 1
+      gunModel: {fileID: 2297398998074881439, guid: 0f5e5086b05fe12419a582dff2302658, type: 3}
+      gunSprite: {fileID: 21300000, guid: 16ac4e7ad4b68c1428e17b684a2c30de, type: 2}
+      gunDecription: Magazine Load Pump Shotgun
+      reloadAnimationClip: {fileID: 7400000, guid: 857fa0f2aff29c54d8a4f039a7884306, type: 2}
+    upgradeList:
+      gunUgradeList:
+      - starUpgrade: 0
+        priceUpgrade: 0
+        fireRateUpgrade: 0
+        powerUpgrade: 0
+        criticalUpgrade: 0
+        reloadUpgrade: 0
+      - starUpgrade: 1
+        priceUpgrade: 1000
+        fireRateUpgrade: 0.2
+        powerUpgrade: 1
+        criticalUpgrade: 0.2
+        reloadUpgrade: 0
+      - starUpgrade: 2
+        priceUpgrade: 2000
+        fireRateUpgrade: 0.3
+        powerUpgrade: 1
+        criticalUpgrade: 0.3
+        reloadUpgrade: 0
+      - starUpgrade: 3
+        priceUpgrade: 3000
+        fireRateUpgrade: 0.4
+        powerUpgrade: 2
+        criticalUpgrade: 0.4
+        reloadUpgrade: 0
+      - starUpgrade: 4
+        priceUpgrade: 4000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 3
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 5
+        priceUpgrade: 5000
+        fireRateUpgrade: 0.5
+        powerUpgrade: 4
+        criticalUpgrade: 0.5
+        reloadUpgrade: 0
+      - starUpgrade: 6
+        priceUpgrade: 6000
+        fireRateUpgrade: 0.6
+        powerUpgrade: 6
+        criticalUpgrade: 0.6
+        reloadUpgrade: 0
+      - starUpgrade: 7
+        priceUpgrade: 7000
+        fireRateUpgrade: 0.7
+        powerUpgrade: 7
+        criticalUpgrade: 0.7
+        reloadUpgrade: 0
+      - starUpgrade: 8
+        priceUpgrade: 8000
+        fireRateUpgrade: 0.8
+        powerUpgrade: 8
+        criticalUpgrade: 0.8
+        reloadUpgrade: 0
+      - starUpgrade: 9
+        priceUpgrade: 10000
+        fireRateUpgrade: 0.9
+        powerUpgrade: 9
+        criticalUpgrade: 0.9
+        reloadUpgrade: 0
+    buyGun:
+      ammoPrice: 500
+      price:
+        priceType: 0
+        cost: 1500
+        priceImage: {fileID: 21300000, guid: 3f750014afcb9dc41892df4c5d9dfb23, type: 2}

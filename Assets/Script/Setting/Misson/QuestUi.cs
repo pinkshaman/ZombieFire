@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class QuestUi : MissonUi
 {
-    private MissionBase missionBase;
-    private MissionProgess missionProgess;
+    public MissionBase missionBase;
+    public MissionProgess missionProgess;
 
 
     public void UpdateMissionProgess(MissionProgess missionProgess)

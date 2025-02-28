@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AchievementUi : MissonUi
 {
-    private AchievementBase achievementBase;
-    private AchievementProgess achievementProgess;
+    public AchievementBase achievementBase;
+    public AchievementProgess achievementProgess;
 
 
     public void UpdateAchievement(AchievementProgess achievementProgess)

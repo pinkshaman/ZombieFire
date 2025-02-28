@@ -101,6 +101,17 @@ public class GunManager : MonoBehaviour
     {
         LoadGunData();
         LoadGunSlot();
+        foreach (var gun in gunList.baseGunList)
+        {
+            var progessData = playerGunList.playerGuns.Find(progessData => progessData.gunName == gun.GunName);
+            if (gun.GunName == "RPG")
+                continue;
+            if (progessData == null)
+            {
+                CreatPlayerGunData(gun);
+            }
+
+        }
     }
     public List<BaseGun> ReturnListBaseGun()
     {

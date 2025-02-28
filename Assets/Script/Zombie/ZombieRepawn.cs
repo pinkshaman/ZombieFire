@@ -46,17 +46,21 @@ public class ZombieRepawn : MonoBehaviour
     }
     private void SpawnZombie(GameObject zombiePrefabs)
     {
-        if (zombiePrefabs.CompareTag("Boss"))
+        if (zombiePrefabs.GetComponent<Boss>() != null)
         {
+
             int bossPointIndex = Random.Range(0, BossSpawnPos.Count);
             var spawnPoint = BossSpawnPos[bossPointIndex].transform;
             Instantiate(zombiePrefabs, spawnPoint.position, spawnPoint.rotation);
             HpBoss.SetActive(true);
         }
-        int pointIndex = Random.Range(0, SpawnPotisionList.Count);
-        Transform SpawnPoint = SpawnPotisionList[pointIndex].transform;
-        Instantiate(zombiePrefabs, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
+        else
+        { 
+            int pointIndex = Random.Range(0, SpawnPotisionList.Count);
+            Transform SpawnPoint = SpawnPotisionList[pointIndex].transform;
+            Instantiate(zombiePrefabs, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
 
+        }
 
     }
     public void OnzombieDeath()
