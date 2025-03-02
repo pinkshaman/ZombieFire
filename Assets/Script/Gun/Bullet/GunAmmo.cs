@@ -150,6 +150,7 @@ public class GunAmmo : MonoBehaviour
             PlayerManager.Instance.UpdatePlayerData(PlayerManager.Instance.playerData);
             gun.gunPlayer.ammoStoraged += gun.gunData.gunStats.ammoCapacity;
             GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+            UpdateTextAmmo();
             ammoTextUI.IsBuyAmmo(cost);
             onBuyAmmo.Invoke();
             return true;

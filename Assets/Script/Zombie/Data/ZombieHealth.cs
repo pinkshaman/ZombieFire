@@ -9,14 +9,15 @@ public class ZombieHealth : Health
     public ZombieRepawn zombieRepawn;
     private bool isDeadByHeadShot;
     public HPBar healthBar;
+
     public override void Start()
     {
         Initialize();
-        
+
         zombieRepawn = FindObjectOfType<ZombieRepawn>();
         OnHealthChange.AddListener(healthBar.Fill);
         OnTakeDamage.AddListener(zombie.OnGetHit);
-        OnTakeDamage.AddListener(healthBar.FacingPlayer);     
+        OnTakeDamage.AddListener(healthBar.FacingPlayer);
     }
     public void Initialize()
     {
@@ -28,7 +29,10 @@ public class ZombieHealth : Health
     {
         zombieRepawn.OnzombieDeath();
         zombie.Die(isDeadByHeadShot);
-        
+        MissonManager.Instance.UpdateMissionProgress(MissionRequireType.Kill,zombie.zombieData.ZombieName, 1);
+        MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Kill,zombie.zombieData.ZombieName,1);
+
+       
         base.Die();
     }
     public void CheckHeadShot(RaycastHit hitInfo)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -115,6 +116,7 @@ public class MissonManager : MonoBehaviour
                 progress.isComplete = true;
                 Debug.Log($"Mission Complete: {mission.missionName}");
             }
+            SaveMissionProgess();
         }
     }
 
@@ -186,7 +188,7 @@ public class MissonManager : MonoBehaviour
 
             if (!achievementDictionary.ContainsKey(key))
             {
-                AchievementProgess newProgress = new AchievementProgess(achievement.id, achievement.achievementRequireType,0, achievement.targetAchievement, false, false);
+                AchievementProgess newProgress = new AchievementProgess(achievement.id, achievement.achievementRequireType, 0, achievement.targetAchievement, false, false);
                 achievementProgessList.achivementProgessList.Add(newProgress);
                 achievementDictionary[key] = (achievement, newProgress);
 
@@ -197,12 +199,48 @@ public class MissonManager : MonoBehaviour
     }
     public void UpdateAchievementProgessData(AchievementProgess progess)
     {
-        var AchievementIndex = achievementProgessList.achivementProgessList.FindIndex(achievement => achievement.progessID == progess.progessID);
-        achievementProgessList.achivementProgessList[AchievementIndex] = progess;
+        if (achievementDictionary.ContainsKey(progess.progessID))
+        {
+            achievementDictionary[progess.progessID] = (achievementDictionary[progess.progessID].achievementBase, progess);
+            SaveAchievementProgess();
+        }
+    }
+    public void UpdateAchievementProgess(MissionRequireType type, string progessTarget, int tagetCount)
+    {
+        foreach (var key in achievementDictionary.Keys.ToList())
+        {
+            var (achievement, progress) = achievementDictionary[key];
+
+            if (progress.isComplete) continue;
+
+            if (achievement.achievementRequireType == type && (achievement.targetAchievement == progessTarget || type == MissionRequireType.Play))
+            {
+                progress.currenProgess += (type == MissionRequireType.Play) ? 1 : tagetCount;
+
+                if (progress.currenProgess >= achievement.achievementRequire)
+                {
+                    progress.isComplete = true;
+                }
+            }
+            achievementDictionary[key] = (achievement, progress);
+        }
+        achievementProgessList.achivementProgessList = achievementDictionary.Values.Select(x => x.achievementtProgess).ToList();
         SaveAchievementProgess();
     }
 
+    public void CompleteAchievementProgess((MissionType, int) key)
+    {
+        if (missionProgessDictionary.ContainsKey(key))
+        {
+            var (progress, mission) = missionProgessDictionary[key];
 
+            if (!progress.isComplete)
+            {
+                progress.isComplete = true;
+                Debug.Log($"Mission Complete: {mission.missionName}");
+            }
+        }
+    }
 
     [ContextMenu("SaveAchievementProgess")]
     public void SaveAchievementProgess()

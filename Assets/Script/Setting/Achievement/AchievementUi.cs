@@ -7,7 +7,10 @@ public class AchievementUi : MissonUi
     public AchievementBase achievementBase;
     public AchievementProgess achievementProgess;
 
-
+    public override void Start()
+    {
+        getRewardButton.onClick.AddListener(TakeReward);
+    }
     public void UpdateAchievement(AchievementProgess achievementProgess)
     {
         this.achievementProgess = achievementProgess;
@@ -26,7 +29,7 @@ public class AchievementUi : MissonUi
     }
     public void CheckAchievement(AchievementProgess progess)
     {
-        if(progess.currenProgess >= achievementBase.achievementRequire)
+        if (progess.currenProgess >= achievementBase.achievementRequire)
         {
             progess.isComplete = true;
         }
@@ -49,7 +52,7 @@ public class AchievementUi : MissonUi
     }
     public override void UpdateStatus()
     {
-       MissonManager.Instance.UpdateAchievementProgessData(achievementProgess);
+        MissonManager.Instance.UpdateAchievementProgessData(achievementProgess);
 
     }
 }

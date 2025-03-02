@@ -103,9 +103,9 @@ public class Result : MonoBehaviour
     public void WatchAdsButton()
     {
         var playerData = PlayerManager.Instance.playerData;
-        int coin = int.Parse(coinReward.text);
+        int.TryParse(coinReward.text, out int coin);
         playerData.coin += (2 * coin);
-        int exp = int.Parse(expText.text);
+        int.TryParse(expText.text, out int exp);
         playerData.exp += (2 * exp);
         PlayerManager.Instance.UpdatePlayerData(playerData);
     }
@@ -117,9 +117,9 @@ public class Result : MonoBehaviour
     {
         var playerData = PlayerManager.Instance.playerData;
 
-        int coin = int.Parse(coinReward.text);
+        int.TryParse(coinReward.text, out int coin);
         playerData.coin += coin;
-        int exp = int.Parse(expText.text);
+        int.TryParse(expText.text, out int exp);
         playerData.exp += exp;
 
         PlayerManager.Instance.UpdatePlayerData(playerData);

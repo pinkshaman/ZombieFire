@@ -107,6 +107,7 @@ public class GameFlow : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         ActiveResultPanel();
+
     }
     public void StartStage()
     {
@@ -121,6 +122,12 @@ public class GameFlow : MonoBehaviour
         string rankClass = result.ReturnRank();
         Debug.Log($"RankClass:{rankClass}");
         StageGameMode.Instance.UpdateDataArenaProgess(stage.stageID, isStageClear, rankClass);
+        CheckMisson();
+    }
 
+    public void CheckMisson()
+    {
+        MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Play, "Game", 1);
+        MissonManager.Instance.UpdateMissionProgress(MissionRequireType.Play, "Game", 1);
     }
 }
