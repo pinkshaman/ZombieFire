@@ -39100,6 +39100,7 @@ MonoBehaviour:
   goldQuatityText: {fileID: 1816111029}
   bonusText: {fileID: 1040275827}
   bonusLabel: {fileID: 497962160}
+  isBought: 0
 --- !u!114 &137825198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39471,6 +39472,7 @@ MonoBehaviour:
   goldQuatityText: {fileID: 1290766773}
   bonusText: {fileID: 1503362542}
   bonusLabel: {fileID: 1527944413}
+  isBought: 0
 --- !u!1 &259182796 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1803458260094029029, guid: 081d47fb2ae9a1a42a62063899267f79, type: 3}
@@ -42372,6 +42374,7 @@ MonoBehaviour:
   goldQuatityText: {fileID: 761771531}
   bonusText: {fileID: 384367669}
   bonusLabel: {fileID: 1985792531}
+  isBought: 0
 --- !u!1001 &908407214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42677,6 +42680,7 @@ MonoBehaviour:
   goldQuatityText: {fileID: 662178085}
   bonusText: {fileID: 1045731809}
   bonusLabel: {fileID: 1057114331}
+  isBought: 0
 --- !u!114 &1019720098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44029,6 +44033,7 @@ MonoBehaviour:
   goldQuatityText: {fileID: 2146008662}
   bonusText: {fileID: 1874533481}
   bonusLabel: {fileID: 1290238076}
+  isBought: 0
 --- !u!114 &1643059228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44085,6 +44090,7 @@ MonoBehaviour:
   goldQuatityText: {fileID: 2072743568}
   bonusText: {fileID: 1446918088}
   bonusLabel: {fileID: 763786694}
+  isBought: 0
 --- !u!114 &1702785730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44717,6 +44723,7 @@ MonoBehaviour:
   goldQuatityText: {fileID: 1188117938}
   bonusText: {fileID: 1744233212}
   bonusLabel: {fileID: 1057114331}
+  isBought: 0
 --- !u!114 &2072743568 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2049446030817531135, guid: 081d47fb2ae9a1a42a62063899267f79, type: 3}
@@ -44956,6 +44963,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1355}
     m_Modifications:
+    - target: {fileID: 1475083049439207, guid: 690333cb7497dbb4fbaec22e3114f89d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754853593967090, guid: 690333cb7497dbb4fbaec22e3114f89d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1872210632111265, guid: 690333cb7497dbb4fbaec22e3114f89d, type: 3}
       propertyPath: m_Name
       value: Package_UI_Panel
@@ -44963,6 +44978,10 @@ PrefabInstance:
     - target: {fileID: 1872210632111265, guid: 690333cb7497dbb4fbaec22e3114f89d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875934513969155, guid: 690333cb7497dbb4fbaec22e3114f89d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224032342703388780, guid: 690333cb7497dbb4fbaec22e3114f89d, type: 3}
       propertyPath: m_AnchorMax.y

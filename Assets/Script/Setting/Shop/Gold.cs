@@ -16,6 +16,8 @@ public class Gold : MonoBehaviour
     public Text bonusText;
     public GameObject bonusLabel;
 
+    public bool isBought;
+
     public void Start()
     {
         priceText.text = realMoney.ToString();
@@ -28,5 +30,6 @@ public class Gold : MonoBehaviour
     public void Buy()
     {
         Debug.Log(" Buy Gold");
+        isBought = true;
     }
 }

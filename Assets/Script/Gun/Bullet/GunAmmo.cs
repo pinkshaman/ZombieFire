@@ -14,7 +14,7 @@ public class GunAmmo : MonoBehaviour
     public UnityEvent loadedAmmoChanged;
     private int cost;
     private bool isReloading = false;
-
+    private int ammoStroraged;
     public AmmoTextBinder ammoTextUI;
     public int LoadedAmmo
     {
@@ -50,7 +50,7 @@ public class GunAmmo : MonoBehaviour
     }
     public void UpdateTextAmmo()
     {
-        ammoTextUI.UpdateGunAmmo(LoadedAmmo,gun.gunPlayer.ammoStoraged,gun.GunName);
+        ammoTextUI.UpdateGunAmmo(LoadedAmmo,ammoStroraged,gun.GunName);
     }
     public void SingleFireAmmoCounter()
     {
@@ -66,17 +66,17 @@ public class GunAmmo : MonoBehaviour
     }
     private void ReFillAmmo()
     {
-        int ammoToReload = Mathf.Min(magSize - LoadedAmmo, gun.gunPlayer.ammoStoraged);
+        int ammoToReload = Mathf.Min(magSize - LoadedAmmo, ammoStroraged);
         if (ammoToReload <= 0 && AutoBuy())
         {
-            ammoToReload = Mathf.Min(magSize - LoadedAmmo, gun.gunPlayer.ammoStoraged);
+            ammoToReload = Mathf.Min(magSize - LoadedAmmo, ammoStroraged);
         }
-        ammoToReload = Mathf.Min(ammoToReload, gun.gunPlayer.ammoStoraged);
+        ammoToReload = Mathf.Min(ammoToReload, ammoStroraged);
         if (ammoToReload > 0)
         {
-            gun.gunPlayer.ammoStoraged -= ammoToReload;
+            ammoStroraged -= ammoToReload;
             LoadedAmmo += ammoToReload;
-            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, ammoStroraged);
         }
     }
 
@@ -97,7 +97,7 @@ public class GunAmmo : MonoBehaviour
     }
     public void Reload()
     {
-        if (gun.gunPlayer.ammoStoraged <= 0 && !AutoBuy() || isReloading)
+        if (ammoStroraged <= 0 && !AutoBuy() || isReloading)
         {
             return;
         }
@@ -138,6 +138,8 @@ public class GunAmmo : MonoBehaviour
     public void InitializeGun()
     {
         var newGun = GunManager.Instance.GetGun(gunName);
+        var playerGunData = GunManager.Instance.ReturnPlayerGun(newGun.GunName);
+        ammoStroraged = playerGunData.ammoStoraged;
         this.gun.gunData = newGun;
         magSize = newGun.gunStats.ammoCapacity;
 
@@ -149,8 +151,8 @@ public class GunAmmo : MonoBehaviour
         {
             PlayerManager.Instance.playerData.coin -= cost;
             PlayerManager.Instance.UpdatePlayerData(PlayerManager.Instance.playerData);
-            gun.gunPlayer.ammoStoraged += gun.gunData.gunStats.ammoCapacity;
-            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, gun.gunPlayer.ammoStoraged);
+            ammoStroraged += gun.gunData.gunStats.ammoCapacity;
+            GunManager.Instance.UpdateAmmo(gun.gunData.GunName, ammoStroraged);
             UpdateTextAmmo();
             ammoTextUI.IsBuyAmmo(cost);
             onBuyAmmo.Invoke();
