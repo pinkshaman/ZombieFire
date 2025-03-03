@@ -26,8 +26,10 @@ public abstract class Gun : MonoBehaviour
     {
         var originalGun = GunManager.Instance.GetGun(GunName);
         var newGun = CloneGunData(originalGun);
+        
         gunPlayer = GunManager.Instance.ReturnPlayerGun(newGun.GunName);
-        Initialize(newGun);
+        
+        Initialize(newGun,gunPlayer);
         itemUI = FindObjectOfType<GamePlayUI>();
         OnReloading.AddListener(itemUI.UserReloadItem);
     }
@@ -36,9 +38,10 @@ public abstract class Gun : MonoBehaviour
         OnAiming.Invoke();
     }
 
-    public virtual void Initialize(BaseGun gunData)
+    public virtual void Initialize(BaseGun gunData, PlayerGun playerGun)
     {
         this.gunData = gunData;
+        this.gunPlayer = playerGun;
         ApplyUpgradeEffects(gunData);
         Debug.Log($"SetData :{gunData.GunName}");
     }

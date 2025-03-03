@@ -25,6 +25,7 @@ public class QuestUi : MissonUi
         missionName.text = $"{missionBase.missionRequireType} {missionBase.missionRequire} {missionBase.tagertName}";
         progessText.text = $"{missionProgess.missionProgessRequire}/{missionBase.missionRequire}";
         rewardImage.sprite = missionBase.reward.rewardImage;
+        
         rewardAmout.text = missionBase.reward.rewardAmmout.ToString();
 
         FillProgess(missionProgess.missionProgessRequire, missionBase.missionRequire);
@@ -32,20 +33,32 @@ public class QuestUi : MissonUi
     }
     public override void FillProgess(int progess, int baseRequire)
     {
+        if (missionProgess.isComplete&& missionProgess.isTook) return;
         var fillPercent = progess / baseRequire;
         fillBar.fillAmount = fillPercent;
     }
     public void CheckStatus(MissionProgess progess)
     {
-      
+        if (progess.missionProgessRequire >= missionBase.missionRequire)
+        {
+            progess.isComplete = true;
+        }
         if (progess.isComplete)
         {
             getRewardButton.interactable = true;
+            getRewardButton.image.color = Color.green;
             uncompleteLabel.SetActive(false);
         }
         else
         {
             getRewardButton.interactable = false;
+            uncompleteLabel.SetActive(false);
+            getRewardButton.image.color = Color.gray;
+        }
+        if(progess.isTook)
+        {
+            getRewardButton.interactable = false;
+            getRewardButton.image.color = Color.gray;
             uncompleteLabel.SetActive(true);
         }
     }
@@ -54,6 +67,9 @@ public class QuestUi : MissonUi
         PlayerManager.Instance.TakeReward(missionBase.reward);
         missionProgess.isTook = true;
         UpdateStatus();
+        CheckStatus(missionProgess);
+        
+
     }
     public override void UpdateStatus()
     {
@@ -67,6 +83,7 @@ public class QuestUi : MissonUi
         }
         else
         {
+            missionProgess.isTook = true;
             MissonManager.Instance.UpdateDataProgess(missionProgess);
             UpdateMissionProgess(missionProgess);
         }

@@ -103,11 +103,19 @@ public class Result : MonoBehaviour
     public void WatchAdsButton()
     {
         var playerData = PlayerManager.Instance.playerData;
+
         int.TryParse(coinReward.text, out int coin);
-        playerData.coin += (2 * coin);
+        Reward newReward = new Reward();
+        newReward.rewardType = RewardType.Coin;
+        newReward.rewardAmmout = coin * 2;
+        PlayerManager.Instance.TakeReward(newReward);
+
         int.TryParse(expText.text, out int exp);
-        playerData.exp += (2 * exp);
-        PlayerManager.Instance.UpdatePlayerData(playerData);
+        Reward newRewardExp = new Reward();
+        newRewardExp.rewardType = RewardType.Exp;
+        newRewardExp.rewardAmmout = exp * 2;
+        PlayerManager.Instance.TakeReward(newRewardExp);
+
     }
     public string ReturnRank()
     {
@@ -115,14 +123,17 @@ public class Result : MonoBehaviour
     }
     public void UpdateReward()
     {
-        var playerData = PlayerManager.Instance.playerData;
-
         int.TryParse(coinReward.text, out int coin);
-        playerData.coin += coin;
-        int.TryParse(expText.text, out int exp);
-        playerData.exp += exp;
+        Reward newReward = new Reward();
+        newReward.rewardType = RewardType.Coin;
+        newReward.rewardAmmout = coin;
+        PlayerManager.Instance.TakeReward(newReward);
 
-        PlayerManager.Instance.UpdatePlayerData(playerData);
+        int.TryParse(expText.text, out int exp);
+        Reward newRewardExp = new Reward();
+        newRewardExp.rewardType = RewardType.Exp;
+        newRewardExp.rewardAmmout = exp;
+        PlayerManager.Instance.TakeReward(newRewardExp);
     }
 
 }

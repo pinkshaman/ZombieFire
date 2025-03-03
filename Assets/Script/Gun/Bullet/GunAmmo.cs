@@ -140,6 +140,7 @@ public class GunAmmo : MonoBehaviour
         var newGun = GunManager.Instance.GetGun(gunName);
         this.gun.gunData = newGun;
         magSize = newGun.gunStats.ammoCapacity;
+
         ReFillAmmo();
     }
     public bool AutoBuy()

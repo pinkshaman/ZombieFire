@@ -20,37 +20,33 @@ public class MissionSelect : MonoBehaviour
         CreateAllAchievement();
         getAllRewardButton.onClick.AddListener(TakeAllReward);
     }
+
     public void CreateAllMission()
     {
-        var AllMission = MissonManager.Instance.missionProgessDictionary;
-        foreach (var mission in AllMission)
+        var missionList = MissonManager.Instance.missionProgessList.missionProgessList;
+
+        foreach (var progress in missionList)
         {
-            var (missionType, missionID) = mission.Key;
-            var (progress, missionBase) = mission.Value;
+            MissionBase missionBase = MissonManager.Instance.GetMissionByID(progress.missionProgessID);
+            if (missionBase == null) continue;
 
-            var missionUiInstance = Instantiate(questPrefabsUi);
-            missionUiInstance.SetMissionData(missionBase, progress);
+            var missionUi = Instantiate(questPrefabsUi);
+            missionUi.SetMissionData(missionBase, progress);
 
-            if (missionType == MissionType.Daily)
-            {
-                missionUiInstance.transform.SetParent(rootUiDailyMission, false);
-            }
-            else if (missionType == MissionType.Repeat)
-            {
-                missionUiInstance.transform.SetParent(rootUiRepeatMisson, false);
-            }
+            missionUi.transform.SetParent(progress.missionType == MissionType.Daily ? rootUiDailyMission : rootUiRepeatMisson, false);
         }
     }
+
     public void CreateAllAchievement()
     {
-        var AllAchievement = MissonManager.Instance.achievementDictionary;
-        foreach (var achievement in AllAchievement)
-        {
-            var key = achievement.Key;
-            var (achievementBase, progess) = achievement.Value;
+            var achievementProgressList = MissonManager.Instance.achievementProgessList.achivementProgessList;
+        var achievementList = MissonManager.Instance.achievementList.achievementList;
 
-            var achievementUIInstance = Instantiate(AchievementPrefabsUi,rootUiAchievement);
-           achievementUIInstance.SetAchievementData(achievementBase, progess);
+        foreach (var progress in achievementProgressList)
+        {
+            var achievementBase = achievementList.Find(a => a.id == progress.progessID);
+            var achievementUi = Instantiate(AchievementPrefabsUi, rootUiAchievement);
+            achievementUi.SetAchievementData(achievementBase, progress);
         }
     }
     public void TakeAllReward()
@@ -61,21 +57,21 @@ public class MissionSelect : MonoBehaviour
 
         foreach (var daily in allDailyMisson)
         {
-            if(daily.missionProgess.isComplete && !daily.missionProgess.isTook)
+            if (daily.missionProgess.isComplete && !daily.missionProgess.isTook)
             {
                 allReward.rewardListToShow.Add(daily.missionBase.reward);
             }
         }
         foreach (var repeat in allRepeatMisson)
         {
-            if(repeat.missionProgess.isComplete&& !repeat.missionProgess.isTook)
+            if (repeat.missionProgess.isComplete && !repeat.missionProgess.isTook)
             {
                 allReward.rewardListToShow.Add(repeat.missionBase.reward);
             }
         }
-        foreach(var achievemnt in allAchievement)
+        foreach (var achievemnt in allAchievement)
         {
-            if(achievemnt.achievementProgess.isComplete&& !achievemnt.achievementProgess.isTook)
+            if (achievemnt.achievementProgess.isComplete && !achievemnt.achievementProgess.isTook)
             {
                 allReward.rewardListToShow.Add(achievemnt.achievementBase.reward);
             }

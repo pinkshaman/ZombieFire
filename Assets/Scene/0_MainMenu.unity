@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 1952}
   - component: {fileID: 1955}
   - component: {fileID: 1954}
+  - component: {fileID: 320479705}
   m_Layer: 0
   m_Name: Quest_Button
   m_TagString: Untagged
@@ -36071,7 +36072,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 320479705}
+        m_TargetAssemblyTypeName: CheckMission, Assembly-CSharp
+        m_MethodName: CheckStatus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39718,6 +39731,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f8a8a8f97f75c4bbdfa4718079d716, type: 3}
+--- !u!114 &320479705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0264749c010da147b5eb6b4c67f0b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusImage: {fileID: 151}
 --- !u!1 &325439930
 GameObject:
   m_ObjectHideFlags: 0
@@ -47972,14 +47998,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quest_UI_Panel
       objectReference: {fileID: 0}
-    - target: {fileID: 1041251517282132, guid: ea666e97219cf9448a3cac8559758479, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1041932952311230, guid: ea666e97219cf9448a3cac8559758479, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224117118878543197, guid: ea666e97219cf9448a3cac8559758479, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -48060,18 +48078,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 224172686787166721, guid: ea666e97219cf9448a3cac8559758479, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -524
+    - target: {fileID: 570587879286906960, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224431366318169153, guid: ea666e97219cf9448a3cac8559758479, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -524
+    - target: {fileID: 570587879286906960, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224693025233605456, guid: ea666e97219cf9448a3cac8559758479, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -524
+    - target: {fileID: 570587879286906960, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 775837799811384047, guid: ea666e97219cf9448a3cac8559758479, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1641}
     - target: {fileID: 8345794444865387193, guid: ea666e97219cf9448a3cac8559758479, type: 3}
       propertyPath: audioSource
       value: 

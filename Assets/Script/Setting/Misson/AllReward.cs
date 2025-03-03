@@ -27,6 +27,8 @@ public class AllReward : MonoBehaviour
     }
     public void ShowReward()
     {
+        if (rewardListToShow == null || rewardListToShow.Count == 0) return;
+        gameObject.SetActive(true);
         foreach (var reward in rewardListToShow)
         {
             var rewardToShow = Instantiate(rewardPrefabs, rootUi);

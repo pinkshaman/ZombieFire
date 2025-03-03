@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -8,14 +9,12 @@ public class MissonManager : MonoBehaviour
 {
     public static MissonManager Instance { get; private set; }
     public MissonProgessList missionProgessList;
-    public Dictionary<(MissionType, int), (MissionProgess progress, MissionBase mission)> missionProgessDictionary = new Dictionary<(MissionType, int), (MissionProgess, MissionBase)>();
     public MissionDaily missionDaily;
     public MissonRepeat missionRepeat;
 
     public AchievementList achievementList;
     public AchievementProgessList achievementProgessList;
-
-    public Dictionary<int, (AchievementBase achievementBase, AchievementProgess achievementtProgess)> achievementDictionary = new Dictionary<int, (AchievementBase, AchievementProgess)>();
+    private const string LastResetKey = "LastDailyReset";
 
     private void Awake()
     {
@@ -31,102 +30,64 @@ public class MissonManager : MonoBehaviour
     }
     public void Start()
     {
-        CreateDictionary();
-        CreateAchievementDictionary();
+        CheckAndResetDailyMission();
+        LoadMissionProgess();
+        LoadAchievementProgess();
+        CreateAchievementList();
+        CreateMissionList();
     }
 
-    [ContextMenu("CreateDictionary")]
-    public void CreateDictionary()
+    [ContextMenu("CreateMissionList")]
+    public void CreateMissionList()
     {
-
         if (missionProgessList == null)
-        {
             missionProgessList = new MissonProgessList();
-        }
+
         if (missionProgessList.missionProgessList == null)
-        {
             missionProgessList.missionProgessList = new List<MissionProgess>();
-        }
-        if (missionProgessDictionary == null)
-        {
-            missionProgessDictionary = new Dictionary<(MissionType, int), (MissionProgess, MissionBase)>();
-        }
-        AddMissionsToDictionary(missionDaily);
-        AddMissionsToDictionary(missionRepeat);
-        Debug.Log($"Dictionary is Created with {missionProgessDictionary.Count} missions.");
+
+        AddMissions(missionDaily.missionList, MissionType.Daily);
+        AddMissions(missionRepeat.missionList, MissionType.Repeat);
+
         SaveMissionProgess();
     }
-
-    private void AddMissionsToDictionary(Mission mission)
+    private void AddMissions(List<MissionBase> missionList, MissionType type)
     {
-        foreach (var missionBase in mission.missionList)
+        foreach (var mission in missionList)
         {
-            var key = (mission.missionType, missionBase.missionID);
-
-            if (!missionProgessDictionary.ContainsKey(key))
+            if (!missionProgessList.missionProgessList.Exists(missionProgess => missionProgess.missionProgessID == mission.missionID && missionProgess.missionType == type))
             {
-                MissionProgess newProgress = new MissionProgess(
-                    missionBase.missionID,
-                    mission.missionType,
-                    missionBase.missionRequireType,
-                    false,
-                    0,
-                    missionBase.tagertName
-                );
-
-                missionProgessList.missionProgessList.Add(newProgress);
-                missionProgessDictionary[key] = (newProgress, missionBase);
-
-                Debug.Log($"Created ProgressMission: {mission.missionType}, {missionBase.missionName}, {missionBase.missionRequireType}, {missionBase.missionRequire} - {missionBase.tagertName}");
+                missionProgessList.missionProgessList.Add(new MissionProgess(
+                    mission.missionID, type, mission.missionRequireType, false, 0, mission.tagertName));
             }
         }
     }
-
     public void UpdateMissionProgress(MissionRequireType requireType, string targetName, int amount)
     {
-        foreach (var entry in missionProgessDictionary)
+        foreach (var progress in missionProgessList.missionProgessList)
         {
-            var (missionType, missionID) = entry.Key;
-            var (progress, mission) = entry.Value;
-
             if (progress.missinRequireType == requireType && progress.targetName == targetName && !progress.isComplete)
             {
                 progress.missionProgessRequire += amount;
+                MissionBase mission = GetMissionByID(progress.missionProgessID);
 
-                if (progress.missionProgessRequire >= mission.missionRequire)
+                if (mission != null && progress.missionProgessRequire >= mission.missionRequire)
                 {
                     progress.isComplete = true;
-                    Debug.Log($"Mission Updated: {mission.missionName} ({progress.missionProgessRequire}/{mission.missionRequire}) - {mission.tagertName}");
-
-                    CompleteMission(missionType, missionID);
                 }
             }
         }
+        SaveMissionProgess();
     }
 
-    private void CompleteMission(MissionType missionType, int missionID)
-    {
-        var key = (missionType, missionID);
-        if (missionProgessDictionary.ContainsKey(key))
-        {
-            var (progress, mission) = missionProgessDictionary[key];
 
-            if (!progress.isComplete)
-            {
-                progress.isComplete = true;
-                Debug.Log($"Mission Complete: {mission.missionName}");
-            }
-            SaveMissionProgess();
-        }
-    }
-
-    public (MissionProgess progress, MissionBase mission)? GetMissionData(MissionType missionType, int missionID)
+    public MissionBase GetMissionByID(int missionID)
     {
-        var key = (missionType, missionID);
-        if (missionProgessDictionary.ContainsKey(key))
-        {
-            return missionProgessDictionary[key];
-        }
+        foreach (var mission in missionDaily.missionList)
+            if (mission.missionID == missionID) return mission;
+
+        foreach (var mission in missionRepeat.missionList)
+            if (mission.missionID == missionID) return mission;
 
         return null;
     }
@@ -136,10 +97,35 @@ public class MissonManager : MonoBehaviour
         var data = missionProgessList.missionProgessList.Find(d => d.missionProgessID == newdata.missionProgessID && d.missionType == newdata.missionType);
         if (data != null)
         {
-            data.missionProgessRequire = newdata.missionProgessRequire;
-            data.isComplete = newdata.isComplete;
+            data = newdata;
             SaveMissionProgess();
         }
+    }
+
+    public void CheckAndResetDailyMission()
+    {
+        string lastResetTimeStr = PlayerPrefs.GetString(LastResetKey, "");
+        if (!string.IsNullOrEmpty(lastResetTimeStr))
+        {
+            DateTime lastResetTime = DateTime.Parse(lastResetTimeStr);
+            if ((DateTime.Now - lastResetTime).TotalHours < 24)
+            {
+                return;
+            }
+        }
+
+        ResetDailyMission();
+    }
+
+    public void ResetDailyMission()
+    {
+        missionProgessList.missionProgessList.RemoveAll(m => m.missionType == MissionType.Daily);
+        AddMissions(missionDaily.missionList, MissionType.Daily);
+
+        SaveMissionProgess();
+        PlayerPrefs.SetString(LastResetKey, DateTime.Now.ToString());
+        PlayerPrefs.Save();
+
     }
 
     [ContextMenu("SaveMissionProgess")]
@@ -162,8 +148,8 @@ public class MissonManager : MonoBehaviour
     //-------------------------------------//
 
 
-    [ContextMenu("CreateAchievementDictionary")]
-    public void CreateAchievementDictionary()
+    [ContextMenu("CreateAchievementList")]
+    public void CreateAchievementList()
     {
         if (achievementProgessList == null)
         {
@@ -174,44 +160,40 @@ public class MissonManager : MonoBehaviour
             achievementProgessList.achivementProgessList = new List<AchievementProgess>();
         }
 
-        if (achievementDictionary == null)
-        {
-            achievementDictionary = new Dictionary<int, (AchievementBase, AchievementProgess)>();
-        }
-        AddAchievementToDictionary();
-    }
-    public void AddAchievementToDictionary()
-    {
         foreach (var achievement in achievementList.achievementList)
         {
-            var key = achievement.id;
-
-            if (!achievementDictionary.ContainsKey(key))
+            if (!achievementProgessList.achivementProgessList.Any(p => p.progessID == achievement.id))
             {
-                AchievementProgess newProgress = new AchievementProgess(achievement.id, achievement.achievementRequireType, 0, achievement.targetAchievement, false, false);
-                achievementProgessList.achivementProgessList.Add(newProgress);
-                achievementDictionary[key] = (achievement, newProgress);
+                AchievementProgess newProgress = new AchievementProgess(
+                    achievement.id,
+                    achievement.achievementRequireType,
+                    0,
+                    achievement.targetAchievement,
+                    false,
+                    false
+                );
 
+                achievementProgessList.achivementProgessList.Add(newProgress);
                 Debug.Log($"Added Achievement: {achievement.achievementName}");
             }
         }
+
         SaveAchievementProgess();
     }
+
     public void UpdateAchievementProgessData(AchievementProgess progess)
     {
-        if (achievementDictionary.ContainsKey(progess.progessID))
-        {
-            achievementDictionary[progess.progessID] = (achievementDictionary[progess.progessID].achievementBase, progess);
-            SaveAchievementProgess();
-        }
+        var data = achievementProgessList.achivementProgessList.Find(data => data.progessID == progess.progessID && data.achievementRequireType == progess.achievementRequireType);
+        data = progess;
+        SaveAchievementProgess();
     }
+
     public void UpdateAchievementProgess(MissionRequireType type, string progessTarget, int tagetCount)
     {
-        foreach (var key in achievementDictionary.Keys.ToList())
+        foreach (var progress in achievementProgessList.achivementProgessList)
         {
-            var (achievement, progress) = achievementDictionary[key];
-
-            if (progress.isComplete) continue;
+            var achievement = achievementList.achievementList.FirstOrDefault(a => a.id == progress.progessID);
+            if (achievement == null || progress.isComplete) continue;
 
             if (achievement.achievementRequireType == type && (achievement.targetAchievement == progessTarget || type == MissionRequireType.Play))
             {
@@ -222,25 +204,11 @@ public class MissonManager : MonoBehaviour
                     progress.isComplete = true;
                 }
             }
-            achievementDictionary[key] = (achievement, progress);
         }
-        achievementProgessList.achivementProgessList = achievementDictionary.Values.Select(x => x.achievementtProgess).ToList();
         SaveAchievementProgess();
     }
 
-    public void CompleteAchievementProgess((MissionType, int) key)
-    {
-        if (missionProgessDictionary.ContainsKey(key))
-        {
-            var (progress, mission) = missionProgessDictionary[key];
 
-            if (!progress.isComplete)
-            {
-                progress.isComplete = true;
-                Debug.Log($"Mission Complete: {mission.missionName}");
-            }
-        }
-    }
 
     [ContextMenu("SaveAchievementProgess")]
     public void SaveAchievementProgess()
