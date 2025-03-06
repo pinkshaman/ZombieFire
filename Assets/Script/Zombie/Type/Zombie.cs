@@ -60,7 +60,7 @@ public abstract class Zombie : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         playerHealth = FindObjectOfType<PlayerHealth>();
-
+       
     }
     public IEnumerator InitializeZombieData()
     {
@@ -88,6 +88,8 @@ public abstract class Zombie : MonoBehaviour
         isDead = false;
         RageObj.SetActive(false);
         BoneRig.SetActive(true);
+        var zombiehealth = GetComponentInParent<ZombieHealth>();
+        zombiehealth.OnTakeDamage.AddListener(CheckGetHit);
     }
 
     public virtual void CheckHeight()
@@ -165,7 +167,7 @@ public abstract class Zombie : MonoBehaviour
         var getHitIndex = Random.Range(0, 1);
         anim.SetInteger("GetHitType", getHitIndex);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
         if (!isDead) Move();
         isGetHit = false;
     }
@@ -203,12 +205,11 @@ public abstract class Zombie : MonoBehaviour
             int deathType = Random.Range(1, 3);
             anim.SetInteger("DeathType", deathType);
         }
-        Destroy(gameObject, 2.0f);
     }
 
     public virtual void Move()
     {
-        if (isDead || agent == null || !agent.isOnNavMesh) return;
+        if (isDead || agent == null || !agent.isOnNavMesh|| isGetHit) return;
         agent.isStopped = false;
         agent.SetDestination(playerTaget.position);
         if(isRage)

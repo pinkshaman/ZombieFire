@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -40,36 +40,20 @@ public class GameFlow : MonoBehaviour
     {
         stage = StageGameMode.Instance.ReturnCurrentStageforPlay();
     }
-    public void SpawnEnemy(GameObject zombie, int quatity)
-    {
-        StartCoroutine(zombieRepawn.SpawnZombieByTime(zombie, quatity));
-    }
-    public void SpawnWave(float waveNumber)
-    {
-        BaseWave baseWave = stage.waveList.Find(baseWave => baseWave.waveNumber == waveNumber);
-
-        foreach (var Group in baseWave.zombieList)
-        {
-            SpawnEnemy(Group.zombie, Group.quatity);
-            if (isSpawnDone)
-            {
-                break;
-            }
-        }
-    }
     public IEnumerator SpawnByNumberWave()
     {
-        foreach (var number in stage.waveList)
+        foreach (var wave in stage.waveList)
         {
-            if (number.waveNumber == 1)
+            if (wave.waveNumber == 1)
             {
                 StartStage();
             }
             else
             {
-                PlayAlert(number.waveNumber);
+                PlayAlert(wave.waveNumber);
             }
-            SpawnWave(number.waveNumber);
+
+            zombieRepawn.StartWave(wave);
 
             yield return new WaitUntil(() => isWaveEnd);
             isWaveEnd = false;
@@ -77,6 +61,8 @@ public class GameFlow : MonoBehaviour
         isStageClear = true;
         OnStageClear.Invoke();
     }
+
+
     public void IsWaveEnd()
     {
         isWaveEnd = true;

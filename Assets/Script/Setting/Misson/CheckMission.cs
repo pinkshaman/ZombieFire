@@ -28,17 +28,15 @@ public class CheckMission : MonoBehaviour
             }
         }
 
-        if (!hasReward)
+        foreach (var mission in missionProgessList)
         {
-            foreach (var mission in missionProgessList)
+            if (mission.isComplete && !mission.isTook)
             {
-                if (mission.isComplete && !mission.isTook)
-                {
-                    hasReward = true;
-                    break;
-                }
+                hasReward = true;
+                break;
             }
         }
+
         statusImage.SetActive(hasReward);
     }
 }

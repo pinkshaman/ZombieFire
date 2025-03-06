@@ -16,8 +16,6 @@ public class GameOption : MonoBehaviour
     public void Start()
     {
         Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         mainMenuButton.onClick.AddListener(MainMenuButton);
         returnToGameButton.onClick.AddListener(ReturnToGameButton);
         SetData();

@@ -7,7 +7,7 @@ public class Gold : MonoBehaviour
 {
     public int goldQuatity;
     public int realMoney;
-    public Button buttonBuy;
+
     public int percentBonus;
     public bool isBonus;
 
@@ -22,7 +22,6 @@ public class Gold : MonoBehaviour
     {
         priceText.text = realMoney.ToString();
         goldQuatityText.text = goldQuatity.ToString();
-        buttonBuy.onClick.AddListener(Buy);
         bonusLabel.SetActive(isBonus);
         if (!isBonus) return;
         bonusText.text = $"BONUS {percentBonus} %";
@@ -31,5 +30,18 @@ public class Gold : MonoBehaviour
     {
         Debug.Log(" Buy Gold");
         isBought = true;
+        var playerData = PlayerManager.Instance.playerData;
+        if(isBonus)
+        {
+            playerData.gold += goldQuatity;
+            PlayerManager.Instance.UpdatePlayerData(playerData);
+        }
+        else
+        {
+            var newGold = Mathf.RoundToInt(goldQuatity * (1 + percentBonus / 100));
+            playerData.gold += newGold;
+            PlayerManager.Instance.UpdatePlayerData(playerData);
+        }
     }
+    
 }

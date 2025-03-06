@@ -1,11 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ZombieRepawn : MonoBehaviour
 {
-    public List<GameObject> SpawnPotisionList;
+    public List<GameObject> SpawnPositionList;
     public List<GameObject> BossSpawnPos;
     private int total;
     public float spawnSpeed;
@@ -15,7 +15,9 @@ public class ZombieRepawn : MonoBehaviour
     public UnityEvent OnZombieClear;
     public UnityEvent OnSpawnDone;
     public UnityEvent<int> OnStartSpawn;
-    public int Livezombie
+    private Dictionary<GameObject, Queue<GameObject>> zombiePools = new Dictionary<GameObject, Queue<GameObject>>();
+
+    public int LiveZombie
     {
         get => liveZombie;
         set
@@ -24,53 +26,106 @@ public class ZombieRepawn : MonoBehaviour
             OnZombieChange.Invoke(liveZombie, total);
         }
     }
-    public void InitData(int quatity)
+    public void InitData(int quantity)
     {
-        Livezombie = quatity;
-        total = quatity;
-        OnStartSpawn.Invoke(quatity);
+        LiveZombie = quantity;
+        total = quantity;
+        OnStartSpawn.Invoke(quantity);
     }
-    public IEnumerator SpawnZombieByTime(GameObject zombie, int quatity)
+    public void StartWave(BaseWave baseWave)
     {
-        InitData(quatity);
-        while (quatity > 0)
+        int totalZombies = 0;
+        foreach (var group in baseWave.zombieList)
         {
-            SpawnZombie(zombie);
-            quatity--;
-            yield return new WaitForSeconds(spawnSpeed);
-            if (quatity == 0)
+            totalZombies += group.quatity;
+        }
+
+        InitData(totalZombies);
+        StartCoroutine(SpawnWaveCoroutine(baseWave));
+    }
+
+    private IEnumerator SpawnWaveCoroutine(BaseWave baseWave)
+    {
+
+        foreach (var group in baseWave.zombieList)
+        {
+            for (int i = 0; i < group.quatity; i++)
             {
-                OnSpawnDone.Invoke();
+                SpawnZombie(group.zombie);
+                yield return new WaitForSeconds(spawnSpeed);
             }
         }
-    }
-    private void SpawnZombie(GameObject zombiePrefabs)
-    {
-        if (zombiePrefabs.GetComponent<Boss>() != null)
-        {
 
-            int bossPointIndex = Random.Range(0, BossSpawnPos.Count);
-            var spawnPoint = BossSpawnPos[bossPointIndex].transform;
-            Instantiate(zombiePrefabs, spawnPoint.position, spawnPoint.rotation);
+        OnSpawnDone.Invoke();
+    }
+    private void SpawnZombie(GameObject zombiePrefab)
+    {
+        if (zombiePrefab == null) return;
+
+        Transform spawnPoint;
+
+        if (zombiePrefab.GetComponent<Boss>() != null && BossSpawnPos.Count > 0)
+        {
+            spawnPoint = BossSpawnPos[Random.Range(0, BossSpawnPos.Count)].transform;
             HpBoss.SetActive(true);
         }
+        else if (SpawnPositionList.Count > 0)
+        {
+            spawnPoint = SpawnPositionList[Random.Range(0, SpawnPositionList.Count)].transform;
+        }
         else
-        { 
-            int pointIndex = Random.Range(0, SpawnPotisionList.Count);
-            Transform SpawnPoint = SpawnPotisionList[pointIndex].transform;
-            Instantiate(zombiePrefabs, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
-
+        {
+            return;
         }
 
+        GameObject zombie = GetZombieFromPool(zombiePrefab);
+        zombie.transform.position = spawnPoint.position;
+        zombie.transform.rotation = spawnPoint.rotation;
+        zombie.SetActive(true);
     }
-    public void OnzombieDeath()
+
+    private GameObject GetZombieFromPool(GameObject zombiePrefab)
     {
-        Livezombie--;
-        if (Livezombie == 0)
+        if (!zombiePools.ContainsKey(zombiePrefab))
+        {
+            zombiePools[zombiePrefab] = new Queue<GameObject>();
+        }
+
+        if (zombiePools[zombiePrefab].Count > 0)
+        {
+            return zombiePools[zombiePrefab].Dequeue();
+        }
+        else
+        {
+            return Instantiate(zombiePrefab);
+        }
+    }
+
+    public void ReturnZombieToPool(GameObject zombiePrefab, GameObject zombie)
+    {
+        zombie.SetActive(false);
+        if (!zombiePools.ContainsKey(zombiePrefab))
+        {
+            zombiePools[zombiePrefab] = new Queue<GameObject>();
+        }
+        zombiePools[zombiePrefab].Enqueue(zombie);
+    }
+
+    public void OnZombieDeath(GameObject zombiePrefab, GameObject zombie)
+    {
+        LiveZombie--;
+        StartCoroutine(ReturnZombieWithDelay(zombiePrefab, zombie, 3f));
+
+        if (LiveZombie == 0)
         {
             Debug.Log("Zombie Clear");
             OnZombieClear?.Invoke();
         }
     }
 
+    private IEnumerator ReturnZombieWithDelay(GameObject zombiePrefab, GameObject zombie, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ReturnZombieToPool(zombiePrefab, zombie);
+    }
 }

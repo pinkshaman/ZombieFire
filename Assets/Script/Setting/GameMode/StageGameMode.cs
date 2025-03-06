@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using System.Linq;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 
 
@@ -67,19 +67,21 @@ public class StageGameMode : MonoBehaviour
     public void Start()
     {
         LoadStageData();
-        DefineHighestStageUnlonked();
+        InitArenaProgessData();
+        DefineHighestArenaUnlocked();
     }
     public void SetCurrentArenaAndStage(int stage)
     {
         currentStageLoad = stage;
     }
-    public void DefineHighestStageUnlonked()
+    public void DefineHighestArenaUnlocked()
     {
         var activeArenas = arenaProgessListed.arenaProgressList
        .Where(arena => arena.isActiveArena)
        .OrderByDescending(arena => arena.arenaNumber)
        .FirstOrDefault();
         highestArenaUnlocked = activeArenas.arenaNumber;
+        activeArenas.stageProgessList.stageProgessLists[0].isCanPlay = true;
     }
     public Stage ReturnCurrentStageforPlay()
     {

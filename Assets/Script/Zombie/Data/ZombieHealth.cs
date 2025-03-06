@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ZombieHealth : Health
 {
@@ -27,7 +27,7 @@ public class ZombieHealth : Health
     }
     public override void Die()
     {
-        zombieRepawn.OnzombieDeath();
+        zombieRepawn.OnZombieDeath(zombie.gameObject, gameObject);
         zombie.Die(isDeadByHeadShot);
         MissonManager.Instance.UpdateMissionProgress(MissionRequireType.Kill,zombie.zombieData.ZombieName, 1);
         MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Kill,zombie.zombieData.ZombieName,1);

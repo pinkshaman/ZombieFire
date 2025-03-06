@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AllReward : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class AllReward : MonoBehaviour
     public RewardUi rewardPrefabs;
     public void SetDataList()
     {
+        gameObject.SetActive(true);
         List<Reward> mergedList = new List<Reward>();
 
         foreach (var reward in rewardListToShow)
@@ -16,19 +18,20 @@ public class AllReward : MonoBehaviour
             if (existingReward != null)
             {
                 existingReward.rewardAmmout += reward.rewardAmmout;
+                existingReward.rewardImage = reward.rewardImage;
             }
             else
             {
-                mergedList.Add(new Reward { rewardType = reward.rewardType, rewardAmmout = reward.rewardAmmout });
+                mergedList.Add(new Reward { rewardType = reward.rewardType, rewardAmmout = reward.rewardAmmout,rewardImage = reward.rewardImage });
             }
         }
 
         rewardListToShow = mergedList;
+        ShowReward();
     }
     public void ShowReward()
     {
         if (rewardListToShow == null || rewardListToShow.Count == 0) return;
-        gameObject.SetActive(true);
         foreach (var reward in rewardListToShow)
         {
             var rewardToShow = Instantiate(rewardPrefabs, rootUi);
@@ -40,5 +43,9 @@ public class AllReward : MonoBehaviour
     public void GetReward(Reward reward)
     {
         PlayerManager.Instance.TakeReward(reward);
+    }
+    public void OnDisable()
+    {
+        
     }
 }

@@ -24,7 +24,7 @@ public class BossHealth : Health
     }
     public override void Die()
     {
-        zombieRepawn.OnzombieDeath();
+        zombieRepawn.OnZombieDeath(zombie.gameObject, gameObject);
         zombie.Die(isDeadByHeadShot);
         base.Die();
     }

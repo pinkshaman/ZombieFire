@@ -39,7 +39,7 @@ public class MissionSelect : MonoBehaviour
 
     public void CreateAllAchievement()
     {
-            var achievementProgressList = MissonManager.Instance.achievementProgessList.achivementProgessList;
+        var achievementProgressList = MissonManager.Instance.achievementProgessList.achivementProgessList;
         var achievementList = MissonManager.Instance.achievementList.achievementList;
 
         foreach (var progress in achievementProgressList)
@@ -60,6 +60,7 @@ public class MissionSelect : MonoBehaviour
             if (daily.missionProgess.isComplete && !daily.missionProgess.isTook)
             {
                 allReward.rewardListToShow.Add(daily.missionBase.reward);
+                daily.TakeReward();
             }
         }
         foreach (var repeat in allRepeatMisson)
@@ -67,6 +68,7 @@ public class MissionSelect : MonoBehaviour
             if (repeat.missionProgess.isComplete && !repeat.missionProgess.isTook)
             {
                 allReward.rewardListToShow.Add(repeat.missionBase.reward);
+                repeat.TakeReward();
             }
         }
         foreach (var achievemnt in allAchievement)
@@ -74,8 +76,9 @@ public class MissionSelect : MonoBehaviour
             if (achievemnt.achievementProgess.isComplete && !achievemnt.achievementProgess.isTook)
             {
                 allReward.rewardListToShow.Add(achievemnt.achievementBase.reward);
+                achievemnt.TakeReward();
             }
         }
-        allReward.ShowReward();
+        allReward.SetDataList();
     }
 }
