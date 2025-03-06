@@ -67,8 +67,8 @@ public class Score : MonoBehaviour
     public void GetSkillScore()
     {
         score += 20;
-        rankExp += (expPerZombie * 0.5f);
-        totalExp += (expPerZombie * 0.5f);
+        rankExp += (expPerZombie * 0.6f);
+        totalExp += (expPerZombie * 0.6f);
         killCount++;    
         CheckRankUp();
         UpdateUI();

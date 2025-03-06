@@ -23,7 +23,7 @@ public class GameFlow : MonoBehaviour
 
         LoadGamePlay();
     }
-    public void LoadGamePlay()
+    public virtual void LoadGamePlay()
     {
 
         isSpawnDone = false;
@@ -36,11 +36,11 @@ public class GameFlow : MonoBehaviour
 
         StartCoroutine(SpawnByNumberWave());
     }
-    public void InitData()
+    public virtual void InitData()
     {
         stage = StageGameMode.Instance.ReturnCurrentStageforPlay();
     }
-    public IEnumerator SpawnByNumberWave()
+    public virtual IEnumerator SpawnByNumberWave()
     {
         foreach (var wave in stage.waveList)
         {
@@ -63,7 +63,7 @@ public class GameFlow : MonoBehaviour
     }
 
 
-    public void IsWaveEnd()
+    public  void IsWaveEnd()
     {
         isWaveEnd = true;
     }
@@ -90,8 +90,6 @@ public class GameFlow : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         ActiveResultPanel();
 
     }
@@ -101,7 +99,7 @@ public class GameFlow : MonoBehaviour
         startAlert.StartAlerts();
     }
     [ContextMenu("ActiveResultPanel")]
-    public void ActiveResultPanel()
+    public virtual void ActiveResultPanel()
     {
         resutlPanel.SetActive(true);
         var result = FindObjectOfType<Result>();
@@ -111,7 +109,7 @@ public class GameFlow : MonoBehaviour
         CheckMisson();
     }
 
-    public void CheckMisson()
+    public virtual void CheckMisson()
     {
         MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Play, "Game", 1);
         MissonManager.Instance.UpdateMissionProgress(MissionRequireType.Play, "Game", 1);

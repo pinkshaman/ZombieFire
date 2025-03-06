@@ -31,6 +31,7 @@ public class ZombieHealth : Health
         zombie.Die(isDeadByHeadShot);
         MissonManager.Instance.UpdateMissionProgress(MissionRequireType.Kill,zombie.zombieData.ZombieName, 1);
         MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Kill,zombie.zombieData.ZombieName,1);
+        MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Kill, "Zombie", 1);
 
        
         base.Die();
