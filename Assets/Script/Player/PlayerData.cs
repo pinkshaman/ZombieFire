@@ -7,6 +7,7 @@ using UnityEngine;
 [Serializable]
 public class PlayerData
 {
+    public string playerID;
     public float exp;
     public int health;
     public int coin;
@@ -16,7 +17,7 @@ public class PlayerData
     public ItemList itemList;
     public LevelRewardProgessList levelRewardProgessList;
 
-    public PlayerData(LevelRewardProgessList levelRewardProgessList, float exp, int health, int coin, int gold, SpecialUpgradeProgess specialUpgradeProgess)
+    public PlayerData(LevelRewardProgessList levelRewardProgessList, float exp, int health, int coin, int gold, SpecialUpgradeProgess specialUpgradeProgess, string playerID)
     {
         this.levelRewardProgessList = levelRewardProgessList;
         this.exp = exp;
@@ -24,6 +25,7 @@ public class PlayerData
         this.coin = coin;
         this.gold = gold;
         this.specialUpgradeProgess = specialUpgradeProgess;
+        this.playerID = playerID; 
     }
 }
 [Serializable]

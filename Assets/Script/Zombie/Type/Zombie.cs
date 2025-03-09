@@ -74,7 +74,7 @@ public abstract class Zombie : MonoBehaviour
 
         if (zombieData == null)
         {
-            Debug.LogWarning($"{gameObject.name} chưa được gắn zombieData!");
+            Debug.LogWarning($"{gameObject.name} not found zombieData!");
         }
 
     }

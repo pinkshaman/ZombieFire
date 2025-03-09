@@ -43,6 +43,7 @@ public class LoginReward : MonoBehaviour
     }
     public void UpdateUi()
     {
-        SetData(isTook,isCanTake);
+        checkObject.SetActive(isTook);
+        recievedGameObject.SetActive(!isCanTake);
     }
 }

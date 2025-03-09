@@ -1,3 +1,4 @@
+using GooglePlayGames;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,10 @@ public class MainMenuGameOption : MonoBehaviour
     public Slider BMGSlider;
     public AudioSource BGMSource;
     private OptionData optionData;
+    public Text playerID;
+    public Text versionText;
 
-
+    public Button showLeaderBoad;
     public void Start()
     {
         SetData();
@@ -45,4 +48,17 @@ public class MainMenuGameOption : MonoBehaviour
         AudioManager.Instance.UpadateData(optionData);
         BGMSource.volume = value;
     }
+    public void SetID()
+    {
+        var ID = PlayGamesPlatform.Instance.GetUserId();
+        playerID.text = $"User ID :{ID}";
+        var version = Application.version;
+        versionText.text = $"V.{version}";
+    }
+    public void ShowLeaderBoard()
+    {
+        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_survival_leaderboard);
+    }
+    
+  
 }

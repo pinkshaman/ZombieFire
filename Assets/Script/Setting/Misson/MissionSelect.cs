@@ -13,7 +13,7 @@ public class MissionSelect : MonoBehaviour
     public Button getAllRewardButton;
 
     public AllReward allReward;
-
+    public CheckMission checkMission;
     public void Start()
     {
         CreateAllMission();
@@ -61,6 +61,7 @@ public class MissionSelect : MonoBehaviour
             {
                 allReward.rewardListToShow.Add(daily.missionBase.reward);
                 daily.TakeReward();
+                checkMission.CheckStatus();
             }
         }
         foreach (var repeat in allRepeatMisson)
@@ -69,6 +70,7 @@ public class MissionSelect : MonoBehaviour
             {
                 allReward.rewardListToShow.Add(repeat.missionBase.reward);
                 repeat.TakeReward();
+                checkMission.CheckStatus();
             }
         }
         foreach (var achievemnt in allAchievement)
@@ -77,6 +79,7 @@ public class MissionSelect : MonoBehaviour
             {
                 allReward.rewardListToShow.Add(achievemnt.achievementBase.reward);
                 achievemnt.TakeReward();
+                checkMission.CheckStatus();
             }
         }
         allReward.SetDataList();

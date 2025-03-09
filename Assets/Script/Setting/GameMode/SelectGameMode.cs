@@ -20,6 +20,9 @@ public class SelectGameMode : MonoBehaviour
     public GameObject statusBunus;
     public GameObject statusGuntrial;
 
+    public SurvivalCheck survivalCheckPanel;
+    public GameObject bonusCheckPanel;
+
     private int maxSurivalCount;
     private int maxBonusCount;
     private int survival;
@@ -74,7 +77,10 @@ public class SelectGameMode : MonoBehaviour
         {
             SceneManager.LoadScene(21);
         }
-      
+      else
+        {
+            survivalCheckPanel.gameObject.SetActive(true);
+        }
     }
     public void LoadBonusGame()
     {
@@ -82,6 +88,10 @@ public class SelectGameMode : MonoBehaviour
         {
             var randomIndex = Random.Range(22, 23);
             SceneManager.LoadScene(randomIndex);
+        }
+        else
+        {
+            bonusCheckPanel.SetActive(true);
         }
     }
     public void LoadGunTrialGame()

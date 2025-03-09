@@ -44,8 +44,5 @@ public class AllReward : MonoBehaviour
     {
         PlayerManager.Instance.TakeReward(reward);
     }
-    public void OnDisable()
-    {
-        
-    }
+  
 }

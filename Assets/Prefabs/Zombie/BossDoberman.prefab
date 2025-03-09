@@ -12,13 +12,15 @@ GameObject:
   - component: {fileID: 3515288942210956223}
   - component: {fileID: 6585961740229439764}
   - component: {fileID: 8650207488579691292}
+  - component: {fileID: 5692202924277069669}
+  - component: {fileID: 4325335148222434133}
   m_Layer: 0
   m_Name: BossDoberman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7527505956062746711
 Transform:
   m_ObjectHideFlags: 0
@@ -35,6 +37,7 @@ Transform:
   - {fileID: 956125190299741180}
   - {fileID: 8039107918683534860}
   - {fileID: 294422044736299452}
+  - {fileID: 3983444158803657908}
   - {fileID: 7831636582589836771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
@@ -48,7 +51,7 @@ Animator:
   m_GameObject: {fileID: 409222790889011540}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3a2cd5014a1345d458f2ecdfd7334b4a, type: 2}
-  m_Controller: {fileID: 9100000, guid: 22d5402c86b08604b8d1b10195878ec5, type: 2}
+  m_Controller: {fileID: 9100000, guid: d673a6fb5f572d544ac7a8a5410fdb53, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -66,7 +69,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409222790889011540}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.15
   m_Speed: 3.5
@@ -177,6 +180,77 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &5692202924277069669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409222790889011540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a834f0611dc2448a470834c291230e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieName: BossDoberman
+  zombieData:
+    ZombieName: 
+    Damage: 0
+    RangedAtk: 0
+    Health: 0
+    Speed: 0
+    duration: 0
+  properties:
+    Type: 5
+    Prefabs: {fileID: 409222790889011540}
+    clipDie: {fileID: 0}
+    clipDeadbyHS: {fileID: 0}
+    clipShot: {fileID: 0}
+    clipRage: {fileID: 0}
+    clipAttack: {fileID: 0}
+  anim: {fileID: 3515288942210956223}
+  audioSource: {fileID: 8650207488579691292}
+  agent: {fileID: 6585961740229439764}
+  playerTaget: {fileID: 0}
+  RageObj: {fileID: 6787769955656634647}
+  playerHealth: {fileID: 0}
+  BoneRig: {fileID: 8438832708193501210}
+  isRage: 0
+  isGetHit: 0
+  isDead: 0
+  hasRisen: 0
+  isRising: 0
+  OnReachingRadius:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartMoving:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4325335148222434133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409222790889011540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a4efa861e35e84a9e712825510fb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoint: 0
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  zombie: {fileID: 5692202924277069669}
+  zombieRepawn: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!1 &447154754727248903
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +281,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8514907531380593112}
-  m_LocalEulerAnglesHint: {x: -1.8522253, y: 11.007745, z: -8.687136}
+  m_LocalEulerAnglesHint: {x: -5.3145585, y: 1.6644025, z: 13.46359}
 --- !u!1 &736933396641468660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,6 +2827,8 @@ GameObject:
   - component: {fileID: 4962882945285914287}
   - component: {fileID: 7786515395140204446}
   - component: {fileID: 8974054260237356789}
+  - component: {fileID: 632108203841786217}
+  - component: {fileID: 8352785306929399989}
   m_Layer: 11
   m_Name: Head_Shot_Target_OJ
   m_TagString: Untagged
@@ -2804,6 +2880,46 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.13
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &632108203841786217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197795837840279519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
+--- !u!54 &8352785306929399989
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197795837840279519}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1361923579000156625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,6 +2932,7 @@ GameObject:
   - component: {fileID: 2625346538618745185}
   - component: {fileID: 6037974092093371765}
   - component: {fileID: 7374980620784563359}
+  - component: {fileID: 8881614369703747489}
   m_Layer: 0
   m_Name: DogLLeg2
   m_TagString: Untagged
@@ -2838,7 +2955,7 @@ Transform:
   m_Children:
   - {fileID: 2718513607389672860}
   m_Father: {fileID: 3027626092003361058}
-  m_LocalEulerAnglesHint: {x: 2.8717692, y: -3.5327208, z: -38.077496}
+  m_LocalEulerAnglesHint: {x: 0.116680086, y: 4.4913387, z: 37.6295}
 --- !u!136 &2625346538618745185
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2901,7 +3018,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.2583751, y: 0.0000031292443, z: 0.0000030528754}
+  m_ConnectedAnchor: {x: -0.2583751, y: 0.0000031292443, z: 0.0000030677766}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2935,6 +3052,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8881614369703747489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361923579000156625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &1542369582527767652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,7 +3096,7 @@ Transform:
   m_Children:
   - {fileID: 8438146349059161551}
   m_Father: {fileID: 7997001028391187281}
-  m_LocalEulerAnglesHint: {x: 0.18265209, y: -11.159084, z: -101.50936}
+  m_LocalEulerAnglesHint: {x: -15.355936, y: -3.1397119, z: 105.378555}
 --- !u!1 &2219462621383363947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,7 +3127,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6151402925368347972}
-  m_LocalEulerAnglesHint: {x: 1.8522692, y: -11.007776, z: -8.686814}
+  m_LocalEulerAnglesHint: {x: 9.211146, y: -2.9093716, z: 24.014118}
 --- !u!1 &2577055912166908847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,6 +3140,7 @@ GameObject:
   - component: {fileID: 124159434172341211}
   - component: {fileID: 8185325592824715458}
   - component: {fileID: 187356951615501932}
+  - component: {fileID: 6179451663867803173}
   m_Layer: 0
   m_Name: DogLLeg1
   m_TagString: Untagged
@@ -3032,7 +3163,7 @@ Transform:
   m_Children:
   - {fileID: 5647339520587030638}
   m_Father: {fileID: 294422044736299452}
-  m_LocalEulerAnglesHint: {x: 176.76376, y: -6.7138824, z: 115.29816}
+  m_LocalEulerAnglesHint: {x: -3.0265586, y: -178.23082, z: -63.38187}
 --- !u!136 &124159434172341211
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3079,7 +3210,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -3129,6 +3260,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6179451663867803173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2577055912166908847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &2733746426881624735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3347,7 @@ GameObject:
   - component: {fileID: 4841205406823775031}
   - component: {fileID: 4412833109101040382}
   - component: {fileID: 1859588962279289218}
+  - component: {fileID: 7484149008057848112}
   m_Layer: 0
   m_Name: DogRFLeg2
   m_TagString: Untagged
@@ -3225,7 +3370,7 @@ Transform:
   m_Children:
   - {fileID: 9189469617423915902}
   m_Father: {fileID: 8222283342494507435}
-  m_LocalEulerAnglesHint: {x: 1.5280617, y: 4.176334, z: 19.382446}
+  m_LocalEulerAnglesHint: {x: 0.5547917, y: -3.1329572, z: -23.224857}
 --- !u!136 &4841205406823775031
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3272,7 +3417,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -3288,7 +3433,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18411356, y: -0.000002205372, z: 0.000000018626455}
+  m_ConnectedAnchor: {x: -0.18411358, y: -0.0000021979215, z: -0.000000007450582}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -3322,6 +3467,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7484149008057848112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3739972507462045085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &4165004363631732999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,7 +3594,7 @@ Transform:
   m_Children:
   - {fileID: 8222283342494507435}
   m_Father: {fileID: 6702424816782127465}
-  m_LocalEulerAnglesHint: {x: 163.66313, y: 12.559134, z: 52.291576}
+  m_LocalEulerAnglesHint: {x: 32.012405, y: -150.56575, z: -114.399536}
 --- !u!1 &4888170552870968372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,7 +3625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3633556358485165419}
-  m_LocalEulerAnglesHint: {x: -0.0056873066, y: 1.2502496, z: 52.609287}
+  m_LocalEulerAnglesHint: {x: -2.834379, y: -1.5726117, z: -48.5545}
 --- !u!1 &4939707107235490993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3638,7 @@ GameObject:
   - component: {fileID: 6391302988444978295}
   - component: {fileID: 7444669718203479602}
   - component: {fileID: 871610536137372842}
+  - component: {fileID: 4124370203420972421}
   m_Layer: 0
   m_Name: DogRLeg1
   m_TagString: Untagged
@@ -3502,7 +3661,7 @@ Transform:
   m_Children:
   - {fileID: 5464697826376560012}
   m_Father: {fileID: 294422044736299452}
-  m_LocalEulerAnglesHint: {x: -176.76317, y: 6.7126923, z: 115.302444}
+  m_LocalEulerAnglesHint: {x: 5.1911273, y: 175.2483, z: -80.15736}
 --- !u!136 &6391302988444978295
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3565,7 +3724,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.02364206, y: 0.013721915, z: -0.076080546}
+  m_ConnectedAnchor: {x: 0.02364206, y: 0.013721915, z: -0.076080516}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3599,6 +3758,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &4124370203420972421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4939707107235490993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &5005832390538421554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,6 +3783,7 @@ GameObject:
   - component: {fileID: 5559991465810293797}
   - component: {fileID: 5654261526956525289}
   - component: {fileID: 3475857197758710218}
+  - component: {fileID: 6053221582107500163}
   m_Layer: 0
   m_Name: DogRLeg2
   m_TagString: Untagged
@@ -3633,7 +3806,7 @@ Transform:
   m_Children:
   - {fileID: 4455129961560764857}
   m_Father: {fileID: 2664635123738793311}
-  m_LocalEulerAnglesHint: {x: -2.8711174, y: 3.5314038, z: -38.070297}
+  m_LocalEulerAnglesHint: {x: 0.99403566, y: -6.1547747, z: 54.109375}
 --- !u!136 &5559991465810293797
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3730,6 +3903,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6053221582107500163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005832390538421554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &5130510214819279222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,7 +3946,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4455129961560764857}
-  m_LocalEulerAnglesHint: {x: 0.011299259, y: 5.091407, z: 59.41489}
+  m_LocalEulerAnglesHint: {x: -7.527104, y: 1.5314239, z: -45.3475}
 --- !u!1 &5172058611254617945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +3978,7 @@ Transform:
   m_Children:
   - {fileID: 5241456785479173324}
   m_Father: {fileID: 2361987251605745758}
-  m_LocalEulerAnglesHint: {x: -0.06183376, y: 3.9182858, z: 10.255913}
+  m_LocalEulerAnglesHint: {x: -0.14933966, y: 0.0000143592715, z: -0.00037053644}
 --- !u!1 &5300170298362691947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,6 +3991,7 @@ GameObject:
   - component: {fileID: 5310547798757698578}
   - component: {fileID: 775834363016305588}
   - component: {fileID: 4834008700249367233}
+  - component: {fileID: 8491981735187337582}
   m_Layer: 0
   m_Name: DogRFLeg1
   m_TagString: Untagged
@@ -3827,7 +4014,7 @@ Transform:
   m_Children:
   - {fileID: 4914243313628512492}
   m_Father: {fileID: 1962553912000157031}
-  m_LocalEulerAnglesHint: {x: -8.47744, y: 18.66142, z: -68.71429}
+  m_LocalEulerAnglesHint: {x: 39.543884, y: -20.677307, z: 60.58191}
 --- !u!136 &5310547798757698578
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3874,7 +4061,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -3924,6 +4111,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8491981735187337582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300170298362691947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &5950757213491681883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,7 +4134,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3983444158803657908}
   - component: {fileID: 884104145155779288}
-  - component: {fileID: 6557307976960405100}
   m_Layer: 11
   m_Name: HP_BAR_Pos_OJ
   m_TagString: Untagged
@@ -3950,12 +4149,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5950757213491681883}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000995773, y: 0.00000024562013, z: -0.88464963, w: -0.46625656}
-  m_LocalPosition: {x: 0.127, y: -0.187, z: -0}
-  m_LocalScale: {x: 0.9444505, y: 0.9444504, z: 0.94444996}
+  m_LocalRotation: {x: -0.49999964, y: 0.4999998, z: 0.4999995, w: -0.5000012}
+  m_LocalPosition: {x: 0, y: 1.1808237, z: 0.5349308}
+  m_LocalScale: {x: 0.9444508, y: 0.9444506, z: 0.94444984}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7997001028391187281}
+  m_Father: {fileID: 7527505956062746711}
   m_LocalEulerAnglesHint: {x: -0.00007810255, y: -0.00008782161, z: -124.416855}
 --- !u!33 &884104145155779288
 MeshFilter:
@@ -3965,27 +4164,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5950757213491681883}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &6557307976960405100
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5950757213491681883}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.08
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6037496994380083145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +4195,7 @@ Transform:
   m_Children:
   - {fileID: 1398850203750298016}
   m_Father: {fileID: 294422044736299452}
-  m_LocalEulerAnglesHint: {x: 0.0000008060807, y: -0.0000065120844, z: 17.28522}
+  m_LocalEulerAnglesHint: {x: -0.28381616, y: -1.3312213, z: -18.13264}
 --- !u!1 &6127726340700544621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,7 +4227,7 @@ Transform:
   m_Children:
   - {fileID: 1391983410191367274}
   m_Father: {fileID: 5647339520587030638}
-  m_LocalEulerAnglesHint: {x: -1.0797585, y: 0.69314057, z: 33.234337}
+  m_LocalEulerAnglesHint: {x: -1.2832402, y: 0.011724719, z: -33.249355}
 --- !u!1 &6181945213407599886
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,7 +4259,7 @@ Transform:
   m_Children:
   - {fileID: 4396293176632618607}
   m_Father: {fileID: 4914243313628512492}
-  m_LocalEulerAnglesHint: {x: 0.06183388, y: -3.9182854, z: 10.255912}
+  m_LocalEulerAnglesHint: {x: 0.8975482, y: 0.0061375806, z: 0.039640844}
 --- !u!1 &6310313349247697399
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,6 +4272,7 @@ GameObject:
   - component: {fileID: 426016948219929179}
   - component: {fileID: 1641981724224039003}
   - component: {fileID: 8182956643238114534}
+  - component: {fileID: 7005203218115291989}
   m_Layer: 0
   m_Name: DogLFLeg1
   m_TagString: Untagged
@@ -4116,7 +4295,7 @@ Transform:
   m_Children:
   - {fileID: 2361987251605745758}
   m_Father: {fileID: 4486509052193944174}
-  m_LocalEulerAnglesHint: {x: 8.477377, y: -18.661613, z: -68.714}
+  m_LocalEulerAnglesHint: {x: -36.13736, y: 14.334401, z: 59.569424}
 --- !u!136 &426016948219929179
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4163,7 +4342,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -4213,6 +4392,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7005203218115291989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310313349247697399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &6662318611285788567
 GameObject:
   m_ObjectHideFlags: 0
@@ -4243,7 +4435,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9189469617423915902}
-  m_LocalEulerAnglesHint: {x: 0.0054773134, y: -1.2502965, z: 52.608784}
+  m_LocalEulerAnglesHint: {x: -2.4436548, y: 5.615812, z: -60.732796}
 --- !u!1 &6787769955656634647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,14 +4462,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6787769955656634647}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.18200001, y: 0.1015, z: 0.184}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2185796569703625798}
   m_Father: {fileID: 7527505956062746711}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &2723530106799366836
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -6570,6 +6762,7 @@ GameObject:
   - component: {fileID: 3790885714069263763}
   - component: {fileID: 5213102692943660242}
   - component: {fileID: 363049210214964586}
+  - component: {fileID: 759917176411284220}
   m_Layer: 0
   m_Name: DogLFLeg2
   m_TagString: Untagged
@@ -6592,7 +6785,7 @@ Transform:
   m_Children:
   - {fileID: 3633556358485165419}
   m_Father: {fileID: 7455255442497549969}
-  m_LocalEulerAnglesHint: {x: -1.5279839, y: -4.17591, z: 19.382156}
+  m_LocalEulerAnglesHint: {x: 0.24744502, y: 4.2660484, z: -31.353497}
 --- !u!136 &3790885714069263763
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6639,7 +6832,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -6689,6 +6882,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &759917176411284220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050458654890881754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &7243276854770693563
 GameObject:
   m_ObjectHideFlags: 0
@@ -6722,7 +6928,7 @@ Transform:
   - {fileID: 8295587553732036646}
   - {fileID: 1962553912000157031}
   m_Father: {fileID: 1398850203750298016}
-  m_LocalEulerAnglesHint: {x: -0.0000018516749, y: 0.0000055193586, z: -2.145318}
+  m_LocalEulerAnglesHint: {x: -0.011682796, y: 0.406638, z: 3.1229594}
 --- !u!1 &7637949691068109811
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,7 +6959,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7997001028391187281}
-  m_LocalEulerAnglesHint: {x: 3.053331e-13, y: 9.1599965e-12, z: 25.818731}
+  m_LocalEulerAnglesHint: {x: 2.6583478, y: 0.4637593, z: -19.741056}
 --- !u!1 &7756863942243592379
 GameObject:
   m_ObjectHideFlags: 0
@@ -6785,7 +6991,7 @@ Transform:
   m_Children:
   - {fileID: 3875441734791618560}
   m_Father: {fileID: 5464697826376560012}
-  m_LocalEulerAnglesHint: {x: 1.0794845, y: -0.693899, z: 33.25433}
+  m_LocalEulerAnglesHint: {x: 1.2795427, y: -0.016003493, z: -48.403835}
 --- !u!1 &7785411961006399866
 GameObject:
   m_ObjectHideFlags: 0
@@ -6817,7 +7023,7 @@ Transform:
   m_Children:
   - {fileID: 7455255442497549969}
   m_Father: {fileID: 6702424816782127465}
-  m_LocalEulerAnglesHint: {x: -163.6631, y: -12.559166, z: 52.291553}
+  m_LocalEulerAnglesHint: {x: -32.013615, y: 150.56396, z: -114.39738}
 --- !u!1 &7854816476260981615
 GameObject:
   m_ObjectHideFlags: 0
@@ -6849,7 +7055,7 @@ Transform:
   m_Children:
   - {fileID: 1713896270805290755}
   m_Father: {fileID: 7997001028391187281}
-  m_LocalEulerAnglesHint: {x: -0.1826487, y: 11.159072, z: -101.509415}
+  m_LocalEulerAnglesHint: {x: 14.172731, y: 2.8339784, z: 105.78446}
 --- !u!1 &8163365599388269096
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,6 +7068,7 @@ GameObject:
   - component: {fileID: 2059597675912425388}
   - component: {fileID: 4199601900180864399}
   - component: {fileID: 3980188801105426020}
+  - component: {fileID: 1441801517584612033}
   m_Layer: 0
   m_Name: DogHead
   m_TagString: Untagged
@@ -6887,9 +7094,8 @@ Transform:
   - {fileID: 8514907531380593112}
   - {fileID: 4962882945285914287}
   - {fileID: 8060812637674396042}
-  - {fileID: 3983444158803657908}
   m_Father: {fileID: 8295587553732036646}
-  m_LocalEulerAnglesHint: {x: -0.000000093187715, y: 0.00000028124873, z: 72.32946}
+  m_LocalEulerAnglesHint: {x: -5.7244544, y: -6.4257116, z: -47.63914}
 --- !u!135 &2059597675912425388
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6934,7 +7140,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -6984,6 +7190,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1441801517584612033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163365599388269096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &8293515917250046020
 GameObject:
   m_ObjectHideFlags: 0
@@ -6996,6 +7215,7 @@ GameObject:
   - component: {fileID: 6974441180523879320}
   - component: {fileID: 8213158072819128750}
   - component: {fileID: 3996118295079529095}
+  - component: {fileID: 8680754945002008278}
   m_Layer: 0
   m_Name: DogSpine2
   m_TagString: Untagged
@@ -7018,7 +7238,7 @@ Transform:
   m_Children:
   - {fileID: 6702424816782127465}
   m_Father: {fileID: 3860041991529497455}
-  m_LocalEulerAnglesHint: {x: 0.000001460134, y: 0.000001555225, z: -4.2261705}
+  m_LocalEulerAnglesHint: {x: -0.16120446, y: -0.84884894, z: 5.604418}
 --- !u!65 &6974441180523879320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7063,7 +7283,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -7113,6 +7333,19 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8680754945002008278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8293515917250046020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &8438832708193501210
 GameObject:
   m_ObjectHideFlags: 0
@@ -7124,6 +7357,8 @@ GameObject:
   - component: {fileID: 294422044736299452}
   - component: {fileID: 4399994944717961532}
   - component: {fileID: 2786031023239904732}
+  - component: {fileID: 3182479568292899057}
+  - component: {fileID: 4966786128391077760}
   m_Layer: 0
   m_Name: DogPelvis
   m_TagString: Untagged
@@ -7149,7 +7384,7 @@ Transform:
   - {fileID: 3860041991529497455}
   - {fileID: 7815977485117783979}
   m_Father: {fileID: 7527505956062746711}
-  m_LocalEulerAnglesHint: {x: 90.000015, y: -69.70095, z: 89.99999}
+  m_LocalEulerAnglesHint: {x: 0.00001195283, y: -89.67748, z: -159.70094}
 --- !u!65 &4399994944717961532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7194,10 +7429,37 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &3182479568292899057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8438832708193501210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6c81e2b4f7d249a10881ba942f7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigids: []
+  anim: {fileID: 0}
+--- !u!114 &4966786128391077760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8438832708193501210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 1
 --- !u!1 &8633892788912839597
 GameObject:
   m_ObjectHideFlags: 0
@@ -7228,7 +7490,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 294422044736299452}
-  m_LocalEulerAnglesHint: {x: -0.0000121943785, y: -0.0000036259178, z: -125.33773}
+  m_LocalEulerAnglesHint: {x: -9.199264, y: -10.438943, z: 139.09772}
 --- !u!1 &8682020505027605298
 GameObject:
   m_ObjectHideFlags: 0
@@ -7259,7 +7521,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2718513607389672860}
-  m_LocalEulerAnglesHint: {x: -0.010344195, y: -5.091246, z: 59.436115}
+  m_LocalEulerAnglesHint: {x: 3.37759, y: -2.033939, z: -60.039627}
 --- !u!1 &9043931671827073992
 GameObject:
   m_ObjectHideFlags: 0
@@ -7291,4 +7553,4 @@ Transform:
   m_Children:
   - {fileID: 7997001028391187281}
   m_Father: {fileID: 6702424816782127465}
-  m_LocalEulerAnglesHint: {x: 0.00000125489, y: -0.0000015190882, z: -28.527376}
+  m_LocalEulerAnglesHint: {x: 2.7351477, y: -3.8932605, z: 17.653017}

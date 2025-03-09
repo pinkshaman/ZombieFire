@@ -57,6 +57,7 @@ public class SurvivalResult : Result
         progess.highestWave = wave;
         progess.highestScore = score;
         SurvivalMode.Instance.UpdateRank(progess);
+        SurvivalMode.Instance.ReportScore();
     }
      public override void WatchAdsButton()
     {

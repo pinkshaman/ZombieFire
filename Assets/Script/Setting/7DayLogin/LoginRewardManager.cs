@@ -91,8 +91,7 @@ public class LoginRewardManager : MonoBehaviour
         if (reward != null && reward.isCanTake && !reward.isTook)
         {
             reward.isTook = true;
-            reward.isCanTake = false;
-
+            
             Save7dayReward();
         }
     }

@@ -1,8 +1,10 @@
+using GooglePlayGames;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SocialPlatforms.Impl;
 
 [Serializable]
 public class SurvivalModeProgess
@@ -54,7 +56,10 @@ public class SurvivalMode : MonoBehaviour
             survivalModeProgess.highestWave = progess.highestWave;
         }
     }
-
+    public void ReportScore()
+    {
+        PlayGamesPlatform.Instance.ReportScore(survivalModeProgess.highestScore, GPGSIds.leaderboard_survival_leaderboard, (bool success) => { });
+    }
 
     [ContextMenu("SaveSuvivalMode")]
     public void SaveSuvivalMode()

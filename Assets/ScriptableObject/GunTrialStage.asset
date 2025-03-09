@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277a901b364c47b4cbe23ac80398cb27, type: 3}
+  m_Name: GunTrialStage
+  m_EditorClassIdentifier: 
+  waveList:
+  - waveNumber: 1
+    zombieList:
+    - zombie: {fileID: 2466182281165211636, guid: fc98077329bba4b468b54cf890f49080, type: 3}
+      quatity: 3
+    - zombie: {fileID: 2553796983226572467, guid: 67625735b51d06a43a1abf15880fdf9a, type: 3}
+      quatity: 5
+  - waveNumber: 2
+    zombieList:
+    - zombie: {fileID: 6490897852717533211, guid: e1895a4d2c0eeb048a07f720c77828bc, type: 3}
+      quatity: 5
+    - zombie: {fileID: 4706756620348509543, guid: 912fe6b5dc5571144809948819028ebc, type: 3}
+      quatity: 5
+  - waveNumber: 3
+    zombieList:
+    - zombie: {fileID: 6741506080007547240, guid: eef6488b82c0c3a40be660dda0ea93b1, type: 3}
+      quatity: 5
+    - zombie: {fileID: 1551875999176445215, guid: 256611cbd6830524bab681a7b6539b2c, type: 3}
+      quatity: 5
+  - waveNumber: 4
+    zombieList:
+    - zombie: {fileID: 1334191681617113990, guid: a158e9e36f9be8b4f90518027b73f575, type: 3}
+      quatity: 5
+    - zombie: {fileID: 9151062942202578539, guid: 5d83ffa9bdc6ee347b52ecd60b7d4e05, type: 3}
+      quatity: 5
+  - waveNumber: 5
+    zombieList:
+    - zombie: {fileID: 1996681407264920842, guid: 81efeb28da5b00343886cdf12ac1340c, type: 3}
+      quatity: 5
+    - zombie: {fileID: 2619431740408234700, guid: 1b664c682c1523c4295561a1ada86c44, type: 3}
+      quatity: 5
+    - zombie: {fileID: 5725318178752270087, guid: 87c94251c7e963e4aa224a61716aac9a, type: 3}
+      quatity: 5

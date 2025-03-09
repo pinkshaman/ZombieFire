@@ -13,6 +13,7 @@ public class BossHealth : Health
         Initialize();
         zombie = FindObjectOfType<Boss>();
         zombieRepawn = FindObjectOfType<ZombieRepawn>();
+        healthBar =FindObjectOfType<BossHPBar>();
         OnHealthChange.AddListener(healthBar.Fill);
         OnTakeDamage.AddListener(zombie.OnGetHit);
     }
