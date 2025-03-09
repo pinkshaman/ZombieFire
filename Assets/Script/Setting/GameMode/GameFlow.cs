@@ -90,6 +90,8 @@ public class GameFlow : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         Time.timeScale = 0;
+        BonusMode.Instance.UpdateRequireTimes();
+        SurvivalMode.Instance.UpdateRequireTimes();
         ActiveResultPanel();
 
     }
@@ -102,7 +104,7 @@ public class GameFlow : MonoBehaviour
     public virtual void ActiveResultPanel()
     {
         resutlPanel.SetActive(true);
-        var result = FindObjectOfType<Result>();
+        var result = FindObjectOfType<StageResult>();
         string rankClass = result.ReturnRank();
         Debug.Log($"RankClass:{rankClass}");
         StageGameMode.Instance.UpdateDataArenaProgess(stage.stageID, isStageClear, rankClass);

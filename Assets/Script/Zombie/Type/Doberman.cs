@@ -23,7 +23,7 @@ public class Doberman : Zombie
 
     public override void Move()
     {
-        if (isDead || agent == null || !agent.isOnNavMesh) return;
+        if (isDead || agent == null || !agent.isOnNavMesh|| isGetHit) return;
         agent.isStopped = false;
         agent.SetDestination(playerTaget.position);
         anim.SetBool("isWalking", true);
@@ -41,7 +41,7 @@ public class Doberman : Zombie
         BoneRig.SetActive(false);
 
         anim.SetBool("isDead", true);
-        Destroy(gameObject, 2.0f);
+
 
     }
 }

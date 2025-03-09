@@ -11,14 +11,6 @@ public class LoadingGame : MonoBehaviour
     private bool isLoading = false;
     public GameObject chooseStage;
 
-    void Start()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            ResetLegacyAnimations();
-        }
-    }
-
     void Update()
     {
         if (isLoading)
@@ -43,20 +35,8 @@ public class LoadingGame : MonoBehaviour
         if (!isLoading)
         {
             isLoading = true;
-            loadProgress = 0; // Reset tiến trình
-            loadingText.text = "0%"; // Hiển thị ban đầu
-        }
-    }
-
-    private void ResetLegacyAnimations()
-    {
-        foreach (Animation anim in FindObjectsOfType<Animation>())
-        {
-            if (anim.clip != null)
-            {
-                anim.Stop();  // Dừng animation nếu đang chạy
-                anim.Play();  // Chạy lại animation từ đầu
-            }
+            loadProgress = 0;
+            loadingText.text = "0%";
         }
     }
 }

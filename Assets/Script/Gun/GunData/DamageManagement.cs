@@ -50,8 +50,6 @@ public class DamageManagement : MonoBehaviour
 
         if (healthTarget.IsDead)
         {
-
-
             if (isHeadShot)
             {
                 HandleHeadShotKill();
@@ -71,8 +69,8 @@ public class DamageManagement : MonoBehaviour
         }
         headShotAlert.gameObject.SetActive(true);
         headShotAlert.HeadShotAlertCount(headShotCount);
-        OnHeadShot?.Invoke();
-
+        OnHeadShot.Invoke();
+        OnKill.Invoke();
         if (comboHeadShot != null)
         {
             StopCoroutine(comboHeadShot);
@@ -84,7 +82,7 @@ public class DamageManagement : MonoBehaviour
     {
         killAlert.gameObject.SetActive(true);
         killAlert.KillAlertPlay();
-        OnKill?.Invoke();
+        OnKill.Invoke();
     }
     private IEnumerator ResetHeadShotCombo()
     {

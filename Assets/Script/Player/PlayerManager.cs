@@ -186,6 +186,13 @@ public class PlayerManager : MonoBehaviour
             var item = playerData.itemList.itemLists.Find(item => item.itemName == reward.rewardName);
             item.quatity += reward.rewardAmmout;
         }
+        if(reward.rewardType == RewardType.Permisson)
+        {
+            var item = GunManager.Instance.playerGunList.playerGuns.Find(item => item.gunName == reward.rewardName);
+            item.isUnlocked = true;
+            item.ammoStoraged = 0;
+            item.starUpgrade = 1;
+        }
         UpdatePlayerData(playerData);
     }
 

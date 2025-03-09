@@ -50,8 +50,7 @@ public class Score : MonoBehaviour
                 totalZombie += group.quatity;
             }
         }
-        float exp = 100f / totalZombie;
-        return exp;
+        return totalZombie > 0 ? 100f / totalZombie : 0f;
     }
 
     public void GetHeadShotScore()
@@ -60,24 +59,26 @@ public class Score : MonoBehaviour
         rankExp += expPerZombie;
         totalExp += expPerZombie;
         headshotCount++;
+
         CheckRankUp();
         UpdateUI();
     }
 
     public void GetSkillScore()
     {
+        float expGain = expPerZombie * 0.6f;
         score += 20;
-        rankExp += (expPerZombie * 0.6f);
-        totalExp += (expPerZombie * 0.6f);
-        killCount++;    
+        rankExp += expGain;
+        totalExp += expGain;
+        killCount++;
+
         CheckRankUp();
         UpdateUI();
     }
 
     private void CheckRankUp()
     {
-        if (rankExp < expPerRank) return;
-        if (rankExp >= expPerRank)
+        while (rankExp >= expPerRank)
         {
             rankExp -= expPerRank;
             IncreaseRankClass();

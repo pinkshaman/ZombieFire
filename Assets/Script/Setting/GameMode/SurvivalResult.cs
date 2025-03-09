@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SurvivalResult : MonoBehaviour
+public class SurvivalResult : Result
 {
     public Text killText;
     public Text headShotText;
@@ -18,14 +18,14 @@ public class SurvivalResult : MonoBehaviour
     public Button TouchToExit;
 
     public DamageManagement damageManagement;
-    public Score score;
+    public SurvivalScore survivalScore;
     public SurvivalGameFlow survivalGameFlow;
     private int currentScore;
     private int currentWave;
 
     public void Start()
     {
-        var data = SurvivalMode.Instance.suvivalModeProgess;
+        var data = SurvivalMode.Instance.survivalModeProgess;
         currentScore = data.highestScore;
         currentWave = data.highestWave;
         ShowResult();
@@ -35,12 +35,12 @@ public class SurvivalResult : MonoBehaviour
     public void ShowResult()
     {
         maxHeadShotComboText.text = damageManagement.ReturnMaxHeadShotKill().ToString();
-        killText.text = score.ReturnKillCount();
-        headShotText.text = score.ReturnHeadShotCount();
+        killText.text = survivalScore.ReturnKillCount().ToString();
+        headShotText.text = survivalScore.ReturnHeadShotCount().ToString();
         waveArrivalText.text = survivalGameFlow.ReturnWave().ToString();
         maxHeadShotComboText.text = damageManagement.ReturnMaxHeadShotKill();
-        scoreText.text = score.ReturnScore();
-        int coin = score.ReturnRewardCoin();
+        scoreText.text = survivalScore.ReturnScoreCount().ToString();
+        int coin = survivalScore.ReturnCoin();
         rewardText.text = coin.ToString();
         UpdateReward();
         int.TryParse(scoreText.text, out int newScore);
@@ -49,8 +49,16 @@ public class SurvivalResult : MonoBehaviour
         {
             newRecordObject.SetActive(true);
         }
+        UpdateRank(newScore, newWave);
     }
-    public void WatchAdsButton()
+    public void UpdateRank(int score, int wave)
+    {
+        SurvivalModeProgess progess = new SurvivalModeProgess();
+        progess.highestWave = wave;
+        progess.highestScore = score;
+        SurvivalMode.Instance.UpdateRank(progess);
+    }
+     public override void WatchAdsButton()
     {
         var playerData = PlayerManager.Instance.playerData;
 

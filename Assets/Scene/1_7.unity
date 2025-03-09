@@ -9497,10 +9497,94 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -968.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9999961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0027925079
+      objectReference: {fileID: 0}
     - target: {fileID: 6614402971531923485, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_Name
       value: Game
       objectReference: {fileID: 0}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: BossSpawnPos.Array.data[0]
+      value: 
+      objectReference: {fileID: 968}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: BossSpawnPos.Array.data[1]
+      value: 
+      objectReference: {fileID: 178}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[0]
+      value: 
+      objectReference: {fileID: 240}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[1]
+      value: 
+      objectReference: {fileID: 536}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[2]
+      value: 
+      objectReference: {fileID: 755}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[3]
+      value: 
+      objectReference: {fileID: 356}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[4]
+      value: 
+      objectReference: {fileID: 558}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[5]
+      value: 
+      objectReference: {fileID: 186}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1337}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[7]
+      value: 
+      objectReference: {fileID: 795}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[8]
+      value: 
+      objectReference: {fileID: 400}
+    - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: SpawnPositionList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1021}
     - target: {fileID: 7175625126329278869, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: SpawnPotisionList.Array.data[0]
       value: 
@@ -9541,6 +9625,22 @@ PrefabInstance:
       propertyPath: SpawnPotisionList.Array.data[9]
       value: 
       objectReference: {fileID: 1021}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908877980276537725, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
