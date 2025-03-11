@@ -2920,7 +2920,7 @@ GameObject:
   - component: {fileID: 787724503694785615}
   m_Layer: 0
   m_Name: HelmetDoberman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3058,6 +3058,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 2513660511750168633}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 7191159067567738631}
 --- !u!82 &787724503694785615
 AudioSource:
@@ -4227,6 +4228,7 @@ GameObject:
   - component: {fileID: 7630463919603254922}
   - component: {fileID: 4593759367919466009}
   - component: {fileID: 8634685871395985393}
+  - component: {fileID: 6832724017746315222}
   m_Layer: 0
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -4333,7 +4335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSurFaceType: 0
+  hitSurFaceType: 2
 --- !u!54 &8634685871395985393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4361,6 +4363,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6832724017746315222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5788266918166550753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6f52ad4fcfb444b58b646d31ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6045898439591215056
 GameObject:
   m_ObjectHideFlags: 0
@@ -7809,9 +7823,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6700824556184795581}
   - component: {fileID: 1779476115545875695}
-  - component: {fileID: 8491007962925647831}
-  - component: {fileID: 7018721079163661020}
-  - component: {fileID: 306515721988963117}
+  - component: {fileID: 4071483444543185794}
+  - component: {fileID: 2901350014841507941}
+  - component: {fileID: 2912870114129660389}
   m_Layer: 11
   m_Name: Head_Shot_Target_OJ
   m_TagString: Head
@@ -7842,7 +7856,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8809590370927401080}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &8491007962925647831
+--- !u!135 &4071483444543185794
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7861,9 +7875,9 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.13
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7018721079163661020
+--- !u!114 &2901350014841507941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7876,7 +7890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSurFaceType: 1
---- !u!54 &306515721988963117
+--- !u!54 &2912870114129660389
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

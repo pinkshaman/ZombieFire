@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 4296568226552540969}
   - component: {fileID: 4802196995020536841}
   - component: {fileID: 6375796146036108073}
+  - component: {fileID: 7925764390788819688}
   m_Layer: 9
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -503,6 +504,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSurFaceType: 0
+--- !u!114 &7925764390788819688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441171779938225845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6f52ad4fcfb444b58b646d31ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &532474181852134555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4440,7 +4453,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5a0e91a71d9661c4a904dd1115dbf82b, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7104,7 +7116,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a313e22835922784c8c7e1f9d66dea7c, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7737,9 +7748,10 @@ GameObject:
   - component: {fileID: 2014031128851188746}
   - component: {fileID: 1777929086028073981}
   - component: {fileID: 8896678393757627832}
+  - component: {fileID: 5521618110272426313}
   m_Layer: 9
   m_Name: Shield
-  m_TagString: Unbreakable
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7870,6 +7882,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSurFaceType: 0
+--- !u!114 &5521618110272426313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796850741306165279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e07a952e0bef045ae21d8d1ccd88d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7058624422281279385
 GameObject:
   m_ObjectHideFlags: 0
@@ -9740,6 +9764,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 3607279363197109184}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 8969558438204594285}
 --- !u!82 &3354649706506416688
 AudioSource:

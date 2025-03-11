@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 164254209718430147}
   m_Layer: 0
   m_Name: GoldenShieldBlack
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,6 +382,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 8802947128885878336}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 3080914452850744578}
 --- !u!82 &164254209718430147
 AudioSource:
@@ -3547,7 +3548,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5a0e91a71d9661c4a904dd1115dbf82b, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4192,9 +4192,11 @@ GameObject:
   - component: {fileID: 5157004830618869908}
   - component: {fileID: 4397472379285337185}
   - component: {fileID: 5286203018701115996}
+  - component: {fileID: 174173178194017010}
+  - component: {fileID: 8299428849583484659}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Unbreakable
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4285,6 +4287,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &174173178194017010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150623397040790174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e07a952e0bef045ae21d8d1ccd88d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8299428849583484659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150623397040790174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 2
 --- !u!1 &4404793740846415015
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,6 +5130,9 @@ GameObject:
   - component: {fileID: 4634656570592125900}
   - component: {fileID: 4115244526889387720}
   - component: {fileID: 3557016498490083020}
+  - component: {fileID: 6788983146600947690}
+  - component: {fileID: 2515919350299765696}
+  - component: {fileID: 4204114954127749209}
   m_Layer: 0
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -5197,6 +5227,58 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6788983146600947690
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321130816313227615}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2515919350299765696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321130816313227615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ab3f3cca7dacd45b62034bdb34055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSurFaceType: 2
+--- !u!114 &4204114954127749209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321130816313227615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6f52ad4fcfb444b58b646d31ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5412225538528003057
 GameObject:
   m_ObjectHideFlags: 0
@@ -7449,7 +7531,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a313e22835922784c8c7e1f9d66dea7c, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

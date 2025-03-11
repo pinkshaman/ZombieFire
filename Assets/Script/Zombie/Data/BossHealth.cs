@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHealth : Health
+public class BossHealth : ZombieHealth
 {
-    public Zombie zombie;
-    public ZombieRepawn zombieRepawn;
-    private bool isDeadByHeadShot;
-    public BossHPBar healthBar;
+
     public override void Start()
     {
         Initialize();
-        zombie = FindObjectOfType<Boss>();
         zombieRepawn = FindObjectOfType<ZombieRepawn>();
         healthBar =FindObjectOfType<BossHPBar>();
         OnHealthChange.AddListener(healthBar.Fill);
         OnTakeDamage.AddListener(zombie.OnGetHit);
     }
-    public void Initialize()
+    public override void Initialize()
     {
         maxHealthPoint = zombie.zombieData.Health;
         HealthPoint = maxHealthPoint;
@@ -27,10 +23,8 @@ public class BossHealth : Health
     {
         zombieRepawn.OnZombieDeath(zombie.gameObject, gameObject);
         zombie.Die(isDeadByHeadShot);
-        base.Die();
-    }
-    public void CheckHeadShot(RaycastHit hitInfo)
-    {
-        isDeadByHeadShot = hitInfo.collider.CompareTag("Head");
+        MissonManager.Instance.UpdateMissionProgress(MissionRequireType.Kill, zombie.zombieData.ZombieName, 1);
+        MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Kill, zombie.zombieData.ZombieName, 1);
+        MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Kill, "Zombie", 1);
     }
 }

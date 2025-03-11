@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4325335148222434133}
   m_Layer: 0
   m_Name: BossDoberman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,6 +250,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 5692202924277069669}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 0}
 --- !u!1 &447154754727248903
 GameObject:
@@ -2831,7 +2832,7 @@ GameObject:
   - component: {fileID: 8352785306929399989}
   m_Layer: 11
   m_Name: Head_Shot_Target_OJ
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

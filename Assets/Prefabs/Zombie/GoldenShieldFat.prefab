@@ -4526,7 +4526,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5a0e91a71d9661c4a904dd1115dbf82b, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4657,9 +4656,10 @@ GameObject:
   - component: {fileID: 3076555623103695991}
   - component: {fileID: 7602409450297749268}
   - component: {fileID: 476879708674470116}
+  - component: {fileID: 5168222504761167289}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Unbreakable
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4790,6 +4790,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5168222504761167289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512971025204553895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e07a952e0bef045ae21d8d1ccd88d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5514005872947067913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5808,6 +5820,7 @@ GameObject:
   - component: {fileID: 4892527458189139880}
   - component: {fileID: 2526632835322797472}
   - component: {fileID: 8912322944631280169}
+  - component: {fileID: 965813296816000152}
   m_Layer: 0
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -5942,6 +5955,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &965813296816000152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246694136261741658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6f52ad4fcfb444b58b646d31ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7311985928290791800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8989,7 +9014,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a313e22835922784c8c7e1f9d66dea7c, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9386,7 +9410,7 @@ GameObject:
   - component: {fileID: 1819163210814611118}
   m_Layer: 0
   m_Name: GoldenShieldFat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9621,6 +9645,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 772925864690282814}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 4358805181166003724}
 --- !u!1 &9164212108152352383
 GameObject:

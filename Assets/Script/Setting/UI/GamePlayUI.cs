@@ -17,6 +17,7 @@ public class GamePlayUI : MonoBehaviour
     public Button reloadButton;
     public ScratchShow scratchShow;
     public GameObject ShieldEffect;
+    public SplashShow splashShow;
     public UnityEvent OnUsingShield;
 
     private bool _isUsingShield;
@@ -91,6 +92,10 @@ public class GamePlayUI : MonoBehaviour
         var clip = ShieldEffect.GetComponent<Animation>();
         clip.Play();
 
+    }
+    public void ShowSplash()
+    {
+        splashShow.ShowRandomScratch();
     }
 
 }

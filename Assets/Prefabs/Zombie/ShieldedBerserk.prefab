@@ -3561,7 +3561,7 @@ GameObject:
   - component: {fileID: 2146807012634146194}
   m_Layer: 0
   m_Name: ShieldedBerserk
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3796,6 +3796,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 8955858768398232910}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 1389319891296145204}
 --- !u!1 &2748327172038045879
 GameObject:
@@ -5216,6 +5217,7 @@ GameObject:
   - component: {fileID: 2839156471577641173}
   - component: {fileID: 6240676862220570819}
   - component: {fileID: 6972958157093043836}
+  - component: {fileID: 4989980209717960590}
   m_Layer: 0
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -5350,6 +5352,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4989980209717960590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4649023984987402689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6f52ad4fcfb444b58b646d31ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4692093091456094733
 GameObject:
   m_ObjectHideFlags: 0

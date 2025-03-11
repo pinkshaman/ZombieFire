@@ -38,8 +38,20 @@ public class GunRayCaster : MonoBehaviour
         {
             var effectPrefabs = HitEffectManager.Instance.GetEffectPrefabs(hitSurface.hitSurFaceType);
             Instantiate(effectPrefabs, hitInfo.point, effectRotation);
-            DeliverDamage(hitInfo);
 
+            Helmet helmet = hitInfo.collider.GetComponent<Helmet>();
+            if (helmet != null)
+            {
+                helmet.TakeHit();
+            }
+            Shield shield = hitInfo.collider.GetComponent<Shield>();
+            if (shield != null)
+            {
+                shield.TakeHit();
+                return;
+            }
+            
+            DeliverDamage(hitInfo);
         }
         Debug.Log($"{hitInfo.collider.gameObject.tag}");
     }

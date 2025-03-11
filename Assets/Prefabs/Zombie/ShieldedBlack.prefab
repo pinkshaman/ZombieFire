@@ -6561,7 +6561,7 @@ GameObject:
   - component: {fileID: 620210708675681445}
   m_Layer: 0
   m_Name: ShieldedBlack
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6796,6 +6796,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 1872054766051512231}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 7024262894292956565}
 --- !u!1 &7550563642760403300
 GameObject:
@@ -9244,7 +9245,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a313e22835922784c8c7e1f9d66dea7c, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9375,6 +9375,7 @@ GameObject:
   - component: {fileID: 2435545967130176253}
   - component: {fileID: 4129999754256933685}
   - component: {fileID: 5197932302364107314}
+  - component: {fileID: 3337937322644623484}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Shield
@@ -9508,6 +9509,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3337937322644623484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8251296495022564407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e07a952e0bef045ae21d8d1ccd88d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8359690991928360288
 GameObject:
   m_ObjectHideFlags: 0
@@ -9554,6 +9567,7 @@ GameObject:
   - component: {fileID: 5520203854363304966}
   - component: {fileID: 233289264152709542}
   - component: {fileID: 8068358590802914396}
+  - component: {fileID: 4830703937613138180}
   m_Layer: 0
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -9688,6 +9702,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4830703937613138180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419902054182721864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6f52ad4fcfb444b58b646d31ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8444628817632756481
 GameObject:
   m_ObjectHideFlags: 0

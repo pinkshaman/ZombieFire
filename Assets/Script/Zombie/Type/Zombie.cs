@@ -78,7 +78,7 @@ public abstract class Zombie : MonoBehaviour
         }
 
     }
-    public void Start()
+    public virtual void Start()
     {
         OnReachingRadius.AddListener(Attack);
         OnStartMoving.AddListener(StopAttack);
@@ -149,7 +149,7 @@ public abstract class Zombie : MonoBehaviour
         }
 
     }
-    public void CheckGetHit()
+    public virtual void CheckGetHit()
     {
         OnGetHit();
         if (isRage) return;
@@ -164,14 +164,14 @@ public abstract class Zombie : MonoBehaviour
     {
         StopMove();
         anim.SetTrigger("GetHit");
-        var getHitIndex = Random.Range(0, 1);
+        var getHitIndex = Random.Range(0, 2);
         anim.SetInteger("GetHitType", getHitIndex);
 
         yield return new WaitForSeconds(2.5f);
         if (!isDead) Move();
         isGetHit = false;
     }
-    public void OnGetHit()
+    public virtual void OnGetHit()
     {
         if (isGetHit) return;
         isGetHit = true;
@@ -202,7 +202,7 @@ public abstract class Zombie : MonoBehaviour
         }
         else
         {
-            int deathType = Random.Range(1, 3);
+            int deathType = Random.Range(1, 4);
             anim.SetInteger("DeathType", deathType);
         }
     }
@@ -214,12 +214,12 @@ public abstract class Zombie : MonoBehaviour
         agent.SetDestination(playerTaget.position);
         if(isRage)
         {
-            int moveType = Random.Range(4, 7);
+            int moveType = Random.Range(4, 8);
             anim.SetInteger("MoveType", moveType);
         }
         else
         {
-            int moveType = Random.Range(1, 3);
+            int moveType = Random.Range(1, 4);
             anim.SetInteger("MoveType", moveType);
         }
     }

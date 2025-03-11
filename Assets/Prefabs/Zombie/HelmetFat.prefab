@@ -3658,7 +3658,7 @@ GameObject:
   - component: {fileID: 2120275653612516034}
   m_Layer: 0
   m_Name: HelmetFat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3893,6 +3893,7 @@ MonoBehaviour:
       m_Calls: []
   zombie: {fileID: 3342311234705336035}
   zombieRepawn: {fileID: 0}
+  isDeadByHeadShot: 0
   healthBar: {fileID: 7741129426567104898}
 --- !u!1 &4574926098145220386
 GameObject:
@@ -4079,6 +4080,7 @@ GameObject:
   - component: {fileID: 1691924165373367955}
   - component: {fileID: 6783094022315947300}
   - component: {fileID: 525251883365711998}
+  - component: {fileID: 4682457970463167546}
   m_Layer: 0
   m_Name: Helmet_OJ
   m_TagString: Helmet
@@ -4213,6 +4215,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4682457970463167546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4649395343450691688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6f52ad4fcfb444b58b646d31ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4773237391600558839
 GameObject:
   m_ObjectHideFlags: 0

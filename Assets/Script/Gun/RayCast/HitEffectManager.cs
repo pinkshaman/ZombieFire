@@ -8,7 +8,8 @@ using UnityEngine;
 public enum HitSurfaceType
 {
     Dirt = 0,
-    Blood =1,
+    Blood = 1,
+    ShieldHit = 2,
 }
 [Serializable]
 public class HitEffectMapper

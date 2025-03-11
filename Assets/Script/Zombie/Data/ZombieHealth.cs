@@ -7,7 +7,7 @@ public class ZombieHealth : Health
 {
     public Zombie zombie;
     public ZombieRepawn zombieRepawn;
-    private bool isDeadByHeadShot;
+    public bool isDeadByHeadShot;
     public HPBar healthBar;
 
     public override void Start()
@@ -19,7 +19,7 @@ public class ZombieHealth : Health
         OnTakeDamage.AddListener(zombie.OnGetHit);
         OnTakeDamage.AddListener(healthBar.FacingPlayer);
     }
-    public void Initialize()
+    public virtual void Initialize()
     {
         maxHealthPoint = zombie.zombieData.Health;
         HealthPoint = maxHealthPoint;
