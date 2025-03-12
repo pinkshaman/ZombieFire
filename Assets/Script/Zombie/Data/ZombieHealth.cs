@@ -27,7 +27,7 @@ public class ZombieHealth : Health
     }
     public override void Die()
     {
-        zombieRepawn.OnZombieDeath(zombie.gameObject, gameObject);
+        zombieRepawn.OnZombieDeath(zombie.gameObject);
         zombie.Die(isDeadByHeadShot);
         MissonManager.Instance.UpdateMissionProgress(MissionRequireType.Kill,zombie.zombieData.ZombieName, 1);
         MissonManager.Instance.UpdateAchievementProgess(MissionRequireType.Kill,zombie.zombieData.ZombieName,1);

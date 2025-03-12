@@ -48,7 +48,7 @@ public class Boss : Zombie
         smoke.Play();
         foreach (Transform pos in SummonPos)
         {
-            int radomZombie = Random.Range(0, zombieList.Count + 1);
+            int radomZombie = Random.Range(0, zombieList.Count);
             Instantiate(zombieList[radomZombie].gameObject, pos.position, Quaternion.identity);
         }
 

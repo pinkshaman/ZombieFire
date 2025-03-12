@@ -43,21 +43,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7343894243866476951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e51d06b432bca84b8a557739bfed920, type: 3}
+  m_Script: {fileID: 11500000, guid: 0511b58bd36c14e4cb7b2305c463561a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPotisionList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnSpeed: 1
+  SpawnPositionList: []
+  BossSpawnPos: []
+  spawnSpeed: 0
+  HpBoss: {fileID: 0}
   OnZombieChange:
     m_PersistentCalls:
       m_Calls: []

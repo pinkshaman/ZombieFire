@@ -15,8 +15,7 @@ public class ZombieRepawn : MonoBehaviour
     public UnityEvent OnZombieClear;
     public UnityEvent OnSpawnDone;
     public UnityEvent<int> OnStartSpawn;
-    private Dictionary<GameObject, Queue<GameObject>> zombiePools = new Dictionary<GameObject, Queue<GameObject>>();
-
+    private Dictionary<string, Queue<GameObject>> zombiePools = new Dictionary<string, Queue<GameObject>>();
     public int LiveZombie
     {
         get => liveZombie;
@@ -58,7 +57,7 @@ public class ZombieRepawn : MonoBehaviour
 
         OnSpawnDone.Invoke();
     }
-    private void SpawnZombie(GameObject zombiePrefab)
+    public virtual void SpawnZombie(GameObject zombiePrefab)
     {
         if (zombiePrefab == null) return;
 
@@ -84,16 +83,18 @@ public class ZombieRepawn : MonoBehaviour
         zombie.SetActive(true);
     }
 
-    private GameObject GetZombieFromPool(GameObject zombiePrefab)
+    public GameObject GetZombieFromPool(GameObject zombiePrefab)
     {
-        if (!zombiePools.ContainsKey(zombiePrefab))
+        string prefabName = zombiePrefab.name;
+
+        if (!zombiePools.ContainsKey(prefabName))
         {
-            zombiePools[zombiePrefab] = new Queue<GameObject>();
+            zombiePools[prefabName] = new Queue<GameObject>();
         }
 
-        if (zombiePools[zombiePrefab].Count > 0)
+        if (zombiePools[prefabName].Count > 0)
         {
-            return zombiePools[zombiePrefab].Dequeue();
+            return zombiePools[prefabName].Dequeue();
         }
         else
         {
@@ -101,31 +102,39 @@ public class ZombieRepawn : MonoBehaviour
         }
     }
 
-    public void ReturnZombieToPool(GameObject zombiePrefab, GameObject zombie)
+    public void ReturnZombieToPool(GameObject zombie)
     {
         zombie.SetActive(false);
-        if (!zombiePools.ContainsKey(zombiePrefab))
+        zombie.GetComponent<Zombie>().ResetState();
+
+        if (!zombiePools.ContainsKey(zombie.name))
         {
-            zombiePools[zombiePrefab] = new Queue<GameObject>();
+            zombiePools[zombie.name] = new Queue<GameObject>();
         }
-        zombiePools[zombiePrefab].Enqueue(zombie);
+
+        zombiePools[zombie.name].Enqueue(zombie);
     }
 
-    public void OnZombieDeath(GameObject zombiePrefab, GameObject zombie)
+    public void OnZombieDeath(GameObject zombie)
     {
         LiveZombie--;
-        StartCoroutine(ReturnZombieWithDelay(zombiePrefab, zombie, 3f));
-
-        if (LiveZombie == 0)
+        StartCoroutine(ReturnZombieWithDelay(zombie, 3f));
+        if (LiveZombie <= 0)
         {
             Debug.Log("Zombie Clear");
             OnZombieClear?.Invoke();
         }
     }
 
-    private IEnumerator ReturnZombieWithDelay(GameObject zombiePrefab, GameObject zombie, float delay)
+    private IEnumerator ReturnZombieWithDelay(GameObject zombie, float delay)
     {
         yield return new WaitForSeconds(delay);
-        ReturnZombieToPool(zombiePrefab, zombie);
+        ReturnZombieToPool(zombie);
+    }
+
+    private void ResetZombieState(GameObject zombie)
+    {
+        var zombieScript = zombie.GetComponent<Zombie>();
+        zombieScript.ResetState();
     }
 }

@@ -48,6 +48,10 @@ public class GameFlow : MonoBehaviour
             {
                 StartStage();
             }
+            else if(stage.isBossWave)
+            {
+                break;
+            }
             else
             {
                 PlayAlert(wave.waveNumber);
@@ -80,7 +84,7 @@ public class GameFlow : MonoBehaviour
     public void ClearStage()
     {
         if (!isStageClear) return;
-
+        StartSlowMotion();
         clearAlert.gameObject.SetActive(true);
         clearAlert.AlertPlay();
         StartCoroutine(GameEnd());
@@ -94,6 +98,20 @@ public class GameFlow : MonoBehaviour
         SurvivalMode.Instance.UpdateRequireTimes();
         ActiveResultPanel();
 
+    }
+    public void StartSlowMotion()
+    {
+        StartCoroutine(SlowMotionEffect());
+    }
+    private IEnumerator SlowMotionEffect()
+    {
+        Time.timeScale = 0.2f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+        yield return new WaitForSecondsRealtime(2f);
+
+        Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = 0.02f;
     }
     public void StartStage()
     {

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
@@ -22,6 +23,11 @@ public abstract class Zombie : MonoBehaviour
     public bool isDead;
     public bool hasRisen = false;
     public bool isRising;
+
+    private Vector3 targetPosition;
+    private bool hasTarget = false;
+    private float stopDistance = 0.5f;
+
     public UnityEvent OnReachingRadius;
     public UnityEvent OnStartMoving;
     private bool _isMovingValue;
@@ -60,7 +66,7 @@ public abstract class Zombie : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         playerHealth = FindObjectOfType<PlayerHealth>();
-       
+
     }
     public IEnumerator InitializeZombieData()
     {
@@ -91,7 +97,30 @@ public abstract class Zombie : MonoBehaviour
         var zombiehealth = GetComponentInParent<ZombieHealth>();
         zombiehealth.OnTakeDamage.AddListener(CheckGetHit);
     }
+    public void SetTargetPosition(Vector3 pos)
+    {
+        targetPosition = pos;
+        hasTarget = true;
+        Move();
+    }
+    public void ResetState()
+    {
+        isDead = false;
+        isGetHit = false;
+        isRage = false;
+        hasRisen = false;
+        isRising = false;
+        hasTarget = false;
 
+        anim.SetBool("isDead", false);
+        anim.SetBool("isAttacking", false);
+
+        var zombieHealth = GetComponent<ZombieHealth>();
+        zombieHealth.InitHealth(zombieData.Health);
+
+        RageObj.SetActive(false);
+        BoneRig.SetActive(true);
+    }
     public virtual void CheckHeight()
     {
         if (hasRisen) return;
@@ -154,8 +183,8 @@ public abstract class Zombie : MonoBehaviour
         OnGetHit();
         if (isRage) return;
         isRage = true;
-        audioSource.clip =properties.clipRage;
-        audioSource.Play(); 
+        audioSource.clip = properties.clipRage;
+        audioSource.Play();
         RageObj.SetActive(true);
         agent.speed *= 1.5f;
 
@@ -177,7 +206,7 @@ public abstract class Zombie : MonoBehaviour
         isGetHit = true;
         StartCoroutine(GetHit());
     }
-    public void CheckDistance()
+    public virtual void CheckDistance()
     {
         var distanceToPlayer = Vector3.Distance(transform.position, playerTaget.position);
         IsMoving = distanceToPlayer > zombieData.RangedAtk;
@@ -209,10 +238,19 @@ public abstract class Zombie : MonoBehaviour
 
     public virtual void Move()
     {
-        if (isDead || agent == null || !agent.isOnNavMesh|| isGetHit) return;
+        if (isDead || agent == null || !agent.isOnNavMesh || isGetHit) return;
         agent.isStopped = false;
-        agent.SetDestination(playerTaget.position);
-        if(isRage)
+
+        if (hasTarget)
+        {
+            agent.SetDestination(targetPosition);
+        }
+        else
+        {
+            agent.SetDestination(playerTaget.position);
+        }
+
+        if (isRage)
         {
             int moveType = Random.Range(4, 8);
             anim.SetInteger("MoveType", moveType);
@@ -221,6 +259,26 @@ public abstract class Zombie : MonoBehaviour
         {
             int moveType = Random.Range(1, 4);
             anim.SetInteger("MoveType", moveType);
+        }
+    }
+
+    public void CheckArrivedAtTarget()
+    {
+        if (!hasTarget || isDead) return;
+
+        float distance = Vector3.Distance(transform.position, targetPosition);
+        if (distance <= stopDistance)
+        {
+            hasTarget = false;
+            OnReachEndPos();
+        }
+    }
+    public void OnReachEndPos()
+    {
+        ZombieRepawn respawnManager = FindObjectOfType<ZombieRepawn>();
+        if (respawnManager != null)
+        {
+            respawnManager.ReturnZombieToPool(gameObject);
         }
     }
     public virtual void StopMove()
@@ -241,7 +299,7 @@ public abstract class Zombie : MonoBehaviour
         CheckDistance();
         CheckOffMesh();
         CheckHeight();
-
+        CheckArrivedAtTarget();
         if (IsMoving)
         {
             Move();
