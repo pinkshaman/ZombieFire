@@ -46,7 +46,7 @@ public class RpgGun : Gun
 
     }
 
-    void Fire()
+   public void Fire()
     {
         GameObject rocket = RocketPooling.Instance.GetRocket();
         rocket.GetComponent<Rocket>().ShootRocket(transform.position, transform.rotation);
