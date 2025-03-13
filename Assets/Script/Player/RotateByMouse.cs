@@ -15,6 +15,8 @@ public class RotateByMouse : MonoBehaviour
     private float yaw;
     private Vector2 lastInputPosition;
     private bool isDragging = false;
+    private int activeFingerId = -1;
+
 
     public Transform horizontalPivot;
     public Transform verticalPivot;
@@ -69,32 +71,48 @@ public class RotateByMouse : MonoBehaviour
 
     private void HandleTouchRotation()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount == 0)
         {
-            Touch touch = Input.GetTouch(0);
+            activeFingerId = -1;
+            isDragging = false;
+            return;
+        }
+
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+            Touch touch = Input.GetTouch(i);
 
             if (!IsInRotationZone(touch.position))
-                return;
+                continue;
 
-            switch (touch.phase)
+            if (activeFingerId == -1 || activeFingerId == touch.fingerId)
             {
-                case TouchPhase.Began:
-                    lastInputPosition = touch.position;
-                    isDragging = true;
-                    break;
-
-                case TouchPhase.Moved:
-                    if (isDragging)
-                    {
-                        Vector2 delta = touch.position - lastInputPosition;
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        activeFingerId = touch.fingerId;
                         lastInputPosition = touch.position;
-                        RotateCamera(delta);
-                    }
-                    break;
+                        isDragging = true;
+                        break;
 
-                case TouchPhase.Ended:
-                    isDragging = false;
-                    break;
+                    case TouchPhase.Moved:
+                        if (isDragging)
+                        {
+                            Vector2 delta = touch.position - lastInputPosition;
+                            lastInputPosition = touch.position;
+                            RotateCamera(delta);
+                        }
+                        break;
+
+                    case TouchPhase.Ended:
+                    case TouchPhase.Canceled:
+                        if (activeFingerId == touch.fingerId)
+                        {
+                            isDragging = false;
+                            activeFingerId = -1;
+                        }
+                        break;
+                }
             }
         }
     }

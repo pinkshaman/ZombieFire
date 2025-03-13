@@ -15,7 +15,7 @@ public class Gold : MonoBehaviour
     public Text goldQuatityText;
     public Text bonusText;
     public GameObject bonusLabel;
-
+    public PurchasedPanel purchasedPanel;
     public bool isBought;
 
     public void Start()
@@ -35,12 +35,16 @@ public class Gold : MonoBehaviour
         {
             playerData.gold += goldQuatity;
             PlayerManager.Instance.UpdatePlayerData(playerData);
+            purchasedPanel.gameObject.SetActive(true);
+            purchasedPanel.SetData(goldQuatity);
         }
         else
         {
             var newGold = Mathf.RoundToInt(goldQuatity * (1 + percentBonus / 100));
             playerData.gold += newGold;
             PlayerManager.Instance.UpdatePlayerData(playerData);
+            purchasedPanel.gameObject.SetActive(true);
+            purchasedPanel.SetData(newGold);
         }
     }
     

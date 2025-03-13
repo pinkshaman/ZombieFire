@@ -8,31 +8,12 @@ public class Rocket : MonoBehaviour
     public float explosionRadius;
     public float explosionForce;
     public int damage;
-    public float bulletSpeed;
     public GameObject fireTail;
     public Rigidbody rb;
-    public bool isShooting;
 
-    public void ShootRocket(Vector3 startPosition, Quaternion rotation)
-    {
-        transform.position = startPosition;
-        transform.rotation = rotation;
-        isShooting = true;
-        gameObject.SetActive(true);
-    }
-
-    public void Update()
-    {
-        if (!isShooting) return;
-        transform.position += bulletSpeed * Time.deltaTime * transform.forward;
-    }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Weapon"))
-        {
-            return;
-        }
         Explode();
     }
 
@@ -64,8 +45,6 @@ public class Rocket : MonoBehaviour
 
     public void ResetRocket()
     {
-        isShooting = false;
-        gameObject.SetActive(false);
         RocketPooling.Instance.ReturnRocket(gameObject);
     }
 }

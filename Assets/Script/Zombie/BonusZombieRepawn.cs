@@ -6,17 +6,19 @@ public class BonusZombieRepawn : ZombieRepawn
 {
     public List<GameObject> EndPos;
 
-
-
     public override void SpawnZombie(GameObject zombiePrefab)
     {
-        base.SpawnZombie(zombiePrefab);
+        Transform spawnPoint;
+        spawnPoint = SpawnPositionList[Random.Range(0, SpawnPositionList.Count)].transform;
 
-        Zombie zombieScript = zombiePrefab.GetComponent<Zombie>();
-        if (zombieScript != null && EndPos.Count > 0)
-        {
-            Vector3 randomEndPos = EndPos[Random.Range(0, EndPos.Count)].transform.position;
-            zombieScript.SetTargetPosition(randomEndPos);
-        }
+        GameObject zombie = GetZombieFromPool(zombiePrefab);
+        zombie.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
+        zombie.SetActive(true);
+
+    }
+
+    public List<GameObject> ReturnList()
+    {
+        return EndPos;
     }
 }

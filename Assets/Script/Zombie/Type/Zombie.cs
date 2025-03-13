@@ -24,10 +24,6 @@ public abstract class Zombie : MonoBehaviour
     public bool hasRisen = false;
     public bool isRising;
 
-    private Vector3 targetPosition;
-    private bool hasTarget = false;
-    private float stopDistance = 0.5f;
-
     public UnityEvent OnReachingRadius;
     public UnityEvent OnStartMoving;
     private bool _isMovingValue;
@@ -58,7 +54,7 @@ public abstract class Zombie : MonoBehaviour
         }
     }
 
-    public void Awake()
+    public virtual void Awake()
     {
         StartCoroutine(InitializeZombieData());
         playerTaget = GameObject.FindGameObjectWithTag("Player").transform;
@@ -97,12 +93,7 @@ public abstract class Zombie : MonoBehaviour
         var zombiehealth = GetComponentInParent<ZombieHealth>();
         zombiehealth.OnTakeDamage.AddListener(CheckGetHit);
     }
-    public void SetTargetPosition(Vector3 pos)
-    {
-        targetPosition = pos;
-        hasTarget = true;
-        Move();
-    }
+
     public void ResetState()
     {
         isDead = false;
@@ -110,7 +101,6 @@ public abstract class Zombie : MonoBehaviour
         isRage = false;
         hasRisen = false;
         isRising = false;
-        hasTarget = false;
 
         anim.SetBool("isDead", false);
         anim.SetBool("isAttacking", false);
@@ -240,15 +230,7 @@ public abstract class Zombie : MonoBehaviour
     {
         if (isDead || agent == null || !agent.isOnNavMesh || isGetHit) return;
         agent.isStopped = false;
-
-        if (hasTarget)
-        {
-            agent.SetDestination(targetPosition);
-        }
-        else
-        {
-            agent.SetDestination(playerTaget.position);
-        }
+        agent.SetDestination(playerTaget.position);
 
         if (isRage)
         {
@@ -262,25 +244,6 @@ public abstract class Zombie : MonoBehaviour
         }
     }
 
-    public void CheckArrivedAtTarget()
-    {
-        if (!hasTarget || isDead) return;
-
-        float distance = Vector3.Distance(transform.position, targetPosition);
-        if (distance <= stopDistance)
-        {
-            hasTarget = false;
-            OnReachEndPos();
-        }
-    }
-    public void OnReachEndPos()
-    {
-        ZombieRepawn respawnManager = FindObjectOfType<ZombieRepawn>();
-        if (respawnManager != null)
-        {
-            respawnManager.ReturnZombieToPool(gameObject);
-        }
-    }
     public virtual void StopMove()
     {
         agent.ResetPath();
@@ -299,7 +262,6 @@ public abstract class Zombie : MonoBehaviour
         CheckDistance();
         CheckOffMesh();
         CheckHeight();
-        CheckArrivedAtTarget();
         if (IsMoving)
         {
             Move();

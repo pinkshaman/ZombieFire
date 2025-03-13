@@ -137,7 +137,7 @@ public class SelectGameMode : MonoBehaviour
             int remainingTime = GetRemainingTime();
             if (remainingTime <= 0)
             {
-                gunTrialTimeCount.text = "";
+                gunTrialTimeCount.text = "Ready!";
                 isCounting = false;
                 CheckStatus();
                 yield break;

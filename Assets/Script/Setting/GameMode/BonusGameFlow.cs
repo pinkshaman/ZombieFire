@@ -28,7 +28,7 @@ public class BonusGameFlow : GameFlow
         OnStageClear.AddListener(ClearStage);
 
         StartCoroutine(SpawnByNumberWave());
-        StopCoroutine(StartCountdown());
+        StartCoroutine(StartCountdown());
     }
     public override IEnumerator SpawnByNumberWave()
     {
@@ -51,6 +51,8 @@ public class BonusGameFlow : GameFlow
         OnStageClear.Invoke();
         StopCoroutine("StartCountdown");
     }
+
+
     private IEnumerator StartCountdown()
     {
         while (timeRemaining > 0)
@@ -72,8 +74,20 @@ public class BonusGameFlow : GameFlow
     private void TimeUp()
     {
         Debug.Log("TimeOut");
+
         isStageClear = true;
         ClearStage();
     }
-    
+    public override void ActiveResultPanel()
+    {
+        resutlPanel.SetActive(true);
+        var result = FindObjectOfType<BnResult>();
+        CheckMisson();
+    }
+    public override void CheckMisson()
+    {
+
+    }
+
+
 }

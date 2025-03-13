@@ -5,6 +5,8 @@ using UnityEngine;
 public class RpgGun : Gun
 {
     public RPG rpgGun;
+    public float bulletSpeed;
+
     private float reloadSpeed;
     public bool isRPGReloading = false;
 
@@ -19,11 +21,15 @@ public class RpgGun : Gun
     {
         rpgGun.rocket.SetActive(false);
     }
+    public void ActiveRocket()
+    {
+        rpgGun.rocket.SetActive(true);
+    }
 
     public IEnumerator ShootBullet()
     {
         gunAmmo.SingleFireAmmoCounter();
-        anim.SetTrigger("Fire");
+        anim.Play("Fire");
         Fire();
         audioSource.clip = rpgGun.gunAudio.Shooting;
         audioSource.Play();
@@ -37,19 +43,23 @@ public class RpgGun : Gun
     {
         if (gunAmmo.LoadedAmmo > 0)
         {
+            ActiveRocket();
             isRPGReloading = true;
             reloadSpeed = 1.5f;
+            anim.SetTrigger("Reload");
             yield return new WaitForSeconds(reloadSpeed);
             isRPGReloading = false;
             gunAmmo.UnlockShooting();
         }
-
     }
 
    public void Fire()
     {
+        DeavtiveRocket();
+
         GameObject rocket = RocketPooling.Instance.GetRocket();
-        rocket.GetComponent<Rocket>().ShootRocket(transform.position, transform.rotation);
+        rocket.transform.SetPositionAndRotation(rpgGun.firingPos.position,rpgGun.firingPos.rotation);
+        rocket.GetComponent<Rigidbody>().velocity = rpgGun.firingPos.forward * bulletSpeed;
     }
 
 
