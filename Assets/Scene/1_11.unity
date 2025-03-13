@@ -3034,8 +3034,8 @@ Transform:
   - {fileID: 2073}
   - {fileID: 2886}
   - {fileID: 1909}
-  - {fileID: 2146}
   - {fileID: 2642}
+  - {fileID: 2146}
   - {fileID: 2397}
   - {fileID: 1937}
   - {fileID: 2819}
@@ -9765,6 +9765,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3701333323708345493, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: playPos
+      value: 
+      objectReference: {fileID: 774}
     - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

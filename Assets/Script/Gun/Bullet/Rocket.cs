@@ -4,50 +4,68 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    public GameObject explosinPrefabs;
-    public float exposionRadius;
-    public float exposionForce;
+    public GameObject explosionPrefab;
+    public float explosionRadius;
+    public float explosionForce;
     public int damage;
+    public float bulletSpeed;
     public GameObject fireTail;
+    public Rigidbody rb;
+    public bool isShooting;
 
-  
-    public void ActiveFireTail()
+    public void ShootRocket(Vector3 startPosition, Quaternion rotation)
     {
-        fireTail.SetActive(true);
+        transform.position = startPosition;
+        transform.rotation = rotation;
+        isShooting = true;
+        gameObject.SetActive(true);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log($"{collision.collider.gameObject.tag}");
-        Instantiate(explosinPrefabs, transform.position, transform.rotation);        
-        BlowObject();
-        Destroy(gameObject);
-    }
-  
-    private void BlowObject()
-    {
-        Collider[] effectedObject = Physics.OverlapSphere(transform.position, exposionRadius);
-        for (int i = 0; i < effectedObject.Length; i++)
-        {
-            DeliverDamage(effectedObject[i]);
-            AddForceToObject(effectedObject[i]);
-        }
-    }
-    private void DeliverDamage(Collider victim)
-    {
-        Health health = victim.GetComponentInParent<Health>();
-        if (health != null)
-        {
-            health.TakeDamage(damage);
 
+    public void Update()
+    {
+        if (!isShooting) return;
+        transform.position += bulletSpeed * Time.deltaTime * transform.forward;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Weapon"))
+        {
+            return;
+        }
+        Explode();
+    }
+
+    public void Explode()
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        BlowObjects();
+        ResetRocket();
+    }
+
+    public void BlowObjects()
+    {
+        Collider[] affectedObjects = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (var obj in affectedObjects)
+        {
+            Rigidbody rb = obj.attachedRigidbody;
+            if (rb != null)
+            {
+                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, 1, ForceMode.Impulse);
+            }
+
+            Health health = obj.GetComponentInParent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
         }
     }
-    private void AddForceToObject(Collider effectedObject)
+
+    public void ResetRocket()
     {
-        Rigidbody rigidbody = effectedObject.attachedRigidbody;
-        if (rigidbody)
-        {
-            DeliverDamage(effectedObject);
-            rigidbody.AddExplosionForce(exposionForce, transform.position, exposionRadius, 1, ForceMode.Impulse);
-        }
+        isShooting = false;
+        gameObject.SetActive(false);
+        RocketPooling.Instance.ReturnRocket(gameObject);
     }
 }

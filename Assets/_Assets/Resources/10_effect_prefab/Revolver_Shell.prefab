@@ -2,18 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &1954475462190346
 GameObject:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4453974606183958}
   - component: {fileID: 33695428192660362}
   - component: {fileID: 23238181730982348}
   - component: {fileID: 64240122523866077}
   - component: {fileID: 54136213328734959}
-  - component: {fileID: 114848527427243785}
   m_Layer: 8
   m_Name: Revolver_Shell
   m_TagString: Untagged
@@ -23,12 +22,12 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4453974606183958
 Transform:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954475462190346}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -88,7 +87,6 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &64240122523866077
 MeshCollider:
-  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,17 +103,18 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 31d7e576ac4bf56458264465a1d0ac71, type: 2}
 --- !u!54 &54136213328734959
 Rigidbody:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954475462190346}
+  serializedVersion: 4
   m_Mass: 0.55
   m_Drag: 0.51
   m_AngularDrag: 0.19
@@ -135,16 +134,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &114848527427243785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954475462190346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52021cec017a224a489678bc01e4b2d6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  Auto_Destroy_Time: 2

@@ -171,9 +171,12 @@ public abstract class Gun : MonoBehaviour
         for (int i = 1; i <= gunPlayer.starUpgrade; i++)
         {
             var baseUpgrade = gun.upgradeList.gunUgradeList.Find(upgrade => upgrade.starUpgrade == i);
-            gun.gunStats.damage += baseUpgrade.powerUpgrade;
-            gun.gunStats.critical += baseUpgrade.criticalUpgrade;
-            gun.gunStats.fireRate += baseUpgrade.fireRateUpgrade;
+            if (baseUpgrade != null)
+            {
+                gun.gunStats.damage += baseUpgrade.powerUpgrade;
+                gun.gunStats.critical += baseUpgrade.criticalUpgrade;
+                gun.gunStats.fireRate += baseUpgrade.fireRateUpgrade;
+            }
         }
     }
 

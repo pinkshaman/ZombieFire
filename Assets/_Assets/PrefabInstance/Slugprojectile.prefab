@@ -2,18 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &1840014141874369
 GameObject:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4612597407005728}
   - component: {fileID: 33391763626005783}
   - component: {fileID: 23246828301208187}
   - component: {fileID: 135221182805361649}
   - component: {fileID: 54610059830396672}
-  - component: {fileID: 114519255888511452}
   m_Layer: 12
   m_Name: Slugprojectile
   m_TagString: Untagged
@@ -23,12 +22,12 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4612597407005728
 Transform:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840014141874369}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 131.26285, y: 4.663537, z: 97.47275}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -88,7 +87,6 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &135221182805361649
 SphereCollider:
-  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,16 +103,17 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 3
   m_Radius: 0.099999994
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &54610059830396672
 Rigidbody:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840014141874369}
+  serializedVersion: 4
   m_Mass: 1.5
   m_Drag: 0
   m_AngularDrag: 0
@@ -134,18 +133,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &114519255888511452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840014141874369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984d767153c621867370b1fcb7533a93, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  speed: 200
-  explosion: {fileID: 1738494092094702, guid: 9c089ce55b2a9284fbb8ba3f6bb91501, type: 2}
-  waitTime: 5

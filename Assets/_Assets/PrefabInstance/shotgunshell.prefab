@@ -2,18 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &1674591770896013
 GameObject:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4712166493015192}
   - component: {fileID: 33159559175105761}
   - component: {fileID: 23370270760423192}
   - component: {fileID: 64307461934255094}
   - component: {fileID: 54496580055833657}
-  - component: {fileID: 114400328716064988}
   - component: {fileID: 82810139852940067}
   m_Layer: 8
   m_Name: shotgunshell
@@ -24,12 +23,12 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4712166493015192
 Transform:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674591770896013}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.6763, y: -19.3073, z: -5.8342986}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -89,7 +88,6 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &64307461934255094
 MeshCollider:
-  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,17 +104,18 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4ea5d2ad73297a149a7fd14b9387d2b4, type: 2}
 --- !u!54 &54496580055833657
 Rigidbody:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674591770896013}
+  serializedVersion: 4
   m_Mass: 0.8
   m_Drag: 2
   m_AngularDrag: 2
@@ -136,37 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &114400328716064988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674591770896013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04acf2bfda98e57b5827291f4efb8cd3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  waitTime: 2
-  myAudioSource: {fileID: 82810139852940067}
-  shellsounds:
-  - {fileID: 8300000, guid: 9e862c936517e124fb2c7882e486942c, type: 3}
-  - {fileID: 8300000, guid: fd53469c526a900408c469ec843dfa43, type: 3}
-  - {fileID: 8300000, guid: 69f8c7e48e766cf41a20e3d7f53be0e8, type: 3}
-  - {fileID: 8300000, guid: 605241de881499349ab03333737140be, type: 3}
-  desiredmask:
-    serializedVersion: 2
-    m_Bits: 2048
 --- !u!82 &82810139852940067
 AudioSource:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674591770896013}
   m_Enabled: 1
+  serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1

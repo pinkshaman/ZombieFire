@@ -2,17 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &1701802983014113
 GameObject:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4926907024724996}
   - component: {fileID: 33770056024232866}
   - component: {fileID: 23336777724629509}
   - component: {fileID: 64024226132837085}
-  - component: {fileID: 114426021101717502}
   - component: {fileID: 54366582989147918}
   m_Layer: 0
   m_Name: grenade
@@ -23,12 +22,12 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4926907024724996
 Transform:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701802983014113}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.121689, y: -0.96675783, z: -7.0467963}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -88,7 +87,6 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &64024226132837085
 MeshCollider:
-  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,32 +103,18 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d04e5d910373c7745a5b503b0f52aeaf, type: 2}
---- !u!114 &114426021101717502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701802983014113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95319365a597a574a7c08c1c069ec1f2, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  explosion: {fileID: 4442322991750870, guid: 5d55273bcd5f8894e8e2bd5e60c619c4, type: 2}
-  waitTime: 2
-  hitpoints: 5
 --- !u!54 &54366582989147918
 Rigidbody:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701802983014113}
+  serializedVersion: 4
   m_Mass: 0.88
   m_Drag: 0.24
   m_AngularDrag: 0.2

@@ -2488,8 +2488,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16264a537d513e3449063c4265860853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosinPrefabs: {fileID: 1795184843501878, guid: a888b5473aa9c68459d384b43f313971, type: 3}
-  exposionRadius: 10
-  exposionForce: 5
+  explosionPrefab: {fileID: 1795184843501878, guid: a888b5473aa9c68459d384b43f313971, type: 3}
+  explosionRadius: 5
+  explosionForce: 10
   damage: 10
+  bulletSpeed: 40
   fireTail: {fileID: 1100644516765546}
+  rb: {fileID: 54035898407851330}
+  isShooting: 0

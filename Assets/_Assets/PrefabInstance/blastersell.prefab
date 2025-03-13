@@ -2,18 +2,17 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &1895693486032464
 GameObject:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4629458618356070}
   - component: {fileID: 33554995919736939}
   - component: {fileID: 23941259311581862}
   - component: {fileID: 64698835620643369}
   - component: {fileID: 54085261632200019}
-  - component: {fileID: 114621089056352990}
   - component: {fileID: 82922348704240182}
   m_Layer: 8
   m_Name: blastersell
@@ -24,12 +23,12 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4629458618356070
 Transform:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895693486032464}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9928201, z: 0, w: -0.119617246}
   m_LocalPosition: {x: 5.4588, y: -19.317184, z: -5.4873}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -89,7 +88,6 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &64698835620643369
 MeshCollider:
-  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,17 +104,18 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4e614abfee0a8ab41aa88a6a13bef620, type: 2}
 --- !u!54 &54085261632200019
 Rigidbody:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895693486032464}
+  serializedVersion: 4
   m_Mass: 0.8
   m_Drag: 2
   m_AngularDrag: 2
@@ -136,37 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &114621089056352990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895693486032464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04acf2bfda98e57b5827291f4efb8cd3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  waitTime: 2
-  myAudioSource: {fileID: 82922348704240182}
-  shellsounds:
-  - {fileID: 8300000, guid: 9e862c936517e124fb2c7882e486942c, type: 3}
-  - {fileID: 8300000, guid: fd53469c526a900408c469ec843dfa43, type: 3}
-  - {fileID: 8300000, guid: 69f8c7e48e766cf41a20e3d7f53be0e8, type: 3}
-  - {fileID: 8300000, guid: 605241de881499349ab03333737140be, type: 3}
-  desiredmask:
-    serializedVersion: 2
-    m_Bits: 2048
 --- !u!82 &82922348704240182
 AudioSource:
-  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895693486032464}
   m_Enabled: 1
+  serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1

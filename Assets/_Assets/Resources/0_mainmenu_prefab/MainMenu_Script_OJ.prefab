@@ -2,14 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &1102427890511242
 GameObject:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4937168520306760}
-  - component: {fileID: 114419883635611296}
   m_Layer: 0
   m_Name: MainMenu_Script_OJ
   m_TagString: Untagged
@@ -19,12 +18,12 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4937168520306760
 Transform:
-  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102427890511242}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,53 +31,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!114 &114419883635611296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102427890511242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d80d776c0de6c5ab1ccb94371c1739, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  Fast_Zombie_Make: 1
-  Player_NO_Damage: 0
-  Player_EXP_UP: 1
-  Survival_Mode: 0
-  Bonus_Mode: 1
-  Open_Area_Index: 0
-  Title_UI_Script: {fileID: 0}
-  MainMenu_Top_UI_Script: {fileID: 0}
-  MainMenu_UI_Script: {fileID: 0}
-  GRAC_UI_Panel_OJ: {fileID: 0}
-  gdpr_UI_Script: {fileID: 0}
-  Weapon_UI_Script: {fileID: 0}
-  Shop_UI_Script: {fileID: 0}
-  Option_UI_Script: {fileID: 0}
-  Stage_Select_UI_Script: {fileID: 0}
-  Weapon_3D_OJ:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  MainMenu_State: 0
-  MainMenu_Before_State: 0
-  Weapon_List_Start_Index: 0
-  Gear_Item_List_Index: 0

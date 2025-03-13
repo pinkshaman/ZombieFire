@@ -574,6 +574,8 @@ MonoBehaviour:
       m_Calls: []
   itemUI: {fileID: 0}
   _isShieldActive: 0
+  playerHpBar: {fileID: 0}
+  gameOver: {fileID: 0}
 --- !u!1001 &79068455033335520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1839,13 +1841,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 500659626336976720, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3351915484822997412}
   m_SourcePrefab: {fileID: 100100000, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
 --- !u!4 &3412713432654066046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8911662152123761378, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
   m_PrefabInstance: {fileID: 6120657201346245532}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5909358283778165964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 500659626336976720, guid: 602ed63547a47ab4d873b13f49fd2799, type: 3}
+  m_PrefabInstance: {fileID: 6120657201346245532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3351915484822997412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5909358283778165964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2d13607f27dae4f97b52bc028526d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketPrefab: {fileID: 1735388364549867, guid: b9273ede1b51f6f46a9c8416f8bdd722, type: 3}
+  poolSize: 10
 --- !u!1001 &6181414420512292461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1950,7 +1974,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimingCamera: {fileID: 8327507717219535865}
-  cameraHolder: {fileID: 1752241487316183353}
   recoilRecoverySpeed: 5
   horizontalRecoil: 0.015
   verticalRecoil: 0.015

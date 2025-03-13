@@ -1,34 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 public class RpgGun : Gun
 {
     public RPG rpgGun;
     private float reloadSpeed;
-    public float bulletSpeed;
     public bool isRPGReloading = false;
 
-    public  override void Update()
+    public override void Update()
     {
-        base.Update();
-        if (Input.GetMouseButtonDown(0) && !isRPGReloading)
+        if (IsValidFireInput() || Input.GetKey(KeyCode.V) && !isRPGReloading)
         {
             Shooting();
         }
     }
     public void DeavtiveRocket()
     {
-        rpgGun.rocket.gameObject.SetActive(false);
+        rpgGun.rocket.SetActive(false);
     }
 
     public IEnumerator ShootBullet()
     {
         gunAmmo.SingleFireAmmoCounter();
-        anim.Play("Fire");
-        AddProjectile();
-
+        anim.SetTrigger("Fire");
+        Fire();
         audioSource.clip = rpgGun.gunAudio.Shooting;
         audioSource.Play();
         rpgGun.muzzleSmoke.Play();
@@ -43,7 +39,6 @@ public class RpgGun : Gun
         {
             isRPGReloading = true;
             reloadSpeed = 1.5f;
-
             yield return new WaitForSeconds(reloadSpeed);
             isRPGReloading = false;
             gunAmmo.UnlockShooting();
@@ -51,14 +46,15 @@ public class RpgGun : Gun
 
     }
 
-    public void AddProjectile()
+    void Fire()
     {
-        GameObject bullet = Instantiate(rpgGun.bulletPrefabs, rpgGun.firingPos.position, rpgGun.firingPos.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = rpgGun.firingPos.forward * bulletSpeed;
+        GameObject rocket = RocketPooling.Instance.GetRocket();
+        rocket.GetComponent<Rocket>().ShootRocket(transform.position, transform.rotation);
     }
+
+
     public override void Shooting()
     {
-        
         StartCoroutine(ShootBullet());
     }
 

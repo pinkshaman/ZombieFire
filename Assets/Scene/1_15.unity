@@ -1786,8 +1786,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066}
-  - component: {fileID: 4493}
-  - component: {fileID: 3709}
   m_Layer: 13
   m_Name: Camera_SET
   m_TagString: Player
@@ -8521,27 +8519,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.605176, y: 0.842627, z: 0.605176}
   m_Center: {x: 0, y: 0.40638277, z: 0}
---- !u!65 &3709
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &3710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9758,25 +9735,6 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!114 &4493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8249b28b562e2b52515061fe549b3814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Play_Camera_Rotation_OJ: {fileID: 0}
-  Play_Camera_OJ: {fileID: 0}
-  Play_Camera: {fileID: 0}
-  Weapon_Camera: {fileID: 0}
-  Grenade_Explosion_Pos: {fileID: 0}
-  MotionBlur_Script: {fileID: 0}
-  Zombie_LookAt_OJ: {fileID: 0}
 --- !u!114 &300273690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9942,6 +9900,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3701333323708345493, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: playPos
+      value: 
+      objectReference: {fileID: 774}
     - target: {fileID: 3899243883550840217, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -9965,6 +9927,10 @@ PrefabInstance:
     - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_LocalPosition.z
       value: 20.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6001833029642485766, guid: daf248d200384e043b42911e370f3b63, type: 3}
       propertyPath: m_LocalRotation.y
