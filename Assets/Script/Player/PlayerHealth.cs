@@ -12,7 +12,7 @@ public class PlayerHealth : Health
 
     public override void Start()
     {
-        itemUI = FindObjectOfType<GamePlayUI>();
+        itemUI = FindFirstObjectByType<GamePlayUI>();
         maxHealthPoint = PlayerManager.Instance.ReturnPlayerHealthAfterEffected();
         HealthPoint = maxHealthPoint;
         itemUI.OnUsingShield.AddListener(UpdateShieldState);

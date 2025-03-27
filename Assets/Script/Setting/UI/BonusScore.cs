@@ -13,7 +13,7 @@ public class BonusScore : MonoBehaviour
 
     public void Start()
     {
-        damageManagement = FindObjectOfType<DamageManagement>();
+        damageManagement = FindFirstObjectByType<DamageManagement>();
         coin = 0;
         kill = 0;
         damageManagement.OnHeadShot.AddListener(GetHeadShotScore);

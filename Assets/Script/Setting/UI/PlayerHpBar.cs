@@ -8,7 +8,7 @@ public class PlayerHpBar : HPBar
     public Text healthAmounText;
     public override void Start()
     {
-        health = FindObjectOfType<PlayerHealth>();
+        health = FindFirstObjectByType<PlayerHealth>();
         health.OnHealthChange.AddListener(Fill);
         ShowText();      
 

@@ -61,7 +61,7 @@ public abstract class Zombie : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        playerHealth = FindObjectOfType<PlayerHealth>();
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
 
     }
     public IEnumerator InitializeZombieData()

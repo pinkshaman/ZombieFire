@@ -37,7 +37,7 @@ public class GunAmmo : MonoBehaviour
     private void Start()
     {
         gamePlayUI = FindFirstObjectByType<GamePlayUI>();
-        ammoTextUI = FindObjectOfType<AmmoTextBinder>();
+        ammoTextUI = FindFirstObjectByType<AmmoTextBinder>();
         InitializeGun();
         UpdateTextAmmo();
         ammoTextUI.buyAmmo.onClick.AddListener(() => AutoBuy());

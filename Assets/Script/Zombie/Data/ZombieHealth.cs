@@ -14,7 +14,7 @@ public class ZombieHealth : Health
     {
         Initialize();
 
-        zombieRepawn = FindObjectOfType<ZombieRepawn>();
+        zombieRepawn = FindFirstObjectByType<ZombieRepawn>();
         OnHealthChange.AddListener(healthBar.Fill);
         OnTakeDamage.AddListener(zombie.OnGetHit);
         OnTakeDamage.AddListener(healthBar.FacingPlayer);

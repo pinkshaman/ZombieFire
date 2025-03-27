@@ -13,7 +13,7 @@ public class BonusZombie : Zombie
     public override void Awake()
     {
         StartCoroutine(InitializeZombieData());
-        bonusZombieRepawn = FindObjectOfType<BonusZombieRepawn>();
+        bonusZombieRepawn = FindFirstObjectByType<BonusZombieRepawn>();
         SetDestination();
         audioSource = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
@@ -39,7 +39,7 @@ public class BonusZombie : Zombie
     }
     public void OnReachEndPos()
     {
-        ZombieRepawn respawnManager = FindObjectOfType<ZombieRepawn>();
+        ZombieRepawn respawnManager = FindFirstObjectByType<ZombieRepawn>();
         if (respawnManager != null)
         {
             respawnManager.ReturnZombieToPool(gameObject);

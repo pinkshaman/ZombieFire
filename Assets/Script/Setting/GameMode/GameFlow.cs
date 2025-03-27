@@ -122,7 +122,7 @@ public class GameFlow : MonoBehaviour
     public virtual void ActiveResultPanel()
     {
         resutlPanel.SetActive(true);
-        var result = FindObjectOfType<StageResult>();
+        var result = FindFirstObjectByType<StageResult>();
         string rankClass = result.ReturnRank();
         Debug.Log($"RankClass:{rankClass}");
         StageGameMode.Instance.UpdateDataArenaProgess(stage.stageID, isStageClear, rankClass);

@@ -13,7 +13,7 @@ public class HPBar : MonoBehaviour
 
     public virtual void Start()
     {
-        cameraTransform = FindObjectOfType<Camera>().transform;
+        cameraTransform = FindFirstObjectByType<Camera>().transform;
     }
     public virtual void Fill(int currentHealth, int totalHealth)
     {

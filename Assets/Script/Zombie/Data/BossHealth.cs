@@ -8,8 +8,8 @@ public class BossHealth : ZombieHealth
     public override void Start()
     {
         Initialize();
-        zombieRepawn = FindObjectOfType<ZombieRepawn>();
-        healthBar =FindObjectOfType<BossHPBar>();
+        zombieRepawn = FindFirstObjectByType<ZombieRepawn>();
+        healthBar =FindFirstObjectByType<BossHPBar>();
         OnHealthChange.AddListener(healthBar.Fill);
         OnTakeDamage.AddListener(zombie.OnGetHit);
     }

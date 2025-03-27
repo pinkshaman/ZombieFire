@@ -11,7 +11,7 @@ public class DamageTextPooling : MonoBehaviour
     private Transform cameraTransform;
     public void Start()
     {
-        cameraTransform = FindObjectOfType<Camera>().transform;
+        cameraTransform = FindFirstObjectByType<Camera>().transform;
         damageTextPool = new List<DamageText>();
 
         for (int i = 0; i < Poolsize; i++)

@@ -30,7 +30,7 @@ public abstract class Gun : MonoBehaviour
         gunPlayer = GunManager.Instance.ReturnPlayerGun(newGun.GunName);
         
         Initialize(newGun,gunPlayer);
-        itemUI = FindObjectOfType<GamePlayUI>();
+        itemUI = FindFirstObjectByType<GamePlayUI>();
         OnReloading.AddListener(itemUI.UserReloadItem);
     }
     public virtual void Aiming()

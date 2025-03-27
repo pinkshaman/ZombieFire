@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
 
     public void Start()
     {
-        damageManagement = FindObjectOfType<DamageManagement>();
+        damageManagement = FindFirstObjectByType<DamageManagement>();
         stage = StageGameMode.Instance.ReturnCurrentStageforPlay();
         RankOrder = new List<string> { "C", "B", "A", "S" };
         expPerZombie = IntRank();

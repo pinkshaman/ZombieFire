@@ -36,7 +36,7 @@ public class LoginReward : MonoBehaviour
         {
             isTook = true;
             PlayerManager.Instance.TakeReward(reward);
-            LoginRewardManager rewardManager = FindObjectOfType<LoginRewardManager>();
+            LoginRewardManager rewardManager = FindFirstObjectByType<LoginRewardManager>();
             rewardManager.ClaimReward(day);
             UpdateUi();
         }

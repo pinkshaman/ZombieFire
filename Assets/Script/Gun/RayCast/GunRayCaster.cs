@@ -16,8 +16,8 @@ public class GunRayCaster : MonoBehaviour
 
     public void Start()
     {
-        hitEffectManager = FindObjectOfType<HitEffectManager>();
-        damageManagement = FindObjectOfType<DamageManagement>();
+        hitEffectManager = FindFirstObjectByType<HitEffectManager>();
+        damageManagement = FindFirstObjectByType<DamageManagement>();
     }
     public void PerformRayCasting()
     {

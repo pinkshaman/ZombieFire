@@ -164,7 +164,7 @@ public class GunManager : MonoBehaviour
 
     public Gun FindActiveGun()
     {
-        Gun[] guns = FindObjectsOfType<Gun>();
+        Gun[] guns = FindObjectsByType<Gun>(FindObjectsSortMode.None);
         foreach (Gun gun in guns)
         {
             if (gun.gameObject.activeInHierarchy)

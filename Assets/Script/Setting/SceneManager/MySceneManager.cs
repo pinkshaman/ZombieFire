@@ -41,7 +41,7 @@ public class MySceneManager : MonoBehaviour
     }
     private IEnumerator EnsureGameDataLoaded()
     {
-        StageSelect stageSelect = FindObjectOfType<StageSelect>();
+        StageSelect stageSelect = FindFirstObjectByType<StageSelect>();
         stageSelect.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(0.5f);

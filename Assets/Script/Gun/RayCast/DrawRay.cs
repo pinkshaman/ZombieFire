@@ -26,7 +26,7 @@ public class DrawRay : MonoBehaviour
     }
     public void Start()
     {
-        rayCaster = FindObjectOfType<GunRayCaster>();
+        rayCaster = FindFirstObjectByType<GunRayCaster>();
         if (rayCaster == null) return;
         rayCaster.onRaycasting.AddListener(DrawRaycast);
 

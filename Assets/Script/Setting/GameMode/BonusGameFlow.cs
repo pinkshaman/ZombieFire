@@ -81,7 +81,7 @@ public class BonusGameFlow : GameFlow
     public override void ActiveResultPanel()
     {
         resutlPanel.SetActive(true);
-        var result = FindObjectOfType<BnResult>();
+        var result = FindFirstObjectByType<BnResult>();
         CheckMisson();
     }
     public override void CheckMisson()

@@ -59,7 +59,7 @@ public class RpgGun : Gun
 
         GameObject rocket = RocketPooling.Instance.GetRocket();
         rocket.transform.SetPositionAndRotation(rpgGun.firingPos.position,rpgGun.firingPos.rotation);
-        rocket.GetComponent<Rigidbody>().velocity = rpgGun.firingPos.forward * bulletSpeed;
+        rocket.GetComponent<Rigidbody>().linearVelocity = rpgGun.firingPos.forward * bulletSpeed;
     }
 
 

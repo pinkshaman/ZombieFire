@@ -13,7 +13,7 @@ public class SurvivalScore : MonoBehaviour
     public Text scoreText;
     public void Start()
     {
-        damageManagement = FindObjectOfType<DamageManagement>();
+        damageManagement = FindFirstObjectByType<DamageManagement>();
         killCount = 0;
         headshotCount = 0;
         damageManagement.OnHeadShot.AddListener(GetHeadShotScore);

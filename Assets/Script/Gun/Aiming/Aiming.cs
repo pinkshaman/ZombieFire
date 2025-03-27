@@ -14,7 +14,7 @@ public class Aiming : MonoBehaviour
 
     public void Awake()
     {
-        gun = FindObjectOfType<Gun>();
+        gun = FindFirstObjectByType<Gun>();
     }
     private void Start()
     {
